@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //     var nn = 123; // 全局变量
+    //
+    //     function fn() {
+    //        var nn = 666; // 私有变量
+    //        console.log(nn); // 666
+    //     }
+    //    fn();
+    //    console.log(nn); // 123
+
+//    var nn = 123; // 全局变量
+//    function fn() {
+//        console.log(nn); // 123
+//        nn = 666; //
+//        console.log(nn); // 666
+//    }
+//    fn();
+//    console.log(nn); // 666
+//    作用域链
+//    如果在私有作用域中遇到一个变量，首先看是不是形参或者有没有在当前作用域预解释的时候声明过，如果没有声明过也不是形参 就会去上级作用域中查找 ，一直找到window为止
+
+   var num = 20;
+    function fn() { // fn的私有变量 num = 20;
+        return function () { // var num = undefined, num = 9
+            num = 9; // 由20 改为了 9
+            ++num; // ++9
+            console.log(num); // 10
+        }
+    }
+    var f = fn(); //
+    f(); // f里操作的是全局中的变量 num
+    console.log(num); //  f() 执行修改后 的 num -> 10
+    // 如何看上级作用域
+//    就看 函数是在哪里定义的
+
+
+
+</script>
+</body>
+</html>

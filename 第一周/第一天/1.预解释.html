@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 基本数据类型 undefined null string number boolean
+    // 引用数据类型
+       // 函数数据类型 function
+       // 对象数据类型 [] RegExp {} Date
+
+//  浏览器加载html时候，会提供一个供js代码执行的环境 -> window (全局作用域)
+
+//  预解释（变量提升）
+//  在当前作用域中，js代码执行之前，把所有带var和带function关键字的进行声明或者定义
+//    var 和 function 的 预解释的区别
+//  通过var声明的时候  会给变量赋值一个默认值undefined
+//  预解释的时候 带var只声明 不定义 带function 预解释的时候 声明加定义
+//    预解释完成后 代码自上而下开始执行
+
+//  声明 var num
+//  定义 赋值 num = 123
+//      console.log(num); // undefined
+      var num = 123;
+//      console.log(num); // 123
+//      console.log(obj);
+    var obj = {name:'zhufeng'};
+//      console.log(obj);
+//    console.log(fn); //
+
+//    全局变量和私有变量
+//    全局变量 就是 在全局作用域中声明的变量
+//    私有变量 就是 在私有作用域中声明的变量
+
+//   预解释是针对于当前作用域 只发生在当前作用域中 首先开始对window进行预解释 函数执行的时候会形成一个私有作用域 然后 函数执行的时候也会进行 预解释
+   function fn(a,b){
+        console.log(name1); // undefined
+        console.log(a,b);  // 33, 66 是一个变量 在私有中声明过
+        var name1 = 'nihao';
+        console.log(name1); // 'nihao'
+//        console.log('function');
+    }
+    fn(33,66);
+//    var a,b;
+    console.log(a,b); // 报错了 没有全局中声明过
+    console.log(name1);
+//    全局变量和私有变量
+//    全局作用域中声明的变量
+//    在私有作用域中声明的变量（形参和预解释的声明的变量）
+//    console.log(fn);
+//    console.log(name1); // 报错
+//    函数执行  将函数里的js代码加载运行 也需要一个供函数里js代码执行的环境 -> 私有作用域
+    //  1.给形参赋值
+    //  2.进行预解释
+    //  3.从上到下执行
+
+
+    function fn1(){
+        var name1 = 'nihao';
+        console.log('function');
+    }
+    fn1();
+//    console.log(name1);
+//   console.log(fn);
+//     fn();
+
+
+    console.log(num2);
+    var num2;
+</script>
+</body>
+</html>

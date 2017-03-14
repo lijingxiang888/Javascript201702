@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 1.不管if条件是否成立都会进行预解释
+//    console.log(num); // undefined
+//    if(false){
+//        var num = 123;
+//    }
+//    console.log(num); // undefined
+//    console.log(fn); // undefined
+//    fn(); // 报错 undefined（）
+//    2.预解释的时候不会 声明等号右边的
+//    var fn = function () {
+//      console.log('function');
+//    };
+//console.log(fn);
+//    fn(); // 'function'
+
+//  reutrn 下面的代码虽然不执行 也要进行预解释 但是return 右边 不会进行预解释 因为把它当做一个值返回出去；
+
+    function fn1() {
+//        console.log(num); // undefined
+        console.log(fn);
+        return function fn(){  // return 右边 不会进行预解释 因为是把它当做一个值返回出去；
+            console.log('fn');
+        };
+        var num = 123; // 虽然不执行但依然进行预解释
+    }
+    fn1();
+
+
+</script>
+</body>
+</html>
