@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <p>点赞 <span id="totals">0</span></p>
+ <button>点赞</button>
+<script type="text/javascript">
+    var btn = document.getElementsByTagName('button')[0];
+    var totals = document.getElementById('totals');
+
+//     利用全局作用域不销毁的情况 来保存我们每一次修改后count的值
+//    var count = 0;
+//    btn.onclick = function () {
+//         count++;
+//        totals.innerHTML = count;
+//    }
+
+//     自己创建一个不销毁的作用域 来保存每一次修改后count的值
+//    ~(function () {
+//        var count = 0;
+//        function f() {
+//            count++;
+//            totals.innerHTML = count;
+//        }
+//        btn.onclick = f;
+//    })()
+
+//    btn主动去里面占用 自执行函数里 定义的 function
+//    ~(function () {
+//        var count = 0;
+//        btn.onclick = function () {
+//            count++;
+//            totals.innerHTML = count;
+//        };
+//    })()
+
+//    btn在外面等着 自执行函数 主动将在它里面定义的function 让btn接收
+//    btn.onclick = (function () {
+//        var count = 0;
+//         return function () {
+//             console.log(count);
+//             count++;
+//             totals.innerHTML = count;
+//         }
+//    })();
+//    console.log(btn.onclick);
+
+//    btn.onclick = (function () {
+//        var count = 0;
+//        return function () {
+//            console.log(count);
+//            count++;
+//            totals.innerHTML = count;
+//        }
+//    })();
+//  内容自身加一
+//    btn.onclick = function () {
+//        totals.innerHTML = ++totals.innerHTML;
+//    }
+
+//    利用自定义属性
+    btn.count = 0;
+    btn.onclick = function () {
+        totals.innerHTML = ++this.count;
+    }
+</script>
+</body>
+</html>

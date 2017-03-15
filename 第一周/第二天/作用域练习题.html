@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+//    function foo() {
+//        var num = 0;
+//        function f() {
+//            console.log(num += 5)
+//        }
+//        return f;
+//    }
+//    var fo1 = foo(); // 形成 第一个不销毁 栈内存
+//    fo1(); // 5
+//    fo1(); // 10
+//    var fo2 = foo(); // 形成 第二个不销毁 栈内存
+//    fo2(); // 5
+//    fo1 = fo2;  // 改变了 fo1指向 也就说明我第一个不销毁栈内存里 堆内存就不被占用了 那么第一个foo就可以销毁了
+//    fo1(); // 10
+
+    ////////////////////////////////////////////////
+//
+//var fer1;
+//    function far(){
+//        var count = 0; // 1 2
+//        function ff() {
+//            console.log(count++);
+//        }
+////        window.fer1 = ff;
+//        fer1 = ff;
+//    }
+//    far();
+//    fer1(); // 0
+//    fer1(); // 1
+//
+//
+//
+//
+//
+//    /////////////////////////////////////////////////////
+    function fn() {
+     var count = 0; // 1 2
+     return  function (n) {
+            count++; console.log(count + n);
+        }
+    }
+    var f1 =fn();
+    f1(10); // d11
+    f1(6); // d8
+    var f2 = fn();
+    f2(10); // 11
+    f2(1); // 3
+    f1 = f2;
+    f1(15); // 18
+    fn()(9); // 10 10
+//
+//
+//    ///////////////////////////////////////////////////////////
+//    var obj = {
+//        num: 3,
+//        bar: (function () {
+//              var n = 5;
+//              return function () {
+//                  console.log(n += 2);
+//              }
+//        })()
+//    };
+//    obj.bar();
+//    obj.bar();
+//    var fn3 = obj.bar;
+//    fn3();
+//    fn3();
+</script>
+</body>
+</html>

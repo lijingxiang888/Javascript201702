@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        a {
+
+            text-decoration: none;
+
+        }
+
+        ul {
+
+            list-style: none;
+
+            /*background: orangered;*/
+
+            width: 302px;
+
+        }
+
+        body {
+
+            font: 12px/1.5 "Microsoft Himalaya";
+
+            background: #59afe4;
+
+        }
+
+        .box {
+
+            margin: 30px auto;
+
+            width: 300px;
+
+            border: 1px solid #222;
+
+            border-radius: 3px;
+
+            background: #fff;
+
+            overflow: hidden;
+
+        }
+
+        .clearfix:after {
+
+            display: block;
+
+            content: "";
+
+            clear: both;
+
+        }
+
+        ul li {
+
+            float: left;
+
+            border-bottom: 1px solid #222;
+
+            width: 74px;
+
+            height: 41px;
+
+            line-height: 41px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+        }
+
+        ul li.cur {
+
+            margin-left: -1px;
+
+            padding-right: 3px;
+
+            border-bottom-color: #fff;
+
+            border-left: 1px solid #222;
+
+            border-right: 1px solid #222;
+
+            width: 150px;
+
+        }
+
+        p {
+
+            display: none;
+
+            text-align: center;
+
+            line-height: 50px;
+
+        }
+
+        p.cur {
+
+            display: block;
+
+        }
+
+        ul li a {
+
+            color: orangered;
+
+            font-size: 10px;
+
+        }
+
+        ul li a:hover {
+
+            text-decoration: underline;
+
+        }
+
+        ul li span {
+
+            color: orangered;
+
+            display: none;
+
+        }
+
+        ul li.cur span {
+
+            display: inline-block;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <ul class="clearfix">
+
+        <li>小组更新<span>&nbsp/&nbsp<a href="#">更多</a></span></li>
+
+        <li class="cur">我的小组<span>&nbsp/&nbsp<a href="#">更多</a></span></li>
+
+        <li>热门话题<span>&nbsp/&nbsp<a href="#">更多</a></span></li>
+
+    </ul>
+
+    <p>小组更新</p>
+
+    <p class="cur">我的小组</p>
+
+    <p>热门话题</p>
+
+</div>
+
+<script>
+
+    var oLis = document.querySelectorAll('li'), oPs = document.querySelectorAll('p');
+
+    //  作用域方式一 利用不销毁作用域 （弊端会形成多个不销毁作用域）
+    //    for (var i = 0; i < oLis.length; i++) {
+    //        oLis[i].onclick = (function (n) { // 让li在外面接收 每一次自执行函数里返回的内部函数 导致当前自执行函数 形成的作用域 不能销毁
+    //            return function () {
+    //                console.log(n);
+    //                   for(var j = 0; j < oLis.length; j++){
+    //                       oLis[j].className = oPs[j].className = '';
+    //                   }
+    //                this.className = oPs[n].className = 'cur';
+    //            }
+    //        })(i);
+    //    }
+
+    //    作用域方式二 利用不销毁作用域  （弊端会形成多个不销毁作用域）
+    for (var i = 0; i < oLis.length; i++) { // 每一轮都会形成一个不销毁的作用域
+        (function (n) {
+            oLis[n].onclick = function () {  // 我们主动跑到里面来占用 在这里定义的function 并把for循环的每一轮i的值 传递进来 赋给每一个不销毁的作用域里的形参n来保存当前这一轮i的值
+                console.log(n);
+                for (var j = 0; j < oLis.length; j++) {
+                    oLis[j].className = oPs[j].className = '';
+                }
+                this.className = oPs[n].className = 'cur';
+            }
+        })(i);
+    }
+
+
+    // 自定义属性（推荐）
+    //    for(var i=0;i<oLis.length;i++){
+    //
+    //        oLis[i].joo=i;
+    //
+    //        oLis[i].onclick=function(){
+    //
+    //            for(var j=0;j<oLis.length;j++){
+    //
+    //                oLis[j].className='';
+    //
+    //                oPs[j].className='';
+    //
+    //            }
+    //
+    //            this.className='cur';
+    //
+    //            oPs[this.joo].className='cur';
+    //
+    //        }
+    //
+    //    }
+
+
+    //    var obj1= {};
+    //    var obj2= {};
+    //    var obj3= {};
+    //  var arr = [obj1,obj2,obj3];
+    //    for(var i = 0; i < 3; i++){
+    //       arr[i].fn =(function (n) {
+    //           return function () {
+    //                console.log(n);
+    //            }
+    //        })(i)
+    //    }
+    //     obj1.fn();
+    //     obj2.fn();
+    //     obj3.fn();
+    //
+
+</script>
+
+</body>
+
+</html>
