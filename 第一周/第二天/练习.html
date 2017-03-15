@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function fn(n) {
+        function f(i) {
+            console.log(n + (++i));
+        }
+        return f;
+    }
+    var f = fn(10);
+    f(2);
+//    函数执行  形成一个私有作用域
+//    1.有没有形参 如果有形参赋值
+//    2.预解释
+//    3.从上到下执行
+
+//    作用域链
+//    如果在私有作用域中 遇到一个变量 先看它是不是形参或有没有声明过，如果没有就去上一级作用域查找，如果上一级也没有 继续查找 一直找到window为止；
+
+//    in 用来检测一个属性是否属于这个对象 返回boolean 是 true 不是 false
+
+    var obj = {name: "zhufeng"};
+
+    console.log("name" in obj);
+    console.log("age" in obj);
+
+    if(!("num" in window)){
+        var num = '123';
+    }
+    console.log(num);
+
+//    var num = 123;
+//    console.log(window.num);
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 预解释
+    //    带var 不重复声明
+    //    带function 不重复声明 但重复定义
+
+    //    function fn = log(2) = log(12) = log(13) (var fn 不重复声明 )= log(123)
+    //    console.log(fn); // 输出函数本身 function fn() {console.log(123)}
+    //    fn(); // 123
+    //    function fn() {console.log(2)}
+    //    fn(); // 123
+    //    function fn() {console.log(12)}
+    //    fn(); // 123
+    //    function fn() {console.log(13)}
+    //    var fn = 666; // fn = 123
+    //    function fn() {console.log(123)}
+    //    console.log(fn); // 666
+    //    fn(); // 666() 报错 fn is not a function
+    //    console.log(fn);
+    /**
+     *  123 123 123 报错
+     */
+
+//    function fn2(num) {
+//        num = 123; // num = 20 修改为 num = 123;
+//        var num = 100; // num = 100;
+//        return function () {
+//            console.log(num);
+//        }
+//    }
+//    var f2 = fn2(20);
+//    f2(); // 100;
+
+
+//    console.log(fn2);
+        //    function fn2() {  // A
+        //        console.log(2222);
+        //    }
+        //    fn2();
+        //    function fn2() { // B    B把A覆盖掉
+        //        console.log(6666);
+        //    }
+        //    fn2();
+    console.log(ni); // undefined
+    var ni = 123;
+    console.log(ni); // 123
+    var ni = 666;
+    console.log(ni); // 666
+</script>
+</body>
+</html>

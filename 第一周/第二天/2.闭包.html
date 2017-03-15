@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //    var name1 = 'zhfueng';
+    //    function fn(name1) {
+    ////      name1 = 'bar';
+    //        console.log(name1);
+    //    }
+    //    name1 = 123;
+    //    fn();
+    //    console.log(name1);
+    //    函数执行形成 一个私有作用域 保护里面私有变量 不受外界干扰 的保护机制叫闭包
+    //    function fn1() {
+    //        function f() {
+    //            console.log('我是小f');
+    //        }
+    //        f();
+    //    }
+    //    fn1();
+    //    f();
+
+    //    全局的不可以修改私有的
+    function fn2() {
+        var num2 = 123;
+        return function () { // 内部函数 将num2的值修改了
+            num2 += 3;
+            console.log(num2);
+        }
+    }
+    var f2 = fn2(); // fn2() => 代表的返回值
+    num2 = 100;
+    f2(); // 126
+    console.log(num2);
+</script>
+</body>
+</html>

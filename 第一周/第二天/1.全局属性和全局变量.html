@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //        var num = 123;
+    //        console.log(window.num);
+    //    在全局作用域中声明的变量 不仅是全局变量 也是 给全局添加了一个属性
+    //     带var的只声明不定义 默认值undefined
+    console.log(num1);  // undefined
+    var num1 = 10; // num1 = 10;
+
+    //    console.log(num2); // 因为没有进行预解释 所以 报错
+    //js 中 如果不进行不处理 如果上面代码报错 下面就不会执行
+
+    num2 = 20; // 给window添加了一个属性叫做num2 值是 20；
+    //    console.log(num2);
+    //    console.log(window.num2);
+    //    console.log("num2" in window);
+
+//    function fn() {
+//        num = 100;
+//        console.log(num); // 100
+//    }
+////    console.log(num);
+//    fn();
+//    console.log(num); // 100
+
+    var num = 200;
+    function fn() {
+        num = 100;
+        console.log(num); // 100
+    }
+    fn();
+
+    console.log(num); // 100
+</script>
+</body>
+</html>

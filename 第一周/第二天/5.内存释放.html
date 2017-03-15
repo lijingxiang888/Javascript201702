@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 堆内存释放
+    //    浏览器默认机制 每间隔一段时间 会把那些 没有被占用的 内存回收
+
+    //   自己释放
+    var obj = {name: '张建业', age: 18};
+    var obj2 = obj;
+    obj = null; // 空对象指针
+    obj2 = null;
+    //    var num = null;
+
+
+    //    栈内存销毁 与 不销毁
+    //    window （栈内存） 关闭浏览器的时候会销毁
+    //    一般情况下函数执行形成私有作用域（栈内存）执行完里面代码 就会立即销毁
+    //   var count = 0;
+    //    function fn() {
+    ////      var count = 0;
+    //        count++;
+    //        console.log(count);
+    //    }
+    //    fn();
+    //    fn();
+    //    fn();
+
+    //    (function () {
+    //        var count = 0;
+    //        function fn() {
+    //          var count = 0;
+    //            count++;
+    //            console.log(count);
+    //        }
+    //        fn();
+    //        fn();
+    //        fn();
+    //    })();
+    //形成不销毁栈内存
+    //  在私有作用域（栈内存）中， 返回一个 引用数据类型 被外部接收 这个栈内存就不能被销毁
+    //    function fn() {
+    //        return {
+    //            name: '武迪',
+    //            mess: '别再睡觉了'
+    //        }
+    //    }
+    //    var f = fn(); // fn形成的栈内存不销毁
+    //    console.log(f); //
+    //    fn(); // 可以销毁
+
+    //    var obj = {
+    //        name: '武迪',
+    //        mess: '别再睡觉了'
+    //    }
+
+    // 不立即销毁  如果返回的是一个函数数据类型 要等返回值执行完后 fn才能销毁
+    function fn() {
+        var count = 0;// 1 2
+        return function () { // class = f1
+            count++;
+            console.log(count);
+        }
+    }
+    var f = fn(); // count = 1 count = 2
+    f(); // 1
+    f(); // 2
+    console.log(fn()); // 函数返回值
+    fn()(); // fn()() 让fn的返回值执行 = f1()
+</script>
+</body>
+</html>
