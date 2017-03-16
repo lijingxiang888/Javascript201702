@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //    //////////////////////////////////////////////////////////////////////////////////////
+
+        var num = 1; // 3 -> 5
+        var obj = {num : 2}; // 4
+        obj.fn = (function (num){ // 1
+            // var num = 0;
+            this.num += 2; // 自执行函数中的this window
+            num--; // 1-- -> 0
+            return function (n){ // 1 2
+                this.num += 2;
+                num--;
+                console.log(n + ++num);
+            }
+        })(this.num);
+    console.log(this); // window
+        var fn = obj.fn;
+        fn(1); // 1
+        obj.fn(2); // 2
+        console.log(num,obj.num); // 5 4
+
+    //    ///////////////////////////////////////////////////////////////////////////////////////
+    //    var num = 20;
+    //    var obj = {
+    //        num: 30,
+    //        fn: (function (num) {
+    //            this.num *= 3;
+    //            num += 15;
+    //            var num = 45;
+    //            return function () {
+    //                this.num *= 4;
+    //                num += 20;
+    //                console.log(num);
+    //            }
+    //        })(num)
+    //    };
+    //    var fn = obj.fn;
+    //    fn();
+    //    obj.fn();
+    //    console.log(window.num, obj.num);
+</script>
+</body>
+</html>

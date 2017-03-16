@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>点我</button>
+<div>赞我</div>
+<script type="text/javascript">
+    //    JS中this当前行为主体
+
+    //    1.全局中的this是window
+    //    主要研究函数中的this
+    //       2. 函数执行的时候方法中的this要看函数执行的时候前面有没有‘.’,如果前面有点 点前面是谁this就是谁 如果没有点this就是window
+    //     *函数中的this和函数在哪里执行 在哪里定义没有任何关系 只看执行的时候
+    //      3.自执行函数里面的this永远是window
+   //       4.给元素绑定事件 事件触发的时候 里面的this 就是当前绑定事件的元素
+  //        5.定时器中的this也是window
+
+
+    var obj = {
+         name: 'zhufeng',
+         age: 18,
+         mess: '北京欢迎你',
+         fn: function () {
+             console.log(this);
+             console.log('你好我叫 '+ this.name+' 我今年'+this.age+' say '+ this.mess);
+         }
+    };
+    var obj1 = {
+        name: 'zhansan',
+        age: 20,
+        mess: 'zhufeng欢迎你',
+        fn: obj.fn
+    };
+    obj.fn();
+    obj1.fn();
+
+//    var ff = function () {
+//        console.log(this);
+//    };
+//
+//    function bar(fe) {
+//            fe();
+//    }
+//    bar(ff);
+
+//    function fnn() {
+//        setTimeout(function () {
+//            console.log(this);
+//        },1000);
+//    }
+//    fnn();
+
+//    setTimeout(function () {
+//        console.log(this);
+//    },1000);
+//    window.setTimeout(function () {
+//        console.log(this);
+//    },1500);
+
+//   事件中的this
+     var btn = document.getElementsByTagName('button')[0];
+     var oDiv = document.getElementsByTagName('div')[0];
+
+//    btn.onclick = oDiv.onclick = function () {
+//          console.log(this);
+//    };
+
+
+//     btn.onclick = function () {
+//         console.log(this); // btn
+//         ff();
+//     };
+//    function ff() {
+//        console.log(this); // window
+//    }
+
+//    var obj = {fs:ff};
+//    console.log(obj.fs);
+//     btn.onclick = obj.fs;
+//    btn.onclick = function ff() {
+//        console.log(this); // btn
+//    };
+
+//    btn.onclick = (function () {
+//             console.log(this); // window
+//             return function () {
+//                 console.log(this); // btn
+//             }
+//    })();
+//    btn.onclick = function () {
+//        console.log(this);
+//    };
+
+
+
+    //    自执行函数中的this
+    //    (function () {
+    //        console.log(this); // window
+    //    })();
+
+//    function fe() {
+//        console.log(this); // window
+//        (function () {
+//            console.log(this); // window
+//        })()
+//    }
+    //    fe();
+//    var obj = {
+//        fn: (function () {
+//            console.log(this); // obj window
+//            return function () {
+//                console.log(this); // obj
+//            }
+//        })()
+//    };
+//    obj.fn();
+
+
+    //   普通函数中的this
+    //    var obj = {};
+    //    function fn() {
+    //        console.log(this); // window
+    //        return function () {
+    //            console.log(this); // window
+    //        }
+    //    }
+    //    var ff = fn();
+    //    ff();
+    //    obj.ff = ff;
+    //    obj.ff(); // obj
+
+
+    //    function fn() {
+    //        console.log(this); //
+    //    }
+    //    fn();
+
+    //    var obj = {fn:fn,name:'that'};
+    //    function f() {
+    //        console.log(this); //  window
+    //        obj.fn();
+    //    }
+    //    f();
+
+    //    obj.fn();
+
+
+</script>
+</body>
+</html>
