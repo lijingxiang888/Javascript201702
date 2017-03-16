@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+//    var obj = {};
+//      obj.bar = (function (n) {
+//                    n=0;
+//            return function () {
+//                console.log('bar');
+//                ++n;
+//            }
+//      })();
+
+
+
+        var num = 12;
+        var obj = {
+            num: 3,
+            bar: (function (n) {
+//                    var n = 12;
+                  return function (k) {
+                      console.log(k + (++n));
+                  }
+            })(window.num)
+        };
+        obj.bar(1); // 13 //   1 + 13 ++12 n = 13
+        obj.bar(2); // 14  //  2 + 14 ++13 n = 14
+        var fn3 = obj.bar;
+        fn3(2); // 14  // 2 + 15 ++14 n = 15
+        fn3(4); // 16  // 4 + 16 ++15 n = 16
+
+    function foo(m){
+        return function (n){
+            console.log(n + ++m);
+        }
+    }
+    var f = foo(5);
+    f(4);
+    var f1 = f;
+    f(3);
+    f1(2);
+    foo(3)(2);
+</script>
+</body>
+</html>
