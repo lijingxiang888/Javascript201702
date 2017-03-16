@@ -21,44 +21,44 @@
     //    main.fn(fn);
 
 
-//    function fn1() {
-//        console.log(this === ary);
-//    }
-//    function fn2() {
-//        console.log(this);
-//    }
-//    function fn3() {
-//    }
-//    function fn4() {
-//    }
-//    var ary = [fn1, fn2, fn3, fn4];
-//    ary[1](); // ary
-//    var arry = ary[1];
-////    var arry = function fn2 (){
-////        console.log(this);
-////    };
-////    console.log(arry); // fn2函数本身
-//    arry(); //  window
+    //    function fn1() {
+    //        console.log(this === ary);
+    //    }
+    //    function fn2() {
+    //        console.log(this);
+    //    }
+    //    function fn3() {
+    //    }
+    //    function fn4() {
+    //    }
+    //    var ary = [fn1, fn2, fn3, fn4];
+    //    ary[1](); // ary
+    //    var arry = ary[1];
+    ////    var arry = function fn2 (){
+    ////        console.log(this);
+    ////    };
+    ////    console.log(arry); // fn2函数本身
+    //    arry(); //  window
 
     /////////////////////////////////////////////////////////////////////////////////////////////
-        var num = 5; // 6 -> 7
-        var obj = {
-            num : 4, // 5
-            fn : (function (num){
-                num++;
-                this.num++; // 自执行函数中this window window.num++ 6
-                var num = 2;   // num = 2 -> 3 -> 4
-                return function (){
-                    num++; // 2++ -> 3++
-                    this.num++; // window.num++ 6++ // obj.num++  4++
-                    console.log(num); // 3 // 4
-                }
-            })()
-        };
-        var fn = obj.fn;
-        fn(); // 3
-        obj.fn(); // 4
-        console.log(this.num,obj.num); // 7 5
+    var num = 5; // 6 -> 7
+    var obj = {
+        num: 4, // 5
+        fn: (function (num) {
+            num++;
+            this.num++; // 自执行函数中this window window.num++ 6
+            var num = 2;   // num = 2 -> 3 -> 4
+            return function () {
+                num++; // 2++ -> 3++
+                this.num++; // window.num++ 6++ // obj.num++  4++
+                console.log(num); // 3 // 4
+            }
+        })()
+    };
+    var fn = obj.fn;
+    fn(); // 3
+    obj.fn(); // 4
+    console.log(this.num, obj.num); // 7 5
     //
     //
 
