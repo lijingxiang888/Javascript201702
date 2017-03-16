@@ -189,6 +189,7 @@
     //    }
 
     //    作用域方式二 利用不销毁作用域  （弊端会形成多个不销毁作用域）
+/*
     for (var i = 0; i < oLis.length; i++) { // 每一轮都会形成一个不销毁的作用域
         (function (n) {
             oLis[n].onclick = function () {  // 我们主动跑到里面来占用 在这里定义的function 并把for循环的每一轮i的值 传递进来 赋给每一个不销毁的作用域里的形参n来保存当前这一轮i的值
@@ -200,26 +201,27 @@
             }
         })(i);
     }
+*/
 
 
     // 自定义属性（推荐）
-    //    for(var i=0;i<oLis.length;i++){
-    //        oLis[i].joo=i;
-    //        oLis[i].onclick=function(){
-    //
-    //            for(var j=0;j<oLis.length;j++){
-    //
-    //                oLis[j].className='';
-    //
-    //                oPs[j].className='';
-    //
-    //            }
-    //            this.className='cur';
-    //            oPs[this.joo].className='cur';
-    //
-    //        }
-    //
-    //    }
+        for(var i=0;i<oLis.length;i++){
+            oLis[i].joo=i;
+            oLis[i].onclick=function(){
+
+                for(var j=0;j<oLis.length;j++){
+
+                    oLis[j].className='';
+
+                    oPs[j].className='';
+
+                }
+                this.className='cur';
+                oPs[this.joo].className='cur';
+
+            }
+
+        }
 
 
     //    var obj1= {};
