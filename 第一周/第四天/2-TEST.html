@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<script>
+    //=>预解释、变量提声
+
+    //预解释：var num; (undefined->全局下有一个叫做num的变量了，在全局下声明的变量相当于给window增加了一个属性名->window.num=undefined)
+
+    //    console.log(num);//->undefined
+    //    if (!('num' in window)) {//->'num' in window => TRUE
+    //        var num = 100;
+    //    }
+    //    console.log(num);//->undefined
+
+
+    var name = "中国";
+    var age = 5000;
+    age = (function (name, age) {//->形参:变量
+        name = "珠峰";
+        age = age || this.age;
+        this.name = arguments[0];
+        console.log(name, age);
+    })(name, age);//->实参:具体值  把全局下变量的值当做实参传递给私有作用域的形参=>('中国',5000)
+    console.log(name, age);
+</script>
+</body>
+</html>
