@@ -36,23 +36,21 @@
     //    单例模式：手工作业
     //    工厂模式：把实现 一个功能的代码 放到一个函数里面 减少冗余代码 =>  "函数封装"
     // '高内聚低耦合'：减少页面中重复代码 提高代码重复利用率
-    function personInfo(name, sex, hobby) {
-        var obj = {};
-        obj.name = name;
-        obj.sex = sex;
-        obj.hobby = hobby;
-        obj.say = function () {
-            console.log(this.name + '是一个' + this.sex + ', 他喜欢吃' + this.hobby);
-        };
-        return obj;
-    }
-
-    var obj1 = personInfo('wudi', 'boy', '火锅');
-    console.log(obj1);
-    obj1.say();
-    var obj2 = personInfo('changzhenan', 'boy', '新辣道');
-    console.log(obj2);
-    obj2.say();
+//    function personInfo(name, sex, hobby) {
+//        var obj = {};
+//        obj.name = name;
+//        obj.sex = sex;
+//        obj.hobby = hobby;
+//        obj.say = function () {
+//            console.log(this.name + '是一个' + this.sex + ', 他喜欢吃' + this.hobby);
+//        };
+//        return obj;
+//    }
+//
+//    var obj1 = personInfo('wudi', 'boy', '火锅');
+//    obj1.say();
+//    var obj2 = personInfo('changzhenan', 'boy', '新辣道');
+//    obj2.say();
 
 //    share({
 //        tilte: '赶快和我一起来抢票',
@@ -71,23 +69,25 @@
 //    继承：子类继承父类
 //    多态：多种形态 （重载和重写）JS中没有重载
 //        重写：子类重写父类
-    function sum(num) {
-        if(typeof num === 'number'){
-            alert('这是个数字');
-        }else if(typeof num === 'string'){
-            alert('这是个字符串')
-        }else{
-            alert('以上都不符合')
-        }
-    }
-    sum(11);
-    sum('11');
-    sum();
 
-     var arr1 = [1,2,3];
-     var arr2 = new Array(1,2,3);
-    console.log(arr1);
-    console.log(arr2);
+
+//    function sum(num) {
+//        if(typeof num === 'number'){
+//            alert('这是个数字');
+//        }else if(typeof num === 'string'){
+//            alert('这是个字符串')
+//        }else{
+//            alert('以上都不符合')
+//        }
+//    }
+//    sum(11);
+//    sum('11');
+//    sum();
+//
+//     var arr1 = [1,2,3];
+//     var arr2 = new Array(1,2,3);
+//    console.log(arr1);
+//    console.log(arr2);
 </script>
 </body>
 </html>

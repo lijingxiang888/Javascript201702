@@ -19,7 +19,7 @@
   //        5.定时器中的this也是window
 
 
-    var obj = {
+  /*  var obj = {
          name: 'zhufeng',
          age: 18,
          mess: '北京欢迎你',
@@ -36,7 +36,7 @@
     };
     obj.fn();
     obj1.fn();
-
+*/
 //    var ff = function () {
 //        console.log(this);
 //    };
@@ -52,10 +52,11 @@
 //        },1000);
 //    }
 //    fnn();
-
+//
 //    setTimeout(function () {
 //        console.log(this);
 //    },1000);
+//
 //    window.setTimeout(function () {
 //        console.log(this);
 //    },1500);
@@ -64,50 +65,50 @@
      var btn = document.getElementsByTagName('button')[0];
      var oDiv = document.getElementsByTagName('div')[0];
 
-//    btn.onclick = oDiv.onclick = function () {
-//          console.log(this);
-//    };
+    btn.onclick = oDiv.onclick = function () {
+          console.log(this);
+    };
 
 
-//     btn.onclick = function () {
-//         console.log(this); // btn
-//         ff();
-//     };
-//    function ff() {
-//        console.log(this); // window
-//    }
+     btn.onclick = function () {
+         console.log(this); // btn
+         ff();
+     };
+    function ff() {
+        console.log(this); // window
+    }
 
-//    var obj = {fs:ff};
-//    console.log(obj.fs);
-//     btn.onclick = obj.fs;
-//    btn.onclick = function ff() {
-//        console.log(this); // btn
-//    };
+   /* var obj = {fs:ff};
+    console.log(obj.fs);
+     btn.onclick = obj.fs;
+    btn.onclick = function ff() {
+        console.log(this); // btn
+    };
 
-//    btn.onclick = (function () {
-//             console.log(this); // window
-//             return function () {
-//                 console.log(this); // btn
-//             }
-//    })();
-//    btn.onclick = function () {
-//        console.log(this);
-//    };
+    btn.onclick = (function () {
+             console.log(this); // window
+             return function () {
+                 console.log(this); // btn
+             }
+    })();*/
+    //btn.onclick = function () {
+    //    console.log(this);
+   // };
 
 
 
     //    自执行函数中的this
-    //    (function () {
-    //        console.log(this); // window
-    //    })();
+/*        (function () {
+        console.log(this); // window
+    })();
 
-//    function fe() {
-//        console.log(this); // window
-//        (function () {
-//            console.log(this); // window
-//        })()
-//    }
-    //    fe();
+    function fe() {
+        console.log(this); // window
+        (function () {
+            console.log(this); // window
+        })()
+    }
+    fe();*/
 //    var obj = {
 //        fn: (function () {
 //            console.log(this); // obj window
