@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<script>
+    /*var ary = [1, 2, 3, 4];
+     var ary2 = [1, 2, {
+     name: 'zfpx',
+     f: [12, 23]
+     }];*/
+
+    /*document.documentElement ->HTML
+     document.body ->BODY*/
+
+    /*
+     * in：验证某一个属性是否属于这个对象(不管是私有的属性还是公有的属性，只要有返回的结果就是true)
+     */
+    //    var obj = {
+    //        name: '常哲楠',
+    //        age: 81
+    //    };
+    //    console.log('name' in obj);//->true
+    //    console.log('sex' in obj);//->false
+    //    console.log(name in obj);//->window.name in obj ->'' in obj ->false 如果name不加引号它的意思是把name这个变量存储值作为检测的依据，来检测存储的这个值是否为obj的一个属性，加引号'name'就是属性名，验证obj中是否有name这个属性
+    //    console.log(age in obj);//->Uncaught ReferenceError: age is not defined
+
+
+    function prev(curEle) {//curEle->currentElement
+        if ('previousElementSibling' in curEle) {//->兼容
+            return curEle.previousElementSibling;
+        }
+        //->不兼容
+        var pre = curEle.previousSibling;//->获取上一个哥哥节点
+        while (pre && pre.nodeType !== 1) {
+            /*
+             条件
+             pre !== null ：不为空，还没有找到头  => pre 这样写也可以理解为它是true，不等于null的，也可以这样写 !!pre
+             pre.nodeType !== 1：不是元素，还没有找到人
+             */
+            pre = pre.previousSibling;
+        }
+        return pre;
+    }
+
+
+</script>
+
+
+</body>
+</html>
