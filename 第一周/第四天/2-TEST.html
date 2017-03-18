@@ -8,24 +8,24 @@
 <script>
     //=>预解释、变量提声
 
-    //预解释：var num; (undefined->全局下有一个叫做num的变量了，在全局下声明的变量相当于给window增加了一个属性名->window.num=undefined)
-
-    //    console.log(num);//->undefined
-    //    if (!('num' in window)) {//->'num' in window => TRUE
-    //        var num = 100;
-    //    }
-    //    console.log(num);//->undefined
+    //    预解释：var num; (undefined->全局下有一个叫做num的变量了，在全局下声明的变量相当于给window增加了一个属性名->window.num=undefined)
+    //
+    //        console.log(num);//->undefined
+    //        if (!('num' in window)) {//->'num' in window => TRUE
+    //            var num = 100;
+    //        }
+    //        console.log(num);//->undefined
 
 
     var name = "中国";
     var age = 5000;
     age = (function (name, age) {//->形参:变量
-        name = "珠峰";
-        age = age || this.age;
-        this.name = arguments[0];
-        console.log(name, age);
+        name = "珠峰";//这一步把传进来的'中国'替换成了'珠峰'，但还是属于私有变量
+        age = age || this.age;//age=5000是true，所以返回的是age=5000，但还是属于私有变量
+        this.name = arguments[0];//arguments是实参的集合，arguments[0]指的是实参的第一个，又因为arguments与形参在非严格下存在映射关系，形参name被赋予的值改变成了'珠峰'，所以 arguments[0]也会改变成'珠峰'，那么 this.name='珠峰'（全局变量），最后全局变量中的name= "珠峰";
+     console.log(name, age);//输出  '珠峰'，5000
     })(name, age);//->实参:具体值  把全局下变量的值当做实参传递给私有作用域的形参=>('中国',5000)
-    console.log(name, age);
+    console.log(name, age);//这的name指全局的，所以现在name='珠峰'；这个自执行函数虽然执行完了，但是没有return返回值，所以age=(function (name, age){...}=undefined
 </script>
 </body>
 </html>
