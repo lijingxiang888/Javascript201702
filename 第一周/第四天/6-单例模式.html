@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<script>
+    //->单例模式是我们以后项目开发中业务逻辑编写最常用的设计模式：在业务逻辑相对复杂的时候，我们会基于单例模式引入“发布订阅模式”、“promise模式”...
+    //->构造原型模式是我们以后项目中封装类库、组件、插件、框架最常用的设计模式
+
+    //单例模式：解决了变量冲突，实现了分类分组，在单例模式中我们的对象名叫做“命名空间”:单例模式把实现和描述同一件事物的属性和方法进行分类归纳，然后汇总的同一个命名空间下，不同的命名空间互不冲突
+    //    var personModule = {
+    //        name: '珠峰'
+    //    };
+    //
+    //    var studentModule = {
+    //        name: '哲楠'
+    //    };
+
+    //=>真实项目中我们实现模块化开发基本上都采用单例模式
+    var utils = {
+        remove: function () {
+
+        }
+    };
+
+    var searchRender = {
+        fn: function () {
+            utils.remove();
+        }
+    };
+
+
+    var newsRender = {
+        fn: function () {
+
+        }
+    };
+
+    //->高级单例模式
+    var skinRender = (function () {
+        var a = 12;
+
+        return {
+            fn: function () {
+                utils.remove();
+            }
+        }
+    })();
+</script>
+</body>
+</html>

@@ -17,15 +17,46 @@
     //    console.log(num);//->undefined
 
 
-    var name = "中国";
-    var age = 5000;
-    age = (function (name, age) {//->形参:变量
-        name = "珠峰";
-        age = age || this.age;
-        this.name = arguments[0];
-        console.log(name, age);
-    })(name, age);//->实参:具体值  把全局下变量的值当做实参传递给私有作用域的形参=>('中国',5000)
-    console.log(name, age);
+    //    var name = "中国";
+    //    var age = 5000;
+    //    age = (function (name, age) {//->形参:变量
+    //        name = "珠峰";
+    //        age = age || this.age;
+    //        this.name = arguments[0];
+    //        console.log(name, age);
+    //    })(name, age);//->实参:具体值  把全局下变量的值当做实参传递给私有作用域的形参=>('中国',5000)
+    //    console.log(name, age);
+
+
+    //    "use strict";//->使用JS中的严格模式
+    //
+    //    function fn(a, b, c) {
+    //        //->非严格模式下
+    //        //1)arguments 和 形参存在映射的关系:一个改另外一个也跟着改
+    //        /*console.log(arguments[0]);//->12
+    //         a = 120;
+    //         console.log(arguments[0]);//->120
+    //         arguments[1] = 230;
+    //         console.log(b);//->230*/
+    //
+    //        //->严格模式下
+    //        //1)arguments和形参之间没有映射关系
+    //        /*console.log(arguments[0]);//->12
+    //         a = 120;
+    //         console.log(arguments[0]);//->12
+    //         arguments[1] = 230;
+    //         console.log(b);//->23*/
+    //
+    //        //->arguments.callee：指向的是当前函数本身，这里代表的就是当前的函数fn
+    //        //->arguments.callee.caller：当前函数是在哪个函数中执行的，那么caller就指向这个函数，如果是在window下执行的，caller值是null
+    //        //->在严格模式下会报错:Uncaught TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them 严格模式下不允许我们使用call或者caller属性
+    //        //console.log(arguments.callee.caller);
+    //    }
+    //    function sum() {
+    //        fn(12, 23, 34);
+    //    }
+    //    sum();
+
 </script>
 </body>
 </html>

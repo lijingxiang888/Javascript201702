@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<script>
+    //    var i = 2;
+    //    function fn() {
+    //        i *= 2;
+    //        return function (n) {
+    //            console.log(n * (++i));
+    //        }
+    //    }
+    //    var f = fn();
+    //    f(3);
+    //    fn()(3);//->先把fn执行,把执行后的返回结果紧跟着在执行
+    //    f(4);
+    //    fn()(4);
+
+    //->扩展1:
+    //    var i = 2;
+    //    function fn() {
+    //        i *= 2;
+    //        return function (n) {
+    //            console.log(n * (++i));
+    //        }
+    //    }
+    //    var f = fn();
+    //    fn()(3);
+    //    f(3);
+    //    fn()(4);
+    //    f(4);
+
+    //->扩展2:
+    //    var i = 3;
+    //    function fn() {
+    //        i += 2;
+    //        return function (n) {
+    //            console.log(n * (i++));//->是否加括号不影响++i和i++的区别,i++即使加括号也是先和别人运算,然后在累加的
+    //        }
+    //    }
+    //    var f = fn();
+    //    f(3);
+    //    fn()(3);
+    //    fn()(4);
+    //    f(4);
+
+    //->扩展3：
+    var i = 2;
+    function fn(i) {
+        i *= 2;
+        return function (n) {
+            console.log(n * (++i));
+        }
+    }
+    var f = fn(5);
+    f(3);
+    fn(5)(3);
+    f(4);
+    fn(5)(4);
+</script>
+</body>
+</html>

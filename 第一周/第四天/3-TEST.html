@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<script>
+    var obj = {name: "珠峰", age: 7};
+    ~function (obj) {
+        obj.name = "中国";
+        obj = {};
+        obj.age = 5000;
+        console.log(obj);
+    }(obj);//->把全局下OBJ存储的值赋值给私有的变量
+    console.log(obj);
+
+
+    /*A 在吗?请问//是什么意思?
+     B 说*/
+
+    //    var obj = {
+    //        n: 12,
+    //        fn: (function (n) {
+    //            console.log(n);
+    //            n++;
+    //            return function () {
+    //                console.log(n);
+    //            }
+    //        })(obj.n)
+    //    };
+    //    obj.fn();//->Uncaught TypeError: Cannot read property 'n' of undefined  在给对象的fn属性赋值的时候,堆内存还没有彻底创建完成，导致并没有把地址赋值给obj，此时的obj和堆内存没有任何的关联，更别说找到里面的n了
+</script>
+</body>
+</html>
