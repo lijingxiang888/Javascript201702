@@ -1,0 +1,13 @@
+Math不是类，它仅仅是一个对象，'Math' in window=>TRUE 它是window全局对象的一个属性而已，这个对象中包含了很多的方法，供我们操作数字，所以我们把它称之为“数学函数”
+
+Math.abs()
+Math.ceil()
+Math.floor()
+Math.round()
+Math.random()
+Math.round(Math.random()*(m-n)+n)
+Math.max()
+Math.min()
+Math.PI   3.141592653...
+Math.pow(n,m) 获取n的m次幂 =>Math.pow(5,3) ->125
+Math.sqrt(n) 给n开平方 =>Math.sqrt(100) ->10
