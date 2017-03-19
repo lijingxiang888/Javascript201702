@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<script>
+    function Person(name) {
+        //->this.xxx=xxx都是实例的私有属性
+        this.name = name;
+        this.say = function () {
+            console.log('my name is ' + this.name);
+        }
+    }
+    var p1 = new Person('袁勤学');
+    var p2 = new Person('祖明爽');
+    /*
+     * 以下的几句话不要管为什么,因为他们是规定
+     *   1、每一个函数数据类型(普通函数、类(内置类、自定义类))都天生自带一个属性：prototype，这个属性的属性值是一个对象数据类型的结果  Person.prototype=>{}
+     *   2、prototype对应的对象中，有一个天生自带的属性：constructor(构造函数)，这个属性的属性值指向的是当前函数本身  Person.prototype=>{constructor:Person}
+     *   3、每一个对象数据类型(普通对象、实例、prototype、函数也是对象)都有一个天生自带的属性：__proto__，这个属性指向自己所属类的原型(prototype)
+     *
+     *   4、类的原型(prototype)上存储的属性和方法都是实例公有的属性方法
+     */
+
+    //->原型上写的属性都是实例的公有属性
+    Person.prototype.drink = function () {
+        console.log('cheers!');
+    };
+
+    //    console.log(p1.say === p2.say);//->FALSE
+    //    console.log(p1.drink === p2.drink);//->TRUE
+    //    console.log(p1.hasOwnProperty('drink'));//->FALSE
+    //    console.log('drink' in p1);//->TRUE
+
+    //    p1.drink();//->先找自己私有的属性,如果私有的属性中没有drink,则继续到所属类的原型上查找...一直找到Object.prototype为止 =>这种查找的机制叫做“原型链”
+    //    p1.__proto__.drink();//->跳过了私有的查找,直接的找原型上的公有属性
+
+    //    p1.hasOwnProperty();//->THIS指向P1
+    //    p1.__proto__.hasOwnProperty();//->THIS指向p1.__proto__(Person.prototype)
+    //    p1.__proto__.__proto__.hasOwnProperty();//->THIS指向p1.__proto__.__proto__(Object.prototype)  =>Object.prototype.hasOwnProperty() =>让Object原型上的hasOwnProperty方法执行
+    //    //->通过以上三种办法，我们都可以把hasOwnProperty方法执行，但是有所区别:方法执行的时候，方法中的THIS是不一样的；在万恶的IE浏览器下，为了保护原型，屏蔽了我们使用__proto__这个属性
+
+</script>
+</body>
+</html>
