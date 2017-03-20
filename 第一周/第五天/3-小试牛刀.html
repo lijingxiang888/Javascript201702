@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<script>
+    function Student(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    /*Student();//->普通函数执行
+     Student;//->函数的一个定义体(函数本身)*/
+
+    var st1 = new Student('陆明慧', 72);
+    //var st2 = new Student;//->在构造函数模式执行的时候,如果不需要传递参数,后面的小括号可加可不加,没什么区别
+    var st2 = new Student('薄伟玲', 16);
+
+    //->通过构造函数创建出来的实例都是相互独立的个体,互相不影响,而在构造函数体中写的this.xxx=xxx都相当于在给当前的实例增加属于自己的私有属性
+    //->类的数据类型：函数数据类型  typeof Student=>'function'
+    //->实例数据类型：对象数据类型  typeof st1=>'object'
+
+</script>
+</body>
+</html>

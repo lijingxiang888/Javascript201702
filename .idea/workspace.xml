@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b652ab-fbe1-4d36-98c6-aca1104f7654" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第四天/3-TEST.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第四天/4-TEST.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第四天/5-TEST.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第四天/6-单例模式.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第五天/5-单例模式的误区.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第五天/6-原型模式.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第五天/7-原型进阶.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第五天/8-原型进阶-链式写法.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/第一周/第四天/2-TEST.html" afterPath="$PROJECT_DIR$/第一周/第四天/2-TEST.html" />
     </list>
     <ignored path="201702.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +29,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="6-单例模式.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/第一周/第四天/6-单例模式.html">
+      <file leaf-file-name="小东西.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第一周/第五天/小东西.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="363">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2-创建类.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第一周/第五天/2-创建类.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-374">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3-小试牛刀.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第一周/第五天/3-小试牛刀.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="4-登堂入室.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第一周/第五天/4-登堂入室.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="42" column="51" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="6-原型模式.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/第一周/第五天/6-原型模式.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="7-原型进阶.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第一周/第五天/7-原型进阶.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="8-原型进阶-链式写法.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第一周/第五天/8-原型进阶-链式写法.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -63,6 +122,15 @@
         <option value="$PROJECT_DIR$/第一周/第四天/4-TEST.html" />
         <option value="$PROJECT_DIR$/第一周/第四天/5-TEST.html" />
         <option value="$PROJECT_DIR$/第一周/第四天/6-单例模式.html" />
+        <option value="$PROJECT_DIR$/第一周/第五天/小东西.txt" />
+        <option value="$PROJECT_DIR$/第一周/第五天/1-面向对象.html" />
+        <option value="$PROJECT_DIR$/第一周/第五天/2-创建类.html" />
+        <option value="$PROJECT_DIR$/第一周/第五天/3-小试牛刀.html" />
+        <option value="$PROJECT_DIR$/第一周/第五天/4-登堂入室.html" />
+        <option value="$PROJECT_DIR$/第一周/第五天/5-单例模式的误区.html" />
+        <option value="$PROJECT_DIR$/第一周/第五天/6-原型模式.html" />
+        <option value="$PROJECT_DIR$/第一周/第五天/7-原型进阶.html" />
+        <option value="$PROJECT_DIR$/第一周/第五天/8-原型进阶-链式写法.html" />
       </list>
     </option>
   </component>
@@ -169,6 +237,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e9b652ab-fbe1-4d36-98c6-aca1104f7654" name="Default" comment="" />
@@ -176,18 +247,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1489801405931</updated>
-      <workItem from="1489801411469" duration="19253000" />
+      <workItem from="1489801411469" duration="40726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19253000" />
+    <option name="totallyTimeSpent" value="40726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18005952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14136904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -336,6 +407,78 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/1-面向对象.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/小东西.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/2-创建类.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-374">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/3-小试牛刀.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/5-单例模式的误区.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/4-登堂入室.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="42" column="51" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/8-原型进阶-链式写法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/7-原型进阶.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/6-原型模式.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding />
         </state>
       </provider>
