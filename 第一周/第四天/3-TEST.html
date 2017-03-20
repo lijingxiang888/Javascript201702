@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<script>
+   /* var obj = {name: "珠峰", age: 7};
+    ~function (obj) {
+        obj.name = "中国";//这把传进来的obj.name:"珠峰"替换了,所有全局变量obj.name成了 "中国"
+       // obj.age:7 也传进来了
+
+        obj = {};//重新给形参传了一个实参，之前的实参是obj = {name: "珠峰", age: 7};这次传的是obj = {}
+        obj.age = 5000;//所以现在这个obj指的是后传进的obj，那obj.age = 5000，也就是后传进的obj的一个属性age：5000
+        console.log(obj);//输出后传进的obj，所以输出  age：5000
+    }(obj);//->把全局下OBJ存储的值赋值给私有的变量,也就是把全局的obj.name:"珠峰"和obj.age:7传进自执行函数了
+    console.log(obj);//   name: "中国", age: 7*/
+
+
+    /*A 在吗?请问//是什么意思?
+     B 说*/
+
+    //    var obj = {
+    //
+
+
+
+    //        fn: (function (n) {
+    //            console.log(n);
+    //            n++;
+    //            return function () {
+    //                console.log(n);
+    //            }
+    //        })(obj.n)
+    //    };
+    //    obj.fn();//->Uncaught TypeError: Cannot read property 'n' of undefined  预解释时在给对象的fn这个函数属性赋值的时候,堆内存还没有彻底创建完成，导致并没有把地址赋值给obj，此时的obj和堆内存没有任何的关联，更别说找到里面的n了
+</script>
+</body>
+</html>

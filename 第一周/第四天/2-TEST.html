@@ -17,6 +17,7 @@
     //        console.log(num);//->undefined
 
 
+/*<<<<<<< HEAD
     var name = "中国";
     var age = 5000;
     age = (function (name, age) {//->形参:变量
@@ -26,6 +27,65 @@
      console.log(name, age);//输出  '珠峰'，5000
     })(name, age);//->实参:具体值  把全局下变量的值当做实参传递给私有作用域的形参=>('中国',5000)
     console.log(name, age);//这的name指全局的，所以现在name='珠峰'；这个自执行函数虽然执行完了，但是没有return返回值，所以age=(function (name, age){...}=undefined
+=======*/
+    //    var name = "中国";
+    //    var age = 5000;
+    //    age = (function (name, age) {//->形参:变量
+    //        name = "珠峰";
+    //        age = age || this.age;
+    //        this.name = arguments[0];
+    //        console.log(name, age);
+    //    })(name, age);//->实参:具体值  把全局下变量的值当做实参传递给私有作用域的形参=>('中国',5000)
+    //    console.log(name, age);
+
+
+    //    "use strict";//->使用JS中的严格模式
+    //
+/*        function fn(a, b, c) {
+            console.log(arguments[0]);//->12
+             a = 120;
+             console.log(arguments[0]);//->120
+             arguments[1] = 230;
+             console.log(b);//->230
+                     }
+        fn(12, 23, 34)*/
+
+            //->严格模式下
+            //1)arguments和形参之间没有映射关系
+            /*console.log(arguments[0]);//->12
+             a = 120;
+             console.log(arguments[0]);//->12
+             arguments[1] = 230;
+             console.log(b);//->23*/
+
+    //        //->arguments.callee：指向的是当前函数本身，这里代表的就是当前的函数fn
+    //        //->arguments.callee.caller：当前函数是在哪个函数中执行的，那么caller就指向这个函数，如果是在window下执行的，caller值是null
+    //        //->在严格模式下会报错:Uncaught TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them 严格模式下不允许我们使用call或者caller属性
+    //        //console.log(arguments.callee.caller);
+    //    }
+    //    function sum() {
+    //        fn(12, 23, 34);
+    //    }
+    //    sum();
+
+  /*  var name= "中国";
+    var age= 5000;
+    name=(function (name,age) {
+        arguments[0] = "珠峰";//将实参集合的第一个修改成  "珠峰"
+        age = age || this.age;//age=5000没有传进来，所以前面不成立，返回this.age，自执行函数里的this指代window，所以this.age=5000
+        console.log(name, age);//珠峰  5000
+    })(name);
+    console.log(name, age);//undefined  5000//因为name=自执行函数，没有return，所以name=undefined，所以最后输出name=undefined，age=5000*/
+
+  var ary=[100,200];
+    (function (ary) {
+        ary.length--;
+        ary=[];
+        ary[ary.length]=300;
+        console.log(ary);
+    })(ary)
+    console.log(ary);
+
 </script>
 </body>
 </html>

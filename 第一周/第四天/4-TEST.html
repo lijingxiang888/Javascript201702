@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<script>
+//        var i = 2;
+//        function fn() {
+//            i *= 2;
+//            return function (n) {
+//                console.log(n * (++i));
+//            }
+//        }
+//        var f = fn();
+//         f(3);
+//         fn()(3);
+//         f(4);
+//         fn()(4);
+//         解析：
+//        首先，fn()代表函数fn执行后的返回值，那么想要得到这个返回值就先要执行fn。
+//        执行fn：全局变量i=2*2=4，返回值是function (n) {console.log(n * (++i)) }
+//
+//        f(3)：在全局变量i=4，将n=3带入，输出15，执行完后i=5；
+//
+//        fn()(3):在全局变量i=5，将fn再执行一次，并且将返回值紧跟着再执行n=3
+//                i=5，fn执行后输出function (n) {console.log(n * (++i)) }，完后i=10
+//                i=10，将n=3带入，输出3*11=33；完后i=11；
+//
+//        fn(4):i=11，将n=4带入，输出48；完后i=12；
+//
+//        fn()(4):在全局变量i=5，将fn再执行一次，并且将返回值紧跟着再执行n=4
+//               i=12,fn执行后输出function (n) {console.log(n * (++i)) }，完后i=24；
+//               i=24，将n=4带入，输出4*25=100，完后i=25
+
+
+
+  //  ->扩展1:
+ /*       var i = 2;
+        function fn() {
+            i *= 2;
+            return function (n) {
+                console.log(n * (++i));
+            }
+        }
+        var f = fn();//fn执行完后i=4  返回function (n){..}
+        fn()(3);//27
+        f(3);//30
+        fn()(4);//84
+        f(4);//88*/
+
+
+
+    //->扩展2:
+  /*      var i = 3;
+        function fn() {
+            i += 2;
+            return function (n) {
+                console.log(n * (i++));//->是否加括号不影响++i和i++的区别,i++即使加括号也是先和别人运算,然后i在自身的基础上+1
+            }
+        }
+        var f = fn();
+        f(3);//15
+        fn()(3);//24
+        fn()(4);//44
+        f(4);//48*/
+
+    //->扩展3：
+    var i = 2;
+    function fn(i) {
+        i *= 2;//私有变量 10  11  12
+        return function (n) {
+            console.log(n * (++i));
+        }
+    }
+    var f = fn(5);
+    f(3);//33
+    fn(5)(3);//33
+    f(4);//48
+    fn(5)(4);//44
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<script>
+//    var num = 1;//自执行后变4；fn（10）执行后变14
+//    var obj = {num: 2};// obj.fn(20)执行后变22
+//    obj.fn = (function (num) {
+//        this.num = num * 2;//这的this指的是window，因为是自执行函数里的
+//        num++;//（私有变量）；自执行后形参num此时=3；fn（10）后变成4；obj.fn(20)后变成5
+//        return function (n) {
+//            this.num += n;//fn（10）执行时，this指代window，因为前面没有点
+//            num++;//fn（10）执行时，在这个私有作用域里没有声明过num变量，所以它向上找，找到了此时num=3，3++=4，最后输出4，且fn下的私有变量num此时=4
+//                 //obj.fn(20)执行时，在这个私有作用域里没有声明过num变量，所以它向上找，找到了此时num=4，4++=5，最后输出5，且fn下的私有变量num此时=5
+//            console.log(num);//输出形参的值
+//        }
+//    })(obj.num);//->2
+//    var fn = obj.fn;//fn=obj这个对象里自执行函数执行后的返回结果function，所以先开始自执行
+//    fn(10);//n=10，带入function。前面没点，所以function里的this指代window，将n=10带入。
+//    obj.fn(20);//此时fn（20）前面有点了，所以function里的this指代obj，将n=20带入。
+//    console.log(num, obj.num);//输出全局下的num=14和obj下的num=22
+
+</script>
+</body>
+</html>
