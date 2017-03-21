@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function Fn() {
+
+    }
+    Fn.prototype.x = 10;
+    Fn.prototype.y = 10;
+    Fn.prototype.xx = 10;
+    // 批量添加公有属性
+    Fn.prototype = {
+        constructor: Fn,
+        x: 10,
+        y: 10,
+        xx: 10
+    };
+    // 需要我们自己手动添加constructor 指向
+
+    // 内置类添加公有属性
+    //    Array.prototype.mySlice = function () {
+    //        console.log('mySlice');
+    //    };
+    //    [].mySlice();
+
+    // 重构内置类原型对象的时候  被浏览器屏蔽掉了
+    //     如果 我们自己手动为内置类原型开辟一个堆内存 就会将 内置类修改 将浏览器天生给开辟的原型对象 替换掉，导致 在内置类原有 属性和方法 都被替换掉了
+//    Array.prototype = {
+//        mySlice: function () {
+//            console.log('mySlice');
+//        }
+//    };
+//    [].mySlice();
+    //    console.log([1, 2, 4].slice());
+//    Array.prototype.slice = function () {
+//        console.log('mySlice');
+//        return 123;
+//    };
+//    console.log([1, 1, 1].slice());
+    // 在给内置类原型上添加属性和方法的时候 需要一个一个添加
+    // 如果内置类原型上有的属性 我们添加的和原有的名字一样 就会被我们 添加后的 覆盖掉
+    // 当在内置类原型上添加 属性的时候 注意 命名 可以加前缀
+//    Array.prototype.mySlice = function () {
+//        console.log('mySlice');
+//        return 123;
+//    };
+    Array.prototype.slice = function () {
+        console.log('mySlice');
+        return 123;
+    };
+
+</script>
+</body>
+</html>
