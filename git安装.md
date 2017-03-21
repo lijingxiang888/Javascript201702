@@ -29,7 +29,7 @@
 1.进入仓库 复制右边 clone绿色按钮 出来的 仓库地址（https://github.com/JasonLi0204/2017jstext.git）
 2.当本地给找一个空目录作为父级目录 
 
-3. clone克隆仓库 右键打开 git bash 窗口 输入 
+3.clone克隆仓库 右键打开 git bash 窗口 输入 
 ```
  git clone https://github.com/JasonLi0204/2017jstext.git
 ```
@@ -45,13 +45,13 @@ origin  https://github.com/JasonLi0204/2017jstext.git (push)
 
 ```
 
-# 像远程仓库提交修改
+# 向远程仓库提交修改
 ## 从工作区提交到暂存区
 ```
   git add ./-A
 ```
 
-## 第一次使用git 会在commit的时候 配置 email 和 name（如commit是不提示配置email和name 则忽略）
+## 第一次使用git 会在commit的时候 配置 email 和 name（如commit时不提示配置email和name 则忽略）
 ```
 git config --global user.email "你的邮箱"
 git config -- global user.name "名字"
@@ -69,7 +69,7 @@ git config -- global user.name "名字"
 ```
 
 
-# 方式一
+# 拉取别人的仓库 方式一
 ## 把别人仓库 clone到本地
 ```
   git clone 仓库地址
@@ -81,7 +81,7 @@ git config -- global user.name "名字"
 ```
 
 
-# 方式二
+# 拉取别人仓库 方式二
 
 ## 把老师 仓库 fork 到自己github 这样自己的github上就有了一份和老师一样的仓库
 ### 进入老师仓库 点击 右上角 fork按钮
@@ -117,6 +117,7 @@ git add .
 git commit -m "更新老师讲义"
 ```
 - 推送到自己远程仓库
+
 ```
 git push origin master
 ```
