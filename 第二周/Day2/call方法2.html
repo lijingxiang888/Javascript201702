@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //    'use strict';
+    // ’严格模式‘ 让Javascript 在更加严格的方式下运行
+    // call 作用 就是改变方法中的this关键字
+    //    var arr = [1,2,3];
+    //    function fn() {
+    //        console.log(this);
+    //    }
+    // 非严格模式下 如果call中第一个参数不传或者传的是null/undefined ,方法中this都是window，其余的call中第一个参数是啥就是啥
+    // 在严格模式下 如果call中第一个参数不传就是undefined， 其余的call中第一个参数是啥就是啥 如果是null就是null，如果是undefined就是undefined
+    //    fn.call();
+    //    fn.call(null);
+    //    fn.call(undefined);
+    //    fn.call(arr);
+
+    // call作用
+    //    改变call'.'前面方法中的this
+    //    并让前面的方法执行
+    var obj = {name: 'zhufeng'};
+    var name = 'beijing';
+    function fn(a, b) {
+//    console.log(this.name);
+        console.log(this);
+        console.log(a, b);
+    }
+    // fn();
+    // fn.call(obj);
+    fn.call(null, 100, 200);// this是number 100  把200当做第一个实参 传递给 fn中的第一个形参
+
+
+
+</script>
+</body>
+</html>
