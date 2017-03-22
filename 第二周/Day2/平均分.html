@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //    function average() {
+    ////           arguments  实参集合 类数组 它也不是数组
+    ////        console.log(arguments instanceof Array); // false
+    ////         arguments.sort(function (a, b) { // 因为arguments不是Array的实例所以不能直接使用 数组sort的方法
+    ////             return a - b;
+    ////         });
+    ////        console.log(arguments);
+    //
+    //    }
+
+    function average() {
+        var arr = [];
+        for(var i = 0; i < arguments.length; i++){ // 将类数组转化为数组
+                arr.push(arguments[i]);
+        }
+       arr.sort(function (a ,b) {
+           return a - b;
+       });
+        arr.shift();
+        arr.length--;
+        var sum = eval(arr.join('+'));
+        var num = (sum/arr.length).toFixed(2);
+        return num;
+    }
+    var argNum = average(9, 2, 8, 9, 10, 7, 6);
+    console.log(argNum);
+    
+    //
+    Array.prototype.mySlice = function () { // 模拟slice克隆
+//        在slice中克隆数组时操作 的都是this
+          var newArr = [];
+          for(var i = 0; i < this.length; i++){
+                  var cur = this[i];
+                  newArr.push(cur);
+          }
+          return newArr;
+//        我们可以想一下 如果把slice中this换成我们的类数组 让后让它返回一个新数组
+//        也就是利用slice方法 将类数组转化为数组
+//        var newArr = [];
+//        for(var i = 0; i < arguments.length; i++){
+//            var cur = arguments[i];
+//            newArr.push(cur);
+//        }
+//        return newArr;
+    };
+    var newArr1 = [1,2,3].mySlice();
+    console.log(newArr1);
+
+    // arguments是一个类数组 但是也可以像数组一样可以循环遍历
+//    var arr2 =  [1,2,3];
+//    var newArr = arr2.slice();
+//    console.log(newArr === arr2);
+
+//    Array.prototype.slice.call(arguments,0) //利用数组中的slice方法将类数组转化为数组 只需改变slice中this即可
+//     [].slice.call(arguments,0)
+</script>
+</body>
+</html>

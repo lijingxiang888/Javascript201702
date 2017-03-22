@@ -41,16 +41,49 @@
 //    fe(); // 改造后的fn执行
     // call/apply第一个参数指定谁方法中this就是谁
 
+//    function fn1() {
+//        console.log('fn1');
+//    }
+//    function fn2() {
+//        console.log('fn2');
+//    }
+//    window.fn1.call(fn2); // 让fn1执行将里面this修改为fn2
+//    call'.'前面的方法执行
+//    然后让'.'前面的方法里面的this 改为call中第一个参数 fn2
+//    fn1.call.call.call.call() 每一个函数都可以使用Function.prototype上的call方法 因为call也是要给函数 所以就可以fn1.call.call.call.call
+//    fn1.call(fn2); // fn1() 把里面this变为fn2
+//    fn1.call.call(fn2);
+
+    var obj = {
+        fn: function () {
+            console.log(this); // fn2
+            console.log('fn');
+        }
+    };
+//       obj.fn.call(fn2); // 让obj.fn执行 并且将里面的this改为 fn2  obj.fn => fn2.fn()
     function fn1() {
         console.log('fn1');
     }
     function fn2() {
         console.log('fn2');
     }
-    fn1.call(fn2); // 让fn1执行将里面this修改为fn2
-//    fn1.call.call.call.call() 每一个函数都可以使用Function.prototype上的call方法 因为call也是要给函数 所以就可以fn1.call.call.call.call
-    fn1.call.call(fn2);
-    fn1.call.call.call.call(fn2);
+//       fn1.call.call(fn2);
+         fn1.call.call.call.call(fn2);
+//    规律
+//      两个call以上最终执行的是 最后一个call中的第一个参数 里面this是window
+
+    // 让fn1.call执行 将第一个call前面的fn1变成了fn2   fn1.call() 变成了 fn2.call()
+    // 并且让fn2.call()执行  让fn2执行 里面this默认为window
+    // 最终执行的就是我们fn2() 然后输出‘fn2’；
+
+
+    // 最后一个call先执行 最后一个call的目的 让fn1.call执行 并且将里面的this改为 fn2  相当于 fn1.call() => fn2.call()
+    //  fn2.call()让fn2执行并且将里面的this改成window
+    // 最终fn2执行输出 ‘fn2’；
+
+
+
+
 </script>
 </body>
 </html>

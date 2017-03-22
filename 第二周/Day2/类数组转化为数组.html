@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // arguments是一个类数组 但是也可以像数组一样可以循环遍历
+    //    var arr2 =  [1,2,3];
+    //    var newArr = arr2.slice();
+    //    console.log(newArr === arr2);
+
+    //    Array.prototype.slice.call(arguments,0) //利用数组中的slice方法将类数组转化为数组 只需改变slice中this即可
+    //     [].slice.call(arguments,0)
+    function average() {
+//        var arr = [];
+//        for(var i = 0; i < arguments.length; i++){ // 将类数组转化为数组
+//            arr.push(arguments[i]);
+//        }
+//       利用slice将类数组转化为数组
+       var arr = [].slice.call(arguments,0); //让slice方法中操作的this指向我们的arguments
+
+        arr.sort(function (a ,b) {
+            return a - b;
+        });
+        arr.shift();
+        arr.length--;
+        var sum = eval(arr.join('+'));
+        var num = (sum/arr.length).toFixed(2);
+        return num;
+    }
+    var argNum = average(9, 2, 8, 9, 10, 7, 6);
+    console.log(argNum);
+
+</script>
+</body>
+</html>

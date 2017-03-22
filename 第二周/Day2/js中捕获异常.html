@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // try catch js中比较常用的捕获异常方法
+    /**
+     * try catch finally
+     * 如果try里面报错就会执行catch里面的代码
+     * catch(e) e.message 报错信息
+     * finally不管上面报不报错 都会执行
+     */
+//     console.log(num);
+       try{
+           console.log(num);
+       }catch (e) {
+           console.log(e.message);
+//           throw new Error(e.message); // 让浏览器抛出异常
+       }
+       console.log(123);
+
+</script>
+</body>
+</html>
