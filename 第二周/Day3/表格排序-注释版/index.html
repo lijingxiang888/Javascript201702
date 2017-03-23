@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #tables {
+            margin: 20px auto;
+        }
+
+        #tables tr th, #tables tr td {
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #tables thead {
+            background-color: #00A5FF;
+            cursor: pointer;
+            -webkit-user-select: none;
+        }
+        /*#tables tbody tr:nth-child(odd) {*/
+            /*background-color: #FFBC9A;*/
+        /*}*/
+        /*#tables tbody tr:nth-child(even) {*/
+            /*background-color: #ABFFD3;*/
+         /*}*/
+        #tables tbody tr:hover {
+            background-color: red;
+        }
+        .c0 {
+            background-color: #FFBC9A;
+        }
+        .c1 {
+            background-color: #ABFFD3;
+        }
+    </style>
+</head>
+<body>
+<table border="1" cellspacing="0" id="tables">
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>score</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript">
+    // 获取操作元素
+    var tables = document.getElementById('tables'); // 获取表格
+    var tBody = tables.tBodies[0]; // 用表格自己的获取方式 获取tBody
+    var tBodyRows = tBody.rows; // 获取tBody里的所有tr
+    var tHead = tables.tHead; // 获取表格的tHead
+    var tHeadRows = tHead.rows[0]; // 获取tHead里的tr
+    var tHeadThs = tHeadRows.cells; // 获取tHead里的tr的th
+    // 1.请求获取数据 ajax
+    // (1) 创建ajax对象
+    var xhr = new XMLHttpRequest;
+    // (2) 发送请求接口
+    xhr.open('get', './data.txt', false);
+    // (3) 监听请求状态
+    xhr.onreadystatechange = function () {
+        // ajax 状态 xhr.readyState
+        // http状态 xhr.status
+        if (this.readyState === 4 && this.status === 200) {
+            var data = xhr.responseText;
+            console.log(xhr.responseText); // xhr.responseText 请求回来的数据
+//            将JSON字符串转化为JSON对象
+            data = 'JSON' in window ? JSON.parse(data) : eval('(' + data + ')');
+            bindData(data); // 绑定数据到页面中
+        }
+    };
+    // 发送请求
+    xhr.send();
+    // 绑定数据到页面中 （渲染页面）
+    function bindData(data) {
+        // 为了避免引发多次回流 我们创建一个文档碎片 临时一个 元素容器
+        var frg = document.createDocumentFragment();
+
+        for (var i = 0; i < data.length; i++) { // data中有多少个对象 就创建多少个tr
+            var curData = data[i];
+            var tr = document.createElement('tr');
+            for (var key in curData) { // 对象中有多少组键值对 就遍历多少次 创建多少个td
+                var td = document.createElement('td');
+                var val = curData[key];
+
+                if(key === 'sex'){ //  如果key是sex 就进行处理性别
+                    if(curData[key] === 1){ // 男
+                        val = '男'
+                    }else {
+                        val = '女'
+                    }
+                }
+
+                td.innerHTML = val; // 给td里添加文本内容（内容：对象里每个属性的属性值）
+                tr.appendChild(td); // 将创建好的td添加到tr里面
+            }
+            frg.appendChild(tr); // 将每一次循环创建好的tr 添加到 文档碎片（frg）里面 避免多次回流
+        }
+        tBody.appendChild(frg);  //  最后一次性 将 文档碎片里的元素添加到tBody中
+        changeBg(); // 绑定完页面后 奇偶 行变色
+        frg = null;
+    }
+    //给th 表头循环绑定事件
+    // tBody里的tr
+    var tBodyArr = utils.listToArray(tBodyRows); // 将tBodyRows由类数组转化为数组 再进行sort排序
+    console.log(tBodyArr);
+    for(var i = 0; i < tHeadThs.length; i++){
+        tHeadThs[i].ind = i;
+        tHeadThs[i].flag = -1; // flag排序的标识(降序和升序)
+        tHeadThs[i].onclick = function () {
+            for(var j = 0; j < tHeadThs.length; j++){
+                     if(tHeadThs[j] != this){ // 如果不是我点击的这个元素
+                         tHeadThs[j].flag = -1; // 如果不是点击的元素 将排序标识 设为初始值-1
+                     }
+            }
+//            this; // 绑定事件的元素
+//             给tBody里的tr根据列里的内容 进行排序
+            // 当第二次点击的时候 flag = 1 在由 1 * -1 变成了 -1  我下面 (a-b)*-1 => b - a 往后一次这样 a-b*1 => (a-b)*-1 => a-b*1 => (a-b)*-1
+            this.flag *= -1;   // 当我第一次点击的时候 -1 * -1 = 1 第一次flag = 1
+//               然后我下面 a - b * 1
+            var that = this; // 将外面this（绑定事件的元素） 保存给 变量that
+            console.log(that.ind);
+            tBodyArr.sort(function (a,b) { // a和b是我们tBody的tr
+                var val1 = a.cells[that.ind].innerHTML; // 得到每个tr 第i个列内容 作为排序交换位置依据
+                var val2 = b.cells[that.ind].innerHTML;
+                if(isNaN(val1) || isNaN(val2)) { // 如果当前点击这一列的内容不是有效数字说明是中文我就让它 按照 中文的方法 进行排序
+                   return val1.localeCompare(val2) * that.flag; // 控制中文的升降序
+                }
+//                this; // sort的参数function中this => window 指向的并不是我们 绑定事件的元素
+                return (val1 - val2) * that.flag;// 控制数字内容的升降序 flag第一次是1 第二次是-1 第三次是1 第四次是-1
+            });
+            // 让页面中 按照我在数组中给元素排好的顺序 依次将对应元素 移动到末尾
+            var frgs = document.createDocumentFragment(); // 同样为避免产生多次回流 将排好序的元素先都放到 文档碎片里
+            for(var l = 0; l < tBodyArr.length; l++){
+                frgs.appendChild(tBodyArr[l]);
+            }
+            tBody.appendChild(frgs); // 最后一次性 修改html里tBody的结构
+            frgs = null;
+            changeBg(); // 排序后重新计算下 奇偶 行变色
+        }
+    }
+    // 奇偶 行变色
+    function changeBg() {
+        console.log(tBodyRows);
+        for(var i = 0; i < tBodyRows.length; i++){
+            tBodyRows[i].className = 'c' + i%2;
+        }
+    }
+</script>
+</body>
+</html>
