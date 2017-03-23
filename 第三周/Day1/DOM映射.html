@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+</ul>
+<script type="text/javascript">
+     // DOM映射：html页面中的元素 和 JS中通过DOM方法获取的元素对象 是绑定在一起的 一一对应的
+    //          一个改变另一个也会改变
+     var uls = document.getElementsByTagName('ul')[0];
+     var lis = uls.getElementsByTagName('li');
+     lis[1].style.backgroundColor = 'red';
+     setTimeout(function () {
+//         uls.appendChild(lis[1]); // 本身页面中已有的 在appendChild 等于 移动元素到容器末尾
+          var list = document.createElement('li');
+//          list.innerHTML = 'hello';
+//          uls.appendChild(list);
+            uls.insertBefore(lis[2],lis[0]);
+
+     }, 2000);
+
+
+//     for(var i = 0; i < 3; i++){
+//          var list = document.createElement('li');
+//          uls.appendChild(list);
+//     }
+     // HTMLCollection : 元素集合 即时更新  如果内部结构发生改变 会 更新同步到元素集合中
+     console.log(lis);
+</script>
+</body>
+</html>

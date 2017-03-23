@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #tables {
+            margin: 20px auto;
+            -webkit-user-select: none;
+        }
+
+        #tables thead {
+            background-color: #82FFE4;
+        }
+        #tables tr th{
+            cursor: pointer;
+        }
+        #tables tr th, #tables tr td {
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .c0 {
+            background-color: #00A5FF;
+        }
+        .c1 {
+            background-color: #00b38a;
+        }
+    </style>
+</head>
+<body>
+<table border="1" cellspacing="0" id="tables">
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+        <th>score</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--<tr>-->
+    <!--<td>22</td>-->
+    <!--<td>33</td>-->
+    <!--<td>11</td>-->
+    <!--<td>44</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+    <!--<td>22</td>-->
+    <!--<td>33</td>-->
+    <!--<td>11</td>-->
+    <!--<td>44</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+    <!--<td>22</td>-->
+    <!--<td>33</td>-->
+    <!--<td>11</td>-->
+    <!--<td>44</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+    <!--<td>22</td>-->
+    <!--<td>33</td>-->
+    <!--<td>11</td>-->
+    <!--<td>44</td>-->
+    <!--</tr>-->
+    </tbody>
+</table>
+<script type="text/javascript" src="../utils.js"></script>
+<script type="text/javascript">
+    var tables = document.getElementById('tables');
+    var tBody = tables.tBodies[0];
+    var tHead = tables.tHead; // 获取thead
+    var tHeadRows = tHead.rows[0]; // 获取 thead里的第一个tr
+    var tHeadThs = tHeadRows.cells; // tr里th
+    var tBodyRows = tBody.rows;
+
+    //    console.log(tHeadThs);
+    // 绑定数据
+    var xhr = new XMLHttpRequest;
+    xhr.open('get', './data.txt', false);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+//            console.log(xhr.responseText);
+            var data = xhr.responseText;
+            data = "JSON" in window ? JSON.parse(data) : eval('(' + data + ')');
+//            console.log(data);
+            bindData(data); // 绑定数据
+        }
+    };
+    xhr.send();
+    var tRowArrs;
+    // 绑定数据
+    function bindData(data) {
+        var frg = document.createDocumentFragment();
+        for (var i = 0; i < data.length; i++) {
+            var curData = data[i];
+            var tr = document.createElement('tr');
+            for (var key in curData) {
+                var td = document.createElement('td');
+                var val = curData[key];
+                if (key == 'sex') { // 如果key是 sex 才会进行处理
+                    if (val == 1) { //
+                        val = '男'
+                    } else {
+                        val = '女'
+                    }
+                }
+                td.innerHTML = val;
+//                    td.innerHTML = key == 'sex'? curData[key]? '男': '女' : curData[key];
+                tr.appendChild(td);
+            }
+            frg.appendChild(tr);
+        }
+        tBody.appendChild(frg);
+        tRowArrs = listToArray(tBodyRows);
+    }
+
+    // 给表头循环绑定事件
+    for (var i = 0; i < tHeadThs.length; i++) {
+        tHeadThs[i].ind = i;
+        tHeadThs[i].flag = -1;
+        tHeadThs[i].onclick = function () {
+            for (var i = 0; i < tHeadThs.length; i++) {
+                if (this.ind != i) { // 如果不是我点击的这一个
+                    tHeadThs[i].flag = -1; // 让其他th 的flag都为初始值-1
+                }
+            }
+            var that = this;
+            this.flag *= -1;
+
+            tRowArrs.sort(function (a, b) {
+                var val1 = a.cells[that.ind].innerHTML; // 获取当前tr要排序那一列的内容
+                var val2 = b.cells[that.ind].innerHTML;// 获取当前tr的下一tr要排序那一列的内容
+                if (isNaN(val1) || isNaN(val2)) { //如果不是有效数字按照中文排序
+                    return val1.localeCompare(val2) * that.flag;
+                }
+                return (val1 - val2) * that.flag; // 按照数字排序
+            });
+
+            var frg = document.createDocumentFragment();
+            for (var j = 0; j < tRowArrs.length; j++) {
+                frg.appendChild(tRowArrs[j]);
+            }
+            tBody.appendChild(frg);
+            // 重新计算奇 偶行 应为tr位置发生改变
+            changeBg();
+        }
+    }
+
+    // 隔行变色
+    function changeBg() {
+        for(var k = 0; k < tBodyRows.length; k++){
+            tBodyRows[k].className = 'c' + k%2;
+        }
+    }
+    changeBg();
+
+</script>
+</body>
+</html>
