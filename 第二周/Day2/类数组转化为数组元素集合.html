@@ -22,11 +22,11 @@
 //     var newArr = [].slice.call(lis, 0);
 //     console.log(newArr);
      // 用slice将类数组转化为数组时 由于DOM元素集合在Ie6-8中不兼容 所以我们不能用
-//    function arr() {
-//        var newArr = [].slice.call(arguments, 0);
-//        console.log(newArr);
-//    }
-//    arr(1,2,4,5);
+    function arr() {
+        var newArr = [].slice.call(arguments, 0);
+        console.log(newArr);
+    }
+    arr(1,2,4,5);
 //    console.log(123);
     // js中如果当前代码报错 不处理的情况下 后面代码不会执行
 //    var newArr = [].slice.call(lis, 0);
@@ -52,7 +52,6 @@
 //        }
 //    }
 //    console.log(listToArray(lis));
-
 
 </script>
 </body>
