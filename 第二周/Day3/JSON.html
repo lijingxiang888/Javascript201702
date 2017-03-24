@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // JSON:一种数据格式，主要应用于前后端交互，前台向后台发送请求时 后台返回的基本上是JSON格式的数据
+    // JSON对象、JSON字符串
+    // 1.JSON对象 和js对象类似 但是属性名必须用'""'包起来，属性值如果是字符串也要双引号包起来
+    var obj1 = {name: 'zhufeng', age: 10}; // 普通JS对象
+    var obj2 = {"name": "zhufeng", "age": 10}; // JSON对象
+    var arr = [
+        {"name": "zhufeng", "age": 10},
+        {"name": "zhufeng", "age": 10},
+        {"name": "zhufeng", "age": 10},
+        {"name": "zhufeng", "age": 10},
+        {"name": "zhufeng", "age": 10},
+        {"name": "zhufeng", "age": 10}
+    ];
+
+    // 2.JSON字符串
+    var jsonStr1 = '{"name": "zhufeng","age": 10}';
+    var jsonStr2 = '[{"name": "zhufeng","age": 10}]';
+
+    // window浏览器对象上有一个JSON属性对象，
+    // 提供了两个方法
+    // 1.JSON.parse：用来将JSON格式的字符串转化为JSON格式对象
+    var jStr1 = JSON.parse(jsonStr1);
+    var jStr2 = JSON.parse(jsonStr2);
+    console.log(jsonStr2);
+    JSON.parse('{"name": "zhufeng","age": 10}');
+    JSON.parse('[{"name": "zhufeng","age": 10}]');
+    JSON.parse('{"name":"zhufeng","info": "nihao"}');
+    //      for(var key in jStr1){
+    //          console.log(jStr1[key]);
+    //      }
+    // 2.JSON.stringify: 将普通格式对象/JSON格式的对象转换为JSON格式字符串
+    var objs = {name: 'zhufeng', info: 'nihao'};
+    var jObj = {"name": "zhufeng", "info": "nihao"};
+    var Obj1 = JSON.stringify(objs);
+    var Obj2 = JSON.stringify(jObj);
+    JSON.stringify({"name": "zhufeng", "info": "nihao"});
+    JSON.stringify({name: 'zhufeng', info: 'nihao'});
+    console.log(Obj1);
+    console.log(typeof Obj1);
+    console.log(Obj2);
+    console.log(typeof Obj2);
+
+    // JSON 在ie7以下 不兼容    就需要使用eval
+    eval('({"name": "zhufeng","age": 10})');
+    var json1 = '{"name": "zhufeng","age": 10}';
+    var data = eval('(' + json1 + ')');
+    console.log(data);
+    // 处理兼容性
+    var json1 = '{"name": "zhufeng","age": 10}';
+    "JSON" in window ? JSON.parse(json1) : eval('(' + json1 + ')');
+</script>
+</body>
+</html>

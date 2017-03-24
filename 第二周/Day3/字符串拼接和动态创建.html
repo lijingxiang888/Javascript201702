@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>22</li>
+    <li>22</li>
+    <li>22</li>
+</ul>
+<script type="text/javascript">
+    var uls = document.getElementsByTagName('ul')[0];
+    var lis = document.getElementsByTagName('li');
+//    console.log(lis);
+
+    // HTMLCollection/NodeList: 元素集合/节点集合 即时更新，如果所属的内部结构发生了改变 它会自动同步更新
+
+    var arr = [];
+    for(var j = 0; j < lis.length; j++){
+             arr.push(lis[j]);
+    }
+
+    // 动态添加
+    // 文档碎片 动态创建的一个容器 通常用来避免多次回流
+    var frg = document.createDocumentFragment();
+    for(var i = 0; i < 5; i++){
+             var list = document.createElement('li');
+             list.innerHTML = 666;
+             frg.appendChild(list);
+    }
+    uls.appendChild(frg);
+    frg = null;
+    for(var l = 0; l < lis.length; l++){
+        lis[l].onmouseover = function () {
+            this.style.backgroundColor = 'red';
+        };
+        lis[l].onmouseout = function () {
+            this.style.backgroundColor = '';
+        }
+    }
+        console.log(lis);
+        console.log(arr);
+     // 优点 不会影响原有的 事件和效果
+    // 缺点 引发多次回流
+
+    // 字符串添加拼接
+//     var str = '';
+//     for(var i = 0; i < 5; i++){
+//             str += '<li>111</li>'
+//     }
+//    uls.innerHTML += str; // uls.innerHTML = uls.innerHTML + str;
+    // 优势：只会引发一次回流
+    // 弊端：
+//    当我们在往原有的里面拼接添加的时候 相当于想把原有的当做字符串获取到然后再和新生成拼接成字符串 在输出，这样浏览器会重新渲染和解析 从而导致 原有的事件和效果失效
+</script>
+</body>
+</html>

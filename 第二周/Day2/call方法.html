@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 所有的函数数据类型（普通函数 类（内置 自定义））都是Function的一个实例
+    // 每一个函数都可以使用 Function 的prototype上的存储的属性和方法
+    // Function的 prototype上 比较常用的（call/apply/bind(有兼容性)）;
+    // fn.call每一个函数都通过自己__proto__找到Function原型上的call方法
+    //    console.dir(Function);
+    //    function fn() {
+    //       console.log(this);
+    //    }
+    //    console.log(fn.call === fn.__proto__.call);
+    //    console.log(fn.call === Function.prototype.call);
+    //    console.log(fn.__proto__.call === Function.prototype.call);
+    // call的作用
+    // 1.让call方法中的this 当做一个函数执行
+    // 2.将call的this中的this修改为 call的第一个参数值
+
+    //    fn.call(); // fn();
+    // fn.call(obj) 这里面fn是call 的this ，call方法让它的this执行也就是fn() 并且将fn中的this修改为call的第一个参数值obj ,所以 此时fn中的this被修改为 obj
+    //    var obj = {info: 'say'};
+    //    var info = 'sayHi';
+    //    function fn() { // 因为fn是call方法的this call将fn中this修改为了第一个参数值obj this-> obj
+    //        console.log(this.info); // obj.info
+    //    }
+    //    fn.call(obj); // call中this -> fn()-> 将fn中的this 修改为call(obj)call中第一个参数值obj
+    //    fn(); // 如果这样执行 fn中的this是window
+
+    var obj = {info: 'say'};
+    function fn(a, b) {
+        console.log(this);
+        console.log(a, b);
+    }
+    fn.call(obj, 10, 20);
+    // 1.call语法
+    //  函数.call([this],param1,param2...) // 第一个参数作为call的this中的this 其余后面依次是在给call的this里传递的参数值
+</script>
+</body>
+</html>

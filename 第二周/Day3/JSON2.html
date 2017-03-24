@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+   var json1 = '{"name": "zhufeng","age": 10}';
+   var data = "JSON" in window ? JSON.parse(json1) : eval('('+json1+')');
+   console.log(data);
+</script>
+</body>
+</html>

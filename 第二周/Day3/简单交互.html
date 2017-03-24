@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+       // ajax:异步请求 局部刷新
+       var xhr = new XMLHttpRequest; // 生成一个XMLHttpRequest的实例 在这个实例里面提供了我们 发送请求和接收数据的 属性方法
+    console.log(xhr);
+    // 1.要发送请求
+       /**
+        * @param1 获取方式 请求方式 get post
+        * @param2 请求的地址 './data.txt'
+        * @param3:
+        * true 默认就是异步
+        * false 同步
+        */
+       xhr.open('get','./data.txt',true);
+       // 2.监听请求响应 （还需要判断是否请求成功 是否拿到数据）
+       xhr.onreadystatechange = function () { // 监听请求
+           // readyState: 0 ,1, 2, 3 , 4
+           // 如果是4的话说明成功完成发送请求 如果http请求成功状态码 基本是200 一些2开头三位数也代表成功；通常访问一个不存在的网页 返回的http状态码 404
+           // status http请求状态码
+           //readyState ajax 状态码
+           if(this.readyState === 4 && this.status == 200){
+               console.log(xhr.responseText);
+               console.log(typeof xhr.responseText);
+           }
+       };
+       // 发送
+       xhr.send();
+     console.log(132);
+</script>
+</body>
+</html>

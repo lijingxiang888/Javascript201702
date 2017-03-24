@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>白百合</li>
+    <li>李文利</li>
+    <li>周杰伦</li>
+    <li>杨波</li>
+    <li>陈奕迅</li>
+</ul>
+<script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript">
+    var uls = document.getElementsByTagName('ul')[0];
+    var lis = document.getElementsByTagName('li');
+    var lisArr = listToArray(lis);
+//    console.log(lisArr);
+    /**
+     * sort中
+     * a当前项是我们li
+     * b当前项的下一项也是我们li
+     *
+     */
+
+//    'a'.localeCompare('b') // 说明a 小于b 因为a的位置 在b前边 位置越靠后越大
+//    -1
+//    'c'.localeCompare('b')
+//    1
+//    'c'.localeCompare('c') // 说明位置相等
+//    0
+//    '周杰伦'.localeCompare('白百合')
+//    1
+//    '周杰伦'.localeCompare('周百合')
+//    1
+//    '周啊伦'.localeCompare('周百合')
+//    -1
+    lisArr.sort(function (a,b) { // sort排列数组中每项
+//            return a.innerHTML - b.innerHTML;
+        // return 的 如果大于0 就a和b交换位置
+        // return 的 如果 <= 0  a和b不交换
+         // 根据运算结果来决定是否交换位置
+//        return 1;
+//        a.innerHTML.localeCompare(b); // 给中文排序 根据拼音字母排序
+        return (a.innerHTML.localeCompare(b.innerHTML)) * -1;
+    });
+    console.log(lisArr);
+    setTimeout(function () {
+        var frg = document.createDocumentFragment();
+        // 按照在sort中排好序的位置 依次移动页面中元素
+        for(var i = 0; i < lisArr.length; i++){
+            var cur = lisArr[i];
+//            debugger; // 打断点
+//            cur.style.backgroundColor = 'red';
+            frg.appendChild(cur); // 先把每一次创建的元素 添加到文档碎片中
+        }
+        uls.appendChild(frg); // 然后在把文档碎片中元素 一次性添加到 页面ul中 只引发一次回流
+        frg = null;
+    }, 1000);
+
+</script>
+</body>
+</html>

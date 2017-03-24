@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 求数组中最大值和最小值
+//    var arr = [10,20,11,12,9,15];
+     // 先排序 从小到大 取出第一项（min） 和最后一项（max）
+//      arr.sort(function (a, b) {
+//            return a - b;
+//      });
+//      console.log(arr);
+//      var max = arr[arr.length - 1];
+//      var min = arr[0];
+
+    // 假设法
+    // 我先取出第一项作为基准点 假设第一项是最大的 然后用数组里剩余项分别和这个基准点进行比较，如果数组中当前项 比我这个基准点还要大，我们就让当前项在做为我们的基准点 一直比较下去
+//    var arr = [10,20,11,12,9,15];
+//    var max = arr[0]; // 假设数组中第一项是最大的
+//    var min = arr[0];
+//    for(var i = 1; i < arr.length; i++){ // 拿出数组中剩余的每一项和 max进行比较
+//            var cur = arr[i];
+//            // 20 > 10 ? max = 20 : null;
+//            cur > max ? max = cur : null; // 谁大我就让max等于谁
+//            cur < min ? min = cur : null; // 谁小我就让min等于谁
+//    }
+//    console.log(max,min); // 20 9
+
+    // Math.min/Math.max 比较一堆数中的最小值和最大值
+//    var min = Math.min(10,20,11,12,9,15);
+//    var max = Math.max(10,20,11,12,9,15);
+//    var min = Math.min([10,20,11,12,9,15]);
+//    var max = Math.max([10,20,11,12,9,15]);
+
+    var arr = [10,20,11,12,9,15];
+//    var max = Math.max(eval(arr.toString()));
+    // 利用apply传递参数的时候 是把需要传递的参数放在数组里 其实也上相当于一次性分别把数组中的每一个参数取出来 当作实参传递到我们方法中
+    // 利用Math的方法取出最大值
+   var max = Math.max.apply(null,[10,20,11,12,9,15]);
+   var min = Math.min.apply(null,[10,20,11,12,9,15]);
+    console.log(max, min);
+</script>
+</body>
+</html>

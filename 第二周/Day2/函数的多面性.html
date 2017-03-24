@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 所有的对象数据类型（普通对象 实例 prototype 函数） 都是Object基类的一个实例
+    // 所有的函数数据类型（普通函数 类(内置 自定义)）都是Function的一个实例
+    // 所有的实例都是对象数据类型，函数和类都是Function的实例，所以函数也是对象数据类型的值\
+
+//    函数的多面性
+    // 1.普通函数
+    // 执行的时候可以形成一个私有作用域，形参赋值 预解释 代码从上到下执行
+    // 2.作为一个类
+//     具有原型链模式 类和实例的概念
+    // 3.作为一个普通对象
+//     当做一个对象给他添加属性
+//    function Fn() {
+//        var info = 'zhufeng';
+//    }
+//    Fn();
+//    Fn.prototype.say = function () {
+//        console.log('say');
+//    };
+//    Fn.prototype.num = 666;
+////  Function.prototype.num = 888;
+//    Object.prototype.num = 777;
+//    Fn.num = 123; // 把Fn作为一个对象 给它增加一个叫num的属性 属性值123
+//    console.log(Fn.num);
+//    console.dir(Fn);
+//    var f1 = new Fn
+
+// 函数的三种角色互不影响
+//    function Fn() {
+//         var num; // Fn执行的时候形成的私有变量
+//         this.num = 200;
+//         num = 300;
+//         this.say = function () {
+//             this.num = 15;
+//             console.log(this.num);
+//             console.log(Fn.num); // 把Fn当做一个对象 找一个叫做num的属性
+//         }
+//    }
+//    var f1 = new Fn;
+//    Fn.prototype.num = 100; // 作为一个类在原型上给实例添加 公有属性num
+//    num = 400;   Fn.num = 111; // 作为一个对象 给Fn自身添加属性
+//    Fn();   f1.say(); // 15 111
+//    console.log(num); // 200
+//    console.log(f1.num); // 15
+
+    var num = 0;
+    function Fn(num) {
+        arguments[0] = 100;
+        this.num = 200;
+        console.log(num);
+        console.log(this.num);
+        return num;
+    }
+    Fn.num = 400;
+    Fn.prototype.num = 300;
+    Fn.prototype.getNum = function () {
+        console.log(this.num);
+    };
+    var f = new Fn(num);
+    console.log(f.num);
+    f.getNum();
+    Fn.prototype.getNum();
+    console.log(num);
+    var n = Fn(num);
+    console.log(n);
+    console.log(num);
+
+</script>
+</body>
+</html>
