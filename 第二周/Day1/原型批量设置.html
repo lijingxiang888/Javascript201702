@@ -29,11 +29,11 @@
 
     // 重构内置类原型对象的时候  被浏览器屏蔽掉了
     //     如果 我们自己手动为内置类原型开辟一个堆内存 就会将 内置类修改 将浏览器天生给开辟的原型对象 替换掉，导致 在内置类原有 属性和方法 都被替换掉了
-//    Array.prototype = {
-//        mySlice: function () {
-//            console.log('mySlice');
-//        }
-//    };
+    Array.prototype = {
+        mySlice: function () {
+            console.log('mySlice');
+        }
+    };
 //    [].mySlice();
     //    console.log([1, 2, 4].slice());
 //    Array.prototype.slice = function () {
@@ -48,10 +48,7 @@
 //        console.log('mySlice');
 //        return 123;
 //    };
-    Array.prototype.slice = function () {
-        console.log('mySlice');
-        return 123;
-    };
+
 
 </script>
 </body>
