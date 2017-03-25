@@ -1,0 +1,110 @@
+html, body {
+    width: 100%;
+    background: #F5F5F5;
+}
+
+.control {
+    margin: 20px auto;
+    width: 1200px;
+    background: #FFF;
+}
+
+/*子元素浮动,父元素的高度不能被撑开
+  overflow: hidden;
+  :after伪类加clear:both解决
+*/
+.control span {
+    float: left;
+    width: 90px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.control a {
+    position: relative;
+    float: left;
+    padding: 0 10px;
+    line-height: 50px;
+    color: #999;
+}
+
+.control a i {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -4px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border: 4px solid transparent;
+}
+
+.control a i.up {
+    margin-top: -9px;
+    border-bottom-color: #999;
+}
+
+.control a i.up.bg {
+    border-bottom-color: #E01d20;
+}
+
+.control a i.down {
+    margin-top: 1px;
+    border-top-color: #999;
+}
+
+.control a i.down.bg {
+    border-top-color: #E01d20;
+}
+
+.control a:hover {
+    color: #E01D20;
+}
+
+.product {
+    margin: 0 auto;
+    width: 1200px;
+    overflow: hidden;
+}
+
+.product ul {
+    margin-left: -10px;
+    margin-top: -10px;
+    width: 1210px;
+}
+
+.product li {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.product li a {
+    display: block;
+    padding: 0 16px;
+    width: 193px;
+    border: 3px solid transparent;
+    background: #FFF;
+}
+
+.product li a img {
+    display: block;
+    width: 100%;
+}
+
+.product li a span {
+    display: block;
+    line-height: 40px;
+}
+
+.product li a .title {
+    color: #999;
+}
+
+.product li a .price {
+    color: #000;
+}
+
+.product li a:hover {
+    border-color: #E01D20;
+}

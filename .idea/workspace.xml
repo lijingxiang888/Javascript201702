@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b652ab-fbe1-4d36-98c6-aca1104f7654" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第五天/5-单例模式的误区.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第五天/6-原型模式.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第五天/7-原型进阶.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第一周/第五天/8-原型进阶-链式写法.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第二周/Day4/js/table.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第二周/Day4/js/table备份.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第二周/Day4/json/product.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/第二周/Day4/3-table.html" afterPath="$PROJECT_DIR$/第二周/Day4/3-table.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/第二周/Day4/css/table.css" afterPath="$PROJECT_DIR$/第二周/Day4/css/table.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/第二周/Day4/js/utils.js" afterPath="$PROJECT_DIR$/第二周/Day4/js/utils.js" />
     </list>
     <ignored path="201702.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,73 +30,99 @@
     <favorites_list name="201702" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="小东西.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第一周/第五天/小东西.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2-创建类.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第一周/第五天/2-创建类.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-374">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="3-小试牛刀.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第一周/第五天/3-小试牛刀.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="4-登堂入室.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第一周/第五天/4-登堂入室.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="42" column="51" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="6-原型模式.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/第一周/第五天/6-原型模式.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="3-table.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/第二周/Day4/3-table.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="121">
-              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-              <folding />
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+              <folding>
+                <element signature="e#240#338#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="7-原型进阶.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第一周/第五天/7-原型进阶.html">
+      <file leaf-file-name="table.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第二周/Day4/js/table.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="198">
+              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#336#572#0" expanded="false" />
+                <element signature="e#2678#2964#0" expanded="false" />
+                <element signature="e#3108#3156#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="8-原型进阶-链式写法.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第一周/第五天/8-原型进阶-链式写法.html">
+      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第二周/Day4/js/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="198">
+              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+              <folding>
+                <element signature="e#107#316#0" expanded="false" />
+                <element signature="e#350#823#0" expanded="false" />
+                <element signature="e#493#559#0" expanded="false" />
+                <element signature="e#570#743#0" expanded="false" />
+                <element signature="e#672#733#0" expanded="false" />
+                <element signature="e#752#797#0" expanded="false" />
+                <element signature="e#829#1036#0" expanded="false" />
+                <element signature="e#1062#1144#0" expanded="false" />
+                <element signature="e#1157#1219#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="table.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第二周/Day4/css/table.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+              <folding>
+                <element signature="e#11#56#0" expanded="false" />
+                <element signature="e#67#134#0" expanded="false" />
+                <element signature="e#217#301#0" expanded="false" />
+                <element signature="e#314#419#0" expanded="false" />
+                <element signature="e#434#593#0" expanded="false" />
+                <element signature="e#611#667#0" expanded="false" />
+                <element signature="e#688#725#0" expanded="false" />
+                <element signature="e#745#797#0" expanded="false" />
+                <element signature="e#820#854#0" expanded="false" />
+                <element signature="e#873#896#0" expanded="false" />
+                <element signature="e#907#971#0" expanded="false" />
+                <element signature="e#985#1054#0" expanded="false" />
+                <element signature="e#1068#1133#0" expanded="false" />
+                <element signature="e#1149#1268#0" expanded="false" />
+                <element signature="e#1288#1328#0" expanded="false" />
+                <element signature="e#1349#1395#0" expanded="false" />
+                <element signature="e#1418#1438#0" expanded="false" />
+                <element signature="e#1461#1481#0" expanded="false" />
+                <element signature="e#1503#1533#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第二周/Day4/json/product.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="33">
+              <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+              <folding>
+                <element signature="e#134#258#0" expanded="false" />
+                <element signature="e#262#389#0" expanded="false" />
+                <element signature="e#393#523#0" expanded="false" />
+                <element signature="e#527#659#0" expanded="false" />
+                <element signature="e#663#788#0" expanded="false" />
+                <element signature="e#792#919#0" expanded="false" />
+                <element signature="e#923#1050#0" expanded="false" />
+                <element signature="e#1054#1185#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,6 +133,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -131,6 +161,16 @@
         <option value="$PROJECT_DIR$/第一周/第五天/6-原型模式.html" />
         <option value="$PROJECT_DIR$/第一周/第五天/7-原型进阶.html" />
         <option value="$PROJECT_DIR$/第一周/第五天/8-原型进阶-链式写法.html" />
+        <option value="$PROJECT_DIR$/第二周/Day4/2-oop.html" />
+        <option value="$PROJECT_DIR$/第二周/Day4/1-oop.html" />
+        <option value="$PROJECT_DIR$/第二周/Day4/2-table.html" />
+        <option value="$PROJECT_DIR$/第二周/Day4/css/reset.min.css" />
+        <option value="$PROJECT_DIR$/第二周/Day4/css/table.css" />
+        <option value="$PROJECT_DIR$/第二周/Day4/json/product.json" />
+        <option value="$PROJECT_DIR$/第二周/Day4/js/utils.js" />
+        <option value="$PROJECT_DIR$/第二周/Day4/3-table.html" />
+        <option value="$PROJECT_DIR$/第二周/Day4/js/table备份.js" />
+        <option value="$PROJECT_DIR$/第二周/Day4/js/table.js" />
       </list>
     </option>
   </component>
@@ -171,11 +211,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane />
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -184,6 +224,12 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\珠峰培训课堂讲义\201702\第二周\Day4\css" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -211,6 +257,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -247,32 +299,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1489801405931</updated>
-      <workItem from="1489801411469" duration="40726000" />
+      <workItem from="1489801411469" duration="40952000" />
+      <workItem from="1490406348099" duration="25364000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40726000" />
+    <option name="totallyTimeSpent" value="66316000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14136904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12946428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -292,72 +345,66 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/小东西.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/2-创建类.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/3-小试牛刀.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/4-登堂入室.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="42" column="51" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/6-原型模式.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/7-原型进阶.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第一周/第五天/8-原型进阶-链式写法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/第一周/第四天/多维数据.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-          <folding>
-            <element signature="e#1591#3123#0" expanded="false" />
-            <element signature="e#2554#3046#0" expanded="false" />
-            <element signature="e#3131#4663#0" expanded="false" />
-            <element signature="e#4091#4586#0" expanded="false" />
-            <element signature="e#4671#6206#0" expanded="false" />
-            <element signature="e#5622#6129#0" expanded="false" />
-            <element signature="e#6214#7757#0" expanded="false" />
-            <element signature="e#7177#7680#0" expanded="false" />
-            <element signature="e#7765#9297#0" expanded="false" />
-            <element signature="e#8727#9220#0" expanded="false" />
-            <element signature="e#9323#20956#0" expanded="false" />
-            <element signature="e#9331#10843#0" expanded="false" />
-            <element signature="e#10278#10766#0" expanded="false" />
-            <element signature="e#10851#12371#0" expanded="false" />
-            <element signature="e#11803#12294#0" expanded="false" />
-            <element signature="e#12379#13909#0" expanded="false" />
-            <element signature="e#13350#13832#0" expanded="false" />
-            <element signature="e#13917#15432#0" expanded="false" />
-            <element signature="e#14867#15355#0" expanded="false" />
-            <element signature="e#15440#16963#0" expanded="false" />
-            <element signature="e#16401#16886#0" expanded="false" />
-            <element signature="e#16971#18489#0" expanded="false" />
-            <element signature="e#17931#18412#0" expanded="false" />
-            <element signature="e#18497#19715#0" expanded="false" />
-            <element signature="e#19441#19707#0" expanded="false" />
-            <element signature="e#19723#20950#0" expanded="false" />
-            <element signature="e#20676#20942#0" expanded="false" />
-            <element signature="e#20976#30576#0" expanded="false" />
-            <element signature="e#20984#22187#0" expanded="false" />
-            <element signature="e#21913#22179#0" expanded="false" />
-            <element signature="e#22195#23402#0" expanded="false" />
-            <element signature="e#23128#23394#0" expanded="false" />
-            <element signature="e#23410#24613#0" expanded="false" />
-            <element signature="e#24339#24605#0" expanded="false" />
-            <element signature="e#24621#25551#0" expanded="false" />
-            <element signature="e#25559#26760#0" expanded="false" />
-            <element signature="e#26486#26752#0" expanded="false" />
-            <element signature="e#26768#28130#0" expanded="false" />
-            <element signature="e#27706#28122#0" expanded="false" />
-            <element signature="e#28138#29348#0" expanded="false" />
-            <element signature="e#29074#29340#0" expanded="false" />
-            <element signature="e#29356#30570#0" expanded="false" />
-            <element signature="e#30294#30562#0" expanded="false" />
-            <element signature="e#30596#40474#0" expanded="false" />
-            <element signature="e#30604#31805#0" expanded="false" />
-            <element signature="e#31531#31797#0" expanded="false" />
-            <element signature="e#31813#33022#0" expanded="false" />
-            <element signature="e#32748#33014#0" expanded="false" />
-            <element signature="e#33030#34231#0" expanded="false" />
-            <element signature="e#33957#34223#0" expanded="false" />
-            <element signature="e#34239#35446#0" expanded="false" />
-            <element signature="e#35172#35438#0" expanded="false" />
-            <element signature="e#35454#36663#0" expanded="false" />
-            <element signature="e#36389#36655#0" expanded="false" />
-            <element signature="e#36671#37880#0" expanded="false" />
-            <element signature="e#37606#37872#0" expanded="false" />
-            <element signature="e#37888#39100#0" expanded="false" />
-            <element signature="e#38826#39092#0" expanded="false" />
-            <element signature="e#39108#40468#0" expanded="false" />
-            <element signature="e#40044#40460#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -365,9 +412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#811#1317#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -375,7 +419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -383,7 +426,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -391,7 +433,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -399,7 +440,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="52" column="15" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -415,13 +455,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/第一周/第五天/小东西.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
+        <state relative-caret-position="330">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
@@ -429,7 +468,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/第一周/第五天/2-创建类.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-374">
+        <state relative-caret-position="561">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
@@ -437,7 +476,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/第一周/第五天/3-小试牛刀.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
+        <state relative-caret-position="528">
           <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding />
         </state>
@@ -447,13 +486,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
           <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/第一周/第五天/4-登堂入室.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="1386">
           <caret line="42" column="51" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="51" />
           <folding />
         </state>
@@ -461,7 +499,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/第一周/第五天/8-原型进阶-链式写法.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
+        <state relative-caret-position="891">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
@@ -469,7 +507,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/第一周/第五天/7-原型进阶.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
+        <state relative-caret-position="891">
           <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
           <folding />
         </state>
@@ -477,9 +515,132 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/第一周/第五天/6-原型模式.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        <state relative-caret-position="33">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day4/2-oop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+          <folding>
+            <element signature="e#902#981#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day4/1-oop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day4/css/reset.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="0" column="2094" selection-start-line="0" selection-start-column="2089" selection-end-line="0" selection-end-column="2094" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day4/js/table备份.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#336#572#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day4/json/product.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <folding>
+            <element signature="e#134#258#0" expanded="false" />
+            <element signature="e#262#389#0" expanded="false" />
+            <element signature="e#393#523#0" expanded="false" />
+            <element signature="e#527#659#0" expanded="false" />
+            <element signature="e#663#788#0" expanded="false" />
+            <element signature="e#792#919#0" expanded="false" />
+            <element signature="e#923#1050#0" expanded="false" />
+            <element signature="e#1054#1185#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day4/css/table.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+          <folding>
+            <element signature="e#11#56#0" expanded="false" />
+            <element signature="e#67#134#0" expanded="false" />
+            <element signature="e#217#301#0" expanded="false" />
+            <element signature="e#314#419#0" expanded="false" />
+            <element signature="e#434#593#0" expanded="false" />
+            <element signature="e#611#667#0" expanded="false" />
+            <element signature="e#688#725#0" expanded="false" />
+            <element signature="e#745#797#0" expanded="false" />
+            <element signature="e#820#854#0" expanded="false" />
+            <element signature="e#873#896#0" expanded="false" />
+            <element signature="e#907#971#0" expanded="false" />
+            <element signature="e#985#1054#0" expanded="false" />
+            <element signature="e#1068#1133#0" expanded="false" />
+            <element signature="e#1149#1268#0" expanded="false" />
+            <element signature="e#1288#1328#0" expanded="false" />
+            <element signature="e#1349#1395#0" expanded="false" />
+            <element signature="e#1418#1438#0" expanded="false" />
+            <element signature="e#1461#1481#0" expanded="false" />
+            <element signature="e#1503#1533#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day4/js/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <element signature="e#107#316#0" expanded="false" />
+            <element signature="e#350#823#0" expanded="false" />
+            <element signature="e#493#559#0" expanded="false" />
+            <element signature="e#570#743#0" expanded="false" />
+            <element signature="e#672#733#0" expanded="false" />
+            <element signature="e#752#797#0" expanded="false" />
+            <element signature="e#829#1036#0" expanded="false" />
+            <element signature="e#1062#1144#0" expanded="false" />
+            <element signature="e#1157#1219#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day4/js/table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#336#572#0" expanded="false" />
+            <element signature="e#2678#2964#0" expanded="false" />
+            <element signature="e#3108#3156#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day4/3-table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="e#240#338#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

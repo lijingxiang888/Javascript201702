@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet" href="css/table.css"/>
+</head>
+<body>
+<!--div.control>span+a*3>i.up+i.down-->
+<!--A(Anchor)是超链接标签,它有自己的默认行为:跳转页面、锚点定位，如果只想把它作为一个按钮，我们需要阻止默认行为
+   <a href="javascript:;"></a>
+-->
+<div class="control clear" id="control"><!--clear:清除浮动影响的公共样式-->
+    <span>排序:</span>
+    <a href="javascript:;">上架时间<i class="up"></i><i class="down"></i></a>
+    <a href="javascript:;">价格<i class="up"></i><i class="down"></i></a>
+    <a href="javascript:;">热度<i class="up"></i><i class="down"></i></a>
+</div>
+
+<div class="product" id="product">
+    <ul class="clear">
+        <!--<li><a href="#">
+            <img src="img/1.jpg" alt=""/>
+            <span class="title">华为运动蓝牙耳机</span>
+            <span class="price">￥499</span>
+        </a></li>-->
+    </ul>
+</div>
+
+<script src="js/utils.js"></script>
+<script src="js/table.js"></script>
+</body>
+</html>
