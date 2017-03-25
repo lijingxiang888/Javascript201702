@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训-OOP(Object Oriented Programming)</title>
+</head>
+<body>
+<script>
+    function fn1() {
+        console.log(1);
+    }
+    function fn2() {
+        console.log(2);
+    }
+    fn1.call(fn2);//->让fn1执行,让fn1中的this变为fn2 =>1
+    fn1.call.call(fn2);//->(fn1.call).call(fn2) =>fn1.call = fn1.__proto__.call = Function.prototype.call ->只是到原型上找到call方法  function call(){this->fn2}
+    fn1.call.call.call.call.call(fn2);
+    Function.prototype.call(fn1);
+    Function.prototype.call.call.call(fn1);
+
+
+    /*Function.prototype.myCall = function () {
+     //this->fn1  让this函数中的this关键字变为arguments[0]
+     //让this函数执行  this();
+     };
+     fn1.myCall(fn2);
+     fn2.myCall()*/
+
+
+    Array.prototype.slice = function (n, m) {
+        //this->ary
+        var newAry = [];
+        for (var i = n; i < m; i++) {
+            newAry[newAry.length] = this[i];
+        }
+        return newAry;
+    };
+    var ary = [12, 23, 34, 45];
+    ary.slice();
+
+
+    //Array.prototype.slice.call(arguments);
+
+
+    Array.prototype.push = function (n) {
+        this[this.length] = n;
+        return this.length;
+    };
+    ary.push(100);
+    ary2.push();
+
+    [].push.call({})
+</script>
+</body>
+</html>
