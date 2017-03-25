@@ -16,24 +16,24 @@
     //
     //    }
 
-    function average() {
+    /*function average() {
         var arr = [];
         for(var i = 0; i < arguments.length; i++){ // 将类数组转化为数组
                 arr.push(arguments[i]);
         }
-       arr.sort(function (a ,b) {
+       arr.sort(function (a ,b) {//然后再用数组sort方法
            return a - b;
        });
-        arr.shift();
-        arr.length--;
-        var sum = eval(arr.join('+'));
-        var num = (sum/arr.length).toFixed(2);
+        arr.shift();//减去一个最小分
+        arr.length--;//减去一个最大分
+        var sum = eval(arr.join('+'));//先把整理好的数组用"+"隔开变为字符串，再把字符串转化为JS代码执行
+        var num = (sum/arr.length).toFixed(2);//toFixed() 方法可把 Number 四舍五入为指定小数位数的数字。
         return num;
     }
-    var argNum = average(9, 2, 8, 9, 10, 7, 6);
-    console.log(argNum);
+    var argNum = average(2,1, 1, 1, 1,1,1);
+    console.log(argNum);*/
     
-    //
+
     Array.prototype.mySlice = function () { // 模拟slice克隆
 //        在slice中克隆数组时操作 的都是this
           var newArr = [];
@@ -61,6 +61,7 @@
 
 //    Array.prototype.slice.call(arguments,0) //利用数组中的slice方法将类数组转化为数组 只需改变slice中this即可
 //     [].slice.call(arguments,0)
+
 </script>
 </body>
 </html>

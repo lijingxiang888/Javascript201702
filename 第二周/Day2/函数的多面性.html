@@ -18,59 +18,60 @@
     // 3.作为一个普通对象
 //     当做一个对象给他添加属性
 //    function Fn() {
-//        var info = 'zhufeng';
+//        var info = 'zhufeng';// Fn的私有变量
 //    }
 //    Fn();
-//    Fn.prototype.say = function () {
+//    Fn.prototype.say = function () {//把Fn作为一个类（构造函数）
 //        console.log('say');
 //    };
 //    Fn.prototype.num = 666;
-////  Function.prototype.num = 888;
 //    Object.prototype.num = 777;
 //    Fn.num = 123; // 把Fn作为一个对象 给它增加一个叫num的属性 属性值123
-//    console.log(Fn.num);
-//    console.dir(Fn);
+//    console.log(Fn.num);//123
+//    console.dir(Fn);//遍历Fn私有、公有的方法和属性
 //    var f1 = new Fn
 
 // 函数的三种角色互不影响
 //    function Fn() {
 //         var num; // Fn执行的时候形成的私有变量
-//         this.num = 200;
-//         num = 300;
+//         this.num = 200;//构造函数时，它是实例的num；普通函数时，它是全局变量num
+//         num = 300;//Fn的私有变量，因为前面已经声明了
 //         this.say = function () {
-//             this.num = 15;
-//             console.log(this.num);
+//             this.num = 15;//看执行方法say的主体是谁
+//             console.log(this.num);//把执行方法say后的num结果输出
 //             console.log(Fn.num); // 把Fn当做一个对象 找一个叫做num的属性
 //         }
 //    }
 //    var f1 = new Fn;
-//    Fn.prototype.num = 100; // 作为一个类在原型上给实例添加 公有属性num
-//    num = 400;   Fn.num = 111; // 作为一个对象 给Fn自身添加属性
-//    Fn();   f1.say(); // 15 111
-//    console.log(num); // 200
-//    console.log(f1.num); // 15
+//    Fn.prototype.num = 100; // 作为一个类在原型上给实例添加 公有属性num=100
+//    num = 400; //相当于给window增加了一个num的属性名，属性值是400，但它不是全局变量
+//    Fn.num = 111; // 作为一个对象 给Fn自身添加属性
+//    Fn();
+//    f1.say(); // 15 111
+//    console.log(num); // 输出全局变量200，因为找到的是Fn作为普通函数时，里面的num是全局变量
+//    console.log(f1.num); // 15 执行f1.say()时，里面的num已经被修改为15了
 
     var num = 0;
     function Fn(num) {
-        arguments[0] = 100;
-        this.num = 200;
+        arguments[0] = 100;//映射关系，传进来的num=0，后改为形参num=100
+        this.num = 200;//构造函数时，this指代实例；普通函数时，this是window
         console.log(num);
         console.log(this.num);
-        return num;
+        return num;//构造函数时，人为返回的是一个数值的话，不起作用；普通函数时，返回什么，外面就接收什么
     }
-    Fn.num = 400;
-    Fn.prototype.num = 300;
-    Fn.prototype.getNum = function () {
-        console.log(this.num);
+    Fn.num = 400;//把Fn当做对象，添加属性
+    Fn.prototype.num = 300;//给构造函数Fn的原型添加属性
+    Fn.prototype.getNum = function () {//给构造函数Fn的原型添加方法
+        console.log(this.num);//这的this看getNum点前面是谁就是谁
     };
-    var f = new Fn(num);
+    var f = new Fn(num);//把Fn当做构造函数执行
     console.log(f.num);
-    f.getNum();
-    Fn.prototype.getNum();
-    console.log(num);
-    var n = Fn(num);
-    console.log(n);
-    console.log(num);
+    f.getNum();//执行getNum，里面的this指代实例f
+    Fn.prototype.getNum();//执行getNum，里面的this指代Fn的原型
+    console.log(num);//到这步还没让Fn当做普通函数执行呢，所以输出全局的num=0
+    var n = Fn(num);//当做普通函数执行，返回后的结果100，被n接收了
+    console.log(n);//输出n=100
+    console.log(num);//Fn当做普通函数执行时，改变了全局变量num，这时num=200
 
 </script>
 </body>
