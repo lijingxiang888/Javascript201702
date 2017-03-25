@@ -56,3 +56,55 @@ html, body {
 .control a i.down.bg {
     border-top-color: #E01d20;
 }
+
+.control a:hover {
+    color: #E01D20;
+}
+
+.product {
+    margin: 0 auto;
+    width: 1200px;
+    overflow: hidden;
+}
+
+.product ul {
+    margin-left: -10px;
+    margin-top: -10px;
+    width: 1210px;
+}
+
+.product li {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.product li a {
+    display: block;
+    padding: 0 16px;
+    width: 193px;
+    border: 3px solid transparent;
+    background: #FFF;
+}
+
+.product li a img {
+    display: block;
+    width: 100%;
+}
+
+.product li a span {
+    display: block;
+    line-height: 40px;
+}
+
+.product li a .title {
+    color: #999;
+}
+
+.product li a .price {
+    color: #000;
+}
+
+.product li a:hover {
+    border-color: #E01D20;
+}

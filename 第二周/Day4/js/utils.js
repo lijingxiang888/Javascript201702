@@ -28,8 +28,20 @@ var utils = (function () {
         return ary;
     }
 
+    /*
+     * toJSON:把JSON格式的字符串转化为JSON格式的对象(解决了IE6~7下不兼容JSON的问题)
+     * @parameter：
+     *   str[string]：需要转换的JSON字符串
+     * @return：
+     *   obj[object]：转换完成的JSON对象
+     * By Team on 2017/03/25/ 17:04
+     */
+    function toJSON(str) {
+        return 'JSON' in window ? JSON.parse(str) : eval('(' + str + ')');
+    }
+
     return {
-        convertAry: convertAry
+        convertAry: convertAry,
+        toJSON: toJSON
     }
 })();
-utils.convertAry();
