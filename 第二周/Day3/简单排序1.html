@@ -42,12 +42,9 @@
         // return 的 如果大于0 就a和b交换位置
         // return 的 如果 <= 0  a和b不交换
          // 根据运算结果来决定是否交换位置
-//        return 1;
 //        a.innerHTML.localeCompare(b); // 给中文排序 根据拼音字母排序
         return (a.innerHTML.localeCompare(b.innerHTML)) * -1;
     });
-    console.log(lisArr);
-    setTimeout(function () {
         var frg = document.createDocumentFragment();
         // 按照在sort中排好序的位置 依次移动页面中元素
         for(var i = 0; i < lisArr.length; i++){
@@ -58,7 +55,6 @@
         }
         uls.appendChild(frg); // 然后在把文档碎片中元素 一次性添加到 页面ul中 只引发一次回流
         frg = null;
-    }, 1000);
 
 </script>
 </body>
