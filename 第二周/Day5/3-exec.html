@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训-正则捕获</title>
+</head>
+<body>
+<script>
+    //    var str = 'zhufeng2017peixun2018';
+    //    var reg = /\d+/;
+    //console.log(reg.exec(str)); //->["2017", index: 7, input: "zhufeng2017peixun2018"] 通过EXEC执行,获取的结果是一个数组(Array的实例),第一项是正则捕获的内容,index捕获开始的索引,input是原始的字符串
+
+    //->执行一次EXEC只能捕获一次,需要捕获多个的话,也需要执行多次
+    //    //console.log(reg.lastIndex);//->0
+    //    console.log(reg.exec(str));//->['2017'...]
+    //    //console.log(reg.lastIndex);//->0
+    //    //reg.lastIndex = 11;
+    //    //console.log(reg.lastIndex);
+    //    console.log(reg.exec(str));//->['2017'...]  不管我们执行多少次，总之捕获的永远是第一个 => "正则的懒惰性"
+    //->reg.lastIndex：下一次正则捕获的起始索引位置(也就是下一次捕获的时候是从哪开始找的)，第一次捕获的时候值为0，在正则不做任何处理的情况下，我们下一次捕获之前这个值依然为0，所以会重复捕获第一个内容
+    //->而且即使我们手动把值改了,也没有半毛钱的作用,解决懒惰性只能有一种办法：加全局修饰符g(global)
+
+    //->加上G就解决了
+    //    var str = 'zhufeng2017peixun2018';
+    //    var reg = /\d+/g;
+    //    console.log(reg.exec(str));//->['2017'...]
+    //    console.log(reg.lastIndex);//->11
+    //    console.log(reg.exec(str));//->['2018'...]
+    //    console.log(reg.lastIndex);//->21
+    //    console.log(reg.exec(str));//->null
+
+    //->我具体要捕获多少次我们可能不太清楚,循环捕获了
+    //var str = 'zhufeng2017peixun2018yangfan2019qihang2020zhidao9999';
+    //var reg = /\d+/g;
+    //    var ary = [];
+    //    var result = reg.exec(str);//->['2017',index:xxx...]
+    //    while (result) {
+    //        ary.push(result[0]);//->'2017' ary=['2017','2018']
+    //        result = reg.exec(str);//->['2018',index:xxx...]
+    //    }
+    //    console.log(ary);//->["2017", "2018", "2019", "2020", "9999"]
+    //console.log(str.match(reg));//->["2017", "2018", "2019", "2020", "9999"]
+
+    //    var str = 'zhufeng2017peixun2018yangfan2019qihang2020zhidao9999';
+    //    var reg = /\d+/g;
+    //    //console.log(str.match(reg));//->["2017",...]  使用MATCH也要加g,不加只捕获第一个
+    //    RegExp.prototype.myExecAll = function myExecAll() {
+    //        var str = arguments[0] || '';//->如果第一个参数值没有传递的话,我们让其默认值为空字符串
+    ////        if (typeof arguments[0] === 'undefined') {
+    ////            str = '';
+    ////        }
+    //        //1、正则只有加G才能捕获全部,没有加的话我们只让其捕获第一个即可
+    //        if (!this.global) return this.exec(str);
+    //        var ary = [],
+    //                result = this.exec(str);
+    //        while (result) {
+    //            ary.push(result[0]);
+    //            result = this.exec(str);
+    //        }
+    //        return ary.length === 0 ? null : ary;
+    //    };
+    //    console.log(reg.myExecAll('asdfg'));
+
+
+    //    var str = 'zhufeng2017peixun2018yangfan2019qihang2020zhidao9999';
+    //    var reg = /(\d)+/g;
+    //    console.log(reg.exec(str));
+    //    console.log(reg.exec(str));
+    //    console.log(reg.exec(str));//->EXEC每一次捕获的时候不仅仅可以把大正则匹配的结果捕获到,也可以获取小分组捕获的结果 ['2017','7'...] ...
+    //    console.log(str.match(reg));//->["2017", "2018", "2019", "2020", "9999"] 而使用MATCH捕获"多次"的话,只能捕获到大正则的,小分组的是不能捕获的，但是如果使用MATCH只需要捕获“一次”的话，也可以把小分组的内容捕获到
+
+
+    var str = 'zhufeng2017peixun2018yangfan2019qihang2020zhidao9999';
+    var reg = /(\d)+/g;
+    //->我们借用字符串的replace方法(实现字符串的替换)，如果第一项传递的是正则的话，浏览器默认的也会和我们的字符串进行捕获，而且每捕获一次就会触发后面的回调函数执行一次(大部分支持正则的字符串方法，基本上都有这个特点，例如：split...)
+    str = str.replace(reg, function () {
+        //->函数被执行了5次：因为REG和STR相匹配的有五项,我们的正则会捕获五次
+        //->每一次执行函数给函数传递了一些参数值：arguments，arg存储的值和每一次通过EXEC捕获的结果一模一样(既有大正则捕获的结果，也有小分组捕获的结果)
+        //console.log(arguments[0], arguments[1]);//->分别输出本次大正则和第一个小分组捕获的结果
+
+        return '@';//->在当前的函数中你返回的是啥，就相当于把本次正则匹配的结果替换成啥，如果不写return，默认替换成undefined
+    });
+    console.log(str);
+</script>
+</body>
+</html>

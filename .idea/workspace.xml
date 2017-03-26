@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b652ab-fbe1-4d36-98c6-aca1104f7654" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第二周/Day4/js/table.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第二周/Day4/js/table备份.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第二周/Day4/json/product.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第二周/Day5/1-字符串常用方法.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第二周/Day5/2-reg.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第二周/Day5/3-exec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第二周/Day5/4-replace实战.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/第二周/Day5/5-正则的贪婪性.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/第二周/Day4/3-table.html" afterPath="$PROJECT_DIR$/第二周/Day4/3-table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/第二周/Day4/css/table.css" afterPath="$PROJECT_DIR$/第二周/Day4/css/table.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/第二周/Day4/js/utils.js" afterPath="$PROJECT_DIR$/第二周/Day4/js/utils.js" />
     </list>
     <ignored path="201702.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,98 +30,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="3-table.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/第二周/Day4/3-table.html">
+      <file leaf-file-name="2-reg.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第二周/Day5/2-reg.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            <state relative-caret-position="-31">
+              <caret line="94" column="31" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
               <folding>
-                <element signature="e#240#338#0" expanded="false" />
+                <element signature="e#1640#2158#0" expanded="false" />
+                <element signature="e#3086#3254#0" expanded="false" />
+                <element signature="e#3259#3362#0" expanded="false" />
+                <element signature="e#3415#3563#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二周/Day4/js/table.js">
+      <file leaf-file-name="3-exec.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第二周/Day5/3-exec.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#336#572#0" expanded="false" />
-                <element signature="e#2678#2964#0" expanded="false" />
-                <element signature="e#3108#3156#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="560">
+              <caret line="80" column="81" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二周/Day4/js/utils.js">
+      <file leaf-file-name="4-replace实战.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第二周/Day5/4-replace实战.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-              <folding>
-                <element signature="e#107#316#0" expanded="false" />
-                <element signature="e#350#823#0" expanded="false" />
-                <element signature="e#493#559#0" expanded="false" />
-                <element signature="e#570#743#0" expanded="false" />
-                <element signature="e#672#733#0" expanded="false" />
-                <element signature="e#752#797#0" expanded="false" />
-                <element signature="e#829#1036#0" expanded="false" />
-                <element signature="e#1062#1144#0" expanded="false" />
-                <element signature="e#1157#1219#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="1848">
+              <caret line="58" column="133" selection-start-line="58" selection-start-column="133" selection-end-line="58" selection-end-column="133" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二周/Day4/css/table.css">
+      <file leaf-file-name="5-正则的贪婪性.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/第二周/Day5/5-正则的贪婪性.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-              <folding>
-                <element signature="e#11#56#0" expanded="false" />
-                <element signature="e#67#134#0" expanded="false" />
-                <element signature="e#217#301#0" expanded="false" />
-                <element signature="e#314#419#0" expanded="false" />
-                <element signature="e#434#593#0" expanded="false" />
-                <element signature="e#611#667#0" expanded="false" />
-                <element signature="e#688#725#0" expanded="false" />
-                <element signature="e#745#797#0" expanded="false" />
-                <element signature="e#820#854#0" expanded="false" />
-                <element signature="e#873#896#0" expanded="false" />
-                <element signature="e#907#971#0" expanded="false" />
-                <element signature="e#985#1054#0" expanded="false" />
-                <element signature="e#1068#1133#0" expanded="false" />
-                <element signature="e#1149#1268#0" expanded="false" />
-                <element signature="e#1288#1328#0" expanded="false" />
-                <element signature="e#1349#1395#0" expanded="false" />
-                <element signature="e#1418#1438#0" expanded="false" />
-                <element signature="e#1461#1481#0" expanded="false" />
-                <element signature="e#1503#1533#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二周/Day4/json/product.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-              <folding>
-                <element signature="e#134#258#0" expanded="false" />
-                <element signature="e#262#389#0" expanded="false" />
-                <element signature="e#393#523#0" expanded="false" />
-                <element signature="e#527#659#0" expanded="false" />
-                <element signature="e#663#788#0" expanded="false" />
-                <element signature="e#792#919#0" expanded="false" />
-                <element signature="e#923#1050#0" expanded="false" />
-                <element signature="e#1054#1185#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="352">
+              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,9 +80,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -171,6 +119,11 @@
         <option value="$PROJECT_DIR$/第二周/Day4/3-table.html" />
         <option value="$PROJECT_DIR$/第二周/Day4/js/table备份.js" />
         <option value="$PROJECT_DIR$/第二周/Day4/js/table.js" />
+        <option value="$PROJECT_DIR$/第二周/Day5/1-字符串常用方法.html" />
+        <option value="$PROJECT_DIR$/第二周/Day5/2-reg.html" />
+        <option value="$PROJECT_DIR$/第二周/Day5/3-exec.html" />
+        <option value="$PROJECT_DIR$/第二周/Day5/4-replace实战.html" />
+        <option value="$PROJECT_DIR$/第二周/Day5/5-正则的贪婪性.html" />
       </list>
     </option>
   </component>
@@ -300,15 +253,15 @@
       <option name="presentableId" value="Default" />
       <updated>1489801405931</updated>
       <workItem from="1489801411469" duration="40952000" />
-      <workItem from="1490406348099" duration="25364000" />
+      <workItem from="1490406348099" duration="50093000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66316000" />
+    <option name="totallyTimeSpent" value="91045000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12946428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -575,6 +528,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day4/js/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <element signature="e#107#316#0" expanded="false" />
+            <element signature="e#350#823#0" expanded="false" />
+            <element signature="e#493#559#0" expanded="false" />
+            <element signature="e#570#743#0" expanded="false" />
+            <element signature="e#672#733#0" expanded="false" />
+            <element signature="e#752#797#0" expanded="false" />
+            <element signature="e#829#1036#0" expanded="false" />
+            <element signature="e#1062#1144#0" expanded="false" />
+            <element signature="e#1157#1219#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/第二周/Day4/css/table.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -603,24 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第二周/Day4/js/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding>
-            <element signature="e#107#316#0" expanded="false" />
-            <element signature="e#350#823#0" expanded="false" />
-            <element signature="e#493#559#0" expanded="false" />
-            <element signature="e#570#743#0" expanded="false" />
-            <element signature="e#672#733#0" expanded="false" />
-            <element signature="e#752#797#0" expanded="false" />
-            <element signature="e#829#1036#0" expanded="false" />
-            <element signature="e#1062#1144#0" expanded="false" />
-            <element signature="e#1157#1219#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/第二周/Day4/js/table.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -641,6 +594,51 @@
           <folding>
             <element signature="e#240#338#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day5/1-字符串常用方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day5/2-reg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31">
+          <caret line="94" column="31" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
+          <folding>
+            <element signature="e#1640#2158#0" expanded="false" />
+            <element signature="e#3086#3254#0" expanded="false" />
+            <element signature="e#3259#3362#0" expanded="false" />
+            <element signature="e#3415#3563#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day5/3-exec.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="80" column="81" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day5/4-replace实战.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1848">
+          <caret line="58" column="133" selection-start-line="58" selection-start-column="133" selection-end-line="58" selection-end-column="133" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二周/Day5/5-正则的贪婪性.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
