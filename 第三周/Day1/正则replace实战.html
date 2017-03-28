@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+        #info {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-<div>{{name}}</div>
+<!--<div>{{name}}</div>-->
+用户名：<input type="text" id="inp">
+<p id="info">请填写用户名</p>
+<h3 id="text"></h3>
 <script type="text/javascript">
     // 检测字母出现次数
     //var str = 'my name is zhou xiao tian!';
@@ -98,32 +106,100 @@
     //    });
     //    console.log(strer);
 
-    function addZero(val) {
-//        return ('0'+val).slice(-2);
-        return val < 10 ? ('0' + val) : val;
-    }
-// 方式五
-//        var time = '2017-3-26 18:38:4';
-//        var arr = ['年','月','日 ','时','分','秒'];
-//        var reg = /(\d+)[-:]?/g;
-//        var ind = 0;
-//        var timer = time.replace(reg, function () {
-////            console.log(arguments);
-//            return addZero(arguments[1]) + arr[ind++];
-//        });
-//    console.log(timer);
+    //    function addZero(val) {
+    ////        return ('0'+val).slice(-2);
+    //        return val < 10 ? ('0' + val) : val;
+    //    }
+
+
+    // 方式五
+    //        var time = '2017-3-26 18:38:4';
+    //        var arr = ['年','月','日 ','时','分','秒'];
+    //        var reg = /(\d+)[-:]?/g;
+    //        var ind = 0;
+    //        var timer = time.replace(reg, function () {
+    ////            console.log(arguments);
+    //            return addZero(arguments[1]) + arr[ind++];
+    //        });
+    //    console.log(timer);
     // 方式六
-//    var time = '2017-3-26 18:38:4';
-//            var arr = ['年','月','日 ','时','分','秒'];
-//            var reg = /(\D+)|$/g;
-//            var ind = 0;
-//            var timer = time.replace(reg, function () {
-//                return arr[ind++];
-//            });
-//        console.log(timer);
+    //    var time = '2017-3-26 18:38:4';
+    //            var arr = ['年','月','日 ','时','分','秒'];
+    //            var reg = /(\D+)|$/g;
+    //            var ind = 0;
+    //            var timer = time.replace(reg, function () {
+    //                return arr[ind++];
+    //            });
+    //        console.log(timer);
 
+    //================================
+    //    var str2 = '   my name is zxt     ';//->实现一个myTrim方法去除字符串首尾空格
 
+    //    var reg = /^\s+|\s+$/g; // 匹配以空格作为开头或者是匹配以空格作为结尾
+    //    var reg = /^ +| +$/g; // 匹配以空格作为开头或者是匹配以空格作为结尾
+    //    console.log(reg.exec(str2));
+    //    console.log(reg.exec(str2));
 
+    //   str2 =str2.replace(reg, function () {
+    //          return '';
+    //    });
+    //    str2 = str2.replace(reg, '');
+    //    console.log(str2);
+    //
+    //    String.prototype.myTrim = function () {
+    //        var reg = /^\s+|\s+$/g;
+    //        return this.replace(reg, '');
+    //    };
+    //    var str3 = str2.myTrim();
+    //    console.log(str3);
+
+    //    //================================
+    //    var str3 = '2，123，456，789';//->'12,345,678'
+    // 千分符：从后向前数，数三位加一个逗号
+    // 2后面 三个为一组 3组
+    // 3后面 三个为一组 2组
+    // 6后面 三个为一组 1组
+    //    第一次捕获到的是2
+    //    第二次捕获到的是3
+    //    第三次捕获到的是6
+    //    var str3 = '2123456789';
+    //    var str3 = '2123456789.12'; // 2,123,456,789.12
+    //    第一种方式
+    //    var reg = /\d(?=(?:\d{3})+(?:\.\d+|$))/g; // 匹配\d 匹配条件这个数字后面必须是三个数字为一组 的为结尾
+    //    str3 = str3.replace(reg, function () {
+    //        console.log(arguments[0]);
+    //        return arguments[0] + ',';
+    //    });
+    //    console.log(str3);
+
+    //    var str3 = '2123456789';
+    //    var str3 = '987,654,321,2';
+    //    var str3 = '2123456789.12'; // 2,123,456,789.12
+    //    var reg = /(\d{3})(?!$)/g;
+    //    var arrStr = str3.split("").reverse().join(""); // 9876543212
+    //    arrStr = arrStr.replace(reg, function (a) {
+    ////        console.log(arguments[0]);
+    //        console.log(a);
+    //        return a +','
+    //    });
+    //    console.log(arrStr.split("").reverse().join("")); // 2,123,456,789
+
+    //    非空验证
+    var inp = document.getElementById('inp');
+    var info = document.getElementById('info');
+    var text = document.getElementById('text');
+
+    inp.onblur = validVal; // 失去焦点的时候检测输入内容是否为空
+    inp.oninput = validVal; // 实时输入的时候检测输入内容是否为空
+    function validVal() {
+        text.innerHTML = this.value;
+        var reg = /^\s*$/;
+        if (reg.test(this.value)) {
+            info.style.display = 'block';
+        } else {
+            info.style.display = 'none';
+        }
+    }
 </script>
 </body>
 </html>

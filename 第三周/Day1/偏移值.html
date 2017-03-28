@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 2px solid #a0ffd0;
+            margin-left: 200px;
+            padding: 20px;
+        }
+
+        #inner {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            border: 2px solid #92afff;
+
+        }
+        #oDivs{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #00ee00;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <div id="oDivs"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    // 偏移值
+    // offsetLeft 元素左边框外边 距离父级参照物（默认body） 左偏移量
+    // offsetTop 元素上边框外边 距离父级参照物 （默认body）上偏移量
+
+    // offsetParent  元素父级参照物  parentNode(父级节点)
+    var inner = document.getElementById('inner');
+//    console.log(inner.offsetLeft);
+//    console.log(inner.offsetParent);
+//    console.log(inner.offsetParent === inner.parentNode); // 在ie7下 父级参照物是当前元素上级父节点；
+    //  offsetParent  元素父级参照物 可以修改 想让谁是父级参照物 就给谁加上position：（relative/absolute/fixed）
+//    如果我给outer加上定位那么此时 inner父级参照物就是outer 那么inner的offsetLeft/offsetTop  就是距离outer的偏移值
+    var oDivs = document.getElementById('oDivs');
+    var outer = document.getElementById('outer');
+    console.log(oDivs.offsetParent);
+    console.log(oDivs.offsetLeft);
+//    console.log(outer.offsetParent);
+
+    //我们比较常用的是获取 当前元素距离body的上偏移和下偏移
+
+    // 假如我想得到oDivs距离body左偏移
+//    1.先获取到oDivs距离 oDivs的父级参照物左偏移距离
+//    2.获取outer(oDivs的父级参照物)的左边框宽度+outer距离 outer的父级参照物左偏移距离
+//    3.一直找到父级参照物为body为止
+    console.log(offset(oDivs).left);
+    console.log(offset(oDivs).top);
+    function offset(ele) {
+        var l = ele.offsetLeft;
+        var t = ele.offsetTop;
+        var par = ele.offsetParent; // 我先的到当前元素的父级参照物
+        while (par && par.nodeName != 'BODY'){ // 判断父级参照物是否为body如果不是继续向上查找（par的父级参照物）一直找到父级参照物为body为止
+            l += par.clientLeft + par.offsetLeft; // 累加父级参照物的左边边框宽度+父级参照物的 左偏移值
+            t += par.clientTop + par.offsetTop;// 累加父级参照物的上边边框宽度+父级参照物的 上偏移值
+            par = par.offsetParent;
+        }
+        return {
+            left: l,
+            top: t
+        }
+    }
+
+
+</script>
+</body>
+</html>
