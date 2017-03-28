@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #a0ffd0;
+            margin-left: 200px;
+            padding: 20px;
+            /*border-left: 2px solid #a0ffd0;;*/
+            /*border-top: 2px solid #a0ffd0;;*/
+            height: 1000px;
+        }
+
+        #inner {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            border: 2px solid #92afff;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner"></div>
+</div>
+<script type="text/javascript">
+    // 盒子模型：JS中提供获取元素的样式属性值
+    var outer = document.getElementById('outer');
+    var inner = document.getElementById('inner');
+    // 1.clientWidth  内容宽度 + 左右padding
+    // 2.clientHeight 内容高度 + 上下padding
+    //    console.log(outer.clientWidth);
+    //    console.log(outer.clientHeight);
+
+    // 3.clientLeft 获取元素 左边框宽度
+    // 4.clientTop 获取元素 上边框宽度
+
+    //    console.log(outer.clientLeft);
+    //    console.log(outer.clientTop);
+
+    // 5.offsetWidth clientWidth + 左右边框宽度
+    // 6.offsetHeight clientHeight + 上下边框宽度
+//    console.log(outer.offsetWidth);
+//    console.log(outer.offsetHeight);
+
+    //7. scrollWidth
+    //8. scrollHeight
+//    在没有溢出的情况下
+    //scrollWidth: clientWidth
+    //scrollHeight: clientHeight
+//    溢出的情况下
+//    scrollWidth: clientWidth（一屏可视窗口宽度） + 左右溢出内容部分
+//    scrollHeight: clientHeight （一屏可视窗口高度）+ 上下溢出内容部分
+
+
+    // scrollLeft (可设置值)左右滚动条 可滚动区域(文档左右溢出部分)
+    // scrollTop (可设置值) 上下滚动条 可滚动区域(文档上下溢出部分)
+
+     var winW = document.body.clientWidth + document.body.scrollLeft;
+     console.log(document.body.scrollWidth === winW);
+     console.log(document.body.scrollHeight);
+//    document.documentElement.clientWidth || document.body.clientWidth
+
+    // 获取文档的一些盒模型样式属性值 获取或设置
+    function win(attr,val) {
+          if(typeof val === 'undefined'){ // 如果第二个参数没传就是获取值
+              return document.documentElement[attr] || document.body[attr];
+          }
+          // 否则就是 设置值
+        document.documentElement[attr] = val;
+        document.body[attr] = val;
+    }
+    setTimeout(function () {
+        console.log(win('scrollTop'));
+    },1000);
+
+
+
+</script>
+</body>
+</html>
