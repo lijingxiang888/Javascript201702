@@ -1,6 +1,6 @@
 ## git安装 
 
-[git官网](https://git-scm.com/downloads)
+[git下载官网](https://git-scm.com/downloads)
 ### windows系统 直接下载相应版本
 
 ### MAC os 
@@ -58,7 +58,7 @@ git config -- global user.name "名字"
 ```
 ## commit 从暂存区提交到历史区
 ```
- git commit -m "修改描述"
+ git commit -m "填写更新描述"
 
 ```
 
@@ -75,7 +75,7 @@ git config -- global user.name "名字"
   git clone 仓库地址
 ```
 
-## 把别人仓库更新到本地
+## 以后每次把别人仓库更新到本地
 ```
  git pull origin master
 ```
@@ -103,12 +103,12 @@ git remote update teacher
 
 ```
 
-2.然后再拉取(注意是拉取老师仓库的修改到本地)
+2.然后再拉取(注意是拉取老师仓库的同步到自己本地仓库)
 ```
 git pull teacher master
 ```
 
-## 在将本地和老师同步的修改 在推送到自己github远程仓库
+## 在将自己本地仓库和老师同步后 再推送到自己的github远程仓库
 ```
 git add .
 ```
