@@ -21,45 +21,47 @@
     //->而且即使我们手动把值改了,也没有半毛钱的作用,解决懒惰性只能有一种办法：加全局修饰符g(global)
 
     //->加上G就解决了
-    //    var str = 'zhufeng2017peixun2018';
-    //    var reg = /\d+/g;
-    //    console.log(reg.exec(str));//->['2017'...]
-    //    console.log(reg.lastIndex);//->11
-    //    console.log(reg.exec(str));//->['2018'...]
-    //    console.log(reg.lastIndex);//->21
-    //    console.log(reg.exec(str));//->null
+//        var str = 'zhufeng2017peixun2018';
+//        var reg = /\d+/g;
+//        console.log(reg.exec(str));//->['2017'...]
+//        console.log(reg.lastIndex);//->11
+//        console.log(reg.exec(str));//->['2018'...]
+//        console.log(reg.lastIndex);//->21
+//        console.log(reg.exec(str));//->null
 
     //->我具体要捕获多少次我们可能不太清楚,循环捕获了
-    //var str = 'zhufeng2017peixun2018yangfan2019qihang2020zhidao9999';
-    //var reg = /\d+/g;
-    //    var ary = [];
-    //    var result = reg.exec(str);//->['2017',index:xxx...]
-    //    while (result) {
-    //        ary.push(result[0]);//->'2017' ary=['2017','2018']
-    //        result = reg.exec(str);//->['2018',index:xxx...]
-    //    }
-    //    console.log(ary);//->["2017", "2018", "2019", "2020", "9999"]
+//    var str = 'zhufeng2017peixun2018yangfan2019qihang2020zhidao9999';
+//    var reg = /\d+/g;
+//        var ary = [];
+//        var result = reg.exec(str);//->返回一个数组：['2017',index:xxx...]
+//        while (result) {
+//            ary.push(result[0]);//->得到数组中的第一项'2017'，并添加进ary，ary=['2017','2018']
+//            result = reg.exec(str);//->['2018',index:xxx...]
+//        }
+//        console.log(ary);//->["2017", "2018", "2019", "2020", "9999"]
     //console.log(str.match(reg));//->["2017", "2018", "2019", "2020", "9999"]
 
-    //    var str = 'zhufeng2017peixun2018yangfan2019qihang2020zhidao9999';
-    //    var reg = /\d+/g;
-    //    //console.log(str.match(reg));//->["2017",...]  使用MATCH也要加g,不加只捕获第一个
-    //    RegExp.prototype.myExecAll = function myExecAll() {
-    //        var str = arguments[0] || '';//->如果第一个参数值没有传递的话,我们让其默认值为空字符串
-    ////        if (typeof arguments[0] === 'undefined') {
-    ////            str = '';
-    ////        }
-    //        //1、正则只有加G才能捕获全部,没有加的话我们只让其捕获第一个即可
-    //        if (!this.global) return this.exec(str);
-    //        var ary = [],
-    //                result = this.exec(str);
-    //        while (result) {
-    //            ary.push(result[0]);
-    //            result = this.exec(str);
-    //        }
-    //        return ary.length === 0 ? null : ary;
-    //    };
-    //    console.log(reg.myExecAll('asdfg'));
+//        var str = 'zhufeng2017peixun2018yangfan2019qihang2020zhidao9999';
+//        var reg = /\d+/g;
+//        console.log(str.match(reg));//->["2017",...]  使用MATCH也要加g,不加只捕获第一个
+
+//
+//        RegExp.prototype.myExecAll = function myExecAll() {
+//            var str = arguments[0] || '';//->如果第一个参数值没有传递的话,我们让其默认值为空字符串
+//    //        if (typeof arguments[0] === 'undefined') {
+//    //            str = '';
+//    //        }
+//            //1、正则只有加G才能捕获全部,没有加的话我们只让其捕获第一个即可
+//            if (!this.global) return this.exec(str);//if循环只有一个执行代码时，可以去掉{}，判断条件里的this指代reg
+//            var ary = [],
+//            result = this.exec(str);
+//            while (result) {
+//                ary.push(result[0]);
+//                result = this.exec(str);
+//            }
+//            return ary.length === 0 ? null : ary;
+//        };
+//        console.log(reg.myExecAll('asdfg'));
 
 
     //    var str = 'zhufeng2017peixun2018yangfan2019qihang2020zhidao9999';
@@ -76,7 +78,7 @@
     str = str.replace(reg, function () {
         //->函数被执行了5次：因为REG和STR相匹配的有五项,我们的正则会捕获五次
         //->每一次执行函数给函数传递了一些参数值：arguments，arg存储的值和每一次通过EXEC捕获的结果一模一样(既有大正则捕获的结果，也有小分组捕获的结果)
-        //console.log(arguments[0], arguments[1]);//->分别输出本次大正则和第一个小分组捕获的结果
+        console.log(arguments[0], arguments[1]);//->分别输出本次大正则和第一个小分组捕获的结果
 
         return '@';//->在当前的函数中你返回的是啥，就相当于把本次正则匹配的结果替换成啥，如果不写return，默认替换成undefined
     });
