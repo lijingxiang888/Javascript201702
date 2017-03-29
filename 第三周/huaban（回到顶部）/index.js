@@ -65,32 +65,56 @@
         if(winHeight + sTop >= wScrollHeight-1000){
             bindData();
         }
+        backTop();
     };
+    var back = document.getElementById('back');
+    back.onclick = function () {
+        var timer = setInterval(function () {
+               var cTop = utils.win('scrollTop');
+               if(cTop <= 0){
+                   utils.win('scrollTop', 0);
+                   clearInterval(timer);
+                   return;
+               }
+               cTop -= 150;
+            utils.win('scrollTop', cTop);
+        },10);
+    };
+    // 回到顶部
+    function backTop() {
+        var sTop = utils.win('scrollTop');
+        if(sTop >= winHeight*0.5) {
+            utils.setCss(back, 'display', 'block');
+            // back.style.display = 'block'
+        } else {
+            utils.setCss(back, 'display', 'none');
+            // back.style.display = 'none'
+        }
+    }
+
     // 延迟加载图片
     function delayImgs() {
-        winH = utils.win('clientHeight');
        for(var i = 0; i < oImgs.length; i++){
+           if(oImgs[i].flag) continue; // 防止重复加载
            checkImg(oImgs[i]); // 遍历每一个图片 检测是够符合加载标准
        }
     }
     // 检测图片
-    var winH;
     function checkImg(img) {
-        if(img.flag) return; // 防止重复加载
         var sTop = utils.win('scrollTop');
         var imgHeight = img.offsetHeight; // 自身高度
         var imgTop = utils.offset(img).top; // img上偏移
-        if(winH+sTop >= imgHeight + imgTop){
+        if(winHeight+sTop >= imgHeight + imgTop){
               var imgSrc = img.getAttribute('data-real');
               // 检测资源有效性
               var Img = document.createElement('img');
               Img.src = imgSrc;
               Img.onload = function () {
-                  console.log(132);
                   img.src = imgSrc;
                   Img = null;
                   fadeImg(img); // 每一次加载的时候 将图片传递进来 渐变
-                  img.flag = true; // 已经加载过的标记为true
+                  img.flag = true;
+                  console.log(132);
               }
         }
     }

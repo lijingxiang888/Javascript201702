@@ -32,9 +32,11 @@
     var winH = utils.win('clientHeight'); //获取浏览器窗口一屏高度
     var oDiv = document.getElementById('oDiv');
     var Img = oDiv.getElementsByTagName('img')[0];
+    console.log(utils.offset(Img).top);
     var oDivTop = utils.offset(oDiv).top;
     var oDivHei = oDiv.offsetHeight;
     window.onscroll = function () {
+
         var sTop = utils.win('scrollTop'); // 滚动条实时滚动出去的距离
         if (Img.flag) return; // 防止重复加载
         if (winH + sTop >= oDivTop + oDivHei) { // 图片完全出现在窗口视野中时在执行加载代码
