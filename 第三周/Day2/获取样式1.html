@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #oDiv {
+            display: inline-block;
+            height: 200px;
+            margin: 20px auto;
+            background-color: red;
+            opacity: .3;
+            filter: alpha(opacity=80);
+        }
+    </style>
+</head>
+<body>
+<div id="oDiv" style="width: 200px;"></div>
+<script type="text/javascript">
+    // 元素.style只能获取 行内样式
+    var oDiv = document.getElementById('oDiv');
+    //            console.log(oDiv.style.width);
+    //            console.log(oDiv.style.height);
+
+    // window.getComputedStyle 通过它获取所有经过浏览器计算过的元素样式属性和属性值（元素在浏览器加载的时候渲染出来 展现在页面中的样式）
+    //  window.getComputedStyle(元素，伪类->null)得到一个对象数据类型值 (CSSStyleDeclaration 内置类的一个实例 css属性集合)
+    //           var cssObj = window.getComputedStyle(oDiv, null);
+    //           console.log(cssObj.height);
+    //           console.log(window.getComputedStyle(oDiv, null).width);
+
+    // window.getComputedStyle  ie8以下不兼容 -> currentStyle
+    // 元素.currentStyle[attr];
+//    console.log(oDiv.currentStyle.height);
+
+     // 解决getComputedStyle 和 currentStyle（ie） 兼容性
+    // ie中处理透明度样式 filter: alpha(opacity=80); 将里面的数字提取出来
+    // 把数字加单位的 单位去掉 直接返回数字
+
+    /**
+     * getCss 获取元素样式
+     * @param ele (指定元素)
+     * @param attr (样式属性)
+     */
+    function getCss(ele, attr) {
+//        window.getComputedStyle
+        var val;
+        if("getComputedStyle" in window){ // 如果window上有这个属性我们就用
+           val = window.getComputedStyle(ele, null)[attr];
+        } else { //ie Low currentStyle
+            //  oDiv.currentStyle.filter  "alpha(opacity=80)"
+            if(attr === 'opacity'){ // ie8 low
+               val =  ele.currentStyle.filter; // "alpha(opacity=80)"
+               var reg = /^alpha\(opacity=(\d+(?:\.\d+)?)\)$/;
+               // 判断ie下有没有设置filter 透明度 如果没有 默认返回1
+               val = reg.test(val)? (reg.exec(val)[1])/100 : 1; // ["alpha(opacity=80)", "80"]
+            } else {
+                val = ele.currentStyle[attr];
+            }
+
+        }
+//           100px -100px -1.23px   12rem  1em  block
+        // 把带单位的去掉 把数字提取出来 即使是字符串数字 我也要提取成数字在返回 预防后期累加使用
+        var regs = /^-?\d+(\.\d+)?(px|pt|rem|em)?$/;
+        return regs.test(val)? parseFloat(val) : val;
+    }
+
+    console.log(getCss(oDiv, 'width'));
+    console.log(getCss(oDiv, 'display'));
+
+
+</script>
+</body>
+</html>

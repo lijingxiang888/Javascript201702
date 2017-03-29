@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #oDiv {
+            display: inline-block;
+            height: 200px;
+            margin: 20px auto;
+            background-color: red;
+            /*opacity: .3;*/
+            /*filter: alpha(opacity=80);*/
+        }
+    </style>
+</head>
+<body>
+<div id="oDiv" style="width: 200px;"></div>
+<script type="text/javascript">
+    // 元素.style[attr] = 属性值
+    var oDiv = document.getElementById('oDiv');
+
+    //其他浏览器 opacity   ie: filter: alpha(opacity=80);
+    // float  元素.style.cssFloat = val //老版本 ff chrome  ie: 元素.style.styleFloat = val
+    // 加单位  如果不带单位的value 我们给加上单位
+
+    //    oDiv.style.filter = 'alpha(opacity=30)';
+    /**
+     * setCss 给元素设置样式
+     * @param ele   （要设置的元素）
+     * @param attr  （要设置的属性）
+     * @param val   （样式属性值）
+     */
+
+    function setCss(ele, attr, val) {
+        if (attr === 'opacity') { // 透明度处理
+            ele.style['opacity'] = val; // 其他浏览器
+            ele.style['filter'] = 'alpha(opacity=' + val * 100 + ')'; // ie 低版本
+            return;
+        }
+        if(attr === 'float'){
+            ele.style.cssFloat = val; // 老版本 ff
+            ele.style.styleFloat = val; // ie 低版本
+            return;
+        }
+        // 如果是这些属性 为确保 传递进来的值 有单位
+        var reg = /^width|height|top|bottom|left|right|((margin|pading)(Top|Left|Bottom|Right)?)$/;
+        if(reg.test(attr)){
+            if(!isNaN(val)){
+                val += 'px';
+            }
+        }
+       ele.style[attr] = val;
+    }
+//    setCss(oDiv, 'opacity', '.3')
+
+
+</script>
+</body>
+</html>
