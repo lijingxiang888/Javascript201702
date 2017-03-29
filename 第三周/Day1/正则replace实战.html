@@ -123,14 +123,15 @@
     //        });
     //    console.log(timer);
     // 方式六
-    //    var time = '2017-3-26 18:38:4';
-    //            var arr = ['年','月','日 ','时','分','秒'];
-    //            var reg = /(\D+)|$/g;
-    //            var ind = 0;
-    //            var timer = time.replace(reg, function () {
-    //                return arr[ind++];
-    //            });
-    //        console.log(timer);
+        var time = '2017-3-26 18:38:4';
+                var arr = ['年','月','日 ','时','分','秒'];
+                var reg = /(\D+)|$/g;
+                var ind = 0;
+                var timer = time.replace(reg, function () {
+                    console.log(arguments);
+                    return arr[ind++];
+                });
+            console.log(timer);
 
     //================================
     //    var str2 = '   my name is zxt     ';//->实现一个myTrim方法去除字符串首尾空格

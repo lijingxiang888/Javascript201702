@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //    clientWidth: 内容宽度+左右padding
+    //    clientHeight: 内容高度+上下padding
+    //    clientLeft: 左边框宽度
+    //    clientTop: 上边框宽度
+
+    //    offsetWidth：clientWidth+ 左右边框
+    //    offsetHeight：clientHeight+ 左右边框
+    //       不溢出
+    //    scrollWidth: clientWidth
+    //    scrollHeight: clientHeight(html,body height 100%)
+    //    溢出
+    //    scrollWidth: clientWidth+ scrollLeft(最大值)
+    //    scrollHeight: clientHeight+ scrollTop(最大值)
+    //    scrollLeft：滚动条 横向滚动区域
+    //    scrollTop：滚动条 纵向向滚动区域
+    //      偏移量
+    //     offsetParent： 父级参照物（谷歌火狐...默认是body ie 7以下是上级父节点）我们可以通过position：absolute/relative/fixed 可以改变父级参照物
+    //    offsetLeft: 左边框外边 距离 父级参照物的左偏移
+    //    offsetTop: 上边框外边 距离 父级参照物的上偏移
+
+    // 元素距离 body 偏移量
+
+    function offset(ele) {
+        var l = ele.offsetLeft;
+        var t = ele.offsetTop;
+        var par = ele.offsetParent;
+        while (par && par.nodeName.toUpperCase() != 'BODY') {
+            l += par.clientLeft + par.offsetLeft;
+            t += par.clientTop + par.offsetTop;
+            par = par.offsetParent;
+        }
+        return {
+            left: l,
+            top: t
+        }
+    }
+</script>
+</body>
+</html>

@@ -38,16 +38,49 @@
 
 
 <script type="text/javascript">
-    //    var reg = /^\w+((-\w+)|(\.\w+))*@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+
     var user = document.getElementById('user');
     var email = document.getElementById('email');
     var info = document.getElementById('info');
     user.oninput = validVal;
     user.onblur = validVal;
 
+    email.onblur = validEmail2;
+    email.oninput = validEmail2;
+    email.onchange = validEmail2;
+
+    function validEmail1() {
+        var reg1 = /^\s*$/g;
+        var reg2 = /^\w+((-\w+)|(\.\w+))*@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+        var val = this.value;
+        if(reg1.test(val)){
+            info.innerHTML = '请填写邮箱';
+            info.style.display = 'block';
+            return false;
+        } else {
+            info.style.display = 'none';
+            if(!reg2.test(val)){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    function validEmail2() {
+        var flag = validEmail1.call(this);
+              var val = this.value;
+              if(flag){
+                  info.innerHTML = '请填写正确格式邮箱';
+                  info.style.display = 'block';
+              }
+        }
+
+
     function validVal() {
         var regs = /^\s*$/g;
         if (regs.test(this.value)){
+            info.innerHTML = '请填写用户名';
             info.style.display = 'block';
         } else {
             info.style.display = 'none';

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .back {
+            display: none;
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            border: 1px solid #7affa3;
+            background-color: #a9faff;
+            right: 50px;
+            bottom: 100px;
+            text-align: center;
+            line-height: 80px;
+            cursor: pointer;
+            -webkit-user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+<div><img src="./12.png" alt=""></div>
+<div><img src="./12.png" alt=""></div>
+<div><img src="./12.png" alt=""></div>
+<div><img src="./12.png" alt=""></div>
+<div><img src="./12.png" alt=""></div>
+<div class="back" id="back">回到底部</div>
+<script type="text/javascript" src="../utils.js"></script>
+<script type="text/javascript">
+  // 让scrollTop滚动超过一屏在显示回到顶部
+  // 获取浏览器一屏高度 clientHeight
+  // 点击back 的时候 scrollTop 为 0
+  // 实时监听滚动条事件
+    var winH = utils.win('clientHeight'); // 获取浏览器一屏高度
+    var back = document.getElementById('back');
+
+    window.onscroll = function () {
+        var sTop = utils.win('scrollTop'); // 实时获取此时滚动条的 scrollTop
+       if(sTop >= winH){ // 如果滚动的超过一屏 就让回到顶部按钮显示
+           utils.setCss(back, 'display', 'block');
+       } else { // 否则隐藏
+           utils.setCss(back, 'display', 'none');
+       }
+    };
+    var timer;
+    back.onclick = function () {
+       timer = setInterval(function () {
+           var sTop = utils.win('scrollTop'); // 每隔一段时间获取此时的scrollTop
+           if(sTop <= 0){ // 如果scrollTop 小于等于0 说明已经在顶部 不需要再递减
+               clearInterval(timer);
+               return;
+           }
+           sTop -= 200; // 每隔一段时间 让此时的sTop 递减
+           utils.win('scrollTop',sTop); // 然后将递减的值 设置回去
+        },10);
+    };
+    // 滚轮事件 预防 回到顶部过程中 用户 滚动滚轮 立即停止递减
+//    window.onmousewheel = function () {
+//        clearInterval(timer);
+//    }
+</script>
+</body>
+</html>
