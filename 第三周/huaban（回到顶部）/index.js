@@ -25,7 +25,7 @@
         for (var i = 0; i < 50; i++) {
             // 获取0-7之间随机整数 Math.round(Math.random()*（7-0）+0);
             // 作为获取数据的索引
-            var ind = Math.round(Math.random()*7);
+            var ind = Math.round(Math.random() * 7);
             var curData = data[ind];
 
             // 创建li
@@ -56,34 +56,45 @@
             oUlArr[0].appendChild(oLi);
         }
     }
+
     delayImgs();
     window.onscroll = function () {
         delayImgs();
         var wScrollHeight = utils.win('scrollHeight'); // 获取scrollHeight
         var sTop = utils.win('scrollTop');
         // 当滚动条快到底部时 继续绑定数据（项目中 再次发送ajax请求向后继续请求数据 一直到后台数据没有数据）
-        if(winHeight + sTop >= wScrollHeight-1000){
+        if (winHeight + sTop >= wScrollHeight - 1000) {
             bindData();
         }
         backTop();
     };
     var back = document.getElementById('back');
+
+    // 点击按钮 回到顶部
+    var timer;
     back.onclick = function () {
-        var timer = setInterval(function () {
-               var cTop = utils.win('scrollTop');
-               if(cTop <= 0){
-                   utils.win('scrollTop', 0);
-                   clearInterval(timer);
-                   return;
-               }
-               cTop -= 150;
+        timer = setInterval(function () {
+            var cTop = utils.win('scrollTop');
+            if (cTop <= 0) {
+                utils.win('scrollTop', 0);
+                clearInterval(timer);
+                return;
+            }
+            cTop -= 200;
             utils.win('scrollTop', cTop);
-        },10);
+        }, 10);
     };
-    // 回到顶部
+
+    // 防止用户 回到顶部过程中 滑动滚轮
+    window.onmousewheel = function () {
+        clearInterval(timer);
+    };
+
+
+    // 回到顶部按钮 显示/隐藏控制
     function backTop() {
         var sTop = utils.win('scrollTop');
-        if(sTop >= winHeight*0.5) {
+        if (sTop >= winHeight * 0.5) {
             utils.setCss(back, 'display', 'block');
             // back.style.display = 'block'
         } else {
@@ -94,41 +105,43 @@
 
     // 延迟加载图片
     function delayImgs() {
-       for(var i = 0; i < oImgs.length; i++){
-           if(oImgs[i].flag) continue; // 防止重复加载
-           checkImg(oImgs[i]); // 遍历每一个图片 检测是够符合加载标准
-       }
+        for (var i = 0; i < oImgs.length; i++) {
+            if (oImgs[i].flag) continue; // 防止重复加载
+            checkImg(oImgs[i]); // 遍历每一个图片 检测是够符合加载标准
+        }
     }
+
     // 检测图片
     function checkImg(img) {
         var sTop = utils.win('scrollTop');
         var imgHeight = img.offsetHeight; // 自身高度
         var imgTop = utils.offset(img).top; // img上偏移
-        if(winHeight+sTop >= imgHeight + imgTop){
-              var imgSrc = img.getAttribute('data-real');
-              // 检测资源有效性
-              var Img = document.createElement('img');
-              Img.src = imgSrc;
-              Img.onload = function () {
-                  img.src = imgSrc;
-                  Img = null;
-                  fadeImg(img); // 每一次加载的时候 将图片传递进来 渐变
-                  img.flag = true;
-                  console.log(132);
-              }
+        if (winHeight + sTop >= imgHeight + imgTop) {
+            var imgSrc = img.getAttribute('data-real');
+            // 检测资源有效性
+            var Img = document.createElement('img');
+            Img.src = imgSrc;
+            Img.onload = function () {
+                img.src = imgSrc;
+                Img = null;
+                fadeImg(img); // 每一次加载的时候 将图片传递进来 渐变
+                img.flag = true;
+                console.log(132);
+            }
         }
     }
+
     // 图片渐变
     function fadeImg(img) {
         var timer = setInterval(function () {
-                 var op = utils.getCss(img, 'opacity');
-                 if(op >= 1) {
-                     clearInterval(timer);
-                     return;
-                 }
-                  op += 0.1;
-                  utils.setCss(img, 'opacity', op);
-        },100);
+            var op = utils.getCss(img, 'opacity');
+            if (op >= 1) {
+                clearInterval(timer);
+                return;
+            }
+            op += 0.1;
+            utils.setCss(img, 'opacity', op);
+        }, 100);
     }
 })();
 
