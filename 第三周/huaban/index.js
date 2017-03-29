@@ -59,7 +59,7 @@
     delayImgs();
     window.onscroll = function () {
         delayImgs();
-        var wScrollHeight = utils.win('scrollHeight');
+        var wScrollHeight = utils.win('scrollHeight'); // 获取scrollHeight
         var sTop = utils.win('scrollTop');
         // 当滚动条快到底部时 继续绑定数据（项目中 再次发送ajax请求向后继续请求数据 一直到后台数据没有数据）
         if(winHeight + sTop >= wScrollHeight-1000){
@@ -76,6 +76,7 @@
     // 检测图片
     var winH;
     function checkImg(img) {
+        if(img.flag) return; // 防止重复加载
         var sTop = utils.win('scrollTop');
         var imgHeight = img.offsetHeight; // 自身高度
         var imgTop = utils.offset(img).top; // img上偏移
@@ -85,9 +86,11 @@
               var Img = document.createElement('img');
               Img.src = imgSrc;
               Img.onload = function () {
+                  console.log(132);
                   img.src = imgSrc;
                   Img = null;
                   fadeImg(img); // 每一次加载的时候 将图片传递进来 渐变
+                  img.flag = true;
               }
         }
     }
