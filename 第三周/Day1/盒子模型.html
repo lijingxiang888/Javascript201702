@@ -66,8 +66,8 @@
 //    scrollHeight: clientHeight （一屏可视窗口高度）+ 上下溢出内容部分
 
 
-    // scrollLeft (可设置值)左右滚动条 可滚动区域(文档左右溢出部分)
-    // scrollTop (可设置值) 上下滚动条 可滚动区域(文档上下溢出部分)
+//     scrollLeft (可设置值)左右滚动条 可滚动区域(文档左右溢出部分)
+//     scrollTop (可设置值) 上下滚动条 可滚动区域(文档上下溢出部分)
 
      var winW = document.body.clientWidth + document.body.scrollLeft;
      console.log(document.body.scrollWidth === winW);
@@ -76,7 +76,7 @@
 
     // 获取文档的一些盒模型样式属性值 获取或设置
     function win(attr,val) {
-          if(typeof val === 'undefined'){ // 如果第二个参数没传就是获取值
+              if(typeof val === 'undefined'){ // 如果第二个参数没传就是获取值
               return document.documentElement[attr] || document.body[attr];
           }
           // 否则就是 设置值
