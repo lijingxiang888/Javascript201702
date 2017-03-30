@@ -41,7 +41,7 @@ var utils = (function () {
 
     /**
      * offset 获取当前元素距离body左偏移和上偏移的距离
-     * @param ele 
+     * @param ele
      * @returns {left: l,top:t}  左偏移和上偏移
      */
     function offset(ele) {
@@ -204,6 +204,10 @@ var utils = (function () {
         offset: offset,
         getCss: getCss,
         setCss: setCss,
-        getByClass: getByClass
+        getByClass: getByClass,
+        hasClass: hasClass,
+        addClass: addClass,
+        removeClass: removeClass,
+        toggle: toggle
     }
 })();
