@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-<div id="oDiv" class="c1 c3"></div>
+<div id="oDiv" class="c1 c3 class1"></div>
 <script type="text/javascript">
      var oDiv = document.getElementById('oDiv');
      // h5提供的API IE 6-9 以下兼容
@@ -30,10 +30,13 @@
      // 增加类名
      function addClass(ele, cName) {
           cName = cName.replace(/^ +| +$/g,'');
+
           var arrName = cName.split(/ +/);
+
           for(var i = 0; i < arrName.length; i++){
               if(!hasClass(ele,arrName[i])){
                   ele.className += ' '+arrName[i];
+                  console.log(ele.className);
               }
           }
      }
@@ -48,13 +51,14 @@
              var cur = arrName[i];
              if(hasClass(ele, cur)){
                  var reg = new RegExp('(^| )'+cur+'( |$)');
-                 ele.className =  ele.className.replace(reg,'')
+                 ele.className =  ele.className.replace(reg,' ');
+                 console.log(ele.className);
              }
          }
      }
-//     setTimeout(function () {
-//         removeClass(oDiv, 'class1');
-//     },1000);
+
+         removeClass(oDiv, 'c3');
+
 
      //  切换
      function toggle(ele,cName) {
@@ -68,7 +72,7 @@
          }
 
      }
-     toggle(oDiv,'class1',' c3');
+//     toggle(oDiv,'class1','c3');
 </script>
 </body>
 </html>
