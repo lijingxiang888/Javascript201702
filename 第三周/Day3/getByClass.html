@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="oUls">
+    <li class="li1 li2 li3"></li>
+    <li class="li1 li3"></li>
+    <li class="li2 li3"></li>
+    <li class="li1 li5 li3"></li>
+    <li class="li1 li2 li3"></li>
+</ul>
+<script type="text/javascript">
+    var oUls = document.getElementById('oUls');
+    function getByClass(cName, context) {
+        context = context || document; // 处理获取范围
+        cName = cName.replace(/^ +| +$/g,''); // 将传进来的class首尾空格去掉
+        var classArr = cName.split(/ +/); // 将class首尾空格去掉后的拆分成数组中每项
+        var eles = context.getElementsByTagName('*');
+        for(var i = 0; i < classArr.length; i++){
+            var reg = new RegExp("(^| )"+classArr[i]+"( |$)");
+            var nameArr = [];
+            for(var j = 0; j < eles.length; j++){
+                var eleName = eles[j].className;
+                if(reg.test(eleName)){
+                    nameArr.push(eles[j]);
+                }
+            }
+            eles = nameArr;
+        }
+         return eles;
+    }
+    console.log(getByClass("li5", oUls));
+</script>
+</body>
+</html>

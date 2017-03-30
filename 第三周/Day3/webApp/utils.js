@@ -112,38 +112,12 @@ var utils = (function () {
         ele.style[attr] = val;
     }
 
-    /**
-     * getByClass 通过类名获取元素
-     * @param cName 类名
-     * @param context 获取的上下文
-     * @return {NodeList} 匹配的元素集合
-     */
-    function getByClass(cName, context) {
-        context = context || document;
-        cName = cName.replace(/^ +| +$/g,'');
-        var classArr = cName.split(/ +/);
-        var eles = context.getElementsByTagName('*');
-        for(var i = 0; i < classArr.length; i++){
-            var reg = new RegExp("(^| )"+classArr[i]+"( |$)");
-            var nameArr = [];
-            for(var j = 0; j < eles.length; j++){
-                var eleName = eles[j].className;
-                if(reg.test(eleName)){
-                    nameArr.push(eles[j]);
-                }
-            }
-            eles = nameArr;
-        }
-        return eles;
-    }
-
     return { // 将写好的方法 放到这个对象里 并且返回到外面
         likeArray: likeArray,
         toJson: toJson,
         win: win,
         offset: offset,
         getCss: getCss,
-        setCss: setCss,
-        getByClass: getByClass
+        setCss: setCss
     }
 })();
