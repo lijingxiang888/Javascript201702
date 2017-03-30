@@ -21,12 +21,12 @@
             background: url("./timg.gif") no-repeat center;
             background-size: 50%;
             opacity: .3;
-            filter: alpha(opacity=30);
+            filter: alpha(opacity=30);/*设置渐变*/
         }
     </style>
 </head>
 <body>
-<div class="oDiv" id="oDiv"><img data-real="./9.jpg" src="" alt=""></div>
+<div class="oDiv" id="oDiv"><img data-real="9.jpg" src="" alt=""></div>
 <script type="text/javascript" src="../utils.js"></script>
 <script type="text/javascript">
     var winH = utils.win('clientHeight'); //获取浏览器窗口一屏高度
@@ -36,19 +36,19 @@
     var oDivHei = oDiv.offsetHeight;
     window.onscroll = function () {
         var sTop = utils.win('scrollTop'); // 滚动条实时滚动出去的距离
-        if (Img.flag) return; // 防止重复加载
-        if (winH + sTop >= oDivTop + oDivHei) { // 图片完全出现在窗口视野中时在执行加载代码
+        if (Img.flag) return; // 防止重复加载，如果Img.flag=true，就return出来不执行下面了
+        if (winH + sTop >= oDivTop + oDivHei) { // 图片完全出现在窗口视野中时在执行加载代码,winH + sTop = oDivTop + oDivHei时，图片刚好完全展示，当winH + sTop >= oDivTop + oDivHei才都符合图片展示条件
             var imgSrc = Img.getAttribute('data-real');
             // 检测图片资源有效性
             var tempImg = document.createElement('img');
-            tempImg.src = imgSrc;
+            tempImg.src = imgSrc;//不符的话触发tempImg.onerror
             tempImg.onload = function () { // 如果图片加载成功则触发然后在让页面中加载
                 console.log('加载成功');
-                Img.src = imgSrc;
-                Img.flag = true; // 标识 是否加载成功 true已经加载过并成功
+                Img.src = imgSrc;//将imgSrc得图片地址赋值给Img的src
+                Img.flag = true; // 给这张图片加标识 是否加载成功 true已经加载过并成功，不会再重复加载了
                 fadeIn(Img); // 增加渐变效果
             };
-            tempImg.onerror = function () {
+            tempImg.onerror = function () {//onerror事件用来协助处理页面中的javascript错误。当页面上出现异常时，error事件便在window对象上触发。
                 console.log('错误');
             }
         }

@@ -1,9 +1,23 @@
+/*瀑布流图片延时加载开发步骤
+1.ajax请求数据
+ 2.动态绑定
+ <li>
+ <a href="javascript:;">采集</a>
+ <img src="./images/1.jpg" alt="">
+ <p>人生不止有代码 诗和远方</p>
+ </li>
+ 将ul排序 每次讲li插入到 ul高度最低的那个里面
+
+ 3.图片延迟加载
+
+ 4.图片渐变
+ 5.回到顶部（扩展）*/
 (function () {
     var oUls = document.getElementsByTagName('ul');
     var container = document.getElementById('container');
     var winHeight = utils.win('clientHeight');
     // 获取到所有 container的图片
-    var oImgs = container.getElementsByTagName('img');
+    var oImgs = container.getElementsByTagName('images');
     // 将ul集合 转化为 数组
     var oUlArr = utils.likeArray(oUls);
     var data;
@@ -22,7 +36,7 @@
     xhr.send(null);
     // 绑定数据 有多少个对象 就创建多少个li
     function bindData() {
-        for (var i = 0; i < 50; i++) {
+        for (var i = 0; i < 50; i++) {//创建li时循环的次数，暂定循环50次
             // 获取0-7之间随机整数 Math.round(Math.random()*（7-0）+0);
             // 作为获取数据的索引
             var ind = Math.round(Math.random()*7);
@@ -35,8 +49,8 @@
             oa.href = 'javascript:;';
             oa.innerHTML = '采集';
             oLi.appendChild(oa);
-            // 创建 img
-            var oImg = document.createElement('img');
+            // 创建 images
+            var oImg = document.createElement('images');
             //给图片设置随机高 200 - 350
             oImg.style.height = Math.round(Math.random() * 150 + 200) + 'px';
 
@@ -52,7 +66,7 @@
                 return a.offsetHeight - b.offsetHeight;
             });
             // 排完序后 集合中第一个 是高度 最小
-            // 将当前这一轮创建好的 li img 放到 排序后 第一项 也就是 高度最小的那个ul里
+            // 将当前这一轮创建好的 li images 放到 排序后 第一项 也就是 高度最小的那个ul里
             oUlArr[0].appendChild(oLi);
         }
     }
@@ -83,10 +97,10 @@
         if(winH+sTop >= imgHeight + imgTop){
               var imgSrc = img.getAttribute('data-real');
               // 检测资源有效性
-              var Img = document.createElement('img');
+              var Img = document.createElement('images');
               Img.src = imgSrc;
               Img.onload = function () {
-                  console.log(132);
+                  console.log('成功');
                   img.src = imgSrc;
                   Img = null;
                   fadeImg(img); // 每一次加载的时候 将图片传递进来 渐变

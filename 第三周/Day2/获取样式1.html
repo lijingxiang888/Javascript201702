@@ -23,19 +23,19 @@
 <div id="oDiv" style="width: 200px;"></div>
 <script type="text/javascript">
     // 元素.style只能获取 行内样式
-    var oDiv = document.getElementById('oDiv');
-    //            console.log(oDiv.style.width);
-    //            console.log(oDiv.style.height);
+//    var oDiv = document.getElementById('oDiv');
+//                console.log(oDiv.style.width);
+//                console.log(oDiv.style.height);
 
     // window.getComputedStyle 通过它获取所有经过浏览器计算过的元素样式属性和属性值（元素在浏览器加载的时候渲染出来 展现在页面中的样式）
     //  window.getComputedStyle(元素，伪类->null)得到一个对象数据类型值 (CSSStyleDeclaration 内置类的一个实例 css属性集合)
-    //           var cssObj = window.getComputedStyle(oDiv, null);
-    //           console.log(cssObj.height);
-    //           console.log(window.getComputedStyle(oDiv, null).width);
+//               var cssObj = window.getComputedStyle(oDiv, null);
+//               console.log(cssObj.height);
+//               console.log(window.getComputedStyle(oDiv, null).width);
 
     // window.getComputedStyle  ie8以下不兼容 -> currentStyle
-    // 元素.currentStyle[attr];
-//    console.log(oDiv.currentStyle.height);
+     元素.currentStyle[attr];
+    console.log(oDiv.currentStyle.height);
 
      // 解决getComputedStyle 和 currentStyle（ie） 兼容性
     // ie中处理透明度样式 filter: alpha(opacity=80); 将里面的数字提取出来
