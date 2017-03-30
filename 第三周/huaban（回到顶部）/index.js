@@ -111,7 +111,7 @@
         }
     }
 
-    // 检测图片
+    // 检测图片是否可以加载
     function checkImg(img) {
         var sTop = utils.win('scrollTop');
         var imgHeight = img.offsetHeight; // 自身高度
@@ -126,7 +126,7 @@
                 Img = null;
                 fadeImg(img); // 每一次加载的时候 将图片传递进来 渐变
                 img.flag = true;
-                console.log(132);
+                // console.log(132);
             }
         }
     }
