@@ -1,0 +1,20 @@
+
+git发布页面
+
+新建仓库 进入到github首页点击 repositories -> New
+进入到自己项目目录 打开命令行窗口 git init 将项目目录 初始化为本地仓库
+然后 本地仓库和自己新建远程仓库 建立 联系
+git remote add origin https://github.com/liwenli111/webApp.git
+
+git add .
+
+git commit -m"update"
+
+git pull origin master
+
+git push origin master
+
+在远程仓库 Branch按钮点开 输入 创建分支名称（gh-pages）固定名
+然后回车 ok
+进入Settings 在下面会看到一个链接 （网页名称）
+https://liwenli111.github.io/webApp/index.html
