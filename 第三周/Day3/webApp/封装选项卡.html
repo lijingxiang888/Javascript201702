@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .clearfix:after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        body {
+            font: 12px/1.5 "Microsoft YaHei";
+            background-color: #59afe4;
+        }
+
+        .box {
+            overflow: hidden;
+            margin: 20px auto;
+            border: 1px solid #ebebeb;
+            border-radius: 3px;
+            width: 300px;
+            background-color: #fff;
+        }
+
+        ul {
+            width: 302px;
+            background-color: #fcfcfc;
+        }
+
+        li {
+            float: left;
+            border-bottom: 1px solid #ebebeb;
+            height: 41px;
+            width: 74px;
+            text-align: center;
+            line-height: 41px;
+            cursor: pointer;
+        }
+
+        p {
+            display: none;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        p.cur {
+            display: block;
+        }
+
+        li.cur {
+            margin-left: -1px;
+            padding-right: 2px;
+            border-bottom-color: #fff;
+            border-left: 1px solid #ebebeb;
+            border-right: 1px solid #ebebeb;
+            width: 150px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box1">
+    <ul class="clearfix">
+        <li class="cur">更新</li>
+        <li>我们</li>
+        <li>热门</li>
+
+    </ul>
+    <p class="cur">更新</p>
+    <p>我们</p>
+    <p>热门</p>
+</div>
+<div class="box" id="box2">
+    <ul class="clearfix">
+        <li class="cur">更新</li>
+        <li>我们</li>
+        <li>热门</li>
+
+    </ul>
+    <p class="cur">更新</p>
+    <p>我们</p>
+    <p>热门</p>
+</div>
+<script>
+    var box1 = document.getElementById('box1');
+    var box2 = document.getElementById('box2');
+
+    function TabCard(options) {
+        this.ele = options.ele;
+        // 通过传递进来的容器元素 获取 tab头 tab面板
+        this.oLis = this.ele.getElementsByTagName('li');
+        this.oDivs = this.ele.getElementsByTagName('p');
+
+        // 处理默认选中
+        this.selected = options.selected || 0;
+        // 如果传递进来的默认索引超过最大索引 改为0
+        this.selected >=  this.oLis.length?  this.selected = 0 : null;
+        // 执行默认选中操作
+        this.changeTab(this.selected);
+        this.init();
+    }
+
+    // 循环绑定事件
+    TabCard.prototype.init = function () {
+        var that = this;
+        for(var i = 0; i < this.oLis.length; i++){
+            this.oLis[i].ind = i;
+            this.oLis[i].onclick = function () {
+                that.changeTab(this.ind) // 把当前点击元素的索引传递进来
+            }
+        }
+    };
+    // 切换控制
+    TabCard.prototype.changeTab = function (n) {
+          for(var i = 0; i < this.oLis.length; i++){
+              this.oLis[i].className = '';
+              this.oDivs[i].className = '';
+          }
+        this.oLis[n].className = 'cur';
+        this.oDivs[n].className = 'cur';
+    };
+    // ele 容器元素
+    //  selected  默认选中
+    new TabCard({
+        ele: box1,
+        selected: 5
+    });
+
+    new TabCard({
+        ele: box2,
+        selected: 2
+    });
+
+
+
+
+
+//    console.log(tab);
+//
+//    var oLis = box.getElementsByTagName('li');
+//    var oP = box.getElementsByTagName('p');
+//
+//    for (var j = 0; j < oLis.length; j++) {
+//        oLis[j].index = j;
+//        oLis[j].onclick = function () {
+//            for (var i = 0; i < oP.length; i++) {
+//                oLis[i].className = '';
+//                oP[i].className = '';
+//            }
+//            this.className = 'cur';
+//            oP[this.index].className = 'cur';
+//        }
+//    }
+</script>
+</body>
+</html>
