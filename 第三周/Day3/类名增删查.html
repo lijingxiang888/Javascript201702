@@ -42,9 +42,9 @@
 
     // 增加类名
     function addClass(ele, cName) {
-        cName = cName.replace(/^ +| +$/g, '');
+        cName = cName.replace(/^ +| +$/g, '');//去掉首尾空格
 
-        var arrName = cName.split(/ +/);
+        var arrName = cName.split(/ +/);//拆分成数组
 
         for (var i = 0; i < arrName.length; i++) {
             if (!hasClass(ele, arrName[i])) {
@@ -58,8 +58,8 @@
 
     // 删除类名
     function removeClass(ele, cName) {
-        cName = cName.replace(/^ +| +$/g, '');
-        var arrName = cName.split(/ +/);
+        cName = cName.replace(/^ +| +$/g, '');//去掉首尾空格
+        var arrName = cName.split(/ +/);//把每一项拆分成数组
         for (var i = 0; i < arrName.length; i++) {
             var cur = arrName[i];
             if (hasClass(ele, cur)) {

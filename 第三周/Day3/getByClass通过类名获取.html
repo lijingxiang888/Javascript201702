@@ -28,28 +28,32 @@
 //     console.log(eles);
     var cn;
     function getByClass(cName, context) {
-        // 处理上下文 如果没传默认是document
+        //第一个参数cName，用来获取的类名 ；第二个参数是处理上下文，如果没传默认是document
         context = context || document;
-        // 先把cName 字符串首尾空格去掉
+        // 拆分成数组，便于筛选，如果首位有空格，对数组拆分有影响，所以要去掉
         cn = cName = cName.replace(/^ +| +$/g, ''); // "li1 li2 li3"
-        // 将去除首尾空格后的 cName 根据空格拆分成数组中每一项
+        // 将去除首尾空格的cName 根据空格（类名与类名隔好几个空格也没事）拆分成拆分成数组中的每一项
         var classArr = cName.split(/ +/);  // ["li1", "li2", "li3"]
 //         console.log(classArr);
-        // 获取所有context上下文中的元素
+        // 获取上下文的所有元素(此时，我们已经得到了 className和筛选范围了)
         var eles = context.getElementsByTagName('*');
-        // 取出classArr ["li1", "li2", "li3"]中每一项 拼接成正则 再去eles中筛序class名匹配的元素放到一个数组容器中
+        // 取出classArr中的每一项，拼接成正则，再去eles中用正则筛选class名匹配的元素，放到一个数组容器里。
+//         我们规定的正则，要匹配页面中元素class分为几种情况
+//         1自身作为开头 后面是个空格
+//         2前后都有空格
+//         3前面有空格 后面自身作为结尾
         for (var i = 0; i < classArr.length; i++) {
+         //   字面量创建正则的方式，无法在正则中拼接变量的，正则里的内容会当做字符处理，所以只能用实例创建的方法
             var reg = new RegExp("(^| )" + classArr[i] + "( |$)");
-//              console.log(reg); // /(^| )li1( |$)/g
             var nameArr = [];
-            for (var j = 0; j < eles.length; j++) { // 用所有元素的className 依次取出来和我们当前这一轮拼成的要找的class正则进行匹配筛选
+            for (var j = 0; j < eles.length; j++) { // 用所有元素的className 依次取出来和我们当前这一轮拼成的要找的class正则进行匹配筛选，添加到一个容器
                 var eleName = eles[j].className;
-                // 第一次的时候 /(^| )li1( |$)/g.text(eleName)
+                //第一次时候筛选的时候，那第一个正则去匹配元素名是li1的元素
                 if (reg.test(eleName)) { // 将class名匹配的元素添加到nameArr中
                     nameArr.push(eles[j]); // 第二轮的时候我应该在nameArr中筛选
                 }
             }
-            eles = nameArr; // 第一轮筛选后的时候 eles变成了 第一轮筛选后的nameArr集合
+            eles = nameArr; // 第一轮筛选后的时候 eles变成了 第一轮筛选后的nameArr集合，第一次筛选的结果，是第二次筛选范围
             console.log(eles);
         }
         return eles;

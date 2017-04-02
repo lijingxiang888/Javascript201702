@@ -117,7 +117,7 @@
         for(var i = 0; i < this.oLis.length; i++){
             this.oLis[i].ind = i;
             this.oLis[i].onclick = function () {
-                that.changeTab(this.ind) // 把当前点击元素的索引传递进来
+                that.changeTab(this.ind); // 把当前点击元素的索引传递进来
             }
         }
     };
@@ -148,8 +148,8 @@
 
 //    console.log(tab);
 //
-//    var oLis = box.getElementsByTagName('li');
-//    var oP = box.getElementsByTagName('p');
+//    var oLis = document.querySelectorAll('li');
+//    var oP = document.querySelectorAll('p');
 //
 //    for (var j = 0; j < oLis.length; j++) {
 //        oLis[j].index = j;

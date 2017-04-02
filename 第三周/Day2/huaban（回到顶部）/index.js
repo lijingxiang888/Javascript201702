@@ -4,6 +4,7 @@
     var winHeight = utils.win('clientHeight');
     // 获取到所有 container的图片
     var oImgs = container.getElementsByTagName('img');
+    var back = document.getElementById('back');
     // 将ul集合 转化为 数组
     var oUlArr = utils.likeArray(oUls);
     var data;
@@ -68,7 +69,7 @@
         }
         backTop();
     };
-    var back = document.getElementById('back');
+   // var back = document.getElementById('back');
 
     // 点击按钮 回到顶部
     var timer;
@@ -107,7 +108,7 @@
     function delayImgs() {
         for (var i = 0; i < oImgs.length; i++) {
             if (oImgs[i].flag) continue; // 防止重复加载
-            checkImg(oImgs[i]); // 遍历每一个图片 检测是够符合加载标准
+            checkImg(oImgs[i]); // 遍历每一个图片 检测是否符合加载标准
         }
     }
 
