@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 寄生组合模式继承
+      function A() {
+        this.name = 'nameA';
+      }
+      A.prototype.say = function () {
+        console.log('hello world!');
+      };
+      function B() {
+         A.call(this); // call继承 只能继承父类中私有属性
+      }
+      // Object.create 返回一个新对象作为B的原型 然后这个新对象__proto__ == A.prototype
+      // B.prototype = Object.create(A.prototype); // create在ie8下不兼容
+      B.prototype = objectCreate(A.prototype)
+      // console.log(B.prototype.__proto__ === A.prototype );
+      var b = new B();
+      console.log(b.name); // 继承过来的A类私有属性
+      b.say(); // 继承过来的A类公有属性
+
+      function objectCreate(o) { // 解决Object.create兼容性
+        function Fn() {};
+        Fn.prototype = o;
+        return new Fn();// Fn的实例的__proto__ = o
+      }
+    </script>
+  </body>
+</html>

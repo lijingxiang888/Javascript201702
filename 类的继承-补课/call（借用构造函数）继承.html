@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // call(借用构造函数)继承 让A类当做一个普通函数在B类中执行 并且将A类中的this改为 B类的实例
+    // 那么 A类中 this.xxx = xxx 就相当于给B类的实例添加私有属性
+    // call继承 将A类中的私有属性 复制一份 给B类作为私有属性
+      function A() {
+          this.name = 'nameA'; // 在B中A.call(this); A中this被改为B的实例
+      }
+      A.prototype.say = function () {
+        console.log('say');
+      }
+      function B() { // B作为类 的时候 B中this 是当前实例
+          A.call(this); // 让A在B的函数体中当做一个普通函数执行并且将A中this改为B的this(B的实例把b)
+      }
+      var b = new B();
+      console.log(b);
+      console.log(b.name);
+      // call继承只能继承父类中的私有属性
+      // b.say();
+    </script>
+  </body>
+</html>
