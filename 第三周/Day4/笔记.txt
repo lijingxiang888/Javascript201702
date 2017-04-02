@@ -1,0 +1,33 @@
+1、JS盒子模型中的常用属性
+  client(width/height/top/left)
+  offset(width/height/top/left)  offsetParent
+  scroll(width/height/top(读写)/left(读写))
+
+  ->offset：获取当前元素相对于BODY的偏移(top:xxx,left:xxx)
+  ->获取当前元素具体的某一个样式值:
+    curEle.style.xxx：只能获取写在元素行内上的样式
+    getComputedStyle/currentStyle：获取当前元素所有经过浏览器计算的样式
+    =>getCss
+    =>setCss
+    =>setGroupCss
+    =>css ->JQ中的CSS方法
+
+
+//reg = /^alpha\(opacity=(((\d|([1-9]\d))(\.\d+)?)|(100))\)$/;//->数字部分:0-100之间/整数或者小数
+reg = /((\d|([1-9]\d))(\.\d+)?)|(100)/;
+//->0-99 \d|([1-9]\d)
+//->(\.\d+)?
+
+
+var strClass='w1';
+/(^|\s+)'+strClass+'(\s+|$)/ ->使用字面量方式创建的正则,在两个斜杠之间包含起来的都是元字符,没有字符串拼接或者变量这一说
+=>需求：把strClass变量存储的值作为正则的一部分，这种情况下只能使用实例创建的方式
+new RegExp('[元字符部分]',[修饰符部分])
+  new RegExp('(^|\\s+)'+strClass+'(\\s+|$)','i'); =>/(^|\s+)w1(\s+|$)/i
+
+  使用实例创建方式创建的正则，当遇到\xxx情况的时候，我们都需要在\之前在加一个\：不加的话，默认出现的斜杠仅仅被作为了无意义的字符串，在加一个斜杠，才相当于让其变为转义字符
+
+
+
+
+
