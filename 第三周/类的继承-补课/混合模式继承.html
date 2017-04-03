@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 混合模式继承：call继承+原型继承
+      function A() {
+        this.name = 'nameA';
+      }
+      A.prototype.say = function () {
+        console.log('hello world!');
+      };
+      function B() {
+         A.call(this); // call继承 只能继承父类中私有属性
+      }
+      B.prototype = new A(); // 原型继承 父类公有和私有都继承
+      var b = new B();
+      console.log(b.name); // 继承过来的私有属性
+      b.say();
+    </script>
+  </body>
+</html>

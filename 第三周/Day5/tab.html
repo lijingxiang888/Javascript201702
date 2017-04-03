@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训-选项卡</title>
+    <link rel="stylesheet" href="css/tab.css">
+</head>
+<body>
+<div class="box" id="box1">
+    <ul class="tab">
+        <li>视频</li>
+        <li>音乐</li>
+        <li>动画</li>
+    </ul>
+    <div class="content">
+        <!--每一项当中都会在包含很多的元素标签-->
+        <ul>
+            <li>屌丝男士</li>
+            <li>斗破苍穹</li>
+            <li>择天记</li>
+            <li>莽荒纪</li>
+            <li>大主宰</li>
+        </ul>
+    </div>
+    <div class="content">
+        <ul>
+            <li>五月天</li>
+            <li>周杰伦</li>
+            <li>陈奕迅</li>
+            <li>许巍</li>
+            <li>赵雷</li>
+        </ul>
+    </div>
+    <div class="content">
+        <ul>
+            <li>倒霉熊</li>
+            <li>光头强</li>
+            <li>千与千寻</li>
+            <li>你的名字</li>
+            <li>大鱼海棠</li>
+        </ul>
+    </div>
+</div>
+
+<div class="box" id="box2">
+    <ul class="tab">
+        <li>视频</li>
+        <li>音乐</li>
+        <li>动画</li>
+        <li>综艺</li>
+    </ul>
+    <div class="content">
+        <!--每一项当中都会在包含很多的元素标签-->
+        <ul>
+            <li>屌丝男士</li>
+            <li>斗破苍穹</li>
+            <li>择天记</li>
+            <li>莽荒纪</li>
+            <li>大主宰</li>
+        </ul>
+    </div>
+    <div class="content">
+        <ul>
+            <li>五月天</li>
+            <li>周杰伦</li>
+            <li>陈奕迅</li>
+            <li>许巍</li>
+            <li>赵雷</li>
+        </ul>
+    </div>
+    <div class="content">
+        <ul>
+            <li>倒霉熊</li>
+            <li>光头强</li>
+            <li>千与千寻</li>
+            <li>你的名字</li>
+            <li>大鱼海棠</li>
+        </ul>
+    </div>
+    <div class="content">
+        <ul>
+            <li>中国好声音</li>
+            <li>中国最强音</li>
+            <li>中国好歌曲</li>
+            <li>中国好嗓门</li>
+        </ul>
+    </div>
+</div>
+
+<div class="box" id="box3">
+    <ul class="tab">
+        <li>视频</li>
+        <li>音乐</li>
+        <li>动画</li>
+    </ul>
+    <div class="content">
+        <!--每一项当中都会在包含很多的元素标签-->
+        <ul>
+            <li>屌丝男士</li>
+            <li>斗破苍穹</li>
+            <li>择天记</li>
+            <li>莽荒纪</li>
+            <li>大主宰</li>
+        </ul>
+    </div>
+    <div class="content">
+        <ul>
+            <li>五月天</li>
+            <li>周杰伦</li>
+            <li>陈奕迅</li>
+            <li>许巍</li>
+            <li>赵雷</li>
+        </ul>
+    </div>
+    <div class="content">
+        <ul>
+            <li>倒霉熊</li>
+            <li>光头强</li>
+            <li>千与千寻</li>
+            <li>你的名字</li>
+            <li>大鱼海棠</li>
+        </ul>
+    </div>
+</div>
+
+<script src="js/utils.js"></script>
+<script src="js/tab.js"></script>
+<script>
+    var b1 = new TabChange('box1');
+    new TabChange('box2', {preIndex: 1});
+    new TabChange('box3', {preIndex: 2});
+</script>
+</body>
+</html>

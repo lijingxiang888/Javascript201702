@@ -27,6 +27,53 @@ new RegExp('[元字符部分]',[修饰符部分])
 
   使用实例创建方式创建的正则，当遇到\xxx情况的时候，我们都需要在\之前在加一个\：不加的话，默认出现的斜杠仅仅被作为了无意义的字符串，在加一个斜杠，才相当于让其变为转义字符
 
+===============================
+function getByClass(strClass,context){
+   //->如果上下文不传,默认是document
+   context=context||document;
+
+   //->如果兼容getElementsByClassName我们使用内置方法获取即可
+   if('getElementsByClassName' in document){
+      return context.getElementsByClassName(strClass);
+   }
+
+   //->不兼容的情况下按照如下思路处理
+   //1、获取当前上下文下所有的元素标签(把类数组转换成为数组)，把传递进来的样式拆分成一个个的:' w2   w1   ' ->['w2','w1']
+   var allElement=listToArray(context.getElementsByTagName('*'));
+   var classList=strClass.replace(/^ +| +$/g,'').split(/ +/);
+
+   //2、循环样式数组，拿出每一个样式在所有的标签中进行筛选，每一次的筛选，都把不包含这个样式类名的元素在原有的集合中移除掉，这样筛选完成后，剩下的集合就是我们想要的
+   for(var i=0,len=classList.length;i<len;i++){
+      var reg=new RegExp('\\b'+classList[i]+'\\b');
+
+      for(var j=0,len2=allElement.length;j<len2;j++){
+         if(!reg.test(allElement[j].className)){
+            allElement.splice(j,1);
+            j--;
+            len2--;
+         }
+         //->!reg.test(allElement[j].className)?(allElement.splice(j,1),j--,len2--):null;
+      }
+   }
+   return allElement;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
