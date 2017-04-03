@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<div id="box" class="w1">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+    <a href="">
+        <span>珠峰</span>
+    </a>
+    <a href=""></a>
+    <!--我是倒霉的注释-->
+    <a href=""></a>
+</div>
+
+<script src="js/utils.js"></script>
+<script>
+    //->getElementsByTagName:它的筛查范围是当前上下文的后代元素(子子孙孙)
+
+    //->childNodes:获取所有的子节点(包含元素、文本、注释等)
+    //->children：获取所有的元素子节点，但是在IE低版本浏览器中和标准浏览器中获取的结果不统一，IE低版本浏览器会把注释节点也当做元素节点获取到(需要处理兼容)
+
+    var oBox = document.getElementById('box');
+    console.log(oBox.children.length);
+
+</script>
+</body>
+</html>
