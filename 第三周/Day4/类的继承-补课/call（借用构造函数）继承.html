@@ -19,10 +19,10 @@
           A.call(this); // 让A在B的函数体中当做一个普通函数执行并且将A中this改为B的this(B的实例把b)
       }
       var b = new B();
-      console.log(b);
-      console.log(b.name);
+      console.log(b);//-->返回一个对象，里面有 name = 'nameA'
+      console.log(b.name);//'nameA'
       // call继承只能继承父类中的私有属性
-      // b.say();
+       b.say();//报错
     </script>
   </body>
 </html>

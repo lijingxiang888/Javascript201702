@@ -17,9 +17,9 @@
          A.call(this); // call继承 只能继承父类中私有属性
       }
       B.prototype = new A(); // 原型继承 父类公有和私有都继承
-      var b = new B();
+      var b = new B();//输出 'nameA'
       console.log(b.name); // 继承过来的私有属性
-      b.say();
+      b.say();//输出  'hello world!'
     </script>
   </body>
 </html>

@@ -16,10 +16,9 @@
       function B() {
          A.call(this); // call继承 只能继承父类中私有属性
       }
-      // Object.create 返回一个新对象作为B的原型 然后这个新对象__proto__ == A.prototype
-      // B.prototype = Object.create(A.prototype); // create在ie8下不兼容
-      B.prototype = objectCreate(A.prototype)
+      // Object.create 返回一个新对象作为B的原型 然后这个新对象__proto__ == A.prototype，这样就实现了子类B的公有属性继承了父类A的公有属性
       // console.log(B.prototype.__proto__ === A.prototype );
+      B.prototype = objectCreate(A.prototype)
       var b = new B();
       console.log(b.name); // 继承过来的A类私有属性
       b.say(); // 继承过来的A类公有属性

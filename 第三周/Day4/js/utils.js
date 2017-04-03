@@ -49,7 +49,7 @@ var utils = (function () {
         if ('getComputedStyle' in window) {
             result = window.getComputedStyle(curEle, null)[attr];
         } else {
-            //->如果我们的ATTR传递的是OPACITY说明我们想获取元素的透明度,但是在IE低版本浏览器中,通过OPACITY获取不到,我们需要通过FILTER获取,然而我们通过滤镜获取的结果和OPACITY获取的结果还是不一样的:alpha(opacity=30) / 0.3
+            //->如果我们的ATTR传递的是OPACITY说明我们想获取元素的透明度,但是在IE低版本浏览器中,通过OPACITY获取不到,我们需要通过FILTER获取,然而我们通过滤镜获取的结果和OPACITY获取的结果还是不一样的:filter返回alpha(opacity=30) / opacity返回0.3
             if (attr === 'opacity') {
                 result = curEle.currentStyle['filter'];
                 reg = /^alpha\(opacity=(.+)\)$/;
@@ -156,7 +156,7 @@ var utils = (function () {
      * @parameter
      *    strClass：[string]需要操作的样式类名,例如：'w1'、'w2 w1'...
      *    context：[HTML Object]获取的上下文,获取元素的一个范围,不写默认是document在整个文档进行获取
-     */
+
     function getByClass(strClass, context) {
         context = context || document;
         if ('getElementsByClassName' in document) {
@@ -181,7 +181,7 @@ var utils = (function () {
         }
         return ary;
     }
-
+     */
     return {
         offset: offset,
         css: css,

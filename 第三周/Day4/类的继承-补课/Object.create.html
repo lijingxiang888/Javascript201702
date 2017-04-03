@@ -7,11 +7,11 @@
   <body>
     <script type="text/javascript">
       // Object.create 返回一个新对象obj2  让obj2.__proto__ = obj1
-      // var obj1 = {name: 'zhufeng'};
-      // var obj2 = Object.create(obj1); // ie8 low 不支持
-      // console.log(obj2.name); // "zhufeng"
-      // console.log(obj2.__proto__ === obj1);
-      // console.log(obj2);
+//       var obj1 = {name: 'zhufeng'};
+//       var obj2 = Object.create(obj1); // ie8 low 不支持
+//       console.log(obj2.name); // "zhufeng"
+//       console.log(obj2.__proto__ === obj1);
+//       console.log(obj2);//Object
       // 返回一个新对象 让这个新对象的__proto__指向 传进来的obj
       function objectCreate(obj) {
         function Fn() {};
