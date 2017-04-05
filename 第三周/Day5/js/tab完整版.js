@@ -58,8 +58,8 @@ function changeTab(box, preIndex) {
 //->调取实现
 // changeTab(document.getElementById('box1'));
 // changeTab(document.getElementById('box2'), 2);
-
-var boxList = utils.getByClass('box');
-for (var i = 0; i < boxList.length; i++) {
-    changeTab(boxList[i]);
-}
+//
+// var boxList = utils.getByClass('box');
+// for (var i = 0; i < boxList.length; i++) {
+//     changeTab(boxList[i]);
+// }

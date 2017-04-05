@@ -418,6 +418,7 @@ var utils = (function () {
         siblings: siblings,
         index: index,
         firstChild: firstChild,
+        // lastChild:lastChild,差这个，自己写
         prepend: prepend,
         insertAfter: insertAfter
     }
