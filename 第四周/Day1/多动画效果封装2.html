@@ -49,6 +49,7 @@
 
     // 实现动画
     function animate(curEle, target, duration) {
+        window.clearInterval(curEle.timer);
         var begin = {}; // 存储相应属性起始值
         var change = {}; // 存储相应属性变化值
 
