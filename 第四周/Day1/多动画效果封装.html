@@ -57,7 +57,7 @@
 //    });
     // 实现动画
     function animate(curEle, target, duration) {
-        window.clearInterval(oBox.timer);
+        window.clearInterval(curEle.timer);
         var begin = {}; // 存储相应属性起始值
         var change = {}; // 存储相应属性变化值
         // 第1次遍历的时候key是left 第2次遍历的时候key是top 第3次遍历的时候key是opacity
