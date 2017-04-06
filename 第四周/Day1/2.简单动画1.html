@@ -39,16 +39,29 @@
     var begin = utils.css(oBox, 'left');
     // 最大值left
     var maxLeft = utils.win('clientWidth') - oBox.offsetWidth;
+<<<<<<< HEAD
     // 要走的总路程
     var change = maxLeft - begin;
     // 记录当前时间,初始为null，运动起来之后开始累计
+=======
+
+    // 要走的总路程
+    var change = maxLeft - begin;
+    // 记录当前时间
+>>>>>>> 19c0975fccec2941d2dc1f155577cdebb13d45e7
     var time = null;
     //    t/duration * c 是他目前所走的路程（需要增加多少left值）
     // 匀速运动公式
     // 根据所花费时间 先求出 当前所移动的距离(所改变left值) t/duration * c
+<<<<<<< HEAD
     // 然后求出此时的left值为多少  起始值（起始left值） + 移动距离
     function Linear(t, b, c, duration) {
         return t / duration * c + b; // 当前时间的left值
+=======
+    // 让后求出此时的left值为多少  起始值（起始left值） + 移动距离
+    function Linear(t, b, c, duration) {
+        return t / duration * c + b // 当前时间的left值
+>>>>>>> 19c0975fccec2941d2dc1f155577cdebb13d45e7
     }
 
     var timer = setInterval(function () {
@@ -63,10 +76,17 @@
         utils.css(oBox, 'left', curLeft);
     }, 10);
 
+<<<<<<< HEAD
 //        当前时间/总时间 = 当前所走路程/总路程
 //        当前所走路程 = 当前时间/总时间 * 总路程
 //        此时目标位置（此时的left值） = 当前时间/总时间 * 总路程 + 起始位置
 //        t/duration * c + b // 距离body的此时左偏移 left
+=======
+    //    当前时间/总时间 = 当前所走路程/总路程
+    //    当前所走路程 = 当前时间/总时间 * 总路程
+    //    此时目标位置（此时的left值） = 当前时间/总时间 * 总路程 + 起始位置
+    //    t/duration * c + b // 距离body的此时左偏移 left
+>>>>>>> 19c0975fccec2941d2dc1f155577cdebb13d45e7
 </script>
 </body>
 </html>

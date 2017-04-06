@@ -22,7 +22,10 @@
 <div id="oBox"></div>
 <script type="text/javascript" src="../utils.js"></script>
 <script type="text/javascript">
+<<<<<<< HEAD
     //用setInterval定时器的动画，要计算如果倒数第二步的时候加上一个步长 大于等于 最大偏移值时 直接设为最大偏移值
+=======
+>>>>>>> 19c0975fccec2941d2dc1f155577cdebb13d45e7
     var oBox = document.getElementById('oBox');
     // 求出oBox最大偏移值（最大的活动范围）
     var maxLeft = utils.win('clientWidth') - oBox.offsetWidth;
@@ -36,6 +39,11 @@
         // 如果倒数第二步的时候加上这个步长 大于等于 最大偏移值时 直接设为最大偏移值
         // 少走了一步
         if(l + step >= maxLeft ) { // 边界判断需要加上步长 少走一步
+<<<<<<< HEAD
+=======
+             console.log(l);
+             console.log(maxLeft);
+>>>>>>> 19c0975fccec2941d2dc1f155577cdebb13d45e7
              setTimeout(function () {
                  utils.css(oBox, 'left', maxLeft); // 设为刚好的最大值
              },2000);

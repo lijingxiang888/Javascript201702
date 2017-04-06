@@ -25,6 +25,10 @@
 <script type="text/javascript">
     // setTimout的动画 需要把上一次没用的定时器清除掉
      var oBox = document.getElementById('oBox');
+<<<<<<< HEAD
+=======
+     var count = 0;
+>>>>>>> 19c0975fccec2941d2dc1f155577cdebb13d45e7
      // 最大偏移值
      var maxLeft = utils.win('clientWidth') - oBox.offsetWidth;
      var step = 8;
@@ -41,7 +45,11 @@
          }
          l += step;
          utils.css(oBox, 'left', l);
+<<<<<<< HEAD
          timer = setTimeout(move,10);//没满足条件时再执行一次定时器
+=======
+         timer = setTimeout(move,10);
+>>>>>>> 19c0975fccec2941d2dc1f155577cdebb13d45e7
      }
 
 //     var timer = setTimeout(move,1000);

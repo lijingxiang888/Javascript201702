@@ -48,10 +48,17 @@
     //    t/duration * c 是他目前所走的路程（需要增加多少left值）
     // 匀速运动公式
     // 根据所花费时间 先求出 当前所移动的距离(所改变left值) t/duration * c
+<<<<<<< HEAD
     // 然后求出此时的left值为多少  起始值（起始left值） + 移动距离
     // 匀速运动公式
     function Linear(t, b, c, duration) {
         return t / duration * c + b;// 当前时间的left值
+=======
+    // 让后求出此时的left值为多少  起始值（起始left值） + 移动距离
+    // 匀速运动公式
+    function Linear(t, b, c, duration) {
+        return t / duration * c + b // 当前时间的left值
+>>>>>>> 19c0975fccec2941d2dc1f155577cdebb13d45e7
     }
 
     var timer = setInterval(function () {

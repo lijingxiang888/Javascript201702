@@ -50,8 +50,14 @@
         move(maxLeft);
     };
 //    var timer = null;  // 动画定时器 共享
+<<<<<<< HEAD
     // 可以保存到 当前元素自定义属性上 也可以共享，这样安全
     function move(target) {
+=======
+    // 可以保存到 当前元素自定义属性上 也可以共享
+    function move(target) {
+
+>>>>>>> 19c0975fccec2941d2dc1f155577cdebb13d45e7
         clearInterval(oBox.timer); // 清除上一次的定时器 清除上一次的动画
         var curLeft = utils.css(oBox, 'left');
         oBox.timer = setInterval(function () {
@@ -73,7 +79,11 @@
                     return;
                 }
             }
+<<<<<<< HEAD
             utils.css(oBox,'left', curLeft);//实时更新curLeft的值，让定时器动起来
+=======
+            utils.css(oBox,'left', curLeft);
+>>>>>>> 19c0975fccec2941d2dc1f155577cdebb13d45e7
         },10);
     }
 
