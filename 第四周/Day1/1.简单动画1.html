@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #oBox {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+<div id="oBox"></div>
+<script type="text/javascript" src="../utils.js"></script>
+<script type="text/javascript">
+    var oBox = document.getElementById('oBox');
+   // 简单匀速运动
+   // 规定的时间内 2000ms 以匀速运动到 最右边边界
+   // 总时间
+    var duration = 2000;
+    // left最大值 总路程
+    var maxLeft = utils.win('clientWidth') - oBox.offsetWidth;
+
+    // 路程/时间 每毫秒的平均速度 每1毫秒走多长step
+    var step = maxLeft/duration * 10; // 每10毫秒走多长step
+    // 控制的left让它平移  每1毫秒当前自身left的基础上加上step
+   var count = 0;
+  // console.time('timer');
+    var timer = setInterval(function () {
+        var l = utils.css(oBox, 'left'); // 获取当前的left值
+        if(l >=  maxLeft) { // 当l为最大left值时说明已经到达边界 就可以结束运动
+            utils.css(oBox, 'left',maxLeft);//增加这步是为了解决盒子移动完后多出一点距离而出现滚动条的现象，因为盒子移动完后不能保证正好与maxLeft重合
+            clearInterval(timer);
+            return;
+        }
+         l += step; // 每毫秒left值递增step
+
+         utils.css(oBox, 'left', l);//如果没达到maxLeft时，让left每毫秒增加step距离，并实时更新oBox的left数值
+    },10);
+</script>
+</body>
+</html>
