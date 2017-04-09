@@ -31,7 +31,6 @@
 
     getData(bindData); // 将bindData 作为一个回调函数放到getData里 当接收到数据后让bindData 在里面执行 并且把请求到的数据传递到bindData里
     var length;
-
     function bindData(data) {
         // 总共图片个数（包含重复的最后一张）
         length = data.length + 1;
