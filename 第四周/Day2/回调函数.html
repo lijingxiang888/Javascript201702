@@ -8,22 +8,22 @@
 <script type="text/javascript">
     // 回调函数：在方法A里 把 方法B当做一个参数 在方法A调用执行 何时执行执行多少次都可以
 
-    function fn1() {
-        console.log('fn1');
-    }
-//    function fn2(callBack) {
-////        setTimeout(function () {
-//            callBack(); // 回调函数中一般调用情况下 this 都是为window
-////        },1000);
-////
-////        callBack();
-////        callBack();
+//    function fn1() {
+//        console.log('fn1');
 //    }
-////    fn2(fn1);
-//    fn2(function () {
-//        console.log(this);
-//        console.log('我是一个fn');
-//    })
+//    function fn2(callBack) {
+//        setTimeout(function () {
+//            callBack(); // 回调函数中一般调用情况下 this 都是为window
+//        },1000);
+//
+//        callBack();
+//        callBack();
+//    }
+//    fn2(fn1);
+    fn2(function () {
+        console.log(this);
+        console.log('我是一个fn');
+    })
 
     [1,2,3].sort(function (a, b) {
 
@@ -40,11 +40,11 @@
 //        console.log(this);
 //         console.log(a,b);
 //    });
-    var obj = {fn:fe1, name: 'zhufeng'};
+ /*   var obj = {fn:fe1, name: 'zhufeng'};
     obj.fn(function (a,b) {
             console.log(this);
              console.log(a,b);
-        });
+        });*/
 </script>
 </body>
 </html>

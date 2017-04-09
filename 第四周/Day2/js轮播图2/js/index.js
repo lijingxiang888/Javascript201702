@@ -60,7 +60,7 @@
         bindEvent();
     }
 
-    // 图片延迟加载
+    // 图片延迟加载,为了检测图片资源有效性
     var timer;
 
     function delayImg() {

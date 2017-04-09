@@ -25,7 +25,6 @@
 <script type="text/javascript" src="../utils.js"></script>
 <script type="text/javascript">
     var oBox = document.getElementById('oBox');
-
     // 匀速公式
     /**
      *
@@ -46,16 +45,11 @@
         opacity: 1,
         width: 300
     }, 2000); // 运动方式 回调函数
-
     // 实现动画
     function animate(curEle, target, duration) {
-<<<<<<< HEAD
-=======
         window.clearInterval(curEle.timer);
->>>>>>> 19c0975fccec2941d2dc1f155577cdebb13d45e7
         var begin = {}; // 存储相应属性起始值
         var change = {}; // 存储相应属性变化值
-
         for (var key in target) {
             if (target.hasOwnProperty(key)) {
                 // 根据 target里相应的属性得到 相应属性的起始值和 变化值
@@ -78,8 +72,6 @@
             }
         }, 10);
     }
-
-
 </script>
 </body>
 </html>
