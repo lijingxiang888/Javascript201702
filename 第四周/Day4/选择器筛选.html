@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+        #id1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
 <ul>
@@ -18,6 +25,16 @@
         <div><span>123123</span></div>
     </li>
 </ul>
+<h1></h1>
+<h2></h2>
+<h3></h3>
+<h4></h4>
+<h5></h5>
+<div id="id1"></div>
+<div>123</div>
+<div>123</div>
+<div>123</div>
+<div>123</div>
 <!--<ul>-->
 <!--<li>11</li>-->
 <!--<li>22</li>-->
@@ -63,11 +80,31 @@
 //        console.log($('ul:has(.oDiv)'));
         // 匹配所有li元素中 包含span标签的那个li
 //        console.log($('ul li:has(span)'));
-        // 匹配一个空元素  匹配一个不包含任何元素和 文本的元素
+        // 匹配一个
+        //
+        // 空元素  匹配一个不包含任何元素和 文本的元素
 //        console.log($('ul li:empty'));
 
         // 匹配作为父级的元素
-        console.log($('ul li:parent'));
+//        console.log($('ul li:parent'));
+        // 根据所包含的内容匹配 元素:contains(text)
+//        console.log($('ul li:contains("3")'));
+
+        // 匹配根元素 html
+//        console.log($(':root'));
+       // 匹配所有标题元素
+//        console.log($(':header'));
+
+//        $('#id1').animate({width: 300,height: 300}, function () {
+//                 $(this).css('backgroundColor', 'green');
+//        });
+        $('#id1').hide(1000);
+        // 匹配执行动画的元素
+//        console.log($('div:animated'));
+
+
+
+
     });
 </script>
 </body>
