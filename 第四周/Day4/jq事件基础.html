@@ -8,6 +8,7 @@
            width: 100px;
            height: 100px;
            background-color: red;
+           cursor: pointer;
        }
     </style>
 </head>
@@ -18,16 +19,14 @@
     <!-- 事件基础 -->
     $(function () {
 //        $('.oDiv').click(function () {
-////            this ->  绑定事件的元素 原生对象
-////            console.log(this);
-////            $(this).hide(3000);
-//        })
-
-//        function clicks() {
+//         //   this ->  绑定事件的元素 原生对象
 //            $(this).hide(3000);
-//        }
-//        $('.oDiv').dblclick(clicks);
-//        console.log($.fn);
+//        });
+
+        function clicks() {
+            $(this).hide(3000);
+        }
+        $('.oDiv').dblclick(clicks);
 
     });
 </script>

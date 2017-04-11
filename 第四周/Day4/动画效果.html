@@ -26,25 +26,23 @@
 //            if ($('.oDiv').is(':visible')) {
 ////                 $('.oDiv').hide(3000); // 隐藏
 ////                 $('.oDiv').slideUp(1000); // 收起
-////                   $('.oDiv').fadeOut(1000);
+//                   $('.oDiv').fadeOut(1000);//逐渐消失
 //            } else {
 ////                 $('.oDiv').show(3000);  // 显示
 ////                 $('.oDiv').slideDown(1000); // 下拉
-////                 $('.oDiv').fadeIn(1000);
+//                 $('.oDiv').fadeIn(1000);//逐渐显示
 //            }
 //        });
-
-
+//
+//
 //        $('.stop').click(function () {
 //            $('.oDiv').stop(); // 停止当前动画
 //        });
-//         $('.btns').click(function () {
-//             // fast slow
-//             $('.oDiv').animate({left:600, top:600 },100, 'linear',function () {
-//                 console.log(this);
-//                 $(this).css('backgroundColor', 'green');
-//             });
-//         });
+         $('.btns').click(function () {
+             $('.oDiv').animate({left:600, top:600 },600, 'linear',function () {
+                 $(this).css('backgroundColor', 'green');
+             });
+         });
     });
 </script>
 </body>

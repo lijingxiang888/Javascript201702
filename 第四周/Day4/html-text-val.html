@@ -5,18 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-<h3></h3>
+<h3>111111</h3>
 <div></div>
 <input type="text">
 <script type="text/javascript" src="jquery-1.11.3.js"></script>
 <script type="text/javascript">
-    // text html val 获取表单元素内容
+    // text html val 获取和设置表单元素内容
     $(function () {
         var name = 'vueJs';
-        $('h3').text('hello ' + name + '！');
-        $('div').html('<h2>hello reactJs!</h2>');
-        $('input').blur(function () {
-            console.log($(this).val());
+        $('h3').text('hello ' + name + '！');//括号里没有值的话是获取表单元素的内容，有的话是修改表单元素内容
+        $('div').html('<h2>hello reactJs!</h2>');//号里没有值的话是获取表单元素的内容，有的话是修改表单元素内容
+        $('input').blur(function () {//当元素失去焦点时触发 blur 事件
+            console.log($(this).val());//输出input里的内容
         })
     });
 </script>
