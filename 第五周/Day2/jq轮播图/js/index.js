@@ -42,9 +42,6 @@ $(function () {
         $focusList.eq(0).addClass('selected');
         // 获取所有图片
         $oImgs = $('#wrap img');
-        // 保存图片个数
-        outer.imgSize = $oImgs.length;
-
         delayImg(); // 图片延迟加载
     }
 
