@@ -16,7 +16,7 @@ $(function () {
             // dataType: 'json', // 不需要使用$.parseJSON()
             // async: true, 异步
             success: function (result) { // 请求成功后执行
-                console.log(this);
+                // console.log(this);
                 // console.log(result);  // 请求的本身就是json文件 默认返回的就是 json对象
                 typeof callBack === 'function' ? callBack(result) : null;
             }
