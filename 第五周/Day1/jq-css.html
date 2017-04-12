@@ -37,12 +37,12 @@
 <script type="text/javascript" src="jquery-1.11.3.js"></script>
 <script type="text/javascript">
     $(function () {
-        $('#btn').click(function () {
-            $('#view').load('./index.html');
-        });
-        $('#btn1').click(function () {
-            $('#view').load('./yule.html');
-        });
+//        $('#btn').click(function () {
+//            $('#view').load('./index.html');
+//        });
+//        $('#btn1').click(function () {
+//            $('#view').load('./yule.html');
+//        });
 //        $('a').click(function () {
 //           alert('nihao');
 //        });
@@ -55,7 +55,7 @@
 //         width 和 padding 没有关系
 //        console.log($('.oDiv').height()); // number 100 不带单位
 //        console.log($('.oDiv').css('height')); // string 100px 带单位
-
+//        console.log(typeof $('.oDiv').css('height'));
 
 //        console.log($('.oDiv').width()); // number 100
 //        console.log($('.oDiv').css('width')); // // string 100px 带单位
@@ -81,9 +81,9 @@
 //            $(window).scrollLeft(200);
 //        },200);
 //     距离视口偏移值
-        console.log($('.oDiv').offset());// {top: 20, left: 20}
+//        console.log($('.oDiv').offset());// {top: 20, left: 20}
 
-//        console.log($('.oDiv').offsetParent());
+        console.log($('.oDiv').offsetParent());
 //        父级参照物 偏移值
 //        console.log($('.oDiv').position()); //  {top: 50, left: 50}
 

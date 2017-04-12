@@ -6,16 +6,21 @@
 </head>
 <body>
 
-<!--<div class="oDiv"><h3 class="h3"> h3333333</h3></div>-->
+<div class="oDiv">
+    <h3 class="h3"> h3333333</h3>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+</div>
 <!--<strong>strong</strong>-->
 <!--<div class="oDiv"></div>-->
 <!--<div class="oDiv"></div>-->
-<!--<span> hello world  <i>nihao</i></span>-->
+<!--<span> hello world</span>-->
 <!--<span> hello world</span>-->
 <!--<span> hello world</span>-->
 <!--<span> hello world</span>-->
 <div class="hello"><i>hello world</i></div>
-<strong> nihao strong</strong>
+<!--<strong> nihao strong</strong>-->
 <script type="text/javascript" src="jquery-1.11.3.js"></script>
 <script type="text/javascript">
     // DOM
@@ -26,18 +31,19 @@
 
     $(function () {
         // dom 操作
-//           console.log($('<h3>hello Jquery!</h3>'));  // 创建节点
+         //  console.log($('<h3>hello Jquery!</h3>'));  // 创建节点
         // 插入jq对象节点
-//           var $h3 = $('<h3>hello Jquery!</h3>');
-//            $('.oDiv').append($h3);
+         //  var $h3 = $('<h3>hello Jquery!</h3>');
+         //   $('.oDiv').append($h3);
         // 插入原生dom节点
+//        var oDiv = document.getElementsByClassName('oDiv')
 //           var h3 = document.createElement('h3');
 //           h3.innerHTML = 'hello vueJs';
-
+//           oDiv.appendChild(h3);
         // 插入节点
         // 内部插入到容器底部
 //           append  在匹配的容器中 插入节点
-//           $('.oDiv').append($('.h3')); // 移动节点
+         //  $('.oDiv').append($('.h3')); // 移动节点
 //           $('.oDiv').append($('.h3')[0]); // 移动节点
 //           $('.oDiv').append(function (ind) {
 //               console.log(this); // 当前操作的 oDiv 原生对象
@@ -49,8 +55,7 @@
 //                   return '<h2> angularjs</h2>';
 //               }
 //           });
-
-        // appendTo  将节点添加到 指定容器
+        // appendTo  将节点添加到 指定容器底部
 //           $('<h2> angularjs</h2>').appendTo($('.oDiv'));
 //           $('<h2> angularjs</h2>').appendTo($('.oDiv'));
 
@@ -71,8 +76,8 @@
 
 //            外部插入
 //           在指定容器外部（同辈元素） 后面添加节点
-//           $('.oDiv').after('<h2> angularjs</h2>');
-//           $('.oDiv').after($('strong'));
+ //          $('.oDiv').after('<h2> angularjs</h2>');
+ //          $('.oDiv').after($('<strong/>'));
 //           在指定容器外部（同辈元素） 前面添加节点
 //           $('.oDiv').before('<h2> express</h2>');
 //           setTimeout(function () {
@@ -80,7 +85,7 @@
 //           },1000);
 
         // 将节点 插入到 指定的元素 外部后面
-//           $('<h2> express</h2>').insertAfter($('.oDiv'));
+//           $('<h2> express</h2>').insertAfter($('strong'));
         // 将节点 插入到 指定的元素 外部前面
 //           $('<h2> express</h2>').insertBefore($('.oDiv'));
 
@@ -88,7 +93,7 @@
 //            包裹节点
 //              $('span').wrap('<strong/>');
 //              $('span').wrap(function (n) {
-//                  console.log(this);
+//                  console.log(this);//所有span元素
 //                  if(n%2){
 //                      return '<strong/>';
 //                  } else {
@@ -105,7 +110,7 @@
 //           $('span').wrapInner('<strong/>');
 
 //        将包裹的i的元素移除 移除父级
-//          $('i').unwrap();
+   //       $('i').unwrap();
 //        remove 移除节点
 //           setTimeout(function () {
 //               $('div i').remove();
@@ -142,9 +147,9 @@
 
 //         替换节点
 //           用 其他节点 替换指定节点
-//        $('<i>nihao</i>').replaceAll($('div.hello'));
+ //       $('<i>nihao</i>').replaceAll($('div.hello'));
 //         将指定节点 替换成 其他节点
-//        $('div.hello').replaceWith('<i>nihao1111111</i>')
+        $('div.hello').replaceWith('<i>nihao123</i>')
 //        $('div.hello').replaceWith($('strong'))
 
     });

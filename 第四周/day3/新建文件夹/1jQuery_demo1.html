@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style> 
+#div1{ width:100px; height:100px; background:red; position:absolute; top:100px; left:100px}
+div{
+ width:100px; height:100px; margin:20px; background:yellow;	
+}
+</style>
+</head>
+
+<body>
+<div id="div1">div1</div>
+
+<div id="div2">div2</div>
+<div id="div3">div3</div>
+<div id="div4">div4</div>
+<div id="div5">div5</div>
+</body>
+</html>
+<script src="jquery-1.9.1.js"></script>
+<script>
+//选择器-->查找DOM元素并且保存--查找DOM元素的语法是CSS选择器的格式
+//对DOM元素操作
+var obj1=$("#div1");//
+//obj1.animate({width:1000,height:700},15000,function(){
+	//this.style.backgroundColor="green";
+//});
+/*animate(ele,{width:1000,height:700},15000,function(){
+	this.style.backgroundColor="green";
+})*/
+var obj2=$("div");
+//obj2.animate({width:1000,height:700},15000,function(){
+	//this.style.backgroundColor="green";
+//})
+obj2.width(200).css({"background":"red","font-size":"24px"}).height(400);
+
+document.getElementById("div1");
+
+
+function zQuery(){
+	
+}
+zQuery.prototype.width=function(val){
+	
+}
+zQuery.prototype.height=function(val){
+	
+}
+var obj=new zQuery("div");
+obj.height(300);
+obj.width(300);
+$("div").height().width();
+
+</script>

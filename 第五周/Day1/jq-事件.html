@@ -14,9 +14,13 @@
 <body>
 <div class="container">
     <button id="btn"> 点击</button>
+    <button id="btn1"> 点击1</button>
+    <button id="btn2"> 点击1</button>
 </div>
 
-<div class="oDiv"></div>
+<div class="oDiv">
+
+</div>
 <ul>
     <li>11</li>
     <li class="sec">22</li>
@@ -37,7 +41,8 @@
         // 给多个事件行为 绑定同一个处理函数
 //      $('#btn').on('click  mouseover', function () {
 //          console.log('onclick');
-//      })
+//      });
+
 //        $('ul li:first').on('click', function () {
 //            console.log(this);
 //        });
@@ -68,11 +73,11 @@
 
 
 //        function fe1() {
-//            console.log('fe1');
+//            console.log('ni hao');
 //        }
 //
 //        function fe2() {
-//            console.log('fe2');
+//            console.log('xiexie');
 //        }
 //        $('#btn').on('click',fe1).on('click',fe2);
 
@@ -98,9 +103,9 @@
 //            console.log(e.data);
 //        });
 
-//       $('#btn').bind('click', function (e) {
+//       $('#btn').bind('click', function () {
 //            console.log('bindClick');
-//        }).bind('mouseover.over', function () {
+//        }).bind('mouseover', function () {
 //           console.log('bindOver');
 //       });
         // unbind
@@ -110,12 +115,12 @@
 //            $('#btn').unbind('.over'); // 命名空间
 //            $('#btn').off();
 //        }, 1000);
-
+//
 //        $('button').on('click', function () {
-//            console.log('button');
+//            console.log('button1');
 //        });
 //        $('button').bind('click', function () {
-//            console.log('button');
+//            console.log('button2');
 //        });
 
 //        预留事件 解决未来添加的元素 绑定事件
@@ -127,10 +132,9 @@
 //            console.log(this);
             console.log('delegate-click');
         });
-        $('.container').delegate('button', 'mouseover', function () {
-//            console.log(this);
-            console.log('delegate-mouseover');
-        });
+//        $('.container').delegate('button', 'mouseover', function () {
+//            console.log('delegate-mouseover');
+//        });
 
 //        $('body').append('<button>btn2</button>');
 //        $('.container').append('<button>btn2</button>');
@@ -139,10 +143,10 @@
 //            console.log('button-click');
 //        });
 //        setTimeout(function () {
-            //移除 delegate绑定的事件
-//            $('.container').undelegate('click');
-//            $('.container').undelegate();
-//        },2000);
+//          //  移除 delegate绑定的事件
+//            $('.container').undelegate('button','click');
+//           // $('.container').undelegate();
+//        },3000);
 
 
 
