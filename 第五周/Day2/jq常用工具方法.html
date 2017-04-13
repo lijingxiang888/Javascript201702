@@ -25,9 +25,9 @@
 <script type="text/javascript">
     // 工具方法
     $(function () {
-        // 遍历方法 $.each 可以遍历 任何对象  $().each
-        var arr = [2, 3, 4, 5, 5];
-        // ind 索引  item 当前项
+//        // 遍历方法 $.each 可以遍历 任何对象  $().each
+//        var arr = [2, 3, 4, 5, 5];
+//        // ind 索引  item 当前项
 //         $.each(arr, function (ind, item) {
 ////             console.log(this); // 当前项
 ////              console.log(ind, item);
@@ -35,9 +35,9 @@
 //         });
         // key value
 //        $.each({name: 'zhufeng', age: 10}, function (key, value) {
-////               console.log(this); 代表value
-////               console.log(key+' : ' + this);
-////               console.log(key+' : ' + value);
+//             //  console.log(this);// 代表value
+//             //  console.log(key+' : ' + this);
+//               console.log(key+' : ' + value);
 //
 //        });
 //         遍历jq对象
@@ -56,7 +56,7 @@
 
 //        遍历jq对象
 //        $('li').each(function (ind, item) {
-        console.log(this); // 当前项
+//           // console.log(this); // 返回当前项
 //            console.log(ind, item);
 //        });
 
@@ -70,7 +70,7 @@
 //                return false; // 退出each
 //            }
 //            console.log(this);
-//        })
+//        });
 
         // grep map
 
@@ -103,16 +103,16 @@
 //        console.log($('li'));
 //        console.log($('li').size());
 
-        var $li = $('li:first');
+      //  var $li = $('li:first');
         // 获取元素在同辈集合中 索引位置
-//        console.log($li.index());
+     //   console.log($li.index());
 //       $('li').each(function () {
 //           $(this).click(function () {
 //                  alert($(this).index());
 //           });
 //       });
-        // jq对象$('.three')在 $('li')中索引位置
-//        console.log($('li').index($('.three')));
+       //  jq对象$('.three')在 $('li')中索引位置
+       // console.log($('li').index($('.three')));
 
         // 类数组转数组 likeArray
 //        var lis = document.getElementsByTagName('li');
@@ -125,7 +125,7 @@
         // 去重 直接在原有上去重
 //        var arr = [1, 1, 1, 2, 2, 2, 3, 3];
 //        console.log($.unique(arr));
-//        console.log(arr); //
+//        console.log(arr);
 //        合并数组
 //        console.log($.merge([1, 2], [3, 4,'like']));
 //        [1, 2].concat([3, 4,'like'])
@@ -155,8 +155,8 @@
 //        console.log($.type(12));
 //        console.log($.type([]));
 //     检测一个对象是否为空
-//        console.log($.isEmptyObject({})); // true
-//        console.log($.isEmptyObject({name:'zhufeng'})); // false
+        //console.log($.isEmptyObject({})); // true
+        //console.log($.isEmptyObject({name:'zhufeng'})); // false
 
         function A() {
 
@@ -214,10 +214,10 @@
 //        console.log($.trim('  ni hao ')); // "ni hao"
 //
 //        JSON字符串转换为 JSON对象
-         var jsonStr = '{"name":"zhufeng","id": 10}';
+//         var jsonStr = '{"name":"zhufeng","id": 10}';
 //         console.log(jsonStr);
-//        console.log($.parseJSON(jsonStr));
-        var jsonObj = $.parseJSON(jsonStr);
+ //       console.log($.parseJSON(jsonStr));
+//        var jsonObj = $.parseJSON(jsonStr);
 //        var jsonObj = $.parseXML();
 
 //        get请求 需要我们给后台传的参数 以这种形式 url？wd=nihao&rsv_spt=1 拼接到url问号后面

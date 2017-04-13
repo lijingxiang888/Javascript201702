@@ -14,18 +14,16 @@
 <body>
 <div class="container">
     <button id="btn"> 点击</button>
-    <button id="btn1"> 点击1</button>
-    <button id="btn2"> 点击1</button>
 </div>
 
 <div class="oDiv">
-
+<p>555</p>
 </div>
-<ul>
-    <li>11</li>
-    <li class="sec">22</li>
-    <li>33</li>
-</ul>
+<!--<ul>-->
+    <!--<li>11</li>-->
+    <!--<li class="sec">22</li>-->
+    <!--<li>33</li>-->
+<!--</ul>-->
 <script type="text/javascript" src="jquery-1.11.3.js"></script>
 <script type="text/javascript">
     $(function () {
@@ -128,11 +126,11 @@
 //            console.log('button');
 //        });
 //       预留事件 解决未来添加的后代元素 绑定事件
-        $('.container').delegate('button', 'click', function () {
-//            console.log(this);
-            console.log('delegate-click');
-        });
-//        $('.container').delegate('button', 'mouseover', function () {
+//        $('.container').delegate('button', 'click', function () {
+////            console.log(this);
+//            console.log('delegate-click');
+//        });
+////        $('.container').delegate('button', 'mouseover', function () {
 //            console.log('delegate-mouseover');
 //        });
 
@@ -148,6 +146,9 @@
 //           // $('.container').undelegate();
 //        },3000);
 
+//        $('button').on('click', function () {
+//            $('.oDiv').load('index.html')
+//        });
 
 
 
