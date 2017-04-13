@@ -135,6 +135,7 @@
             var cur = oLis[i];
             cur.onmouseover = function () {
                 autoMove(this.ind);
+                outer.flag = false;
             }
         }
         //左右切换
