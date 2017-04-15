@@ -95,19 +95,15 @@
                 // 设置滑过动画前的mask的起始位置
                 switch (res) {
                     case 0: //左边
-                        console.log('左边');
                         $mask.css({left: -boxW, top: 0});
                         break;
-                    case 1:
-                        console.log('下边');
+                    case 1: // 下边
                         $mask.css({left: 0, top: boxH});
                         break;
-                    case 2:
-                        console.log('右边');
+                    case 2: // 右边
                         $mask.css({left: boxW, top: 0});
                         break;
-                    case 3:
-                        console.log('上边');
+                    case 3: // 上边
                         $mask.css({left: 0, top: -boxH});
                         break;
                 }
