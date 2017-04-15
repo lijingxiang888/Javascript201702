@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style type="text/css">
+    <title>JS方法写渐变轮播图</title>
+    <style>
         *{
             margin: 0;
             padding: 0;
         }
-
-        a{
-            text-decoration: none;
-        }
         ul {
             list-style: none;
+        }
+        a{
+            text-decoration: none;
         }
         #outer {
             position: relative;
@@ -58,50 +57,49 @@
         #focus li.selected {
             background: #ff6b1e;
         }
-        #outer a {
+        #oLeft,#oRight{
+            display: none;
             position: absolute;
             top: 50%;
             margin-top: -25px;
-            left: 0;
             width: 30px;
             height: 50px;
             text-align: center;
             line-height: 50px;
-            color: #fff;
             background: rgba(0,0,0,.3);
-            z-index: 10;
-            font-size: 25px;
+            color: #fff;
+            font-size: 30px;
+            z-index: 20;
         }
-        #outer a.right{
-            left: auto;
+        #oRight {
             right: 0;
         }
-        #outer a:hover {
-            background: #000;
+        #oLeft:hover, #oRight:hover {
+            background: rgba(0,0,0,1);
         }
+
     </style>
 </head>
 <body>
 <div id="outer">
     <div id="wrap">
-        <!--<img src="./images/1.jpg" alt="">-->
-        <!--<img src="./images/2.jpg" alt="">-->
-        <!--<img src="./images/3.jpg" alt="">-->
-        <!--<img src="./images/4.jpg" alt="">-->
-        <!--<img src="./images/5.jpg" alt="">-->
+        <!--<img src="images/1.png" alt="">-->
+        <!--<img src="images/2.png" alt="">-->
+        <!--<img src="images/3.png" alt="">-->
+        <!--<img src="images/4.png" alt="">-->
+        <!--<img src="images/5.png" alt="">-->
     </div>
     <ul id="focus">
         <!--<li class="selected"></li>-->
         <!--<li></li>-->
         <!--<li></li>-->
         <!--<li></li>-->
-        <!--<li></li>-->
     </ul>
-    <a  class="left" href="javascript:;"> < </a>
-    <a  class="right" href="javascript:;"> > </a>
+    <a id="oLeft" href="javascript:;"> < </a>
+    <a id="oRight" href="javascript:;"> > </a>
 </div>
-<script type="text/javascript" src="./js/utils.js"></script>
-<script type="text/javascript" src="./js/animate.js"></script>
-<script type="text/javascript" src="./js/index.js"></script>
+<script src="utils.js"></script>
+<script src="animate2.js"></script>
+<script src="index.js"></script>
 </body>
 </html>

@@ -402,14 +402,19 @@ var utils = (function () {
     }
 
     function win(attr, val) {
-        if(typeof val === 'undefined'){
+        if (typeof val === 'undefined') {
             return document.documentElement[attr] || document.body[attr];
         }
         document.documentElement[attr] = val;
         document.body[attr] = val;
     }
 
+    function toJSON(data) {
+        return "JSON" in window ? JSON.parse(data) : eval('(' + data + ')');
+    }
+
     return {
+        toJSON: toJSON,
         win: win,
         listToArray: listToArray,//->JQ没有
         offset: offset,

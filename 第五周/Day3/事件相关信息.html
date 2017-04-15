@@ -39,15 +39,21 @@
 </div>
 <div id="btn"><h3>你好</h3></div>
 <a id="link" href="http://www.baidu.com">跳转到百度</a>
+
 <input type="text" id="oText">
 <script type="text/javascript">
     var btn = document.getElementById('btn');
     var link = document.getElementById('link');
-    oText.onkeydown = function (e) {
-        e = e || window.event;
-        console.log(e.keyCode); // 键码值
-
-    };
+//    oText.onkeydown = function (e) {
+//        e = e || window.event;
+//        console.log(e.keyCode); // 键码值
+//
+//    };
+//    btn.onmouseover = function (e) {
+//        e = e || window.event;
+//        var target = e.target || e.srcElement;
+//        console.log(target); //
+//    };
     // 事件传播-事件冒泡：当前元素相关事件(click)触发时 同时也会触发上级 相关事件(click) 一直到 document
 //    document.body.onclick = function () {
 //       console.log('body');
@@ -61,26 +67,28 @@
 
     outer.onclick = function (e) {
         e = e || window.event;
+        console.log( e.pageX);
+        console.log( e.pageY);
 //        console.log(' pageX: ' + e.pageX);
 //        console.log(' pageY: ' + e.pageY);
 //        console.log(' clientX: ' + e.clientX);
 //        console.log(' clientY: ' + e.clientY);
-        console.log('offsetX: ' + e.offsetX);
-        console.log('offsetY: ' + e.offsetY);
+//        console.log('offsetX: ' + e.offsetX);
+//        console.log('offsetY: ' + e.offsetY);
 
 //          console.log('screeX: ' + e.screenX);
 //          console.log('screeY: ' + e.screenY);
 //
 //        console.log(document.documentElement.scrollLeft || document.body.scrollLeft);
 //        console.log(document.documentElement.scrollTop || document.body.scrollTop);
-//        // ie 6-8 pageY pageX 下写法  clientX/clientY +  scrollLeft/scrollTop
-//        var  pagey = e.clientY + (document.documentElement.scrollTop || document.body.scrollTop);
-//        var pagex = e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft);
-//
-//        var pageY = e.pageY || pagey;
-//        var pageX = e.pageX || pagex;
-//
-//        console.log(pageY, pageX);
+//        // ie 6-8 pageX pageY 下写法  clientX/clientY +  scrollLeft/scrollTop
+        var  pagey = e.clientY + (document.documentElement.scrollTop || document.body.scrollTop);
+        var pagex = e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft);
+
+        var pageY = e.pageY || pagey;
+        var pageX = e.pageX || pagex;
+
+        console.log(pageY, pageX);
 
 //        e.stopPropagation(); // 阻止冒泡传播
 //        e.cancelBubble = true; // ie 阻止冒泡传播
