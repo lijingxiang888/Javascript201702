@@ -47,24 +47,24 @@
     var inner = document.getElementById('inner');
     var center = document.getElementById('center');
     // 事件委托
-//   利用事件默认会进行冒泡传播的机制，我们给最外层元素相关行为绑定事件，元素内  的 后代元素相关行为 触发的时候 也会到导致 最外层元素的相关行为事件触发，我们根据事件对象中事件源 来进行相应处理
+//   利用事件默认会进行冒泡传播的机制，我们给最外层元素相关行为绑定事件，元素内的后代元素相关行为 触发的时候 也会到导致 最外层元素的相关行为事件触发，我们根据事件对象中事件源 来进行相应处理
 
 
 //  一个容器内 document 多个元素div相关行为click 绑定时候  可以采用事件委托方式进行绑定，比单独一个一个绑定事件 执行和性能上 提升很多
 
-    document.onclick = function (e) {
-        e = e || window.event;
-        console.dir(e.target); // 事件对象中的事件源
-        var tar = e.target;
-        //根据事件源中的id 判断当前点击的元素 做出相应处理
-        if(tar.id === 'center') {
-            console.log('center');
-        } else if(tar.id === 'inner') {
-            console.log('inner');
-        } else if(tar.id === 'outer') {
-            console.log('outer');
-        }
-    };
+//    document.onclick = function (e) {
+//        e = e || window.event;
+//        console.dir(e.target); // 事件对象中的事件源
+//        var tar = e.target;
+//        //根据事件源中的id 判断当前点击的元素 做出相应处理
+//        if(tar.id === 'center') {
+//            console.log('center');
+//        } else if(tar.id === 'inner') {
+//            console.log('inner');
+//        } else if(tar.id === 'outer') {
+//            console.log('outer');
+//        }
+//    };
 
     // 事件传播机制
     // 事件捕获阶段

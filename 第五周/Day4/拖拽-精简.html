@@ -41,7 +41,9 @@
         e = e || window.event;
         this.l = e.clientX - this.offsetLeft;
         this.t = e.clientY - this.offsetTop;
-        // 解决ie 和火狐中的 鼠标焦点丢失
+        //我们拖拽的时候 有时过快 导致 鼠标从拖拽元素中 脱离出来
+        //    在ie和火狐 里 需要使用元素的 setCapture() 让鼠标焦点和元素绑定到一起
+        //    chrome 将mousemove和mouseup事件绑定给document
         if (this.setCapture) { // 如果存在这个属性方法 我们就 使用它
             this.setCapture();
             this.onmousemove = move;
@@ -71,6 +73,7 @@
     function move(e) {
         // 计算拖拽元素的 left 和 top 值
         e = e || window.event;
+        //阻止拖拽事件的默认行为，它的默认行为会将拖拽的元素在一个新窗口打开
         e.preventDefault ? e.preventDefault() : e.returnValue = false;         // 计算出来的 left 和 top
         boxL = e.clientX - this.l;
         boxT = e.clientY - this.t;

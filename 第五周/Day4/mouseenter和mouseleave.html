@@ -31,13 +31,13 @@
         console.log('inner');
     };
 
-//    mouseenter 和mouseleave 没有冒泡传播
-    //    outer.onmouseenter = function () {
-//        console.log('outer')
-//    };
-//    inner.onmouseenter = function () {
-//        console.log('inner');
-//    };
+   // mouseenter 和mouseleave 没有冒泡传播
+        outer.onmouseenter = function () {
+        console.log('outer')
+    };
+    inner.onmouseenter = function () {
+        console.log('inner');
+    };
 </script>
 </body>
 </html>
