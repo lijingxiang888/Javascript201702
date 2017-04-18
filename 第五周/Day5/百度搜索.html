@@ -53,7 +53,7 @@
        $('#search').on('input', function () {
            var val = $(this).val();
             if(val) {
-                $(this).data('word',val);
+                $(this).data('word',val); // 保存输入框最开始的数据
                 $.ajax({
                     // 百度搜索关键词 请求 接口API
                     url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
@@ -92,7 +92,7 @@
                      } else if(count === -1){
                          $('.select').removeClass('select');
                          var word = $(this).data('word');
-                         $(this).val(word);
+                         $(this).val(word); // 输入框中设置为最开始输入时的关键词
                          return;
                      } else {
                          $('.lists li').eq(count).addClass('select').siblings().removeClass('select');
@@ -106,7 +106,7 @@
                      count = -1;
                     $('.select').removeClass('select');
                      var word = $(this).data('word');
-                      $(this).val(word);
+                      $(this).val(word); // 输入框中设置为最开始输入时的关键词
                      return;
                 }
                 $('.lists li').eq(count).addClass('select').siblings().removeClass('select');
