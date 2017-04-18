@@ -39,7 +39,7 @@
         }
     }
 
-    //     移除事件 我们实际要移除的是 传递进来的handler 对应Fn
+    //  移除事件
     function off(ele, type, handler) {
         if (ele.removeEventListener) {
             ele.removeEventListener(type, handler);
@@ -53,7 +53,6 @@
                     }
                 }
             }
-//           ele.detachEvent('on' + type, handler);
         }
     }
 
