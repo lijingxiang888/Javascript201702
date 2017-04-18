@@ -19,7 +19,7 @@
             overflow: hidden;
         }
         img {
-            -webkit-user-select: none;
+            -webkit-user-select: none;/*禁止图片选中拖拽*/
         }
         #box2 img {
             position: absolute;
@@ -60,13 +60,11 @@
     var box2Img = box2.getElementsByTagName('img')[0];
     var mask;
     var box1L = box1.offsetLeft + box1.clientLeft;
-    var box1T = box1.offsetTop - box1.clientTop;
+    var box1T = box1.offsetTop + box1.clientTop;
     box1.onmouseenter = function (e) {
-        console.log('123');
         e = e || window.event;
         mask = document.getElementById('mask');
         if (!mask) { // 如果没有mask 就创建
-            console.log('创建');
             mask = document.createElement('div');
             mask.id = 'mask';
             this.appendChild(mask);

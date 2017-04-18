@@ -43,7 +43,7 @@
 <script type="text/javascript">
     var btn = document.getElementById('btn');
     //    DOM0级事件绑定 -> 元素对象上私有属性
-    //    DOM2级事件绑定 ->  在元素对象 原型链上EventTarget的属性 上
+    //    DOM2级事件绑定 ->  在元rget的素对象 原型链上EventTa属性 上
     //      addEventListener/ removeEventListener
     //    btn.onclick = function () {
     //        console.log('btn1');
@@ -54,9 +54,9 @@
      * param2 处理函数
      * param3 Boolean  true  捕获阶段  false 冒泡阶段
      */
-        //    btn.addEventListener('click', function () {
-        //           console.log('btn2');
-        //    },false);
+//            btn.addEventListener('click', function () {
+//                   console.log('btn2');
+//            },false);
 
         // jq on 底层 调用 封装addEventListener/attachEvent DOM2级事件绑定
         // jq bind 里面封装 底层调用 on
@@ -73,12 +73,12 @@
         //          };
 
         // DOM2  将绑定的 处理函数 放到 事件池中
-        //    btn.addEventListener('click', function () {
-        //         console.log('btn1');
-        //    }, false);
-        //    btn.addEventListener('click', function () {
-        //        console.log('btn2');
-        //    }, false);
+//            btn.addEventListener('click', function () {
+//                 console.log('btn1');
+//            }, false);
+//            btn.addEventListener('click', function () {
+//                console.log('btn2');
+//            }, false);
         //
         //   2. DOM0级事件绑定中 事件传播机制 只有 冒泡阶段 DOM2级事件绑定中 可以通过 addEventListener 的第三个参数 指定 true 捕获阶段 false 冒泡阶段
 //    事件传播  先捕获 目标阶段 再冒泡 分为
@@ -129,18 +129,18 @@
 
     //    3. DOM2中提供了一些新的方法 DOMContentLoaded/ jq-ready(HTML结构加载完后执行 )
     //     window.onload  是页面中 html结构和 所有 图片 文字 资源加载完毕后才执行
-    window.onload = function () {
-        console.log('onload11111111');
-    };
-    window.onload = function () {
-        console.log('onload222222');
-    };
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log('DOMContentLoaded11111');
-    });
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log('DOMContentLoaded2222222');
-    })
+//    window.onload = function () {
+//        console.log('onload11111111');
+//    };
+//    window.onload = function () {
+//        console.log('onload222222');
+//    };
+//    document.addEventListener('DOMContentLoaded', function () {
+//        console.log('DOMContentLoaded11111');
+//    });
+//    document.addEventListener('DOMContentLoaded', function () {
+//        console.log('DOMContentLoaded2222222');
+//    })
 
 </script>
 </body>

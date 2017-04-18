@@ -49,11 +49,11 @@
     outer.onmouseenter = function (e) {
         e = e || window.event;
         var mask = document.getElementById('box');
-        if(!mask) {
+        if(!mask) {//如果mask存在的话直接获取，没有的话再创建
             mask = document.createElement('div');
-            mask.id = 'box';
+            mask.id = 'box';//给创建的mask一个私有属性 id="box"
             this.appendChild(mask);
-            computed(e,mask);
+            computed(e,mask);//鼠标刚滑入就让鼠标在遮罩层的中间位置
         }
     };
 
@@ -61,15 +61,15 @@
     var outerT = outer.offsetTop + outer.clientTop;
     outer.onmousemove = function (e) {
         e = e || window.event;
-        var mask = document.getElementById('box');
-        computed(e,mask);
+        var mask = document.getElementById('box');//移动的时候重新获取mask
+        computed(e,mask);//移动的时候，时计算 元素的位置left 和 top），让鼠标始终在遮罩层的中间位置
     };
 
     outer.onmouseleave = function () {
 //        box.style.display = 'none';
-        var mask = document.getElementById('box');
+        var mask = document.getElementById('box');//离开时候再重新获取mask
         if(mask) {
-            this.removeChild(mask)
+            this.removeChild(mask);//让outer移除mask这个子节点
         }
     };
     // 计算元素跟随鼠标移动的 位置

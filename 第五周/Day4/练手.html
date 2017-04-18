@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<script>
+//    function bind(curEle,type,fn) {
+//        if(window.addEventListener) {
+//            curEle.addEventListener(type, fn,false);
+//        } else {
+//            curEle.attachEvent('on' + type, fn);
+//        }
+//    }
+//
+//    function bind(curEle,type,fn) {
+//        if (window.addEventListener) {
+//            curEle.addEventListener(type,fn,false)
+//
+//            }else {
+//            curEle.attachEvent('on' + type,fn);
+//        }
+//    }
+
+    function bind(curEle,type,fn) {
+        if (addEventListener) {
+
+
+            }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var drag = document.getElementById('drag');
+    //h获取元素自身的宽高
+    var dragW = drag.offsetWidth;
+    var dragT = drag.offsetHeight;
+    drag.onmousedown = function (e) {
+        e = e ||window.event;
+        //获取当前窗口的宽高
+        var winW = document.documentElement.clientWidth || document.body.clientWidth;
+        var winH = document.documentElement.clientHeight || document.body.clientHeight;
+        //求出最大活动范围
+        this.maxL = winW - dragW;
+        this.maxT = winH - dragH;
+        //实时活动数据
+        var boxL;
+        var boxT;
+        //实时计算活动数据
+        this.l = e.clientX - this.offsetLeft;
+        this.t = e.clientY - this.offsetTop;
+        //解决鼠标拖拽过快，鼠标和盒子分离问题
+        if (this.setCapture) {
+
+            this.setCapture();
+            this.onmousemove = move;
+            this.onmouseup = up;
+            }else {
+            document.onmousemove = function (e) {
+                move.call(drag,e)
+            };
+            document.onmouseup = up
+        }
+
+    };
+    function up() {
+        if (this.releaseCapture) {
+
+            this.releaseCapture()
+            }
+            this.onmousemove = null;
+            this.onmouseup = null;
+    }
+    function move(e) {
+        e = e ||window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+        //最小活动范围
+        boxL =
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    var drag = document.getElementById('drag');
+//    //元素自身高度和宽度
+//    var dragW = drag.offsetWidth;
+//    var dragH = drag.offsetHeight;
+//    drag.onmousedown = function (e) {
+//        //获取当前窗口的宽高
+//        var winW = document.documentElement.clientWidth||document.body.clientWidth;
+//        var winH = document.documentElement.clientHeight || document.body.clientHeight;
+//        //最大活动范围
+//        this.maxL = winW-dragW;
+//        this.maxT = winH-dragH;
+//        //鼠标移动的范围
+//        var boxL;
+//        var boxT;
+//        e = e ||window.event;
+//        this.l = e.clientX - this.offsetLeft;
+//        this.t = e.clientY - this.offsetTop;
+//        if (this.setCapture) {
+//            this.setCapture();
+//            this.onmousemove = move;
+//            this.onmouseup = up;
+//            }else{
+//            document.onmousemove = function (e) {
+//                move.call(drag,e)
+//            };
+//            document.onmouseup = up()
+//        }
+//    };
+//    //up方法
+//    function up() {
+//        if (this.releaseCapture) {
+//
+//            this.releaseCapture
+//            }
+//        this.onmousemove = null;
+//        this.onmouseup = null;
+//    }
+//    function move(e) {
+//        e = e ||window.event;
+//        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+//        boxL = e.clientX - this.l;
+//        boxT = e.clientY - this.t;
+//        if (boxL>this.maxL) {
+//            boxL = this.maxL;
+//
+//            }else if (boxL < 0) {
+//                boxL = 0
+//                }
+//        if (boxT > this.maxT) {
+//            boxT = this.maxT;
+//        } else if (boxT < 0) {
+//            boxT = 0;
+//        }
+//        this.style.left = boxL + 'px';
+//        this.style.top = boxT + 'px'
+//
+//    }
+
+
+
+
+</script>
+</body>
+</html>
