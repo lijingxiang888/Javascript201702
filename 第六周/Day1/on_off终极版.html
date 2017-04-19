@@ -8,7 +8,7 @@
 <button id="btn">点击</button>
 <script type="text/javascript">
     var btn = document.getElementById('btn');
-    function on(ele, type, handler, bool) { // 绑定事件
+    function on(ele, type, handler, bool) { // 绑定事件， bool可有可无，这决定着是捕获阶段还是冒泡阶段
         if(ele.addEventListener){
             bool = bool || false;
             ele.addEventListener(type, handler, bool);

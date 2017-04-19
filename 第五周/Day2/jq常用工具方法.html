@@ -9,6 +9,13 @@
             height: 100px;
             background-color: red;
         }
+        p{
+            background-color: rgba(0,0,0,.3);
+            width: 60px;
+            height: 80px;
+            color: rgba(255, 253, 53, 0.73);
+
+        }
     </style>
 </head>
 <body>
@@ -21,6 +28,7 @@
     <li>66</li>
 </ul>
 <div id="oDiv"></div>
+<p>哈哈哈哈哈哈哈</p>
 <script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
 <script type="text/javascript">
     // 工具方法
@@ -130,8 +138,8 @@
 //        console.log($.merge([1, 2], [3, 4,'like']));
 //        [1, 2].concat([3, 4,'like'])
 
-        var first = {name: 'cuyuiyang', id: 1, age: 20};
-        var second = {name: 'zhenan', id: 2, say: 'hello'};
+//        var first = {name: 'cuyuiyang', id: 1, age: 20};
+//        var second = {name: 'zhenan', id: 2, say: 'hello'};
         // 将第二个参数对象合并到 第一个对象里面  修改第一个first
 //        $.extend(first,second);
 //        console.log(first); // {name: "zhenan", id: 2, age: 20, say: "hello"}
@@ -230,6 +238,12 @@
 
 //        $.serialize();
 //        $.serializeArray()
+
+
+
+        $("p").animate({
+            height: 'toggle', opacity: 'toggle'
+        }, "slow");
     });
 
 
