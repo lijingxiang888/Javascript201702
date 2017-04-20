@@ -3,7 +3,6 @@ function Drag(curEle) {
     this.DOWN = this.handlerThis(this.down, this);
     on(this.ele, 'mousedown', this.DOWN);
 }
-
 Drag.prototype.down = function (e) {
     this.ele.l = e.clientX - this.ele.offsetLeft;
     this.ele.t = e.clientY - this.ele.offsetTop;
@@ -45,7 +44,6 @@ Drag.prototype.computed = function () {
     this.style.left = this.boxL + 'px';
     this.style.top = this.boxT + 'px';
 };
-
 
 Drag.prototype.handlerThis = function (fn, context) {
     return function (e) {
