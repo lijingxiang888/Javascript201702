@@ -12,15 +12,16 @@
         if(ele.addEventListener){
             bool = bool || false;
             ele.addEventListener(type, handler, bool);
-        } else {
+        } else {//ie不兼容，所以创建一个事件池，将处理函数用attachEvent一个一个的放进去
             if(!ele['onEvent' + type]) { // 如果当前事件类型没有 才创建属于这个事件类型的事件池
-                ele['onEvent' + type] = []; // 事件池
+                ele['onEvent' + type] = []; // //ie下绑定多个处理函数，要放进事件池中
                 // run 方法就是当前 这个事件类型的 执行者
                 ele.attachEvent('on' + type, function (e) {
                     e = e || window.event;
-                    run.call(ele,e);
+                    run.call(ele,e);//将绑定的方法放进事件池后(但是还存在重复绑定问题)，执行时，用run方法执行，按照一个一个排好的顺序依次执行，这样就解决了执行顺序问题
                 });
             }
+            //解决重复绑定问题
             var events = ele['onEvent' + type];
             if(events && events.length) { // 避免往 该事件类型的事件池中重复添加handler处理函数
                 for(var i = 0; i < events.length; i++) {
@@ -42,7 +43,7 @@
              var events = ele['onEvent' + type];
              if(events && events.length) {
                  for(var i = 0; i < events.length; i++) {
-                     if(events[i] === handler){ // 在事件池 中 把我要移除的handler处理函数 从 事件池中移除 （run执行的时候 只看事件池中 有哪些处理函数 就执行哪些处理函数）
+                     if(events[i] === handler){ // 在事件池 中 把我要移除的handler处理函数 从 事件池中移除 （run执行的时候 只看事件池中 有哪些处理函数 就执行哪些处理函数）,detachEvent会将整个事件池全部移除，所有这里不用
                          events.splice(i,1);
                          break;
                      }

@@ -6,7 +6,7 @@ function on(ele, type, handler, bool) { // 绑定事件
         }
         var events = ele['onSelf' + type];
         for(var k = 0; k < events.length; k++){
-            if(events[i] === handler) {
+            if(events[k] === handler) {
                 return;
             }
         }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">点击</button>
+<script>
+    var btn = document.getElementById('btn');
+    function on(ele, type, handler) {
+        if (ele.addEventListener) {
+            ele.addEventListener(type, handler, false)
+        } else {
+            if (!ele['onEvent' + type]) {
+
+                ele['onEvent' + type] = [];
+                ele.attachEvent('on' + type, function (e) {
+                    e = window.event;
+                    run.call(ele, e)
+                })
+            }
+            var events = ele['onEvent' + type];
+            if (events && events.length) {
+                for (var i = 0; i < events.length; i++) {
+                    if (events[i] === handler) {
+                        return
+
+                    }
+                }
+
+            }
+            events.push(handler)
+        }
+    }
+    function off(ele, type, handler) {
+        if (ele.removeEventListener) {
+            ele.removeEventListener(type, handler, false)
+        } else {
+            var events = ele['onEvent' + type];
+            if (events && events.length) {
+                for (var i = 0; i < events.length; i++) {
+                    if (events[i] === handler) {
+                        events.splice(i, 1);
+                        break
+                    }
+                }
+            }
+        }
+    }
+    function run() {
+        e.target = e.srcElement;
+        e.preventDefault = function () {
+            returnValue = false
+        };
+        e.stopPropagation = function () {
+            e.cancelBubble = true
+        };
+        e.pageX = (document.documentElement.scrollLeft || document.body.scrollLeft) + e.clientX;
+        e.pageY = (document.documentElement.scrollTop || document.body.scrollTop) + e.clientY;
+        var events = this['onEvent' + type];
+        if (events && events.length) {
+            for (var i = 0; i < events.length; i++) {
+                events[i].call(this, e)
+            }
+        }
+    }
+</script>
+
+
+</body>
+</html>
