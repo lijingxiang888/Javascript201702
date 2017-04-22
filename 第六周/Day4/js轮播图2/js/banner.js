@@ -106,7 +106,7 @@
         for (var i = 0; i < other.length; i++) {
             utils.css(other[i], 'zIndex', 0);
         }
-
+        that.flag = false;
         // 执行渐变动画
         zfAnimate({
             ele: curImg,
@@ -157,7 +157,6 @@
                     that.step = that.imgLength-1;
                 }
                 that.autoMove(that.step);
-                that.flag = false;
             }
 
         };
@@ -165,7 +164,6 @@
         that.right.onclick = function () {
             if(that.flag)  {
                 that.autoMove();
-                that.flag = false;
             }
         };
 
