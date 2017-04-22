@@ -139,9 +139,9 @@
                 that.autoMove();
             }, that.interTime);
         };
-        
+
         // 焦点点击事件
-        for(var i = 0; i < that.focusList.length; i++){
+        for (var i = 0; i < that.focusList.length; i++) {
             var curLi = that.focusList[i];
             curLi.ind = i;
             curLi.onmouseover = function () {
@@ -151,10 +151,10 @@
 
         // 左右切换事件
         that.left.onclick = function () {
-            if(that.flag) {
+            if (that.flag) {
                 that.step--;
-                if(that.step === -1) {
-                    that.step = that.imgLength-1;
+                if (that.step === -1) {
+                    that.step = that.imgLength - 1;
                 }
                 that.autoMove(that.step);
             }
@@ -162,7 +162,7 @@
         };
 
         that.right.onclick = function () {
-            if(that.flag)  {
+            if (that.flag) {
                 that.autoMove();
             }
         };
