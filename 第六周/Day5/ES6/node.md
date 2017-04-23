@@ -6,6 +6,14 @@
 
 ### 下载安装 (npm install 包名 --save-dev) 如jquery包
 
+###  Mac 使用npm的时候每次都要在前面加上sudo
+
+### Mac
+```
+ sudo npm install jquery --save-dev
+```
+
+### windows
 ```
  npm install jquery --save-dev
 ```
