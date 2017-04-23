@@ -60,7 +60,7 @@
             str += '<li><a href=' + cur.link + '>';
             // 左边div 用来包着img
             // 将当前img要加载的图片路径 先保存到 自身的data-real属性上 只有符合加载标准再让当前img 的src加载这个路径 否则显示默认背景图
-            str += '<div><img data-real=' + cur.src + '></div>';
+            str += '<div><images data-real=' + cur.src + '></div>';
             // 右边div
             str += '<div>';
             str += '<h3>' + cur.title + '</h3>';
@@ -104,7 +104,7 @@
             tempImg.src = imgSrc;
             tempImg.onload = function () {
                 console.log('加载成功');
-                // 让页面中 img 加载 这个图片地址
+                // 让页面中 images 加载 这个图片地址
                 img.src = imgSrc;
                 img.flag = true; // 将加载过的img加一个flag属性为true 说明加载过
             }

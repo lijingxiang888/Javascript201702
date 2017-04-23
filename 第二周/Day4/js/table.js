@@ -35,7 +35,7 @@ for (var i = 0, len = productData.length; i < len; i++) {
     /*当前元素里面的详细内容没必要使用动态创建的方式了,直接的字符串拼接会更省事*/
     var str = '';
     str += '<a href="#">';
-    str += '<img src="' + cur.img + '" alt=""/>';
+    str += '<images src="' + cur.img + '" alt=""/>';
     str += '<span class="title">' + cur.title + '</span>';
     str += '<span class="price">￥' + cur.price + '</span>';
     str += '</a>';

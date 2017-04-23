@@ -31,7 +31,7 @@ $(function () {
         var imgStr = ''; // 拼接img HTML字符串
         var foucsStr = ''; // 拼接焦点 HTML字符串
         $.each(data, function () {
-            imgStr += '<img data-src= ' + this.img + '>'; // $ele.data('src')
+            imgStr += '<images data-src= ' + this.img + '>'; // $ele.data('src')
             foucsStr += '<li></li>';
         });
         // 输出到页面

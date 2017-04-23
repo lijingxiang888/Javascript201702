@@ -36,7 +36,7 @@
             oa.href = 'javascript:;';
             oa.innerHTML = '采集';
             oLi.appendChild(oa);
-            // 创建 img
+            // 创建 images
             var oImg = document.createElement('img');
             //给图片设置随机高 200 - 350
             oImg.style.height = Math.round(Math.random() * 150 + 200) + 'px';
@@ -53,7 +53,7 @@
                 return a.offsetHeight - b.offsetHeight;
             });
             // 排完序后 集合中第一个 是高度 最小
-            // 将当前这一轮创建好的 li img 放到 排序后 第一项 也就是 高度最小的那个ul里
+            // 将当前这一轮创建好的 li images 放到 排序后 第一项 也就是 高度最小的那个ul里
             oUlArr[0].appendChild(oLi);
         }
     }

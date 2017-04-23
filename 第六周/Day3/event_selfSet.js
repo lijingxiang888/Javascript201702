@@ -81,7 +81,7 @@ function run(e) { // 控制处理函数执行顺序
         }
     }
 }
-
+//自定义事件执行
 function selfRun(ele, type,e) {
     var events = ele['onSelf' + type];
     if(events && events.length) {

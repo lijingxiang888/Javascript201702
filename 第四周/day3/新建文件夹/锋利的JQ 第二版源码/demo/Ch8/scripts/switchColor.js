@@ -1,7 +1,7 @@
 ﻿/*衣服颜色切换*/
 $(function(){
-	$(".color_change ul li img").click(function(){    
-		  $(this).addClass("hover").parent().siblings().find("img").removeClass("hover");
+	$(".color_change ul li images").click(function(){
+		  $(this).addClass("hover").parent().siblings().find("images").removeClass("hover");
 		  var imgSrc = $(this).attr("src");
 		  var i = imgSrc.lastIndexOf(".");
 		  var unit = imgSrc.substring(i);

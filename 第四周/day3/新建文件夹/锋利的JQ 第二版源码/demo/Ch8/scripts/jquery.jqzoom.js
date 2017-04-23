@@ -54,7 +54,7 @@
             'text-decoration': 'none'
         });
         //BASE IMAGE
-        var img = $("img:eq(0)", el);
+        var img = $("images:eq(0)", el);
         el.title = $(el).attr('title');
         el.imagetitle = img.attr('title');
         var zoomtitle = ($.trim(el.title).length > 0) ? el.title : el.imagetitle;

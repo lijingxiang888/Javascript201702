@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练手</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        #box2 {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        #box3 {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+<script src="event_selfSet.js">
+
+
+</script>
+<script>
+    //获取操作元素
+    var oBox1 = document.getElementById('box1');
+    var oBox2 = document.getElementById('box2');
+    var oBox3 = document.getElementById('box3');
+    //用自己的on方法绑定'mousedown'方法
+    on(oBox1, 'mousedown', down);
+    on(oBox2, 'mousedown', down);
+    on(oBox3, 'mousedown', down);
+    //开始写down方法
+    function down(e) {
+        this.l = e.clientX - this.offsetLeft;
+        this.t = e.clientY - this.offsetTop;
+        //获得屏幕宽高
+        var winW = document.documentElement.clientWidth || document.body.clientWidth;
+        var winH = document.documentElement.clientHeight || document.body.clientHeight;
+        //计算最大边界
+        this.maxL = winW - this.offsetWidth;
+        this.maxT = winH - this.offsetHeight;
+        //用computed方法将实时变化的宽高赋值给当前元素，但是先要解决this问题
+        this.MOVE = handlerThis(move, this);
+        this.UP = handlerThis(up, this);
+        //用事件委托绑定move和up方法，提高效率
+        on(document, 'mousemove', this.MOVE);
+        on(document, 'mouseup', this.UP);
+    }
+    //move执行时，实时计算移动距离，然后才通过computed赋值给当前元素
+    function move(e) {
+        this.boxL = e.clientX - this.l;
+        this.boxT = e.clientY - this.t;
+        computed.call(this);
+    }
+    function up() {
+        off(document, 'mousemove', this.MOVE);
+        off(document, 'mouseup', this.UP);
+    }
+    function computed() {
+
+        if (this.boxL > this.maxL) {
+            this.boxL = this.maxL
+        } else if (this.boxL <= 0) {
+            this.boxL = 0;
+        }
+        if (this.boxT > this.maxT) {
+            this.maxL = this.maxT;
+        } else if (this.boxT <= 0) {
+            this.boxT = 0
+
+        }
+        //赋值
+        this.style.left = this.boxL + 'px';
+        this.style.top = this.boxT + 'px';
+    }
+
+
+
+        function handlerThis(fn, context) {
+            return function (e) {
+                fn.call(context, e)
+            }
+        }
+
+
+</script>
+<!--<script>-->
+    <!--//获取到要操作的元素-->
+    <!--var oBox1 = document.getElementById('box1');-->
+    <!--var oBox2 = document.getElementById('box2');-->
+    <!--var oBox3 = document.getElementById('box3');-->
+    <!--//给它们绑定拖拽的方法，用自己封装on-off方法-->
+    <!--on(oBox1, 'mousedown', down);-->
+    <!--on(oBox2, 'mousedown', down);-->
+    <!--on(oBox3, 'mousedown', down);-->
+    <!--//开始写down方法，以及down里面要用到的move、up、handlerThis、computed-->
+    <!--function down(e) {-->
+        <!--//计算鼠标距离元素自身的宽高,要有个初始的自身值，这样后面的move才能执行，所以放在这-->
+        <!--this.l = e.clientX - this.offsetLeft;-->
+        <!--this.t = e.clientY - this.offsetTop;-->
+        <!--//计算边界-->
+        <!--var winW = document.documentElement.clientWidth || document.body.clientWidth;-->
+        <!--var winH = document.documentElement.clientHeight || document.body.clientHeight;-->
+        <!--this.maxL = winW - this.offsetWidth;-->
+        <!--this.maxT = winH - this.offsetHeight;-->
+        <!--//当我执行move方法时还要绑定move和up事件，用自己封装的on方法，但是需要解决一下this问题-->
+        <!--this.MOVE = handlerThis(move, this);-->
+        <!--this.UP = handlerThis(up, this);-->
+        <!--//用事件委托方法，一次性将move、up方法绑定在document上，提高了代码效率-->
+        <!--on(document, 'mousemove', this.MOVE);-->
+        <!--on(document, 'mouseup', this.UP)-->
+    <!--}-->
+    <!--//开始写move和up方法-->
+    <!--function move(e) {-->
+        <!--//实时将移动的宽高计算出来,并通过computed方法将宽高赋值给当前元素-->
+        <!--this.boxL = e.clientX - this.l;-->
+        <!--this.boxT = e.clientY - this.t;-->
+        <!--computed.call(this);-->
+    <!--}-->
+    <!--//解除绑定事件，必须和绑定事件的参数高度统一-->
+    <!--function up() {-->
+        <!--off(document, 'mousemove', this.MOVE);-->
+        <!--off(document, 'mouseup', this.UP);-->
+    <!--}-->
+    <!--//边界判断，将实时计算出的宽高赋值给当前元素-->
+    <!--function computed() {-->
+        <!--if (this.boxL > this.maxL) {-->
+            <!--this.boxL = this.maxL;-->
+        <!--} else if (this.boxL <= 0) {-->
+            <!--this.boxL = 0;-->
+        <!--}-->
+        <!--if (this.boxT > this.maxT) {-->
+            <!--this.boxT = this.maxT;-->
+        <!--} else if (this.boxT <= 0) {-->
+            <!--this.boxT = 0;-->
+        <!--}-->
+        <!--this.style.left = this.boxL + 'px';-->
+        <!--this.style.top = this.boxT + 'px';-->
+    <!--}-->
+
+    <!--function handlerThis(fn, context) {-->
+        <!--return function (e) {-->
+            <!--fn.call(context, e);-->
+        <!--}-->
+    <!--}-->
+
+<!--</script>-->
+</body>
+
+</html>

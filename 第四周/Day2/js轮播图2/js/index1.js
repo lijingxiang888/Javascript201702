@@ -43,12 +43,12 @@
         // 拼接数据
         for (var i = 0; i < data.length; i++) {
             var cur = data[i];
-            imgSrc += '<div><img real=' + cur.img + '></div>';
+            imgSrc += '<div><images real=' + cur.img + '></div>';
             // 如果是第一个li 让它有 选中样式
             focusSrc += i === 0 ? '<li class="selected"></li>' : '<li></li>';
         }
         // 拼接和第一张一模一样的图片 作为最后一张
-        imgSrc += '<div><img real=' + data[0].img + '></div>';
+        imgSrc += '<div><images real=' + data[0].img + '></div>';
         // 输出拼接好的 图片
         swiper.innerHTML = imgSrc;
         // 输出拼接好的 焦点

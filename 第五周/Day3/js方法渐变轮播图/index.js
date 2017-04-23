@@ -31,7 +31,7 @@
         var focusSrc = '';
         for (var i = 0; i < data.length; i++) {
             var cur = data[i];
-            imgSrc += '<img data-real=' + cur.img + '>';
+            imgSrc += '<images data-real=' + cur.img + '>';
             focusSrc += i === 0 ? '<li class="selected"></li>' : '<li></li>';
         }
         wrap.innerHTML = imgSrc;
