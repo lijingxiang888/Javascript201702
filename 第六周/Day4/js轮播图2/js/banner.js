@@ -185,10 +185,10 @@
         this.getData(); // 获取数据调用
         this.bindData(); // 绑定数据调用
         this.delayImg(); // 图片延迟加载调用
-        this.timer = setInterval(function () {
+        this.timer = setInterval(function () { // 自动轮播
             that.autoMove();
         }, this.interTime);
-        this.bindEvent();
+        this.bindEvent(); // 绑定事件
     };
 
     // 将Banner类挂载到全局
