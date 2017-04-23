@@ -206,6 +206,7 @@ var utils = (function () {
         setCss: setCss,
         getByClass: getByClass,
 <<<<<<< HEAD
+<<<<<<< HEAD
         hasClass:hasClass,
         addClass:addClass,
         removeClass:removeClass,
@@ -213,6 +214,10 @@ var utils = (function () {
 =======
         hasClass: hasClass,
         addClass: addClass,
+=======
+        hasClass,
+        addClass,
+>>>>>>> 24f9c6f30d73d082b568ae68ae922e9a21325f14
         removeClass: removeClass,
         toggle: toggle
 >>>>>>> 0956ae8c8bcd2df84fa347ec65764e953b64995a
