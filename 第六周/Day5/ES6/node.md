@@ -43,9 +43,19 @@ npm install babel-preset-es2015 --save-dev
 
 ```
 
-babel 使用
+## babel 使用
 
-当前目录下 新建一个 .babelrc 
+### 当前目录下 新建一个 .babelrc 
+
+``` 
+.babelrc 内容
+
+{
+  "presets": ["es2015"]
+}
+
+```
+
 
 编译命令 打开当前目录 命令窗口
 
