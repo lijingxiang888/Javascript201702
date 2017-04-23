@@ -4,6 +4,58 @@
 
 - 在当前目录下（只是在第一次的时候生成一个package.json）npm init -y 会产生一个package.json文件
 
-### 下载安装 jquery包
-- npm install jquery --save-dev
+### 下载安装 (npm install 包名 --save-dev) 如jquery包
+
+```
+ npm install jquery --save-dev
+```
+
 ### 下载完后 会出来一个 node_modules 文件夹（里面是我用npm下载下来的js）
+
+## babel 使用
+-我们需要 一个 es6转换器 babel  把es6语法转化成es5 
+
+### 在当前目下 打开命令窗口输入一下命令
+
+babel是一个es6编译工具
+
+## babel 安装
+### 安装多个包
+
+```
+npm install babel-cli babel-preset-es2015 --save-dev
+
+```
+### 一个一个安装
+
+```
+npm install babel-cli --save-dev
+
+npm install babel-preset-es2015 --save-dev
+
+```
+
+babel 使用
+
+当前目录下 新建一个 .babelrc 
+
+编译命令 打开当前目录 命令窗口
+
+```
+babel a.js -o b.js
+```
+
+## 实时监听编译
+
+### 编译单个文件
+
+```
+babel a.js -wo b.js
+
+```
+
+###　指定src目录的js 实时编译到 build目录下
+
+```
+babel src -wd build
+```
