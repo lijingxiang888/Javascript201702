@@ -2,7 +2,7 @@
 
 - 安装完node会 自带一个npm包管理器
 
-- 在当前目录下（只是在第一次的时候生成一个package.json）npm init -y 会产生一个package.json文件
+- 在当前目录下（注意当前目录名不能为中文）（只是在第一次的时候生成一个package.json）npm init -y 会产生一个package.json文件
 
 ### 下载安装 (npm install 包名 --save-dev) 如jquery包
 
