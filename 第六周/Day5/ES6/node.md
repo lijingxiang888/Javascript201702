@@ -2,6 +2,8 @@
 
 - 安装完node会 自带一个npm包管理器
 
+### npm init 
+> 只初始化一次生成package.json 文件 以后不需要再初始化
 - 在项目目录下（注意当前项目目录名不能为中文）（只是在第一次的时候生成一个package.json）npm init -y 会生成一个package.json文件
 
 ### npm下载安装 
