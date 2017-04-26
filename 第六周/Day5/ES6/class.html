@@ -25,14 +25,14 @@
 
 
 
-    function Fn() {
-        this.a = 100;
-        this.b = 200;
-    }
-    Fn.prototype.say = function () {
-
-    };
-    new Fn;
+//    function Fn() {
+//        this.a = 100;
+//        this.b = 200;
+//    }
+//    Fn.prototype.say = function () {
+//
+//    };
+//    new Fn;
 
 
 //    // 给实例添加属性
@@ -53,10 +53,10 @@
 //    }
 //    let fe = new Fe;
 //    let fe2 = new Fe;
-//    fe.add();
-//    fe2.add();
-//    console.log(fe.add === fe2.add);
-//    Fe.sayHi();
+//    fe.add();// 输出'add'
+//    fe2.add();// 输出'add'
+//    console.log(fe.add === fe2.add);//true
+//    Fe.sayHi();//输出 'sayHi'
 
 //    class A {
 //        constructor(a, b) {
@@ -76,7 +76,7 @@
         }
     }
 
-    // B类继承A类  子类没this 对象 需要 从父类A继承过来
+    // B类继承A类  子类没this对象 需要从父类A继承过来
     class B extends A {
         constructor(b) {
           super(b); // 代表父类构造函数

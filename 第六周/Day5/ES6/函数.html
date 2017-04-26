@@ -33,6 +33,7 @@
      // 默认值和解构赋值结合起来
 //     let {x=100,y=200} = {x:600};
 //     console.log(x,y);
+
 //     let {x=100} = {x:600};
 //     console.log(x);
 
@@ -41,17 +42,19 @@
 //         console.log(x+y); // 9
 //     }
 //     add({x:3,y:6});
-//     let {x=1,y=2}={}
-//     let {x=1,y=2} = {x:3,y:6}
+
+   //  let {x=1,y=2}={}
+    // let {x=1,y=2} = {x:3,y:6}
 
 //     function add({x=1,y=2}={}) {
-     //         console.log(x, y); // 3 2
-     //         console.log(x+y); // 5
-     //     }
-     //     add({x:3});
+//              console.log(x, y); // 3 2
+//              console.log(x+y); // 5
+//          }
+//          add({x:3});
 
 //    let [x=100, y=200,z] = [2,,33];
 //    console.log(x,y,z);
+
 //    let [x=110, y=x] = [];
 //    console.log(x, y);
 
@@ -84,23 +87,23 @@
 //     console.log(fn(1));
 
 //    let fn = (...reset) => {
-     //        console.log(reset);
-     //    };
-     //    fn(5,5,5);
+//             console.log(reset);
+//         };
+//         fn(5,5,5);
 
      // 箭头函数里面this 指向 外层this
-//    window.user = 'winName';
+    window.user = 'winName';
 //    var obj = {
 //        user: 'objName',
 //        fn() {
 //            console.log(this);
-//            setTimeout(()=>{
+//            (()=>{
 //                console.log(this);
-//            },1000)
+//            })()
 //        }
 //    };
 //    obj.fn();
-
+//
 //     obj.fe = function () {
 //         (()=> {
 //             console.log(this);
@@ -112,8 +115,7 @@
 //     window.user = 'winName';
 //     var obj = {
 //         user: 'objName',
-////         that: this,
-//         fn: () => {
+//         fn: () => {//这的fn 这是一个函数名而已
 //             console.log(this); // window
 //             setTimeout(()=>{
 //                 console.log(this); // window
@@ -125,9 +127,9 @@
 //     console.log(obj.that);
 
 
-//    [1,2,3,4].forEach((item) => {
-//        console.log(item);
-//    });
+    [1,2,3,4].forEach((item) => {
+        console.log(item);
+    });
 
 //     let fn = () => {
 //
