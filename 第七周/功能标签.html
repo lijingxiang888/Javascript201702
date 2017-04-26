@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+     mark {
+         background-color: red;
+     }
+     summary:focus {
+         outline: none;
+     }
+    </style>
+</head>
+<body>
+<progress value="10" max="100"></progress>
+<p>韩生学在北京参加了一个<mark>“失独者”</mark>的聚会。</p>
+
+<input type="text" list="user">
+<datalist id="user">
+    <option value="周杰伦">周杰伦</option>
+    <option value="周星驰">周星驰</option>
+    <option value="周润发">周润发</option>
+    <option value="刘德华">刘德华</option>
+    <option value="陈奕迅">陈奕迅</option>
+</datalist>
+
+<details >
+    <summary>什么是HTML5</summary>
+    <p>  HTML5是HTML最新的修订版本,2014年10月由万维网联盟(W3C)完成标准制定。 HTML5的设计目的是为了在移动设备上支持多媒体。 HTML5 简单易学。</p>
+</details>
+
+<form oninput="c.value = Number(a.value) + Number(b.value)">
+    <input type="text" id="a" value="20"> +
+    <input type="text" id="b" value="10">
+    = <output id="c">30</output>
+</form>
+
+
+</body>
+</html>
