@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #oDiv {
+            width: 100px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        .aa {
+            background: green;
+        }
+        .bb {
+            background: #d2fff7;
+        }
+        .cc {
+            background: #3526ff;
+        }
+
+        #inpText {
+            width: 100%;
+            display: none;
+        }
+        #placeh {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div data-user="liwenli" id="userName"></div>
+
+<!-- spellcheck 开启语法检查 true 开启 false 关闭-->
+<textarea name="" id="" cols="30" rows="10" spellcheck="false"></textarea>
+
+<!-- TAB 切换顺序 -->
+<input type="text" tabindex="2">
+<input type="text" tabindex="1">
+<input type="text" tabindex="3">
+
+<div class="cc" id="oDiv"></div>
+
+<p contenteditable="true" spellcheck="false">由经合组织（OECD）举办的增值税全球论坛，是国际上参与国家最多</p>
+<p >由经合组织（OECD）举办的增值税全球论坛，是国际上参与国家最多</p>
+<p >由经合组织（OECD）举办的增值税全球论坛，是国际上参与国家最多</p>
+<p >由经合组织（OECD）举办的增值税全球论坛，是国际上参与国家最多</p>
+
+
+<h3> 测试</h3>
+<div>
+    <input type="text" id="inpText">
+    <p id="pText">由经合组织（OECD）举办的增值税全球论坛，是国际上参与国家最多</p>
+</div>
+
+<input type="text" placeholder="电视盒子">
+<h3>模拟placeholder</h3>
+<input tabindex="4" type="text" id="placeh" value="电视盒子"  val = '电视盒子' style="color:#989898">
+
+<script type="text/javascript">
+
+    // 模拟placeholder
+    var placeh = document.getElementById('placeh');
+    placeh.onfocus = function () {
+        var val = this.style.color;
+        // 判断是否是 提示信息
+        if('rgb(152, 152, 152)' === val) { // 如果当前是提示信息 获取焦点的时候就清空
+            this.value = '';
+            this.style.color = '#000';
+        }
+    };
+    placeh.onblur = function () { // 失去焦点的时候 如果 为空 则显示之前的提示信息 并且color灰色
+        if(/^\s*$/.test(this.value)) {
+            this.style.color = '#989898';
+            this.value = this.getAttribute('val');
+        }
+    };
+    
+    
+    var userName = document.getElementById('userName');
+    var oDiv = document.getElementById('oDiv');
+    console.log(userName.dataset.user);
+
+    // 增加移除 切换class
+    console.log(oDiv.classList.remove('cc'));
+    console.log(oDiv.classList.add('aa'));
+    console.log(oDiv.classList.toggle('aa'));
+
+
+
+
+    var inpText = document.getElementById('inpText');
+    var pText = document.getElementById('pText');
+
+    pText.ondblclick = function () {
+        inpText.value = this.innerHTML;
+        inpText.style.display = 'block';
+        this.style.display = 'none';
+    };
+
+    inpText.onblur = blurEvent;
+    inpText.onkeydown = function (e) {
+        e = e || window.event;
+        if(e.keyCode === 13) {
+            blurEvent();
+        }
+    };
+
+    function blurEvent() {
+        pText.innerHTML = this.value;
+        inpText.style.display = 'none';
+        pText.style.display = 'block';
+    }
+
+//    document.designMode = 'on'; // 页面中所有元素可以编辑
+
+</script>
+</body>
+</html>
