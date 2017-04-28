@@ -36,11 +36,11 @@ range
 -->
 搜索<input type="search">
 email <input type="email">
-
+<input type="time">
 日期 <input type="date">
 颜色 <input type="color" onchange="" id="oColor"><br>
 密码 <input type="password">
-
+<input type="color" onchange="">
 
 范围 <input type="range" value="80" id="rang" oninput="c.value = rang.value +'%'" >
 <output id="c">80%</output>
@@ -60,6 +60,7 @@ number：<input type="number">
 
 
 <script type="text/javascript">
+    var oColor = document.getElementById('oColor');
     oColor.onchange = function () {
         console.log(this.value);
         document.body.style.backgroundColor = this.value;
