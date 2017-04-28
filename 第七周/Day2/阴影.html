@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        ul li {
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+            margin-bottom: 20px;
+        }
+        ul li:nth-child(1) {
+            /* 给边框添加阴影 */
+            box-shadow: 5px 5px 10px 3px mediumvioletred;
+        }
+        ul li:nth-child(2) h3 {
+            /* 给文字添加阴影*/
+            text-shadow: 3px 3px 2px yellow;
+        }
+
+        ul li:nth-child(3) {
+            border: 50px solid blue;
+            border-image: url("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3005562329,313962702&fm=23&gp=0.jpg");
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li><h3>珠峰培训</h3></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

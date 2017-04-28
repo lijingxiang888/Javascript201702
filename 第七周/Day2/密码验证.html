@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    密码：<input type="text" id="password1" name="pass1"><br>
+    重复密码：<input type="text" id="password2" name="pass2"><br>
+    <input type="submit" value="提交">
+</form>
+<script type="text/javascript">
+    var password1 = document.getElementById('password1');
+    var password2 = document.getElementById('password2');
+    password2.oninput = function () {
+        var val1 = password1.value;
+        var val2 = password2.value;
+        if(val1 != val2) {
+            this.setCustomValidity('两次密码输入 不一致');
+        } else {
+            this.setCustomValidity('');
+        }
+    }
+</script>
+</body>
+</html>

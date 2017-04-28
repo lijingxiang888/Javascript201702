@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>线性渐变</title>
+    <style type="text/css">
+        #oDiv {
+            width: 200px;
+            height: 200px;
+            /*!* -ms- ie中 前缀*!*/
+            /*background: -ms-linear-gradient(red,green);  */
+            /*!* -o- 欧朋浏览器 前缀 *!*/
+            /*background: -o-linear-gradient(red,green);  */
+            /*!*  -moz- 火狐浏览器前缀 *!*/
+            /*background: -moz-linear-gradient(red,green);  */
+
+            /* 添加 内核前缀*/
+            /*  -webkit- 一般浏览器 谷歌 webkit*/
+            /*background: -webkit-linear-gradient(top left,red 20%,blueviolet 50%,green 80%);*/
+            /*!*background: linear-gradient(top left,red 20%,blueviolet 50%,green 850%);*!               background: -webkit-linear-gradient(45deg,red 50px,green 30px);*/
+            /*background: linear-gradient(45deg,red 50px,green 30px);*/
+
+            /*background: -webkit-linear-gradient(red 30px,green 50px);*/
+            /*background: linear-gradient(red 30px,green 50px);*/
+
+            /* 重复渐变*/
+            /*background: -webkit-repeating-linear-gradient(top left,red 30px,blue 40px,green 50px);*/
+            /*background: repeating-linear-gradient(top left, red 30px,blue 40px,green 50px)*/
+            background: -webkit-repeating-linear-gradient(top left,red 30px,blue 20px,green 50px);
+            background: repeating-linear-gradient(top left, red 30px,blue 20px,green 50px)
+        }
+    </style>
+</head>
+<body>
+<div id="oDiv"></div>
+</body>
+</html>

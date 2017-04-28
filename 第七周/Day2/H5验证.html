@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="context">
+    <!--邮箱：<input type="email" name="email">-->
+    <!--url：<input type="url" name="url">-->
+    <input type="text"  name="user" pattern="\d{3}" id="userText" required>
+    <input type="submit" value="提交">
+</form>
+
+<!--<input type="text" name="user" form="context">-->
+<script type="text/javascript">
+    var userText = document.getElementById('userText');
+    // h5 验证事件
+    userText.oninvalid = function () {
+
+
+            this.setCustomValidity('请不要乱输入')
+
+    };
+    userText.oninput= function () {
+        console.log(this.validity.valid);
+            this.setCustomValidity('');
+    }
+
+//    userText.oninput = function () {
+//        // 验证是否为空
+////        console.log(/^\s*$/.test(this.value));
+//
+////        console.log(this.validity.valueMissing); // 必须配合 required 使用
+
+//    }
+</script>
+</body>
+</html>

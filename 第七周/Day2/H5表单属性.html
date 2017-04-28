@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+ autofocus 页面加载时候 自动获得焦点
+ autocomplete  自动记忆完成功能
+ required 必填项
+ pattern 验证输入格式
+-->
+<form  autocomplete="on">
+    <label for="user">用户名：</label><input type="text" name="userName" id="user" autocomplete="off" ><br>
+    <label for="password">密码：</label><input type="text" name="password" id="password" pattern="[A-z]{4}"><br>
+    <label for="email">邮箱：</label><input type="email" id="email">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
