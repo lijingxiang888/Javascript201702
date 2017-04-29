@@ -13,8 +13,8 @@
             -moz-transition: all 1s  linear;
             -ms-transition: all 1s  linear;
             -o-transition: all 1s  linear;
-            transition: all 1s  cubic-bezier(1.0,0.6,1.0,0.6);
-            opacity: 1;
+            transition: all 1s  linear;
+
             /*-webkit-transition: width  1s  linear;*/
             /*-moz-transition: width  1s  linear ;*/
             /*-ms-transition: width  1s  linear ;*/
@@ -38,7 +38,6 @@
             width: 500px;
             height: 500px;
             background-color: green;
-            /*opacity: 0.4;*/
         }
     </style>
 
@@ -49,7 +48,6 @@
     oDiv.onclick = function () {
         this.className = 'animated';
     };
-
 </script>
 </body>
 </html>

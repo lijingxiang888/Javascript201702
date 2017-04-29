@@ -124,8 +124,8 @@ $(function() {
 		time = setInterval(autoMove, interTime);
 	}
 
-	// 扩展到jq原型上
-	$.fn.extend({
-		Banner: Banner
-	});
+// 扩展到jq原型上
+$.fn.extend({
+	Banner: Banner
+});
 });
