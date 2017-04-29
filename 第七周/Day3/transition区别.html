@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+         #box {
+             width: 200px;
+             height: 200px;
+             background-color: red;
+             transition: all 1s linear; /* 页面加载的时候 是没有过渡的 需要后期js或者比如hover 控制*/
+             transform: rotate(190deg);
+         }
+         /* 只有开始和结束  不能制定执行次数*/
+        #box:hover {
+            transition: all .4s linear;
+            /*width:400px;*/
+            transform: rotate(190deg);
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript">
+    var box = document.getElementById('box');
+//  transition动画结束后触发 兼容chrome
+    box.addEventListener('transitionend', function () {
+         console.log('transitionend');
+    });
+    // 兼容safari
+    box.addEventListener('webkitTransitionEnd', function () {
+        console.log('webkitTransitionEnd');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #outer {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 20px auto;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /*  forwards 动画停留在 最后那个状态也就是100%的时候
+                    animation-direction 运动方向
+                    reverse 反方向运动
+                    alternate 奇数时正方向 偶数的时 反方向
+                    alternate-reverse 奇数时反方向 偶数的时 正方向
+            */
+            animation: mySlide 3s linear infinite;
+        }
+
+        @keyframes mySlide {
+            0% {
+                background-color: red;
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                background-color: #737dff;
+                transform: translate(400px, 0) rotate(360deg);
+            }
+
+            50% {
+                background-color: #ff65dd;
+                transform: translate(400px, 400px) rotate(0deg);
+            }
+
+            75% {
+                background-color: #ffb51a;
+                transform: translate(0, 400px) rotate(360deg);
+            }
+
+            100% {
+                background-color: red;
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+
+        @-webkit-keyframes mySlide {
+            0% {
+                background-color: red;
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                background-color: #737dff;
+                transform: translate(400px, 0) rotate(360deg);
+            }
+
+            50% {
+                background-color: #ff65dd;
+                transform: translate(400px, 400px) rotate(0deg);
+            }
+
+            75% {
+                background-color: #ffb51a;
+                transform: translate(0, 400px) rotate(360deg);
+            }
+
+            100% {
+                background-color: red;
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<button id='oBtn'>暂停/运行</button>
+<div id="outer">
+    <div id="box" style="-webkit-animation-duration: 3s"></div>
+</div>
+<script type="text/javascript">
+    var oBtn = document.getElementById('oBtn');
+    var box = document.getElementById('box');
+    oBtn.onclick = function () {
+        var state = box.style.webkitAnimationPlayState;
+        if(state === 'paused') {
+            box.style.webkitAnimationPlayState = 'running';
+        } else {
+            box.style.webkitAnimationPlayState = 'paused';
+        }
+    }
+</script>
+</body>
+</html>

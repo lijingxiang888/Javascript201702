@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #outer {
+            width: 200px;
+            height: 200px;
+            border: 1px solid green;
+            margin: 230px auto;
+            transform-style: preserve-3d; /* 开启3d空间 */
+            perspective: 300px; /* 开启透视 视距*/
+            transform-origin: left;
+
+        }
+
+        #inner {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /*transform-origin: top; !* 元素变换基准点*!*/
+        }
+        #inner:hover {
+            transition:1s;
+            /*transform: rotate3d(1,0,0,45deg) translateY(-135px); !* translate3d 开启 gpu加速 让动画运行流畅 没有卡顿 *!*/
+            transform: rotate3d(1,0,0,45deg);
+        }
+        #outer:hover {
+            transform: rotateY(-45deg);
+        }
+        /* rotate3d
+          rotateX
+          rotateY
+          rotateZ
+        */
+
+        /* translate3d
+           translateX()
+           translateY()
+           translateZ()
+        */
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner"></div>
+</div>
+</body>
+</html>
