@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #outer {
+            position: relative;
+            width: 202px;
+            height: 202px;
+            margin: 30px auto;
+            transform-style: preserve-3d;
+            perspective: 900px;
+            transform-origin: left;
+            /*transform: rotateY(-45deg);*/
+        }
+
+        #outer div {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #outer div:nth-child(1) {
+            transform: translateZ(-202px);
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: rgba(0,0,0, .3);
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="box1">1</div>
+    <div id="box2">2</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #outer {
+            width: 400px;
+            height: 120px;
+            border: 1px solid green;
+            margin: auto;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /*margin: 20px auto;*/
+            /* infinite 循环次数无限  reverse 反向运动*/
+            -webkit-animation: myRoate 1s cubic-bezier(.27,.97,.18,1.66) infinite;
+            -o-animation:myRoate 1s cubic-bezier(.27,.97,.18,1.66) infinite;
+            animation: myRotate 1s cubic-bezier(.27,.97,.18,1.66) infinite;
+            /* 运动状态 paused暂停 running运行*/
+            /*animation-play-state: running;*/
+        }
+
+        @-webkit-keyframes myRotate {
+             from {
+                 transform: translate(0,0) rotate(0deg);
+
+             }
+            to {
+                transform: translate(300px,0) rotate(360deg);
+            }
+        }
+
+        @keyframes myRotate {
+            from {
+                transform: translate(0,0)rotate(0deg);
+            }
+            to {
+                transform: translate(300px,0)  rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="box"></div>
+</div>
+
+<button id="oBtn">暂停/运行</button>
+<script type="text/javascript">
+    var oBtn = document.getElementById('oBtn');
+    var box = document.getElementById('box');
+    oBtn.onclick = function () {
+        var state = box.style.webkitAnimationPlayState;
+        if(state === 'paused') {
+            box.style.webkitAnimationPlayState = 'running';
+        } else {
+            box.style.webkitAnimationPlayState = 'paused';
+        }
+
+    }
+</script>
+</body>
+</html>

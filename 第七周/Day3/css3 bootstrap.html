@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style type="text/css">
+        #oBox {
+            width: 200px;
+            height: 200px;
+            /*background-color: red;*/
+        }
+        /*
+          媒体类型
+         screen 电脑 移动端 屏幕
+         print 打印机
+         all  所有设备
+        */
+        /* 小于等于 414px */
+        /*  max-width 小于等于 */
+        /*@media screen and (max-width: 414px){*/
+            /*#oBox {*/
+                /*background-color: green;*/
+            /*}*/
+        /*}*/
+
+        /* 大于等于 415px */
+        /* min-width 大于等于 */
+        /*@media screen and (min-width: 415px){*/
+            /*#oBox {*/
+                /*background-color: #5ea6ff;*/
+            /*}*/
+        /*}*/
+
+        /*  混合写法 */
+        /* 800px - 1000px */
+        /*@media screen and (min-width: 800px) and (max-width: 1000px) {*/
+            /*#oBox {*/
+                /*background-color: deeppink;*/
+                /*width: 80px;*/
+                /*height: 80px;*/
+            /*}*/
+        /*}*/
+        
+        
+        /*  检测竖屏 */
+        @media all and (orientation: portrait) {
+                 #oBox {
+                     background-color: red;
+                     height: 300px;
+                 }
+        }
+        /*  检测横屏 */
+        @media all and (orientation: landscape) {
+            #oBox {
+                background-color: #93ffe2;
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="oBox"></div>
+</body>
+</html>

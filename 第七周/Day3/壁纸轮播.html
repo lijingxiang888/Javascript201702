@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #outer {
+            position: relative;
+            width: 900px;
+            height: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        #outer div {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #outer img {
+            width: 900px;
+            height: 600px;
+        }
+
+        #outer ul {
+            width: 100%;
+            position: absolute;
+            bottom: 5px;
+            text-align: center;
+            z-index: 11;
+        }
+
+        #outer ul li {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 10px solid rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        #outer ul li a {
+            display: block;
+            width: 100px;
+            height: 100px;
+        }
+
+        #outer ul li img {
+            width: 100%;
+            height: 100%;
+        }
+
+        :target {
+            z-index: 10;
+        }
+
+        /* 关于bg1动画 */
+        #bg1:target {
+            animation: myTranslate 1s ease-in;
+        }
+
+        @keyframes myTranslate {
+            0% {
+                transform: translate(-500px);
+            }
+
+            15%, 45% {
+                transform: translate(-150px);
+            }
+
+            30%, 60% {
+                transform: translate(150px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        @-webkit-keyframes myTranslate {
+            0% {
+                transform: translate(-500px);
+            }
+
+            15%, 45% {
+                transform: translate(-150px);
+            }
+
+            30%, 60% {
+                transform: translate(150px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        /* 关于bg2动画 */
+        #bg2:target {
+            animation: myScale 1s linear;
+        }
+
+        @keyframes myScale {
+            from {
+                transform: scale(0) rotate(0);
+            }
+            to {
+                transform: scale(1) rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes myScale {
+            from {
+                transform: scale(0) rotate(0);
+            }
+            to {
+                transform: scale(1) rotate(360deg);
+            }
+        }
+
+        /* 关于bg3动画 */
+        #bg3:target {
+            animation: mySlide .5s ease-in-out;
+        }
+
+        @keyframes mySlide {
+            from {
+                transform: translate(0, -500px);
+            }
+            to {
+                transform: translate(0, 0);
+            }
+        }
+
+        @-webkit-keyframes mySlide {
+            from {
+                transform: translate(0, -500px);
+            }
+            to {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* 关于bg4动画 */
+        #bg4:target {
+            animation: scaleFour .5s linear;
+        }
+
+        @keyframes scaleFour {
+            0% {
+                transform: scale(1.9);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+        }
+
+        @-webkit-keyframes scaleFour {
+            from {
+                transform: scale(1.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* 关于bg5动画 */
+        #bg5:target {
+            animation: myFive .5s linear;
+        }
+
+        @keyframes myFive {
+            from {
+                opacity: 0;
+                transform: scale(0);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @-webkit-keyframes myFive {
+            from {
+                opacity: 0;
+                transform: scale(0);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="bg1"><img src="./images/1.jpg"></div>
+    <div id="bg2"><img src="./images/2.jpg"></div>
+    <div id="bg3"><img src="./images/3.jpg"></div>
+    <div id="bg4"><img src="./images/4.jpg"></div>
+    <div id="bg5"><img src="./images/5.jpeg"></div>
+    <ul>
+        <li><a href="#bg1"><img src="./images/1.jpg"></a></li>
+        <li><a href="#bg2"><img src="./images/2.jpg"></a></li>
+        <li><a href="#bg3"><img src="./images/3.jpg"></a></li>
+        <li><a href="#bg4"><img src="./images/4.jpg"></a></li>
+        <li><a href="#bg5"><img src="./images/5.jpeg"></a></li>
+    </ul>
+</div>
+</body>
+</html>

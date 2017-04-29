@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /*margin: 20px auto;*/
+            -webkit-animation: myRoate 1s linear 3;
+            -o-animation:myRoate 1s linear 3;
+            animation: myRotate 1s linear 3;
+        }
+
+        @-webkit-keyframes myRotate {
+            from {
+                transform: translate(0,0);
+                opacity: 0;
+            }
+            to {
+                transform: translate(300px,300px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes myRotate {
+            from {
+                transform: translate(0,0);
+                opacity: 0;
+            }
+            to {
+                transform: translate(300px,300px);
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
