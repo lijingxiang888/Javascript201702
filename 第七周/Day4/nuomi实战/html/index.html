@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <title>Title</title>
+    <script type="text/javascript">
+        ~function () {
+            var desW = 640;
+
+            function refreshRem() {
+                var doc = document.documentElement;
+                var winW = doc.clientWidth;
+                doc.style.fontSize = winW / desW * 100 + 'px';
+//                desW/winW = 100/x;
+            }
+
+            refreshRem();
+            window.addEventListener('resize', refreshRem);
+        }();
+    </script>
+</head>
+<body>
+<!-- header-search -->
+<header class="header-search">
+    <a class="search-city" href="https://m.nuomi.com/city">北京</a>
+    <input class="search-word" placeholder="搜索商家或地点" type="text">
+    <a class="search-icon"
+       href="https://wappass.baidu.com/passport/login?sms=1&tpl=nuomi&u=https%3A%2F%2Fm.nuomi.com%2Fwebapp%2Fuser%2Fbindaccount%3Fretype%3Dstoken&smsLoginLink=1&authsite=1&time=1493540616&skin=https%3A%2F%2Fm.nuomi.com%2Fstatic%2Flogin%2Fwidget%2Fupdate_passport%2Fpassport.css"></a>
+</header>
+<!-- headerBanner -->
+<div class="swiper-container" id="swiper1">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../images/banner1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../images/banner2.jpg" alt=""></div>
+    </div>
+    <div class="swiper-pagination" id="pagination1"></div>
+</div>
+<!-- goodsList -->
+<div class="swiper-container" id="swiper2">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <ul>
+                <li>
+                    <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                        <img src="../images/list1.png" alt="">
+                        <p>美食</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                        <img src="../images/list2.png" alt="">
+                        <p>电影演出</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                        <img src="../images/list3.png" alt="">
+                        <p>酒店</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                        <img src="../images/list4.png" alt="">
+                        <p>KTV</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                        <img src="../images/list5.png" alt="">
+                        <p>外卖</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                        <img src="../images/list1.png" alt="">
+                        <p>休闲娱乐</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                        <img src="../images/list2.png" alt="">
+                        <p>火锅</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                        <img src="../images/list3.png" alt="">
+                        <p>充值中心</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                        <img src="../images/list4.png" alt="">
+                        <p>周边游</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                        <img src="../images/list5.png" alt="">
+                        <p>代金券</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="swiper-slide">
+            <ul>
+                <li>
+                    <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                        <img src="../images/list6.png" alt="">
+                        <p>丽人</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                        <img src="../images/list7.png" alt="">
+                        <p>亲子</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                        <img src="../images/list8.png" alt="">
+                        <p>购物</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                        <img src="../images/list9.png" alt="">
+                        <p>家装</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                        <img src="../images/list10.png" alt="">
+                        <p>健康养生</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                        <img src="../images/list6.png" alt="">
+                        <p>休闲娱乐</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                        <img src="../images/list7.png" alt="">
+                        <p>火锅</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                        <img src="../images/list8.png" alt="">
+                        <p>充值中心</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                        <img src="../images/list9.png" alt="">
+                        <p>周边游</p>
+                    </a>
+                    <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                        <img src="../images/list10.png" alt="">
+                        <p>代金券</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="swiper-pagination" id="pagination2"></div>
+</div>
+
+<!-- Flash sale -->
+<div class="flash-sale">
+    <div class="flash-preferential">
+        <a class="preferentialTop" href="https://huodong.nuomi.com/actshow/mobile/common/short/newmrh_wap">
+            <h3>每日惠</h3>
+            <h4>狂享折上折</h4>
+            <div>天天特价</div>
+        </a>
+        <a class="preferentialNext" href="https://m.nuomi.com/component/ktv-tang/home/index.html?cid=yyqb_wap_dfk&webapp_nojump=1">
+            <h3>一元抢宝</h3>
+            <h4>1元充500元</h4>
+            <div>一元抢宝</div>
+        </a>
+    </div>
+
+    <div class="million-gold">
+        <a href="https://m.nuomi.com/deal/j00sw5bmj?tinyurl=j00sw5bmj">
+        <div class="million-header">
+            <span>03</span>
+            <span>04</span>
+            <span>01</span>
+        </div>
+        <h4 class="million-tile">金百万</h4>
+        <p class="million-price">￥188</p>
+        </a>
+    </div>
+
+</div>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+</body>
+</html>
