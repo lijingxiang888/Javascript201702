@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style type="text/css">
+        html {
+            font-size: 50px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #oDiv {
+            width: 6.4rem;
+            height: 1rem;
+            background-color: red;
+        }
+        /*#outer {*/
+            /*width: 300px;*/
+            /*height: 300px;*/
+            /*font-size: 80px;*/
+            /*border: 1px solid green;*/
+        /*}*/
+
+        /*#inner {*/
+            /*width: 1em;*/
+            /*height: 1em;*/
+            /*background-color: blue;*/
+        /*}*/
+
+    </style>
+    <script type="text/javascript">
+//        设计稿
+        var desW = 640; // 假设 640 根元素字体是 100px  iphon5 320时 根元素字体应该是多少？
+// 750/375 375 50
+//640/320
+
+        var winW = document.documentElement.clientWidth;
+//        desW/winW = 100/ 320的字体
+       <!-- winW/设计稿宽度*100 = x -->
+        var radio = desW/winW;
+       console.log(radio);
+        document.documentElement.style.fontSize = 100/radio + 'px';
+//        document.documentElement.style.fontSize = winW/desW * 100 + 'px';
+    </script>
+</head>
+<body>
+<div id="outer">
+    <div id="inner"></div>
+</div>
+<!-- rem 相对于根元素字体的单位  -->
+<!-- root 1rem = 根元素字体 -->
+
+<!-- 动态计算根元素字体  -->
+
+<!-- iphone5   640  320    2/1-->
+
+<!--  640  100  -->
+
+<!--  640px = 6.4rem-->
+<!--  320px -->
+
+<!-- 100px 就是为了 好换算 -->
+<!-- 640 基于iPhone5 的设计稿  100px 好换算-->
+<!-- 640 100px  1rem = 100px  -->
+<!-- 320  -->
+<!-- winw/设计稿宽度*100 = x -->
+<!--640/320(2/1) = 100/x;   x=50-->
+
+<!--100 * (1/2) = 50-->
+
+
+
+
+<!-- 200px =2rem -->
+
+<div id="oDiv"></div>
+</body>
+</html>

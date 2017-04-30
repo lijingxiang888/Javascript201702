@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .headerTop {
+            width: 100%;
+            height: 7.71rem;
+            background: url("./headerImg.png") no-repeat center;
+            background-size: 100%;
+        }
+        .header {
+            width: 100%;
+            height: 1.57rem;
+            padding: .2rem 0;
+            background: url("./yaoyiyao.png") #49bcec no-repeat center;
+            background-size: 4.45rem 1.57rem;
+        }
+    </style>
+    <script type="text/javascript">
+          // 设计稿
+          var desW = 640; // 100px
+          function refreshRem() {
+              // 设备宽度
+              var winW = document.documentElement.clientWidth;
+              document.documentElement.style.fontSize = 100/(desW/winW) + 'px';
+//          x= winW/desW*100;
+//          desW/winW = 100/x;   x = 100/(desW/winW)
+          }
+          refreshRem();
+
+//         改变窗口大小时也要重新计算一次 比如由竖屏切换到横屏
+          window.addEventListener('resize', refreshRem);
+
+    </script>
+</head>
+<body>
+<div class="headerTop">
+
+</div>
+<header class="header">
+
+</header>
+</body>
+</html>
