@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <script type="text/javascript">
+        var desW = 640;
+        var doc = document.documentElement;
+        function refreshRem() {
+            var winW = doc.clientWidth;
+            doc.style.fontSize = winW / desW * 100 + 'px';
+        }
+        refreshRem();
+        window.addEventListener('resize', refreshRem);
+    </script>
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <style type="text/css">
+        .swiper-container img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container" id="swiper1">
+    <!-- banner -->
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./images/banner1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./images/banner2.jpg" alt=""></div>
+    </div>
+    <!-- 分页器 -->
+    <div class="swiper-pagination" id="pagination1"></div>
+
+    <!-- 左右切换 -->
+    <!--<div class="swiper-button-prev"></div>-->
+    <!--<div class="swiper-button-next"></div>-->
+</div>
+<script type="text/javascript" src="./js/swiper.min.js"></script>
+<script type="text/javascript">
+//      new Swiper(选择器, {options})
+      new Swiper('#swiper1',{
+//           direction: 'vertical', // 分页器竖着排列
+          loop: true, // 是否无缝滚动
+          autoplay: 4000, // 开启自动轮播 并指定 切换时间 ms
+//          speed: 1000, // 切换到下张的过渡时间 默认300ms
+          pagination: '#pagination1', // 生成分页器 焦点
+          autoplayDisableOnInteraction: false, // 用户操作后 不禁止 自动轮播
+          // 如果需要前进后退按钮
+//          nextButton: '.swiper-button-next',
+//          prevButton: '.swiper-button-prev'
+      });
+</script>
+</body>
+</html>
