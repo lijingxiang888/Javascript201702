@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9b652ab-fbe1-4d36-98c6-aca1104f7654" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/第七周/Day4/nuomi实战/css/index.css" afterPath="$PROJECT_DIR$/第七周/Day4/nuomi实战/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/第七周/Day4/nuomi实战/js/index.js" afterPath="$PROJECT_DIR$/第七周/Day4/nuomi实战/js/index.js" />
-    </list>
+    <list default="true" id="e9b652ab-fbe1-4d36-98c6-aca1104f7654" name="Default" comment="" />
     <ignored path="201702.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -27,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/第七周/Day4/nuomi实战/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="182">
@@ -63,6 +59,26 @@
                 <element signature="e#4390#4448#0" expanded="false" />
                 <element signature="e#4478#4652#0" expanded="false" />
                 <element signature="e#4682#4838#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/第七周/Day4/nuomi实战/html/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="39" column="10" lean-forward="false" selection-start-line="36" selection-start-column="3" selection-end-line="39" selection-end-column="10" />
+              <folding>
+                <element signature="n#script#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#1;n#ul#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#1;n#ul#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#a#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -252,7 +268,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -404,12 +420,12 @@
       <workItem from="1493463940451" duration="503000" />
       <workItem from="1493515936196" duration="27083000" />
       <workItem from="1493562357341" duration="123000" />
-      <workItem from="1493601687616" duration="43000" />
+      <workItem from="1493601687616" duration="169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168576000" />
+    <option name="totallyTimeSpent" value="168702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -762,18 +778,15 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第七周/Day4/nuomi实战/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="39" column="10" lean-forward="false" selection-start-line="36" selection-start-column="3" selection-end-line="39" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/第七周/Day4/nuomi实战/html/test.html" />
     <entry file="file://$PROJECT_DIR$/第七周/Day4/nuomi实战/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="37" />
+          <folding>
+            <element signature="e#80#211#0" expanded="false" />
+            <element signature="e#1016#1220#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -812,6 +825,24 @@
             <element signature="e#4390#4448#0" expanded="false" />
             <element signature="e#4478#4652#0" expanded="false" />
             <element signature="e#4682#4838#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第七周/Day4/nuomi实战/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="39" column="10" lean-forward="false" selection-start-line="36" selection-start-column="3" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <element signature="n#script#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
