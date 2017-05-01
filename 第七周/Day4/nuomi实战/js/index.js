@@ -10,12 +10,21 @@ $(function () {
     //  监听scroll 事件
     $(window).on('scroll', function () {
         var scrollVal = $(this).scrollTop();
+        var obj;
         if(scrollVal >= 10) {
+            obj = {
+                webkitTransitionDuration: '0.3s',
+                transitionDuration: '0.3s'
+            };
             $('.header-search').addClass('header-fixed ');
-            $('.search-word').css('-webkit-transition-duration', '.2s').addClass('search-change').siblings().hide();
+            $('.search-word').css(obj).addClass('search-change').siblings().hide();
         } else {
+            obj = {
+                webkitTransitionDuration: '0s',
+                transitionDuration: '0s'
+            };
             $('.header-search').removeClass('header-fixed ');
-            $('.search-word').css('-webkit-transition-duration', '0s').removeClass('search-change').siblings().show();
+            $('.search-word').css(obj).removeClass('search-change').siblings().show();
         }
     });
     $('.search-word').on('keydown', function (e) {

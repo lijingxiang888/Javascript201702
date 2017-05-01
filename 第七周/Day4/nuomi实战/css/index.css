@@ -47,11 +47,6 @@ body {
     background-size: 13px;
     opacity: .86;
     box-sizing: border-box;
-    -webkit-transition: width  .2s ease-in;
-    -moz-transition: width  .2s ease-in;
-    -ms-transition: width  .2s ease-in;
-    -o-transition: width  .2s ease-in;
-    transition: width  .2s ease-in;
 }
 
 .header-search .search-icon {
@@ -78,6 +73,11 @@ body {
     left: 0;
     margin: auto;
     height: 30px;
+    -webkit-transition: all  .3s ease-in;
+    -moz-transition: all  .3s ease-in;
+    -ms-transition: all  .3s ease-in;
+    -o-transition: all  .3s ease-in;
+    transition: all  .3s ease-in;
 }
 
 /* goodsList */
