@@ -40,9 +40,9 @@ body {
     width: 4.36rem;
     border: none;
     border-radius: 25px;
-    padding: 1px 0 0 25px;
+    padding: 7px 0 6px 25px;
     height: 27px;
-    line-height: 27px;
+    line-height: 25px;
     font-size: 13px;
     color: #666;
     background: url("../images/search.png") no-repeat 8px #fff;
