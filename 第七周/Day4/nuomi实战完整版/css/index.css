@@ -61,7 +61,11 @@ body {
 
 .header-search .search-change {
 	width: 90%;
-	transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    transition: all .3s ease-in;
 }
 
 .header-search .search-icon {

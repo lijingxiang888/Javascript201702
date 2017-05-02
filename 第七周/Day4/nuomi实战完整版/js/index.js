@@ -6,6 +6,12 @@ $(function () {
         autoplayDisableOnInteraction: false,
         pagination: '#pagination1'
     });
+    if($(window).scrollTop() >= 10) {
+        $('.header-search').addClass('header-fixed ');
+        $('.search-word').siblings().hide();
+        $('.search-word').addClass('search-change');
+    }
+
     // header-search
     //  监听scroll 事件
     $(window).on('scroll', function () {
@@ -39,7 +45,6 @@ $(function () {
         loop: true,
         pagination: '#pagination2'
     });
-
 
 });
 
