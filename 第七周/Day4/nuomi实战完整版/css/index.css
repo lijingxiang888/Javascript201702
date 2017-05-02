@@ -2,6 +2,10 @@ body {
 	font-size: 14px;
 	font-family: "Droid Sans", "Droid Sans Fallback", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
 	background-color: #f1f1f1;
+	max-width: 640px;
+	min-width: 300px;
+	margin: 0 auto !important;
+
 }
 
 #swiper1 img {
@@ -452,15 +456,15 @@ body {
 }
 
 
-.goods-list a div {
-	float: left;
-}
+/*.goods-list a div {*/
+	/*float: left;*/
+/*}*/
 
 .goods-list a .goods-info {
-	position: absolute;
+	position: relative;
 	height: 72px;
 	margin-left: 115px;
-	padding-right: 15px;
+	padding-right: 5px;
 }
 
 .goods-list a .goods-info .goods-title {
@@ -500,7 +504,7 @@ body {
     bottom: -7px;
 	margin: 0;
 	line-height: 26px;
-	padding-right: 15px;
+	padding-right: 5px;
     box-sizing: border-box;
 }
 
@@ -523,6 +527,7 @@ body {
 }
 
 .goods-list a div.goods-img {
+	position: absolute;
 	height: 72px;
 }
 
