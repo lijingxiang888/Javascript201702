@@ -234,7 +234,7 @@ body {
 .million-gold .million-header span:nth-child(2):after {
 	content: ':';
 	position: absolute;
-	top: 0;
+	top: -2px;
 	left: 16px;
 }
 
