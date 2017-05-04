@@ -6,6 +6,7 @@ $(function () {
         autoplayDisableOnInteraction: false,
         pagination: '#pagination1'
     });
+
     if($(window).scrollTop() >= 10) {
         $('.header-search').addClass('header-fixed ');
         $('.search-word').siblings().hide();
@@ -33,6 +34,7 @@ $(function () {
             $('.search-word').css(obj).removeClass('search-change').siblings().show();
         }
     });
+
     $('.search-word').on('keydown', function (e) {
         var val = $(this).val();
           if(val && e.keyCode === 13) {

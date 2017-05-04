@@ -1,0 +1,54 @@
+// 复用 定义好一个classA 可以 在其他class里引用
+//.border {
+//  border: 3px solid black;
+//}
+
+//  函数形式 并且有形参的时候 如果不传 就会报错 需要 默认参数
+.border (@wid: 2px, @color: yellow) {
+  border: @wid solid @color;
+}
+
+.radius(@rad) {
+  -webkit-border-radius: @rad;
+  -moz-border-radius: @rad;
+  border-radius: @rad;
+}
+
+
+
+@bg: green;
+@bg2: red;
+@boxBg: #2e24ff;
+
+// 作用域
+.oBox2 {
+  .oBox1;
+  background-color: @bg2;
+  .border();
+  .radius(30px);
+
+  @boxBg: deeppink;
+  .box2 {
+    .box1;
+    background-color:  @boxBg;
+  }
+}
+
+.oBox1 {
+  width: 200px;
+  height: 200px;
+  background-color: @bg;
+  .border(10px, pink);
+  .radius(50%);
+
+  //@boxBg: #ff6713;
+  //@bg2: yellow; // @bg2 最后一次赋值
+  .box1 {
+    width: 100px;
+    height: 100px;
+    background-color: @boxBg;
+  }
+}
+
+
+// 第一个的变量的值 是以 最后一次 赋值 为准

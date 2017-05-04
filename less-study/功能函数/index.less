@@ -1,0 +1,43 @@
+
+@wid: 150rem;
+//.bgColor(@a) when(@a > 10) and (@a < 15) {
+//   background-color: red;
+//}
+//
+//.bgColor(@a) when(default()) {
+//  background-color: green;
+//}
+
+
+//.bgColor(@a) when(iscolor(@a)) {
+//  background-color: @a;
+//}
+
+
+.bgColor(@a) when(isnumber(@a)) {
+  background-color: green;
+}
+
+
+#box {
+   .bgColor(12);
+  //width: ceil(100.5px);
+  //height: floor(88.4px);
+  //background-color: color('green');
+
+  // 将透明度减少多少
+  // background: fadeout(red,20%);
+
+  // 将透明度增加多少
+  // background: fadein(red,20%);
+
+  // 添加或修改单位 不会进行数值转换
+  width: unit(@wid, px);
+
+  height: 200px;
+  border: 1px solid black;
+}
+
+
+
+

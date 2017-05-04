@@ -1,0 +1,28 @@
+//@wid: 100px;
+//@hei: 150px;
+//@bgColor: #111;
+
+//.oBox1 {
+//  //width: @wid + 100;
+//  width: @wid;
+//  height: @wid / 2;
+//  //background-color: @bgColor;
+//  //background-color: @bgColor * 3;
+//  //background-color: @bgColor + #ddd;
+//
+//}
+
+// () 控制运算优先级
+@oWid: 100px;
+@oHei: 100px;
+.outer {
+    width: (@oWid + 100) * 2;
+    height: @oHei;
+    border: 1px solid black;
+}
+.inner {
+  width: @oWid / 2;
+  height: @oHei / 2;
+  border: 1px solid blue;
+  margin: @oHei/4 auto;
+}
