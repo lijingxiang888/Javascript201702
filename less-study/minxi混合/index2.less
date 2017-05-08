@@ -1,0 +1,19 @@
+
+@wid: 300px;
+@hei: 200px;
+
+.box(@wid, @hei) {
+  width: @wid;
+  height: @hei;
+}
+
+// @arguments 代表参数集合
+.shadow(@x, @y, @n, @color) {
+  box-shadow: @arguments;
+}
+
+#oBox {
+  .box(100px, 150px);
+  background-color: red;
+  .shadow(6px, 6px, 10px, blue);
+}

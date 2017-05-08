@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../mui/css/mui.min.css"/>
+    <title>Title</title>
+    <script type="text/javascript">
+        ~function () {
+            var desW = 640;
+
+            function refreshRem() {
+                var doc = document.documentElement;
+                var winW = doc.clientWidth;
+                if (winW >= 640) {
+                    doc.style.fontSize = '100px';
+                    return;
+                }
+                doc.style.fontSize = winW / desW * 100 + 'px';
+                //                desW/winW = 100/x;
+            }
+
+            refreshRem();
+            window.addEventListener('resize', refreshRem);
+        }();
+    </script>
+</head>
+
+<body>
+<!-- header-search -->
+<header class="header-search">
+    <a class="search-city" href="https://m.nuomi.com/city">北京</a>
+    <input class="search-word" placeholder="搜索商家或地点" type="text">
+    <a class="search-icon"
+       href="https://wappass.baidu.com/passport/login?sms=1&tpl=nuomi&u=https%3A%2F%2Fm.nuomi.com%2Fwebapp%2Fuser%2Fbindaccount%3Fretype%3Dstoken&smsLoginLink=1&authsite=1&time=1493540616&skin=https%3A%2F%2Fm.nuomi.com%2Fstatic%2Flogin%2Fwidget%2Fupdate_passport%2Fpassport.css"></a>
+</header>
+
+<main>
+    <!-- headerBanner -->
+    <section class="swiper-container" id="swiper1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../images/banner1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="../images/banner2.jpg" alt=""></div>
+        </div>
+        <div class="swiper-pagination" id="pagination1"></div>
+    </section>
+    <!-- goodsList -->
+    <section class="swiper-container" id="swiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <ul>
+                    <li>
+                        <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                            <img src="../images/list1.png" alt="">
+                            <p>美食</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                            <img src="../images/list2.png" alt="">
+                            <p>电影演出</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                            <img src="../images/list3.png" alt="">
+                            <p>酒店</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                            <img src="../images/list4.png" alt="">
+                            <p>KTV</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                            <img src="../images/list5.png" alt="">
+                            <p>外卖</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                            <img src="../images/list1.png" alt="">
+                            <p>休闲娱乐</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                            <img src="../images/list2.png" alt="">
+                            <p>火锅</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                            <img src="../images/list3.png" alt="">
+                            <p>充值中心</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                            <img src="../images/list4.png" alt="">
+                            <p>周边游</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/326/0-0/0-0-0-0-0">
+                            <img src="../images/list5.png" alt="">
+                            <p>代金券</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="swiper-slide">
+                <ul>
+                    <li>
+                        <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                            <img src="../images/list6.png" alt="">
+                            <p>丽人</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                            <img src="../images/list7.png" alt="">
+                            <p>亲子</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                            <img src="../images/list8.png" alt="">
+                            <p>购物</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                            <img src="../images/list9.png" alt="">
+                            <p>家装</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                            <img src="../images/list10.png" alt="">
+                            <p>健康养生</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                            <img src="../images/list6.png" alt="">
+                            <p>休闲娱乐</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                            <img src="../images/list7.png" alt="">
+                            <p>火锅</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                            <img src="../images/list8.png" alt="">
+                            <p>充值中心</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                            <img src="../images/list9.png" alt="">
+                            <p>周边游</p>
+                        </a>
+                        <a href="https://m.nuomi.com/bj/392/0-0/0-0-0-0-0">
+                            <img src="../images/list10.png" alt="">
+                            <p>代金券</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="swiper-pagination" id="pagination2"></div>
+    </section>
+    <!-- Flash sale -->
+    <section class="flash-sale">
+        <div class="flash-preferential">
+            <a class="preferentialTop" href="https://huodong.nuomi.com/actshow/mobile/common/short/newmrh_wap">
+                <h3>每日惠</h3>
+                <h4>狂享折上折</h4>
+                <div><i>天天特价</i></div>
+            </a>
+            <a class="preferentialNext"
+               href="https://m.nuomi.com/component/ktv-tang/home/index.html?cid=yyqb_wap_dfk&webapp_nojump=1">
+                <h3>一元抢宝</h3>
+                <h4>1元充500元</h4>
+                <div><i>一元抢宝</i></div>
+            </a>
+        </div>
+
+        <div class="million-gold">
+            <a href="https://m.nuomi.com/deal/j00sw5bmj?tinyurl=j00sw5bmj">
+                <div class="million-header">
+                    <span>03</span>
+                    <span>04</span>
+                    <span>01</span>
+                </div>
+                <h4 class="million-tile">金百万</h4>
+                <p class="million-price">￥188</p>
+            </a>
+        </div>
+
+    </section>
+
+    <section class="flash-food">
+        <div class="food-list">
+            <div class="food-left">
+                <a href="https://huodong.nuomi.com/actshow/mobile/common/short/51kuangchi_wap">
+                    <h4>5折放价</h4>
+                    <span>半价狂吃</span>
+                </a>
+            </div>
+            <div class="food-right">
+                <a href="http://lvyou.baidu.com/static/event-cms/20170501mainpostcard/page/index/index.html?fr=nuomidfkwap">
+                    <div class="right-top">
+                        <h4>玩转五一</h4>
+                        <span>酒旅大礼包</span>
+                    </div>
+                </a>
+                <a href="https://huodong.nuomi.com/actshow/mobile/common/short/quanlichuji">
+                    <div class="right-next">
+                        <h4>劵利出击</h4>
+                        <span>领券享5折</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="flash-travel">
+        <a href="http://hotel.baidu.com/pages/promotion/443.html?fr=nuomidfk">
+            <div class="travel-top">
+                <h4>高铁出游</h4>
+                <span>搞定小长假</span>
+            </div>
+        </a>
+        <a href="https://huodong.nuomi.com/actshow/mobile/common/short/yhbfr_2">
+            <div class="travel-next">
+                <h4>美食特惠</h4>
+                <span>20减10</span>
+            </div>
+        </a>
+    </section>
+    <section class="goods-list-title">
+        <h4>猜你喜欢</h4>
+        <a href="https://m.nuomi.com/webapp/tuan/list" class="goods-list-more-link">全部团购</a>
+    </section>
+
+    <section class="goods-list">
+        <a href="https://m.nuomi.com/deal/w00spm0cz?areaDomain=bj&dealTinyUrl=w00spm0cz&&s=61573c77afcc5696aff4030e10616bd6">
+            <div class="goods-img">
+                <img src="../images/food1.jpg" alt=""/>
+            </div>
+            <div class="goods-info">
+                <div class="goods-title">
+                    <h3>好伦哥</h3>
+                    <span>多商圈</span>
+                </div>
+                <p>单人自助1份！免费WiFi！</p>
+                <p class="goods-price">
+                    <ins>56</ins>
+                    <span>门市价<del>56</del></span>
+                    <span>已售8641</span>
+                </p>
+            </div>
+        </a>
+        <a href="https://m.nuomi.com/deal/100swp6uq?areaDomain=bj&dealTinyUrl=100swp6uq&&s=a608640d37ec26a234abd6f3db4206a5">
+            <div class="goods-img">
+                <img src="../images/food2.jpg" alt=""/>
+            </div>
+            <div class="goods-info">
+                <div class="goods-title">
+                    <h3>铁木真</h3>
+                    <span>回龙观</span>
+                </div>
+                <p>单人自助1份！免费WiFi！</p>
+                <p class="goods-price">
+                    <ins>64.9</ins>
+                    <span>门市价<del>69</del></span>
+                    <span>已售1.5万</span>
+                </p>
+            </div>
+        </a>
+        <a href="https://m.nuomi.com/deal/n00so4obn?areaDomain=bj&dealTinyUrl=n00so4obn&&s=a608640d37ec26a234abd6f3db4206a5">
+            <div class="goods-img">
+                <img src="../images/food3.jpg" alt=""/>
+            </div>
+            <div class="goods-info">
+                <div class="goods-title">
+                    <h3>豪尚豪牛排馆</h3>
+                    <span>门头沟</span>
+                </div>
+                <p>单人自助1份！免费WiFi！</p>
+                <p class="goods-price">
+                    <ins>53.8</ins>
+                    <span>门市价<del>89</del></span>
+                    <span>已售2.1万</span>
+                </p>
+            </div>
+        </a>
+        <a href="https://m.nuomi.com/deal/u00sw7mdl?areaDomain=bj&dealTinyUrl=u00sw7mdl&&s=a608640d37ec26a234abd6f3db4206a5">
+            <div class="goods-img">
+                <img src="../images/food4.jpg" alt=""/>
+            </div>
+            <div class="goods-info">
+                <div class="goods-title">
+                    <h3>唱吧麦颂KTV</h3>
+                    <span>多商圈</span>
+                </div>
+                <p>平日时段阳光档/黄金档/夜猫档超值欢唱</p>
+                <p class="goods-price">
+                    <ins>45</ins>
+                    <span>门市价<del>200</del></span>
+                    <span>已售8641</span>
+                </p>
+            </div>
+        </a>
+        <a href="https://m.nuomi.com/deal/w00spm0cz?areaDomain=bj&dealTinyUrl=w00spm0cz&&s=61573c77afcc5696aff4030e10616bd6">
+            <div class="goods-img">
+                <img src="../images/food1.jpg" alt=""/>
+            </div>
+            <div class="goods-info">
+                <div class="goods-title">
+                    <h3>好伦哥</h3>
+                    <span>多商圈</span>
+                </div>
+                <p>单人自助1份！免费WiFi！</p>
+                <p class="goods-price">
+                    <ins>56</ins>
+                    <span>门市价<del>56</del></span>
+                    <span>已售8641</span>
+                </p>
+            </div>
+        </a>
+    </section>
+    <section class="view-all">
+        <a class="view-all-link" href="https://m.nuomi.com/webapp/tuan/list">
+            查看全部团购
+        </a>
+    </section>
+</main>
+<footer class="footer">
+    <section class="city-wrap">
+        <div class="info-bock">
+            <span>城市：</span>
+            <a href="https://m.nuomi.com/city?returnUrl=https%3A%2F%2Fm.nuomi.com%2F%3F_%3D124">北京</a>
+        </div>
+        <div class="login-bock">
+            <a href="https://wappass.baidu.com/passport/login?sms=1&tpl=nuomi&u=https%3A%2F%2Fm.nuomi.com%2Fwebapp%2Fuser%2Fbindaccount%3Fretype%3Dstoken&smsLoginLink=1&authsite=1&time=1493653029&skin=https%3A%2F%2Fm.nuomi.com%2Fstatic%2Flogin%2Fwidget%2Fupdate_passport%2Fpassport.css">登录</a>
+            <a href="https://wappass.baidu.com/passport/reg?tpl=nuomi&u=https%3A%2F%2Fm.nuomi.com%2Fwebapp%2Fuser%2Faddaccount&time=1493653055&skin=http%3A%2F%2Fm.nuomi.com%2Fstatic%2Flogin%2Fwidget%2Fupdate_passport%2Fpassport.css">注册</a>
+        </div>
+    </section>
+    <section class="nav-link">
+        <nav>
+            <a href="">首页</a>
+            <a href="">电脑版</a>
+            <a href="">客户端</a>
+            <a href="">信息反馈</a>
+            <a href="">帮助</a>
+        </nav>
+    </section>
+    <section class="copyright-block">
+        ©nuomi.com 京ICP证060807号
+    </section>
+    <section class="footer-title">
+        <img src="../images/nuomiLogo.png" alt=""/>
+    </section>
+</footer>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/zepto.min1.1.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<script src="../mui/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

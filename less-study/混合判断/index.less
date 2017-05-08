@@ -1,0 +1,62 @@
+.BOX (@wid, @hei){
+  width: @wid;
+  height: @hei;
+  border: 2px solid black;
+}
+
+//.bgColor (@a) when (@a > 5) {
+//  background-color: red;
+//}
+//
+//.bgColor (@a) when (@a <= 5) {
+//  background-color: green;
+//}
+
+//.bgColor (@boo,@a) when (@boo) and (@a > 5) {
+//  background-color: red;
+//}
+//
+//.bgColor (@boo,@a) when (@boo) and (@a <= 5) {
+//  background-color: green;
+//}
+
+//.bgColor (@boo,@a) when (@boo) , (@a <= 5) {
+//  background-color: green;
+//}
+
+//.box1 {
+//  .BOX(100px, 200px);
+//  margin-bottom: 20px;
+//  .bgColor(true,10);
+//}
+//
+//.box2 {
+//  .BOX(200px, 300px);
+//  .bgColor(false, 4);
+//}
+
+
+
+.bgColor(col1,@wid) {
+  background-color: red;
+  width: @wid;
+}
+.bgColor(col2, @hei) {
+  background-color: blue;
+  height: @hei;
+}
+
+
+
+.box1 {
+  .BOX(100px, 200px);
+  margin-bottom: 20px;
+  .bgColor(col1, 300px);
+}
+
+.box2 {
+  .BOX(200px, 300px);
+  .bgColor(col2,100px);
+}
+
+

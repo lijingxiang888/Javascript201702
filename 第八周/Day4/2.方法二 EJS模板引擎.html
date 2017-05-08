@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>EJS模板引擎</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<!--EJS 语法:
+<%%> js的代码
+<%=%> 输出的内容
+
+四部曲:
+1.
+-->
+
+
+
+
+
+
+<!--header begin-->
+<header>
+    <span>编号</span>
+    <span>姓名</span>
+    <span>性别</span>
+    <span>分数</span>
+</header>
+<!--header end-->
+
+<!--main begin-->
+<section class="main"  id="wrapper">
+</section>
+<!--main end-->
+
+
+<!--第三步:造模板 搭html结构 导入数据 -->
+<!--id='mainTemplate'   是为了获取模板的html结构内容
+mainData  自定义的名称 它是模板的数据  是为了和我们通过ajax获取到的data数据关联起来-->
+
+<!--<%%> js的代码在模板中都需要用这个符号包起来
+<% js的代码 %>
+<%= 输出的结果内容 %>
+-->
+<script type="text/template" id="mainTemplate">
+    <ul>
+        <%$.each(mainData,function(index,item){%>
+            <li>
+                <span><%=item.id%></span>
+                <span><%=item.name%></span>
+                <span><%=(item.sex==0)?'男':'女'%></span>
+                <span><%=item.score%></span>
+            </li>
+        <%})%>
+    </ul>
+</script>
+
+
+
+
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<!--iscroll-->
+<script type="text/javascript" src="js/iscroll.js"></script>
+<!--第一步 引入ejs的文件库-->
+<script type="text/javascript" src="js/ejs.min.js"></script>
+
+
+<script type="text/javascript">
+    //rem 动态获取html根元素的字体大小
+    function refreshRem() {
+        var desW = 750,
+                winW = document.documentElement.clientWidth,
+                ratio = winW / desW;
+        document.documentElement.style.fontSize = ratio * 100 + 'px'
+    }
+    refreshRem();
+    window.addEventListener('resize', refreshRem);
+
+
+
+
+   function bindHTML(data){
+//       console.log(data);
+//       第四步:ejs.render 把模板的html结构 模板的数据 data数据  渲染出来
+       var mainHTML=$('#mainTemplate').html();   //获取模板的html结构
+       var result=ejs.render(mainHTML,{mainData:data});   //ejs.render(模板的html结构,{模板数据:data数据})
+      // console.log(result); //html结果包括数据全都倍打印出来 跟字符串拼接 str的结果一模一样
+       $('.main').html(result);
+
+       var _h=document.documentElement.clientHeight,  //设备的高度
+           h=$('header').height(),//头部的高度
+           height=_h-h;  //中间内容区域的高度
+      $('.main').height(height); // 内容在中间高度容器中滚动
+
+
+       //    iscroll 初始化设置
+       var myscroll=new iScroll('wrapper',{
+           //参数配置
+//           vScrollbar:false
+            //是否显示垂直方向的滚动条  false 隐藏  true 显示
+           fadeScrollbar:true
+           //设置滚动条渐隐渐现的效果
+       });
+   }
+
+
+    //第二步:通过ajax获取到data数据
+    $.ajax({
+        url:'json/data.json',
+        type:'get',
+        dataType:'json',
+        success:bindHTML
+    })
+
+</script>
+</body>
+</html>
