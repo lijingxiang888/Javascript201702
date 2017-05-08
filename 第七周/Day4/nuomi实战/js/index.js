@@ -28,7 +28,6 @@ $(function () {
         }
     });
     $('.search-word').on('keydown', function (e) {
-        console.log(123);
         var val = $(this).val();
           if(val && e.keyCode === 13) {
               window.location.href = 'https://m.nuomi.com/webapp/tuan/list?kw='+ val;

@@ -11,14 +11,11 @@
     <script type="text/javascript">
         ~function () {
             var desW = 640;
-
             function refreshRem() {
                 var doc = document.documentElement;
                 var winW = doc.clientWidth;
                 doc.style.fontSize = winW / desW * 100 + 'px';
-//                desW/winW = 100/x;
             }
-
             refreshRem();
             window.addEventListener('resize', refreshRem);
         }();
