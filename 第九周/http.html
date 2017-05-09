@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--https://www.baidu.com/index.html#dfs
+
+ sechme:// 主机名：prot/path?查询参数 key1 = val& key2 = val
+ uri = url(统一资源定位符) + urn
+ https:// 安全传输协议 传输格式 443
+ http 80
+ ftp 21
+ www.baidu.com 域名 主机名 每个域名都对应一个ip地址  公网中ip 61.135.169.125
+ port 端口号 ip地址 有 0 - 65535  1024> prot < 65535 开发人员 四位数8080 9090 8000
+ path 路径 /Javascript201702/第九周/http.html
+ query 查询参数
+ #hash hash值
+
+-->
+<!--
+  页面url 访问过程
+
+
+  控制台 network里面 是客户端 向服务端发送的所有请求
+  页面加载优化
+  减少http请求
+  css js 打包压缩 为内嵌式、
+  雪碧图 CSS Sprites
+  图片延迟加载（懒加载）
+  预加载
+  ajax 局部刷新 异步加载
+-->
+
+<!--  http 事务 那个事件集合 发送一个request 命令 和 response响应
+
+ 客户端 request 请求三部分 请求行 请求头 请求体
+ 请求行
+ req method  path  http version
+ 请求头
+ Host 主机名
+ Connection 链接状态
+ User-Agent 客户端软件环境
+ Accept 接受响应类型
+ Accept-Encoding 接受的数据压缩格式
+ Accept-Language 客户端语言格式
+
+ Cookie 数据载体
+
+ 请求体
+ name=liwenli&id=10
+
+
+  服务端 response 响应三部分 响应行 响应头 响应体
+
+  响应行
+  http version  状态码 状态语
+
+  响应头
+  Server 服务名称
+  Date 响应时间
+  Content-Type 响应内容mime类型 字符编码格式 默认text/html
+  Transfer-Encoding 传输编码格式 chunked 分段传输
+  Connection 链接状态
+  Cache-Control 缓存控制
+  Content-Encoding 压缩格式
+  Set-Cookie 设置cookie
+  响应体 响应回送的内容
+-->
+
+<!--
+  mime类型
+  html text/html
+  js application/javascript
+  css text/css
+  文档 text/plain
+  jpg  image/jpg
+  jpeg image/jpeg
+  png  image/png
+  form application/x-www-form-urlencoded
+-->
+<!--
+   浏览器内核
+   Chrome webkit
+   IE Trident
+   FF Gecko
+-->
+<!--
+http status
+http 1.1
+1xx
+
+200 ok 请求成功
+3xx 重定向
+301 永久重定向
+302 临时重定向
+304 走的缓存
+
+4xx客户端错误
+403 权限不够
+404 找不到页面
+
+5xx 服务器错误
+500 服务器内部错误
+504 网关超时
+-->
+</body>
+</html>
