@@ -38,10 +38,10 @@
 ```
   编辑器左上角 view -> Tool Windows -> terminal  在当前目录下打开命令行
 ```
-12. ping 网络是否通过
+12. ping 网络是否通
 
 ### node
-node 一个运行环境 让js可以在服务端运行  浏览器客户端js 是不可以操作本地系统 
+node 一个运行环境 让js可以 在服务端运行  浏览器客户端js 是不可以操作本地系统 
 node 基于V8 引擎 
 
 node 提供了 很多操作系统api 
@@ -60,7 +60,7 @@ http fs url ...
 自定义模块
 第三方模块 
 
-node 7.0 支持 es6 let const 服务端没有兼容性
+node  支持 es6 let const 服务端没有兼容性
 
 node 全局对象global
 
