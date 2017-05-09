@@ -42,7 +42,7 @@
 
 ### node
 node 一个运行环境 让js可以在服务端运行  浏览器客户端js 是不可以操作本地系统 
-node 基于V8 引擎 webkit 
+node 基于V8 引擎 
 
 node 提供了 很多操作系统api 
 
