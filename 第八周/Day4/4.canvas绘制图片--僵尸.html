@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid #000
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="400" id="cas"></canvas>
+<script type="text/javascript">
+    var cas = document.getElementById('cas');
+    var ctx = cas.getContext('2d');
+    var img = new Image();
+    img.src = 'images/walkingdead.png';
+    img.onload = function () {
+        var width = img.width / 10,
+                height = img.height;
+        var i = 0;
+        window.setInterval(function () {
+            ctx.clearRect(0, 0, cas.width, cas.height);
+            ctx.drawImage(img, i * width, 0, width, height, 0, 0, width, height);
+            if (i == 9) {
+                i = 0;
+            } else {
+                i++;
+            }
+        }, 200)
+    }
+</script>
+</body>
+</html>
