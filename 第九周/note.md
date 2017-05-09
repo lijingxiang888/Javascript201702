@@ -21,10 +21,12 @@
  
  追加内容
  echo 编辑的内容 >> 文件名 
+ 
 ```
  8. cat 查看文件内容
  
  9. 递归强制删除
+ 
  ```
    rm -rf cc
 ```
@@ -37,3 +39,55 @@
   编辑器左上角 view -> Tool Windows -> terminal  在当前目录下打开命令行
 ```
 12. ping 网络是否通过
+
+### node
+node 一个运行环境 让js可以在服务端运行  浏览器客户端js 是不可以操作本地系统 
+node 基于V8 引擎 webkit 
+
+node 提供了 很多操作系统api 
+
+Js单线程 异步非阻塞I/O 读写 输入和输出
+可以 同步 也可以 异步
+自带模块化 commonjs规范
+
+require() // 引入模块
+module.exports // 导出模块   
+requirejs amd 规范 sea.js 
+
+http fs url ...
+模块 
+内置模块
+自定义模块
+第三方模块 
+
+node 7.0 支持 es6 let const 服务端没有兼容性
+
+node 全局对象global
+
+npm init  当前文件名 不能是 中文 不能是大写 不要有特殊符号
+
+```
+npm install 包名 --save / --save-dev  
+
+--save 保存到 package.json 的dependencies 属性里
+--save-dev 保存到 package.json 的devDependencies 属性里
+
+```
+当前项目依赖包 安装到哪个文件夹
+```
+ npm root
+```
+
+2. 全局安装
+```
+npm install package -g
+```
+查看全局安装 的目录
+
+```
+ npm root -g
+```
+
+
+  
+

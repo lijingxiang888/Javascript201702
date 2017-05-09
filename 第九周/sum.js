@@ -1,3 +1,1 @@
-/**
- * Created by Admin on 2017/5/9.
- */
+ module.exports.sum = (a, b) => console.log(a+b);

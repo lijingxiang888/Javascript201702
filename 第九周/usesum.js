@@ -1,3 +1,3 @@
-/**
- * Created by Admin on 2017/5/9.
- */
+let obj = require('./sum.js');
+console.log(obj);
+obj.sum(100, 200);
