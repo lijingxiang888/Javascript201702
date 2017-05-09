@@ -7,7 +7,6 @@
 2.配置环境变量
  右键计算机-> 属性 -> 高级系统设置 -> 环境变量 -> 系统变量 -> path -> (git安装目录下cmd 路径) f:\Program Files\Git\cmd
  
-
 1. ipconfig  ipconfig /all 查看 本机ip信息
 2. clear/cls 清屏
 3. ls -al  查看所有文件
