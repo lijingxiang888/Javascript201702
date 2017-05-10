@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function createXhr() {
+        let xhr = null;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else {
+            if (new ActiveXObject('Microsoft.XMLHTTP')) {
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
+            } else if (new ActiveXObject('Msxml2.XMLHTTP')) {
+                xhr = new ActiveXObject('Msxml2.XMLHTTP');
+            } else if (new ActiveXObject('Msxml3.XMLHTTP')) {
+                xhr = new ActiveXObject('Msxml3.XMLHTTP');
+            }
+        }
+        return xhr;
+    }
+
+    let xhr = createXhr();
+    xhr.open('get', 'http://127.0.0.1:8060/getUsers', true);
+    xhr.onreadystatechange = function () {
+
+    };
+    xhr.send();
+</script>
+</body>
+</html>
