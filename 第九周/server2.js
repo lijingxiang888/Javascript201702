@@ -1,6 +1,6 @@
 // http 搭建server
-let http = require('http');
-let fs = require('fs');
+let http = require('http');//引入http模块
+let fs = require('fs');//引入读取文件的模块
 
 // http.createServer(function (req, res){
 //      res.setHeader('Content-type', 'text/plain;charset=utf-8');
@@ -14,15 +14,13 @@ var mimeType = {
 };
 
 http.createServer(function (req, res){
-    console.log(req.url);
     if(req.url === '/') {
-       res.end(' nihao  zhufeng');
+       res.end(' nihao  zhufeng');//响应体
     }
 
     if(req.url === '/index1.html') {
-        res.setHeader('Content-Type', 'text/html;charset=utf-8');
-        let result = fs.readFileSync('./index1.html');
-        // console.log(result); // 默认读取 的是buffer
+        res.setHeader('Content-Type', 'text/html;charset=utf-8');//响应头
+        let result = fs.readFileSync('./index1.html');// 默认读取 的是buffer
         res.end(result); // 内容 string buffer
     }
     if(req.url === '/index1.css') {
