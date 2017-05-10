@@ -2,5 +2,6 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <includedPredefinedLibrary name="Node.js Core" />
+    <excludedPredefinedLibrary name="Javascript201702/第九周/Day1/test/node_modules" />
   </component>
 </project>

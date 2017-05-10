@@ -73,7 +73,7 @@ npm install babel-preset-es2015 --save-dev
 编译命令 打开当前目录 命令窗口
 
 ```
-babel a.js -o b.js
+babel this.js -o b.js
 ```
 
 ## 实时监听编译
@@ -81,7 +81,7 @@ babel a.js -o b.js
 ### 编译单个文件
 
 ```
-babel a.js -wo b.js
+babel this.js -wo b.js
 ```
 
 ###　指定src目录的js 实时编译到 build目录下
