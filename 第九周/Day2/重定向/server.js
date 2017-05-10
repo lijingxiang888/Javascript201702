@@ -3,13 +3,14 @@ let url = require('url');
 let fs = require('fs');
 http.createServer(function (req, res) {
     let {pathname} = url.parse(req.url);
-    if(pathname === '/') {
-        // res.setHeader('Content-Type', 'text/html;charset=utf-8');
-
-        var result = fs.readFileSync('./test.html');
-        res.end(result);
+    if (pathname === '/') {
         res.writeHead(302, {
-            Location: 'https://www.baidu.com'
+            location: 'https://www.baidu.com'
         });
+        res.end();
+
+        // res.setHeader('location', 'https://www.sogou.com');
+        // res.statusCode = 302;
+        // res.end();
     }
 }).listen(3000);
