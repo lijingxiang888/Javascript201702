@@ -5,13 +5,15 @@ http.createServer(function (req, res) {
     let {pathname} = url.parse(req.url);
     if (pathname === '/') {
         res.writeHead(302, {
-            location: 'https://www.baidu.com'
+            location: '/test'
         });
         res.end();
-
-
-        // res.setHeader('location', 'https://www.sogou.com');
-        // res.statusCode = 302;
-        // res.end();
+        return;
     }
-}).listen(3000);
+
+    if(pathname === '/test') {
+        res.setHeader('Content-Type', 'text/html;charset=utf-8');
+        let result = fs.readFileSync('./test.html');
+        res.end(result);
+    }
+}).listen(7000);

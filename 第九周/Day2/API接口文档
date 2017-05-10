@@ -1,0 +1,12 @@
+/getTime 获取服务端时间date
+
+http://127.0.0.1:5000/getTime
+
+ 数据格式
+ {time: date}
+
+
+/getUsers 获取用户列表
+http://127.0.0.1:8060/getUsers
+
+{data: [{id:1},{id:2}]}
