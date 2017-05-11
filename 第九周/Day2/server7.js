@@ -13,7 +13,7 @@ http.createServer(function (req, res) {
     let pathname = urlObj.pathname; // 解析后的请求路径
     if (pathname === '/' || pathname === '/index.html') {
         res.setHeader('Content-Type', 'text/html;charset=utf-8');
-        var result = fs.readFileSync('./index3.html');
+        let result = fs.readFileSync('./index3.html');
         res.end(result);
         return;
     }
@@ -22,7 +22,7 @@ http.createServer(function (req, res) {
     let flag = fs.existsSync('.' + pathname);
     if (flag) {
         console.log(mime.lookup(pathname));
-        var result = fs.readFileSync('.' + pathname);
+        let result = fs.readFileSync('.' + pathname);
         res.setHeader('Content-Type', mime.lookup(pathname)+ ';charset=utf8');
         res.end(result);
     } else {
