@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+			ajax  async javascript and xml
+			web交互技术 异步获取 局部刷新
+		       分为四部	
+		-->
+		<script type="text/javascript">
+		    /** ajax状态码  xhr.readyState 0 - 4
+		     * 0 uninit 未初始化  创建了xhr对象 没有调用open方法的时候
+		     * 1 loading 调用open方法 准备 发送请求时 
+		     * 2 loaded  发送请求后 完全接收 响应信息 开始准备解析
+		     * 3  交互  将 响应信息解析 将响应原始数据 解析成客户端能够调用的也就是 将我们的数据 挂载到 xhr.responseText xhr.responseXML 中等
+		     * 4 done 响应完成 客户端 可以调用 并且 http status 200
+		     */
+			var xhr = new XMLHttpRequest(); // 创建ajax对象
+			console.log(xhr.readyState);
+			// @param1 请求方式 get post delete head put
+			// @param2 请求地址接口 url
+			// @param3 sync/async 同步 或异步 默认true 异步   false 同步
+			xhr.open('get', './data.json'); // 打开一个接口 建立链接通道
+			xhr.onreadystatechange = function  () { // 监听ajax请求状态                                    
+				console.log(this.readyState);
+				if(this.readyState === 4 && /^2\d{2}$/.test(this.status)) {
+                     console.log(this.responseText);	
+				}
+			};
+			
+			xhr.send();  // 开始发送请求
+		    console.log(xhr.readyState);
+		    
+		    
+		    console.log('后面代码');	
+		</script>
+		
+		
+	</body>
+</html>

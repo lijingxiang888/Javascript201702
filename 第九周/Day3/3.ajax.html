@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 创建ajax对象兼容写法
+			function getXhr () {
+				var xhr = null;
+				if (window.XMLHttpRequest) {
+					xhr = new XMLHttpRequest;
+				} else {
+					if(new ActiveXObject('Microsoft.XMLHTTP')) {
+						xhr = new ActiveXObject('Microsoft.XMLHTTP');
+					} else if(new ActiveXObject('Msxml2.XMLHTTP')) {
+						xhr = new ActiveXObject('Msxml2.XMLHTTP');
+					} else if(new ActiveXObject('Msxml3.XMLHTTP')) {
+						xhr = new ActiveXObject('Msxml3.XMLHTTP');
+					}
+				} 
+				return xhr;
+			}
+			
+			var xhr = getXhr(); // 高版本浏览器
+			xhr.open('get', './data.json', true);
+			xhr.onreadystatechange = function  () {
+				if(this.readyState === 4 && /^2\d{2}$/.test(this.status)) {
+					console.log(this.responseText);
+				}
+			}
+			xhr.send();
+		</script>
+	</body>
+</html>
