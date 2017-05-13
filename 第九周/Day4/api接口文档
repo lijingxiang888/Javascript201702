@@ -1,0 +1,19 @@
+/getList
+获取所有用户 GET /getList url地址，服务端返回数组类型
+{code:0,data:[],msg:'成功'}
+
+/removeInfo
+删除某个用户 DELETE 通过url传递用户id /removeInfo?id=3 删除成功后返回空数据即可
+{code:0,data:'',msg:'成功'}
+
+/addInfo
+新增某个用户 POST 通过请求体传递数据 /addInfo 添加成功后返回添加后的那一项，收到数据后服务端要增加一个id
+{code:0,data:'',msg:'成功'}
+
+/updateInfo
+修改用户 PUT 既要通过url 还要通过请求体 /updateInfo?id=1 改成什么样放到请求体中
+{code:0,data:'',msg:'成功'}
+
+/getInfo
+查询单个用户 GET 通过url /getInfo?id=1
+{code:0,data:'',msg:'成功'}

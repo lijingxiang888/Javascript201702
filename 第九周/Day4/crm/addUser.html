@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>用户增加页面</h3>
+<lable for="user">用户名：</lable><input id="user" type="text"><br>
+<lable for="user">联系方式：</lable><input id="tel" type="text"><br>
+<button id="submit">增加用户</button>
+<script type="text/javascript" src="./jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+       $('#submit').click(function () {
+           let userVal = $('#user').val();
+           let telVal = $('#tel').val();
+           if(userVal && telVal) {
+               let obj = {name: userVal, tel: telVal};
+               $.ajax({
+                   url: 'http://127.0.0.1:9080/addUserData',
+                   type: 'POST',
+                   data: obj,
+                   dataType: 'json',
+                   success: function (result) {
+                       if(result && result.error === 0) {
+                           $('#user').val('');
+                           $('#tel').val('');
+                           alert(result.msg);
+                           window.location.href = '/index.html';
+                       } else {
+                           alert(result.msg);
+                       }
+                   }
+               });
+           } else {
+               alert('请将用户信息填写完整~');
+           }
+       });
+    });
+</script>
+</body>
+</html>
