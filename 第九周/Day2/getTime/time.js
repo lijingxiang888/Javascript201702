@@ -1,9 +1,8 @@
 let time = document.getElementById('time');
 
 function getTime() {
-     // time.innerHTML = new Date().toLocaleString();
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://127.0.0.1:5000/getTime', true);
+    xhr.open('GET', 'http://127.0.0.1:5000/getTime', true);//127.0.0.1 本地ip地址，相当于localhost
     xhr.responseType = 'json'; // 按照json对象形式 解析 响应数据
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && /^2\d{2}$/.test(this.status)) {

@@ -8,7 +8,6 @@ http.createServer(function (req, res) {
             location: 'https://www.baidu.com'
         });
         res.end();
-
         // res.setHeader('location', 'https://www.sogou.com');
         // res.statusCode = 302;
         // res.end();

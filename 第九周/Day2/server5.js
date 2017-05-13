@@ -5,7 +5,7 @@ const MIME = {
     '.js': 'application/javascript',
     '.css': 'text/css',
     '.html': 'text/html',
-    '.jpg': 'image/jpg',
+    '.jpg': 'image/jpg'
 };
 
 http.createServer(function (req, res) {
@@ -20,13 +20,13 @@ http.createServer(function (req, res) {
     let flag = fs.existsSync('.' + req.url);
     if(flag) {
         var result = fs.readFileSync('.' + req.url);
-        // index3.css
+        // 多个请求路径，一个一个判断太麻烦了，只有根路径做if判断，其他的用文件名判断就行，还有文件名不能写死，用正则去匹配
         var suffix = /(\.[a-zA-Z]+$)/.exec(req.url)[1];
         res.setHeader('Content-Type', MIME[suffix] + ';charset=utf8');
         res.end(result);
     } else {
         res.setHeader('Content-Type', 'text/plain;charset=utf8');
-        res.statusCode = 404;
+        res.statusCode = 404;//还得需要修改状态码
         res.end('NOT FOUND页面 跑到火星去了~~');
     }
 

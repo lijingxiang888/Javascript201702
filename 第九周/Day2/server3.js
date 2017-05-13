@@ -22,12 +22,12 @@ http.createServer(function (req, res) {
 
     if (req.url === '/index3.js') {
         res.setHeader('Content-Type', 'application/javascript;charset=utf-8');
-        var result = fs.readFileSync('./index3.js');
+        var result = fs.readFileSync('./index3.js');//同步读取
         res.end(result);
     }
     if (req.url === '/node.jpg') { //如果客户端请求的路径是'/node.jpg'
         res.setHeader('Content-Type', 'image/jpg');
-        fs.readFile('./node.jpg', function (err, data) {
+        fs.readFile('./node.jpg', function (err, data) {//异步读取
                 if (err) {
                     console.log(err);
                 } else {

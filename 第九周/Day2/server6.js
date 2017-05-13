@@ -10,8 +10,9 @@ const MIME = {
 };
 
 http.createServer(function (req, res) {
-    console.log(req.url); // /?name=liwenli&uid=1 包含路径和？后面查询参数
-    let urlObj = url.parse(req.url, true);
+    //console.log(req.url); // /?name=liwenli&uid=1 包含路径和 ？后面的查询参数
+    let urlObj = url.parse(req.url, true);//只要路径
+    console.log(urlObj);
     let pathname = urlObj.pathname; // 解析后的请求路径
     console.log(urlObj.query); // 查询参数
     console.log(pathname);
@@ -36,7 +37,7 @@ http.createServer(function (req, res) {
         res.end('NOT FOUND页面 跑到火星去了~~');
     }
 
-}).listen(7000);
+}).listen(7001);
 
 // fs.exists() 根据路径判断文件是否存在
 // 异步判断
