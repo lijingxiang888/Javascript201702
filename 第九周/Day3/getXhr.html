@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 每调用一次 就要重新做一次兼容处判断
+//			function getXhr () {
+//				var xhr = null;
+//				if (window.XMLHttpRequest) {
+//					xhr = new XMLHttpRequest;
+//				} else {
+//					if(new ActiveXObject('Microsoft.XMLHTTP')) {
+//						xhr = new ActiveXObject('Microsoft.XMLHTTP');
+//					} else if(new ActiveXObject('Msxml2.XMLHTTP')) {
+//						xhr = new ActiveXObject('Msxml2.XMLHTTP');
+//					} else if(new ActiveXObject('Msxml3.XMLHTTP')) {
+//						xhr = new ActiveXObject('Msxml3.XMLHTTP');
+//					}
+//				}
+//				return xhr;
+//			}
+//			getXhr();
+			
+			function getXhr() { // 第一次时候 不仅进行第一次ajax对象生成 也同时进行了改造
+				var xhr = null;
+				var ary = [function () {
+					return new XMLHttpRequest;
+				}, function () {
+					return new ActiveXObject('Microsoft.XMLHTTP');
+				}, function () {
+					return new ActiveXObject('Msxml2.XMLHTTP');
+				}, function () {
+					return new ActiveXObject('Msxml3.XMLHTTP');
+				}];
+				// 进行 筛选 改造
+				for (var i = 0; i < ary.length; i++) {
+					var curFn = ary[i];
+					try {
+						xhr = curFn();
+						getXhr = curFn; // 覆盖之前
+						break; // 如果得到正确答案 就没必要 在继续筛选
+					} catch(e) {}
+				}
+				if(!xhr) {
+					throw Error('你的浏览器版本太低 请升级~~');
+				}
+				return xhr; // 这是第一次的返回
+			}
+			
+			console.log(getXhr); // 改造前
+			
+			console.log(getXhr()); // 第一次调用时 进行改造 并返回一个ajax对象
+			
+			console.log(getXhr); // 改造后
+			
+//			以后的我们调用的 getXhr 都是改造后的
+
+
+        var getXhr2 =(function () {
+        	var xhr = null;
+        	 var ary =  [function () {
+					return new XMLHttpRequest;
+				}, function () {
+					return new ActiveXObject('Microsoft.XMLHTTP');
+				}, function () {
+					return new ActiveXObject('Msxml2.XMLHTTP');
+				}, function () {
+					return new ActiveXObject('Msxml3.XMLHTTP');
+				}];
+				
+				for(var i = 0; i < ary.length; i++) {
+					var curFn = ary[i];
+					try{
+						xhr = curFn();
+						getXhr2 = curFn;
+						break;
+					}catch(e){};
+				}
+				
+				if(!xhr) {
+					throw Error('你的浏览器版本太低 请升级~~');
+				} 
+			
+        });
+         console.log(getXhr2);
+         getXhr2();
+         console.log(getXhr2);
+         
+         
+		</script>
+	</body>
+</html>

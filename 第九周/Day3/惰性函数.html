@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button id="btn">点击</button>
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			//			function on(ele, type, fn) { // 目前 每调用一次on方法 就会 执行一次兼容处理 判断
+			//				if(ele.addEventListener) {
+			//					ele.addEventListener(type, fn, false);
+			//				} else {
+			//					ele.attachEvent('on' + type, fn);
+			//				}
+			//			}
+			//			on(btn, 'click', function  () {
+			//				alert('欢迎你 加入前端！');
+			//			});
+
+			// 只有在第一次的时候 做一次 兼容判断 以后 不需要 做判断 直接使用
+			function fn() {
+				alert('欢迎你 加入前端！');
+			}
+
+			//			function on(ele, type, fn) { //只有第一次 调用的时候 才做一次兼容处理判断
+			//				if(ele.addEventListener) {
+			//					on = function(ele, type, fn) {
+			//						ele.addEventListener(type, fn, false);
+			//					}
+			//				} else {
+			//					on = function(ele, type, fn) {
+			//						ele.attachEvent('on' + type, fn);
+			//					}
+			//				}
+			//				on(ele, type, fn);
+			//			}
+
+			//			
+			//			console.log(on);
+			//			on(btn, 'click', fn);
+			//			console.log(on);
+
+			var on = (function() { // 每一次加载页面的时候 不管目前用不用 都会做一次兼容 处理判断
+				if(window.addEventListener) {
+					return function(ele, type, fn) {
+						ele.addEventListener(type, fn, false);
+					}
+				} else {
+					return function(ele, type, fn) {
+						ele.attachEvent('on' + type, fn);
+					}
+				}
+			})();
+
+			console.log(on);
+			on(btn, 'click', fn);
+		</script>
+	</body>
+
+</html>

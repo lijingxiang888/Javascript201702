@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
+<script type="text/javascript">
+    $(function () {
+       $.ajax({
+           url: url, // 接口请求地址
+           type: 'GET', // 请求方式  1.9下 method
+           beforeSend: function (xhr) { // 发送请求之前 触发
+
+           },
+           data: {}, // 向服务端 发送数据
+           cache: true, // 是否缓存 true 缓存 false 不缓存
+           async: true, // true 异步 false 同步
+           context: window, // 指定success 里面上下文
+           dataType: 'text', // xhr.responseType 接收的数据解析格式
+//           跨域
+//           dataType: 'jsonp',
+//           jsonp: 'cb', // 重写jsonp 的请求url中回调函数key的名称
+//           jsonpCallback: 'fn', // 指定jsonp回调函数的名称
+           success: function (result) { // 成功回调函数
+               console.log(result);
+               console.log(this); // 当前options
+           },
+           timeout: 3000, // xhr.timeout 设置超时时间 如果 超时 会触发error时间
+           // 原生 xhr.timeout  触发 xhr.ontimeout = function
+           error: function (err) { // 请求出错
+             console.log(err);
+           },
+           complete: function (xhr) { // 不管提交成不成功 都会执行
+
+           }
+       })
+    });
+</script>
+</body>
+</html>

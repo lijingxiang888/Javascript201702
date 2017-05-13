@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="getBtn">获取数据</button>
+<p id="text"></p>
+<script type="text/javascript" src="./jquery-1.11.3.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#getBtn').click(getData);
+        function getData() {
+            $.ajax({
+                url: '/getData',
+                type: 'GET',
+                data: {
+                    id: 24,
+                    name: 'lwl'
+                },
+                timeout: 3000,
+                dataType: 'json',
+                success: function (result) {
+                    console.log(result);
+                    console.log(this);
+                    $('#text').html(result.id +' : '+result.name);
+                },
+                error: function (err) {
+                    alert('请刷新页面~~');
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

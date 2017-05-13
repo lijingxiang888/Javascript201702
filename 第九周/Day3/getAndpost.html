@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3> hello Node</h3>
+		<script type="text/javascript">
+			var xhr = new XMLHttpRequest;
+			/**
+			 * get 获取资源
+			 * post 推送数据
+			 * delete 删除服务端资源
+			 * head 获取响应头 不需要响应体
+			 * put 更新服务端数据
+			 */
+			
+			/**
+			 * get post
+			 * 
+			 * 1.缓存问题
+			 * get 存在缓存  解决办法 在请求url?_= 随机数(Math.random())/时间戳(new Date().getTime());
+			 * post 不存在缓存
+			 * 
+			 * 2.传输数据大小限制
+			 * get 将需要发送后端数据拼接到url?name=liwenli&id=1  标准浏览器8kd ie 2kb
+			 * post 通过请求体 xhr.send(JSON.stringify(data)) 没有大小限制
+			 * 
+			 * 3.安全问题
+			 * get 请求是将数据拼接到url后面 容易 被url劫持
+			 * post 比较安全的
+			 * 
+			 * name=liwenli&id=24 查询字符串
+			 */
+			xhr.open('post', 'http://127.0.0.1:9000/getData?name=liwenli&id=24', true);
+			xhr.onreadystatechange = function  () {
+				if(this.readyState === 4 && /^2\d{2}$/.test(this.status)) {
+					console.log(this.responseText);
+				}
+			}
+			var obj = {
+				wd: 'node',
+				say: 'hello world'
+			}
+			xhr.send(JSON.stringify(obj)); // post请求向后台发送数据 
+		</script>
+	</body>
+</html>

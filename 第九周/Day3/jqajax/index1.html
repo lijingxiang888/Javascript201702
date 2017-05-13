@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="getBtn">获取数据</button>
+<p id="text"></p>
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript">
+     let $$ = function (select) {
+        return document.querySelector(select);
+     };
+        $$('#getBtn').onclick = getData;
+
+     function getData() {
+         $.ajax({
+             url: '/getData',
+             type: 'GET',
+             data: {
+                 id: 24,
+                 name: 'lwl'
+             },
+             async: true,
+             cache: false,
+             timeout: 3000,
+             dataType: 'json',
+             success: function (result) {
+                 console.log(this);
+                 $$('#text').innerHTML = result.id +' : '+result.name;
+             },
+             error: function (err) {
+                 alert('自己的ajax 请刷新页面~~');
+             }
+         })
+     }
+
+</script>
+</body>
+</html>
