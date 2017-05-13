@@ -1,6 +1,6 @@
 ## node
 ### 什么是node？
-node 就是一个运行环境 可以js运行在服务端 浏览器端不能操作本地文件  
+> node 就是一个运行环境 可以让js运行在服务端 浏览器端不能操作本地文件等执行操作  
 
 ### node 
 - 非阻塞异步I/0 
@@ -43,11 +43,11 @@ node -v
 
 ### webstorm中运行方式
 ```
-在文件中 右键 - run 文件名.js
+在文件中 右键 -> run 文件名.js
 ```
 ### 通过命令行运行
 ```
-node 文件名
+node 文件名.js
 ```
 
 ### node 中全局对象 是 global
@@ -56,3 +56,19 @@ node 文件名
 1.内置模块
 2.第三方模块
 3.自定义模块
+
+### http-server
+- 全局安装
+```
+npm install http-server -g
+```
+- 使用
+> 在当前目录下 打开命令行 输入以下命令即可
+```
+http-server  (默认8080 -p 指定一个端口号)
+
+Starting up http-server, serving ./
+Available on:
+  http://192.168.0.102:8080
+  http://127.0.0.1:8080
+```
