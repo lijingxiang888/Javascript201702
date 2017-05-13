@@ -8,7 +8,6 @@ let mime = require('mime'); // 第三方模块
  * res 代表的是服务端响应对象
  */
 http.createServer(function (req, res) {
-
     let pathname = req.url;
     if(req.url === '/') {
         res.setHeader('Content-Type', 'text/html;charset=utf-8');

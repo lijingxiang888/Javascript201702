@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 404px;
+            margin: 20px auto;
+        }
+
+        h3 {
+            width: 404px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .addLink {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 10px;
+            background-color: #cccccd;
+            border: 1px solid #666;
+        }
+        p {
+            width: 404px;
+            overflow: hidden;
+            border: 1px solid black;
+            border-right: none;
+        }
+        p span {
+            float: left;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-right: 1px solid black;
+        }
+
+        ul {
+            width: 404px;
+            list-style: none;
+            border-left: 1px solid black;
+        }
+
+        ul li {
+            width: 404px;
+            overflow: hidden;
+            border-bottom: 1px solid black;
+        }
+
+        ul li span {
+            float: left;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-right: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3>crm用户系统</h3>
+    <a class="addLink" href="./addUser.html">增加</a>
+    <p><span>id</span><span>name</span><span>tel</span><span>操作</span></p>
+    <!--<ul>-->
+        <!--<li><span>1</span><span>React</span><span>123123</span><span><a href="">删除</a></span></li>-->
+        <!--<li><span>2</span><span>React</span><span>456</span><span><a href="">删除</a></span></li>-->
+        <!--<li><span>3</span><span>React</span><span>132216</span><span><a href="">删除</a></span></li>-->
+    <!--</ul>-->
+</div>
+
+<script type="text/javascript" src="./jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+       $.ajax({
+           url: 'http://127.0.0.1:9080/getUserData',
+           type: 'GET',
+           dataType: 'json',
+           success: function (result) {
+               if(result && result.error === 0) {
+                   bindData(result['data']);
+               }
+           }
+       });
+
+        function bindData(data) {
+               let str = '<ul>';
+              $.each(data, function () {
+                  str += `
+                    <li>
+                    <span>${this.id}</span>
+                    <span>${this.name}</span>
+                    <span>${this.tel}</span>
+                    <span><a href="">删除</a></span>
+                    </li>
+                  `
+              });
+              str += '</ul>';
+              $('.container').append(str);
+        }
+    });
+</script>
+</body>
+</html>
