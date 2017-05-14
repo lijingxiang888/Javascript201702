@@ -1,0 +1,46 @@
+{
+  "error": 0,
+  "errorMsg": "success",
+  "data": [
+    {
+      "id": 1,
+      "name": "Jay",
+      "score": "100"
+    },
+    {
+      "id": 1,
+      "name": "Jes",
+      "score": "100"
+    },
+    {
+      "id": 2,
+      "name": "Jav",
+      "score": "80"
+    },
+    {
+      "id": 3,
+      "name": "rea",
+      "score": "80"
+    },
+    {
+      "id": 4,
+      "name": "Jay11",
+      "score": "100"
+    },
+    {
+      "id": 5,
+      "name": "Jay22",
+      "score": "100"
+    },
+    {
+      "id": 6,
+      "name": "Jay33",
+      "score": "100"
+    },
+    {
+      "id": 7,
+      "name": "Jay44",
+      "score": "100"
+    }
+  ]
+}

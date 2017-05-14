@@ -1,7 +1,7 @@
 // fs 内置的文件系统模块
 let fs = require('fs');
 // 同步读取
-// let resHtml = fs.readFileSync('./index.html', 'utf8'); // 默认读取出来的的buffer
+// let resHtml = fs.readFileSync('./user.html', 'utf8'); // 默认读取出来的的buffer
 // console.log(resHtml);
 // console.log(123123);
 
@@ -11,7 +11,7 @@ let fs = require('fs');
  *   @param1 err 错误信息 如读取成功 null
  *   @param2 result 读取到的内容
  */
-// let resHtml = fs.readFile('./index.html', 'utf8', function (err, result) {
+// let resHtml = fs.readFile('./user.html', 'utf8', function (err, result) {
 //     // console.log(err);
 //     if(err) {
 //         console.log(err);

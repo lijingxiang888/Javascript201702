@@ -5,7 +5,7 @@ let fs = require('fs');
 // console.log(fs); // fs文件系统
 
 // 同步读取
-// var result = fs.readFileSync('./index.html', 'utf8');
+// var result = fs.readFileSync('./user.html', 'utf8');
 // console.log(result);
 // console.log(123);
 

@@ -3,7 +3,7 @@ let url = require('url');
 let fs = require('fs');
 http.createServer(function (req, res) {
     let {pathname, query} = url.parse(req.url, true);
-     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     if(pathname === '/') { // 访问根路径
         res.setHeader('Content-Type', 'text/html;charset=utf-8');
         let result = fs.readFileSync('./user.html');
@@ -16,6 +16,6 @@ http.createServer(function (req, res) {
         res.statusCode = 404;
         res.end('404 NOT FOUND');
     }
-}).listen(8060,function () {
-    console.log('监听8060');
+}).listen(7070,function () {
+    console.log('监听7070');
 });

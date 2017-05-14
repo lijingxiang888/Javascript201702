@@ -1,39 +1,44 @@
 <!DOCTYPE html>
-<body lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style type="text/css">
+    <style>
         * {
             margin: 0;
             padding: 0;
         }
+
         p {
             width: 300px;
             border: 1px solid black;
             margin: 0 auto;
         }
-        p span,  ul li span {
+
+        p span, ul li span {
             display: inline-block;
             width: 100px;
             height: 30px;
             line-height: 30px;
             text-align: center;
         }
+
         ul {
             width: 300px;
             list-style: none;
             border: 1px solid black;
             margin: 0 auto;
         }
-
     </style>
 </head>
+<body>
+<p>
+    <span>id</span><span>name</span><span>score</span>
+</p>
+<ul class="lists">
 
-
-<p><span>id</span><span>name</span><span>score</span></p>
-<ul id="lists">
 </ul>
+
 </body>
 <script type="text/javascript">
 
@@ -44,17 +49,18 @@
      * 3 交互 将响应回来的原始数据 解析为 客户端 可以调用的数据挂载到responseText responseXML
      * 4 done 完成  可以供客户端调用
      */
+
     function getData(callback) {
         let xhr = new XMLHttpRequest(); // 高版本浏览器
         console.log(xhr.readyState); // 0
-        xhr.open('GET','http://127.0.0.1:8060/getUsers', true);
+        xhr.open('GET','http://127.0.0.1:7070/getUsers', true);
         xhr.responseType = 'json';
         xhr.onreadystatechange = function () {
             console.log(this.readyState); // 2 3 4
             if(this.readyState === 4 && /^2\d{2}$/.test(this.status)) {
-                 if(this.response.error === 0) {
-                     typeof callback === 'function'? callback(this.response) : null;
-                 }
+                if(this.response.error === 0) {
+                    typeof callback === 'function'? callback(this.response) : null;
+                }
             }
         };
         xhr.send();
@@ -69,7 +75,7 @@
         for(let i = 0; i<data.length; i++){
             str += `<li><span>${data[i].id}</span><span>${data[i].name}</span><span>${data[i].score}</span></li>`
         }
-        lists.innerHTML = str;
+        lists.innerHTML = str
     }
 
 </script>
