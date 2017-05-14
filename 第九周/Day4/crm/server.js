@@ -53,7 +53,7 @@ http.createServer(function (req, res) {
     } else {
         res.setHeader('Content-Type', 'text/plain;charset=utf-8');
         res.statusCode = 404;
-        res.end('你的页面 飞走啦！');
+        res.end('你的页面 飞走啦~');
     }
 }).listen(9080, function () {
     console.log('监听9080端口');
