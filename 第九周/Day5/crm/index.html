@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .container {
+            -webkit-user-select: none;
+            width: 404px;
+            margin: 20px auto;
+        }
+
+        .container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            width: 404px;
+            border: 1px solid black;
+            border-right: none;
+            overflow: hidden;
+            background-color: #7ee0ff;
+        }
+
+        .container p span {
+            float: left;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-right: 1px solid black;
+        }
+
+        .container ul {
+            -webkit-user-select: none;
+            list-style: none;
+        }
+
+        .container ul li {
+            width: 404px;
+            overflow: hidden;
+            border: 1px solid black;
+            border-right: none;
+        }
+
+        .container ul li span {
+            float: left;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-right: 1px solid black;
+        }
+        .addUser {
+            display: block;
+            color: black;
+            background-color: #ccc;
+            border: 1px solid black;
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3>crm用户系统</h3>
+    <a class="addUser" href="./template/add.html">增加</a>
+    <p><span>id</span><span>name</span><span>tel</span><span>操作</span></p>
+    <ul id="userList">
+        <!--<li><span>1</span><span>Jay</span><span>132465</span><span><a href="">修改</a> <a href="">删除</a></span></li>-->
+        <!--<li><span>1</span><span>Jay</span><span>132465</span><span><a href="">修改</a> <a href="">删除</a></span></li>-->
+        <!--<li><span>1</span><span>Jay</span><span>132465</span><span><a href="">修改</a> <a href="">删除</a></span></li>-->
+    </ul>
+</div>
+<script type="text/javascript" src="./public/ajax.js"></script>
+<script type="text/javascript" src="./public/index.js"></script>
+</body>
+</html>

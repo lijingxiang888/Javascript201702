@@ -1,0 +1,16 @@
+页面url  http://127.0.0.1:3000/
+
+接口URL  http://127.0.0.1:3000/getTime
+
+跨域
+webstormUrl  http://localhost:63342
+
+XMLHttpRequest
+
+http://bpic.588ku.com
+
+jq
+
+http://127.0.0.1:3000/getTime?callback=jQuery111303535423528657633_1494749062577&_=1494749062578
+
+http://127.0.0.1:3000/getTime?cb=getTime
