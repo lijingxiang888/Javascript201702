@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>字符串拼接</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<!--header begin-->
+<header>
+    <span>编号</span>
+    <span>姓名</span>
+    <span>性别</span>
+    <span>分数</span>
+</header>
+<!--header end-->
+
+<!--main begin-->
+<section class="main">
+</section>
+<!--main end-->
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript">
+    //rem 动态获取html根元素的字体大小
+    function refreshRem() {
+        var desW = 750,
+                winW = document.documentElement.clientWidth,
+                ratio = winW / desW;
+        document.documentElement.style.fontSize = ratio * 100 + 'px'
+    }
+    refreshRem();
+    window.addEventListener('resize', refreshRem);
+    //字符串拼接
+    function bindHTML(data){
+//        console.log(data);
+        var str='';
+        str+='<ul>';
+        $.each(data,funct%ion(index,item){
+            str+='<li>';
+                str+='<span>'+ item.id + '</span>';
+                str+='<span>'+ item.name + '</span>';
+                str+='<span>'+ (item.sex==0?'男':'女') + '</span>';
+                str+='<span>'+ item.score + '</span>';
+            str+='</li>';
+        });
+        str+='</ul>';
+        $('.main').html(str);
+        var oLis=$('li');
+        for(var i=0;i<oLis.length;i++){
+            oLis[i].className='bg'+(i%2+1);
+        }
+    }
+    $.ajax({
+        url:'json/data.json',
+        type:'get',
+        dataType:'json',
+        success:bindHTML
+    })
+
+</script>
+</body>
+</html>

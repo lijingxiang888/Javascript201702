@@ -1,0 +1,169 @@
+1.a href  weburl  alt  title
+  img src thumbnail
+  标题    title
+
+ 接口 :weburl   title  thumbnail
+
+官网:http://www.embeddedjs.com/
+使用EJS(模板引擎)动态绑定页面中的数据
+http://old.zhufengpeixun.cn/qianduanjishuziliao/javaScriptzhuanti/2016-07-31/542.html
+
+/*** EJS 四部曲***/
+字符串拼接绑定数据有自己的弊端：开发效率低、JS代码结构乱
+【1.导入EJS】
+<script charset="UTF-8" type="text/javascript" src="js/ejs.min.js"></script>
+【2.准备需要绑定的数据】
+//->使用jQuery的AJAX获取数据
+$.ajax({
+    url:'/getMenu',
+    type:'get',
+    dataType:'json',
+    success:function(data){
+        //->data:就是我们从服务器获取的数据,然后执行第四步的bindHTML方法
+        bindHTML(data);
+}
+【3.在HTML页面中设定模板和嵌入数据】
+模板有自己的渲染规则，我们把需要写的JS循环判断放在<%%>中，如果需要输出用<%=%>；其实非常的简单就是把之前字符串拼接方式中的JS写在了HTML中，这样EJS负责把模板中的内容获取到，然后按照规则把数据和HTML标签拼接在一起...
+
+//->这个是最终显示HTML和数据的区域
+<div class="menu"></div>
+
+//->这个是制定的模板
+<script charset="UTF-8" type="text/template" id="menuTemplate">
+    <%if(data && data.length>0){%>
+    <ul>
+        <%data.forEach(function(curData,index){%>
+        <%var cName=index===0?'bg':null;%>
+        <li class="<%=cName%>">
+            <a href="#<%=curData.tag%>" columnId="<%=curData.columnId%>">
+            <%=curData.name%>
+            <i class="triangle">
+                <span class="triLeft"></span>
+                <span class="triRight"></span>
+            </i>
+            </a>
+        </li>
+        <%});%>
+    </ul>
+    <%}%>
+</script>
+
+【4.在JS中为EJS模板提供需要绑定的数据】
+function bindHTML(data){
+    //->首先把页面中模板的innerHTML获取到
+    var str=$("#menuTemplate").html();
+    //->然后把str和data交给EJS解析处理，得到我们最终想要的字符串
+    var result=ejs.render(str, {data: data});
+    //->最后把获取的HTML放入到MENU中
+    $(".menu").html(result);
+}
+
+/*** Iscroll ***/
+【iScroll v4.2.5】
+http://sandbox.runjs.cn/show/agvervd3
+http://www.jq22.com/demo/iscroll_V4.2.5201702062041/
+http://www.360doc.com/content/14/0724/11/16276861_396699901.shtml
+【参数设置】
+hScroll *	是否允许水平滚动	false 否 true 是	true
+vScroll *	是否允许垂直滚动	false 否 true 是	true
+bounce *	是否超过实际位置反弹	false 否 true 是	true
+bounceLock	当内容少于滚动是否可以反弹	false 否 true 是	false
+momentum *	是否开启拖动惯性	false 否 true 是	true
+lockDirection	当水平或垂直拖动时是否锁定另一边的拖动	false 否 true 是	true
+useTransform	是否使用CSS变形	false 否 true 是	true
+useTransition	是否使用CSS变换	false 否 true 是	false
+checkDOMChanges	是否自动检测内容变化	false 否 true 是	false
+topOffset	已经滚动的基准值(一般用在拖动刷新)	数字值	0
+x	滚动水平初始位置（负值）	数字值	0
+y	滚动垂直初始位置（负值）	数字值	0
+【Scrollbar 的相关参数】
+参数名	说明	可选值	默认值
+hScrollbar *	是否显示水平滚动条	false 否 true 是	true
+vScrollbar *	是否显示垂直滚动条	false 否 true 是	true
+fixedScrollbar	在iOS系统上，当元素拖动超出了scroller的边界时，滚动条会收缩，设置为true可以禁止滚动条超出scroller的可见区域。	false 否 true 是	默认在Android上为true， iOS上为false
+hideScrollbar	是否隐藏滚动条	false 否 true 是	默认在Android上为false， iOS上为true
+fadeScrollbar	滚动条是否渐隐渐显	false 否 true 是	默认在Android上为false， iOS上为true
+scrollbarClass *	字定义滚动条的样式名	自定义class	''
+【Zoom 放大相关的参数】
+zoom	是否放大	false 否 true 是	false
+zoomMin	放大的最小倍数	数字值	1
+zoomMax	放大的最大倍数	数字值	4
+doubleTapZoom	双击放大倍数	数字值	2
+wheelAction	鼠标滚动行为（还可以是zoom）	none 不支持 'scroll' 鼠标滚动 'zoom' 鼠标缩放	'scroll'
+【snap 捕捉元素相关的参数】
+snap	是否开启捕捉元素，snap值可以为true 或是 DOM元素的tagname，当为true 时，捕捉的元素会根据可滚动的位置和滚动区域计算得到可滑动几页。如果为tagname,则滑动会对齐到捕捉的元素上。	false 否 true 是< DOM元素的tagname	false
+snapThreshold	滑动的长度限制，只有大于这个距离才会触发捕捉元素事件	数字值	1
+【自定义 Events 的相关参数】
+onBeforeScrollStart	开始滚动前的事件回调
+默认是阻止浏览器默认行为	null 不设置
+Function 自定义函数	function (e) { e.preventDefault(); }
+onRefresh	refresh 的回调	null
+onScrollStart	开始滚动的回调
+onBeforeScrollMove	在内容移动前的回调
+onScrollMove	内容移动的回调
+onBeforeScrollEnd	在滚动结束前的回调
+onScrollEnd	在滚动完成后的回调
+onTouchEnd	手离开屏幕后的回调
+onDestroy	销毁实例的回调
+onZoomStart	放大开始时的回调
+onZoom	放大的回调
+onZoomEnd	放大结束后的回调
+
+-------------------------------------------------------------------
+【iScroll v5.1.3】
+官网:http://iscrolljs.com/
+参考文档:http://www.jb51.net/article/84744.htm
+iScroll-5 API中文版:http://wiki.jikexueyuan.com/project/iscroll-5/
+【概述】
+iscroll是一款用于移动设备web开发的一款插件，像缩放,下拉刷新,滑动切换等移动应用导长常见的一些效果都可以轻松实现;
+【代码结构】
+<div id="wrapper">
+     <ul>
+         <li>...</li>
+         <li>...</li>
+         ...
+     </ul>
+</div>
+【初始化设置】
+var myScroll = new IScroll('#wrapper',options);
+【参数值】
+options.useTransform  是否使用CSS3的Transform属性   默认值:true
+options.useTransition 是否使用CSS3的Transition属性,否则使用requestAnimationFram代替     默认值:true
+options.HWCompositing  是否启用硬件加速  默认值:true
+options.bounce 是否启用弹力动画效果，关掉可以加速  默认值：true
+
+options.click  是否启用click事件,建议关闭此选项并启用自定义的tap事件(options.tap)  默认值为:false
+options.mouseWheel 是否监听鼠标滚轮事件  默认值:false
+options.scrollX、options.scrollY 可以设置是否显示横向或纵向滚动条  scrollX false scrollY true
+options.tap  是否启用自定义的tap事件,可以自定义tap事件名 默认值:false;
+element.addEventListener('tap', doSomething, false); \\ Native or tap: 'myCustomTapEvent'
+
+options.scrollbars 是否显示默认滚动条  默认值：false
+options.fadeScrollbars  是否渐隐滚动条,关掉可以加速 默认值:false
+
+myScroll.destroy();
+myScroll = null;
+【iscroll事件】
+beforeScrollStart，在用户触摸屏幕但还没有开始滚动时触发。
+scrollCancel，滚动初始化完成，但没有执行。
+scrollStart，开始滚动
+scroll，内容滚动时触发，只有在scroll-probe.js版本中有效，请参考onScroll event。
+scrollEnd，停止滚动时触发。
+flick，用户打开左/右。
+zoomStart，开始缩放。
+zoomEnd，缩放结束。
+---------------------------------------------------------------
+//focus
+var focusSwiper = new Swiper('.focus .swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationType: 'fraction',
+    paginationClickable: true,
+    loop : false,
+    autopaly : 5000,
+    touchMoveStopPropagation : false //解决与iscroll冲突导致直接跳转链接问题
+});
+
+
+
+
+

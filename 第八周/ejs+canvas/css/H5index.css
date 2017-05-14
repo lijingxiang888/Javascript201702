@@ -1,0 +1,38 @@
+/*focus*/
+.focus{
+    position:relative;
+}
+.focus img{
+    display: block;
+    width:100%;
+}
+.swiper-pagination{
+    width:auto;
+    text-align:right;
+    color:#fff;
+    left:auto;
+    right:.4rem;
+    font-size:.36rem;
+}
+.swiper-pagination-current{
+    font-weight:bold;
+    font-size:.48rem;
+}
+.focus .txt,.focus .bg{
+    position:absolute;
+    left:0;
+    bottom:0;
+    height:.8rem;
+    line-height:.8rem;
+}
+.focus .txt{
+    z-index:9;
+    padding:0 1.5rem 0 .2rem;
+    font-size:.32rem;
+    color:#fff;
+}
+.focus .bg{
+    width:100%;
+    background:rgba(0,0,0,.2);
+}
+
