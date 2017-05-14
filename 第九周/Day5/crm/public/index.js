@@ -42,6 +42,10 @@
             // this 是当前点击删除按钮
             let rid = this.getAttribute('data-rid');
             let that = this;
+            // 确认框
+            let flag = confirm('是否删除 用户信息'); // 确认 返回true 取消 false
+            if(!flag) return;
+
             $.ajax({
                 url: '/removeUserInfo',
                 data: {

@@ -123,7 +123,7 @@ http.createServer(function (req, res) {
         res.end(' 404 你访问的资源 飞走了~');
     }
 
-}).listen(8000, function () {
+}).listen(3000, function () {
     console.log('端口监听已开启');
 });
 
