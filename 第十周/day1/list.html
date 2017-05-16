@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div class="container" id="app">
+    <div class="row">
+      <div class="col-md-12">
+          <!-- table 默认样式  table-bordered 边框 -->
+          <table class="table table-bordered">
+              <!-- h3样式  text-center 文本居中 -->
+              <caption class="h3 text-warning text-center">
+                  人员信息
+              </caption>
+              <tr>
+                  <th class="text-center">用户名</th>
+                  <th class="text-center">联系方式</th>
+                  <th class="text-center">操作</th>
+              </tr>
+              <tr  v-for="user in users"  class="text-center">
+                  <td>{{user.name}}</td>
+                  <td>{{user.tel}}</td>
+                  <td><button class="btn btn-danger" @click="remove(user)">删除</button></td>
+              </tr>
+          </table>
+          <form>
+              <div class="form-group">
+                  <label for="username" class="control-label" >用户名</label>
+                  <input id="username" class="form-control" type="text" v-model="list.name">
+              </div>
+              <div class="form-group">
+                  <label for="usertel" class="control-label">联系方式</label>
+                  <input type="text" id="usertel" class="form-control" v-model="list.tel">
+              </div>
+              <div>
+                  <button type="button" class="btn btn-success" @click="add">增加</button>
+              </div>
+          </form>
+      </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            list: {name: '', tel: ''},
+            users: [
+                {name: 'react', tel: 123},
+                {name: 'vue', tel: 123},
+                {name: 'node', tel: 123},
+                {name: 'vue', tel: 123},
+                {name: 'Express', tel: 123}
+            ]
+        },
+        methods: {
+            add: function() {
+                if(this.list.name && this.list.tel) {
+                    this.users.push(this.list);
+                    this.list = {name: '', tel: ''};
+                } else {
+                    alert('请将信息填写完整');
+                }
+            },
+            remove: function (user) {
+                // 方式一
+//                for(var i = 0; i < this.users.length; i++){
+//                    var cur = this.users[i];
+//                    if(user === cur) {
+//                        this.users.splice(i,1);
+//                    }
+//                }
+
+                // 方式二
+                this.users = this.users.filter(function (item) {
+                    return item !== user;
+                });
+                console.log(this.users);
+            }
+        }
+    })
+</script>
+</body>
+</html>

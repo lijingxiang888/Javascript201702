@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "getTime",
+=======
+  "name": "crm",
+>>>>>>> 08ab0cdf23c72a0dfe4240bf74ef17cb46216e6e
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,6 +15,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "mime": "^1.3.4"
+=======
+    "mime": "^1.3.6"
+>>>>>>> 08ab0cdf23c72a0dfe4240bf74ef17cb46216e6e
   }
 }

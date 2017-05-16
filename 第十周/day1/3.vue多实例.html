@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app1">
+    {{title}}
+    <div id="app2">
+        {{say}}
+    </div>
+</div>
+
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    // 通常一个页面 我们 只生成一个实例
+    var vm1 = new Vue({
+        el: '#app1',
+        data: {
+            title: 'my name is app1',
+            say: 'my name is app2'
+        }
+    });
+
+    setTimeout(function () {
+        vm1.title = 'liwenli';
+    }, 3000);
+//    var vm2 = new Vue({
+//        el: '#app2',
+//        data: {
+//            title: 'my name is app2'
+//        }
+//    });
+</script>
+</body>
+</html>

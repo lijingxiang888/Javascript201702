@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3>{{title}}</h3>
+    <h4>{{text}}</h4>
+</div>
+
+<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+//    console.log(Vue);
+//  初始化一个 Vue 根实例 它需要一个参数对象options el挂载元素 data数据 方法 生命周期钩子 template ...
+    var vm = new Vue({
+        el: '#app', // 挂载元素 指定应用范围 不能挂载到 html  or body 上
+        data: { // data 挂载数据
+            title: 'hello vue.js!',
+            text: 'hello world!'
+        }
+    });
+//    console.log(vm); // Vue根实例 对data进行代理
+    console.log(vm.title); // 'hello vue.js!'
+    console.log(vm.text);
+    setTimeout(function () { // 响应式
+        vm.title = 'reactJs'; // 数据改变视图
+    }, 3000);
+</script>
+</body>
+</html>

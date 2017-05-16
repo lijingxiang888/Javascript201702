@@ -5,7 +5,7 @@ http.createServer(function (req, res) {
     let {pathname, query} = url.parse(req.url, true);
     // CORS跨域资源共享 需要服务端设置
     // '*' 所有都可以跨域
-    // res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     // 可以指定某个服务跨域
     // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:63342');
 

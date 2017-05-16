@@ -1,0 +1,184 @@
+http://www.css88.com/ css3参考手册
+【图标字体】
+http://fontawesome.dashgame.com/
+http://iconfont.cn/ 阿里巴巴
+图标字体生成器http://icomoon.io/app/
+图标字体生成器http://fontello.com/
+ISUX矢量字体图标库http://font.isux.us/
+
+【参考资料】
+http://www.w3cplus.com/css3/icon-fonts.html w3c参考网址
+http://www.511yj.com/css-font-face.html
+
+【图标字体优势】
+1)矢量化：字体是矢量格式，因此能够轻松的适配不同的设备，而不必为不同分辨率的屏幕准备不同的图片资源;
+2)轻量性:一个图标字体比一系列的图像（特别是在Retina屏中使用双倍图像）要小。一旦图标字体加载了，图标就会马上渲染出来，不需要下载一个图像。可以减少HTTP请求，还可以配合HTML5离线存储做性能优化;
+2)可扩展性：图标字体可以用过font-size属性设置其任何大小。这使您能够随时输出不同大小的图标，然而，使用位图，你必须得为每个不同大小的图像输出一个不同文件。
+3)灵活性：文字效果可以很容易地应用到你的图标上，包括颜色，阴影和翻转等效果。他们还可以在任何背景下显示。
+4)兼容性：网页字体支持所有现代浏览器，包括IE低版本
+  http://caniuse.com/#feat=fontface
+
+【图标字体劣势】
+1)图标字体只能被渲染成单色或者CSS3的渐变色，由于此限制使得它不能广泛使用。
+2)使用版权上有限制，有好多字体是收费的。当然也有很多免费开源的精美字体图标供下载使用。
+3)创作自已的字体图标很费时间，重构人员后期维护的成本偏高。
+
+【图标字体使用方法】
+1)把字符直接写在html文件里;
+2)使用css来生成内容;
+3)用data-icon属性;
+
+【图标字体语法规则】
+@font-face {
+  font-family: <YourWebFontName>;
+  src: <source> [<format>][,<source> [<format>]]*;
+  [font-weight: <weight>];
+  [font-style: <style>];
+}
+参数说明:
+1)YourWebFontName:此值指的就是你自定义的字体名称，最好是使用你下载的默认字体，他将被引用到你的Web元素中的font-family。如“font-family:"YourWebFontName";”
+2)source:此值指的是你自定义的字体的存放路径，可以是相对路径也可以是绝路径;
+3)format：此值指的是你自定义的字体的格式，主要用来帮助浏览器识别，其值主要有以下几种类型：truetype,opentype,truetype-aat,embedded-opentype,avg等;
+4)weight定义字体是否为粗体;
+5)style主要定义字体样式，如斜体;
+
+
+【自定义字体格式】
+1).ttf(TrueType格式)
+是Windows和Mac的最常见的字体，是一种RAW格式，因此他不为网站优化,支持这种字体的浏览器有【IE9+,Firefox3.5+,Chrome4+,Safari3+,Opera10+,iOS Mobile Safari4.2+】
+
+2).otf字体
+被认为是一种原始的字体格式，其内置在TureType的基础上，所以也提供了更多的功能,支持这种字体的浏览器有【Firefox3.5+,Chrome4.0+,Safari3.1+,Opera10.0+,iOS Mobile Safari4.2+】；
+
+3).woff (Web Open Font格式): 针对网页进行特殊优化，Web字体中最佳格式，他是一个开放的TrueType/OpenType的压缩版本，同时也支持元数据包的分离,支持这种字体的浏览器有【IE9+,Firefox3.5+,Chrome6+,Safari3.6+,Opera11.1+】；
+
+4).eot(Embedded Open Type格式)：字体是IE专用字体，可以从TrueType创建此格式字体,支持这种字体的浏览器有【IE4+】；
+
+5).svg(SVG格式)：是基于SVG字体渲染的一种格式,支持这种字体的浏览器有【Chrome4+,Safari3.1+,Opera10.0+,iOS Mobile Safari3.2+】。
+
+
+在@font-face中我们至少需要.woff,.eot两种格式字体，甚至还需要.svg等字体达到更多种浏览版本的支持
+
+
+【多兼容写法】
+为了使@font-face达到更多的浏览器支持，Paul Irish写了一个独特的@font-face语法叫Bulletproof
+@font-face {
+  font-family: 'YourWebFontName';
+  src: url('YourWebFontName.eot?') format('eot');/*IE*/
+  src:url('YourWebFontName.woff') format('woff'), url('YourWebFontName.ttf') format('truetype');/*non-IE*/
+}
+
+但为了让各多的浏览器支持，也可以写成:
+@font-face{
+  font-family: 'YourWebFontName';
+  src: url('YourWebFontName.eot'); /* IE9 Compat Modes */
+  src: url('YourWebFontName.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('YourWebFontName.woff') format('woff'), /* Modern Browsers */
+  url('YourWebFontName.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('YourWebFontName.svg#YourWebFontName') format('svg'); /* Legacy iOS */
+}
+
+YourWebFontName  改成我们fonts 字体文件的名称
+
+@font-face{
+  font-family: 'icomoon';
+  src: url('fonts/icomoon.eot'); /* IE9 Compat Modes */
+  src: url('fonts/icomoon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/icomoon.woff') format('woff'), /* Modern Browsers */
+  url('fonts/icomoon.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('fonts/iconmoon.svg#icomoon') format('svg'); /* Legacy iOS */
+}
+
+
+
+【新浪】
+@font-face {
+    font-family: 'SinaHomeFont';
+    src: url('fonts/SinaHomeFont.eot?v=0.0.14');
+    src: url('fonts/SinaHomeFont.eot?v=0.0.14#iefix') format('embedded-opentype'),url('fonts/SinaHomeFont.woff?v=0.0.14') format('woff'),url('fonts/SinaHomeFont.ttf?v=0.0.14') format('truetype');
+    font-weight: normal;
+    font-style: normal
+}
+
+[class^="icon_"],[class*=" icon_"] {
+    font-family: 'SinaHomeFont';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+【网易】
+@font-face{
+font-family:'iconfont';
+src:url(http://img2.cache.netease.com/f2e/wap/common/font/iconfont_14.eot);
+src:url(http://img2.cache.netease.com/f2e/wap/common/font/iconfont_14.eot?#iefix) format('embedded-opentype'),
+url(http://img2.cache.netease.com/f2e/wap/common/font/iconfont_14.woff) format('woff'),
+url(http://img2.cache.netease.com/f2e/wap/common/font/iconfont_14.ttf) format('truetype'),
+url(http://img2.cache.netease.com/f2e/wap/common/font/iconfont_14.svg#iconfont) format('svg')}
+
+.iconfont{font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale}
+
+    font-family: 'iconography';
+    src: url('http://static.iqiyi.com
+【爱奇艺】
+@font-face {/ext/common/iconography/iconfont.eot');
+    src: url('http://static.iqiyi.com/ext/common/iconography/iconfont.ttf') format('truetype'),url('http://static.iqiyi.com/ext/common/iconography/iconfont.svg#iconfont') format('svg')
+}
+
+css3提供的语法
+@media     媒体查询
+@keyframes css3动画关键帧
+@font-face 图标字体
+
+
+https://mjs.sinaimg.cn/wap/online/home/v7/dest/css/fonts/SinaHomeFont.woff?v=0.0.14
+https://mjs.sinaimg.cn/wap/online/home/v7/dest/css/fonts/SinaHomeFont.eot
+https://mjs.sinaimg.cn/wap/online/home/v7/dest/css/fonts/SinaHomeFont.ttf
+https://mjs.sinaimg.cn/wap/online/home/v7/dest/css/fonts/SinaHomeFont.svg
+
+4套：.eot  / .woff / .ttf  /.svg
+SinaHomeFont  新浪字体图标的文件名
+
+
+
+【css3属性选择器】
+[attr]         通过属性名选择
+[attr='val']   属性名=属性值才能选中对应的元素
+[attr~='val']  属性值/属性值+空格 都会被选中
+[attr^='val']  以val属性值开头都会被选中
+[attr$='val']  以val属性值结束都会被选中
+[attr*='val']  只要包含val的属性值的元素都会被选中
+[attr|='val']  属性值/属性值- 都会被选中
+
+***** 面试题：
+display:inline-block 默认4px的间距
+解决办法:給父元素加上font-size:0;
+
+//rem计算公式的由来
+100px  1)方便计算  2)减少和设计稿的误差
+设计稿     750  100px
+设备的分辨率320  ?
+？(html fontSize) =(100px*设备分辨率)/750
+                  = 设备分辨率/750*100px
+
+图标字体引入方式：
+1)新浪  通过伪元素before/after 写在css样式表中
+2)网易  直接写在html结构中
+
+
+
+
+
+
+
+
+
+
+
+
+

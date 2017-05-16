@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="oBtn">获取数据</button>
+<script src="./jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    let oBtn = document.getElementById('oBtn');
+    oBtn.onclick = getData;
+    function getData() {
+        $.ajax({
+            type: "post",
+            url: "/getData",
+            data: {
+                name: 'liwenli',
+                id: 1
+            },
+            dataType: 'json',
+            async: true,
+            success: function (result) {
+                console.log(result);
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

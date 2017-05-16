@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/H5index.css"/>
+</head>
+<body>
+<!--focus begin-->
+<div class="focus">
+    <div class="swiper-container">
+        <!--图片 -->
+        <div class="swiper-wrapper">
+        </div>
+        <!--分页器-->
+        <div class="swiper-pagination">
+        </div>
+    </div>
+</div>
+<!--focus end-->
+
+<!--第三步:造模板-->
+<script type="text/template" id="focusTemplate">
+    <%$.each(focusTemData,function(index,item){%>
+    <div class="swiper-slide">
+        <a href="<%=item.link.weburl%>">
+            <img src="<%=item.thumbnail%>"
+                 alt="<%=item.title%>"/>
+            <span class="txt"><%=item.title%></span>
+            <span class="bg"></span>
+        </a>
+    </div>
+    <%})%>
+</script>
+
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<!--第一步  导入ejs.min.js-->
+<script type="text/javascript" src="js/ejs.min.js"></script>
+
+
+<script type="text/javascript">
+    //    rem
+    //rem 动态获取html根元素的字体大小
+    function refreshRem() {
+        var desW = 750,
+                winW = document.documentElement.clientWidth,
+                ratio = winW / desW;
+        document.documentElement.style.fontSize = ratio * 100 + 'px'
+    }
+    refreshRem();
+    window.addEventListener('resize', refreshRem);
+
+
+
+    function bindHTML(data) {
+        console.log(data); //list focus
+        for(var i=0;i<data.length;i++){
+            if(data[i].type=='list'){
+                listData=data[i].item;
+            }else{
+                focusData=data[i].item;
+            }
+        }
+
+//        第四步 ejs.render
+        var focusHTML=$('#focusTemplate').html();  //模板的html结构
+        var focusResult=ejs.render(focusHTML,{focusTemData:focusData});
+        //ejs.render(模板的html结构,{模板的data名称:通过ajax获取到的data})
+//        console.log(focusResult);
+        $('.swiper-wrapper').html(focusResult);
+
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: 1000,//用户操作它 会导致这个参数失效
+            pagination: '.swiper-pagination',
+            paginationType: 'fraction', //分页器的type类型
+            autoplayDisableOnInteraction: false // autoplay重新生效
+        })
+    }
+
+    //第二步:通过ajax获取data数据
+    $.ajax({
+        url: 'http://api.iclient.ifeng.com/ClientNews?id=SYLB10,SYDT10&gv=5.4.0&os=ios&uid=8jWzrXDWQeep2Nw4AZYzmHxkbneHy4Fj',
+        type: 'get',
+        dataType: 'jsonp',
+        jsonp: 'callback',
+        success: bindHTML
+    });
+
+
+</script>
+
+</body>
+</html>

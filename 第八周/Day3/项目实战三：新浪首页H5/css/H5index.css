@@ -1,0 +1,259 @@
+@font-face{
+    font-family: 'SinaHomeFont';
+    src: url('../fonts/SinaHomeFont.eot');
+    src: url('../fonts/SinaHomeFont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/SinaHomeFont.woff') format('woff'),
+    url('../fonts/SinaHomeFont.ttf')  format('truetype'),
+    url('../fonts/SinaHomeFont.svg#SinaHomeFont') format('svg');
+}
+/*css3属性选择器  选中以'icon_'开头    选中包含'icon_'*/
+[class^='icon_'],[class*='icon_']{
+    font-family: 'SinaHomeFont';
+    font-weight:normal;
+    font-style:normal;
+    /*解决字体图标锯齿和不清晰的情况*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+/*通过伪元素 before 或者 after 加属性名content 通过\ 让编码转化为图标字体*/
+.icon_logo:before{
+    content:"\e60e";
+}
+.icon_user:before{
+    content: '\e611';
+}
+.icon_menu:before{
+    content:"\e60b";
+}
+.icon_arrow:before{
+    content:"\e60c";
+}
+.icon_com:before{
+    content: "\e603";
+}
+
+
+/*header*/
+header{
+    height:1rem;
+    line-height:1rem;
+    background:#129bf0;
+    font-size:.44rem;
+    padding:0 .2rem;
+    overflow: hidden;
+}
+header a{
+    color:#fff;
+}
+header .i-logo{
+    float:left;
+    font-weight:normal;
+    font-size:.8rem;
+}
+header .i-nav{
+    float:right;
+    font-size:0;
+}
+header .i-nav li{
+    display: inline-block;
+    font-size:.44rem;
+    margin-left:.32rem;
+}
+header .i-nav li img{
+    width:.44rem;
+}
+
+
+
+/*nav*/
+.nav{
+    padding:.16rem 0;
+}
+.nav a{
+    float:left;
+    width:16.66%;
+    text-align:center;
+    line-height:.64rem;
+    font-size:.32rem;
+    color:#2d2d2d;
+}
+.nav a .icon_arrow{
+    font-weight:bold;
+    font-size:.4rem;
+}
+
+/*focus*/
+.focus img{
+    display: block;
+    width:100%;
+}
+.swiper-pagination{
+    /*auto 样式是为了覆盖swiper.min.css中默认的样式*/
+    left:auto;
+    right:.2rem;
+    width:auto;
+    text-align:right;
+    font-size:.28rem;
+    color:#fff;
+}
+.swiper-pagination-current{
+    font-weight:bold;
+    font-size:.36rem;
+}
+
+/*live*/
+.liveBox{
+    height:.8rem;
+    line-height:.8rem;
+    border-top:.16rem solid #f0f0f0;
+    border-bottom:.16rem solid #f0f0f0;
+}
+.liveBox .live{
+    padding:0 .06rem;
+    margin:0 .24rem 0 .2rem;
+    background:#fa4e46;
+    font-size:.24rem;
+    color:#fff;
+}
+.liveBox a{
+    font-size:.32rem;
+    color:#1a1a1a;
+}
+.main{
+    padding:0 .2rem
+}
+/*左图右文*/
+.i-item{
+    position: relative;
+    padding:.2rem 0;
+    border-bottom:1px solid #ddd;
+    overflow: hidden;
+}
+.i-item .i-pic{
+    float: left;
+    width:2rem;
+    height:1.34rem;
+}
+.i-item .i-pic img{
+    display:block;
+    width:100%;
+    height:100%;
+}
+.i-item .i-des{
+    margin-left:2.2rem;
+}
+.i-item .i-des .i-tit{
+    font-size:.34rem;
+    line-height:.48rem;
+    /******面试题:
+    1)单行文本出现省略号必备的4个条件:
+    width;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    2)多行文本出现省略号必备的4个条件:
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    overflow:hidden
+    */
+    display:-webkit-box;
+    /*文字的排列方向:垂直*/
+    -webkit-box-orient: vertical;
+    /*文字的行数*/
+    -webkit-line-clamp:2;
+    /*文字内容溢出隐藏*/
+    overflow:hidden;
+}
+.i-item .i-des .i-tit a{
+    color:#1a1a1a;
+}
+.i-item .i-des .i-com{
+    position:absolute;
+    right:0;
+    bottom:.2rem;
+    font-size:.22rem;
+    color:#888;
+}
+.i-item .i-des .i-com .icon_com{
+    margin:.1rem 0 0 .08rem;
+}
+
+/*三小图*/
+.i-itemPic{
+    padding:.2rem 0;
+    border-bottom:1px solid #ddd;
+}
+.i-itemPic .i-tit{
+    font-size:.34rem;
+    line-height:.48rem;
+    display:-webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+    overflow:hidden;
+}
+.i-itemPic .i-tit a{
+    color:#1a1a1a;
+}
+.i-itemPic .i-pics{
+    margin:.3rem 0;
+    overflow: hidden;
+}
+.i-itemPic .i-pics ul{
+    margin-left:-.2rem;
+}
+.i-itemPic .i-pics li{
+    float:left;
+    width:33.33%;
+    padding-left:.2rem;
+    /*box-sizing 怪异盒模型 会把padding和border算在总的width里面*/
+    -webkit-box-sizing: border-box;
+    box-sizing:border-box;
+
+}
+.i-itemPic .i-pics li img{
+    display:block;
+    width:100%;
+    height:100%;
+}
+.i-itemPic .i-com{
+    text-align:right;
+    font-size:.22rem;
+    color:#888;
+}
+.i-itemPic .i-com .icon_com{
+    margin:.1rem 0 0 .08rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

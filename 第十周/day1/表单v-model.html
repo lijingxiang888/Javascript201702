@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- v-model 应用于表单中双向数据绑定 文本框 radio checkbox select textarea -->
+<div id="app">
+    <input type="text" v-model="name">
+    <p>{{name}}</p>
+
+
+    <!--<input type="checkbox" v-model="val">-->
+    <!--<p>{{val}}</p>-->
+
+    <!--React： <input type="checkbox" value="React" v-model="arrs">-->
+    <!--Vue：<input type="checkbox" value="Vue" v-model="arrs">-->
+    <!--Node：<input type="checkbox" value="Node" v-model="arrs">-->
+    <!--<p>{{arrs}}</p>-->
+
+  用户名：<input type="text" v-model="users.name">
+  tel：<input type="text" v-model="users.tel">
+    <ul>
+        <li>用户名：{{users.name}}</li>
+        <li>tel：{{users.tel}}</li>
+    </ul>
+
+    <input type="text" v-model="num1"> * <input type="text" v-model="num2"> = {{num1 * num2}}
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+       el: '#app',
+       data: {
+           name: '',
+           val: '',
+           arrs:[],
+           users: {name: '', tel: ''},
+           num1: 0,
+           num2: 0
+       }
+    });
+    setTimeout(function () {
+        vm.name = 'liwenli';
+        console.log(vm.users);
+    },3000);
+</script>
+</body>
+</html>
