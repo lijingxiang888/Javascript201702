@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">{{title}}</div>
+<script type="text/javascript">
+    var app = document.getElementById('app');
+    var title = 'hello reactjs';
+    var reg = /\{\{(.*)\}\}/g;
+    var html = app.innerHTML;
+   html = html.replace(reg, function () {
+         console.log(typeof arguments[1]);
+         console.log(eval(arguments[1]));
+         return eval(arguments[1]);
+    });
+   console.log(html);
+    app.innerHTML = html;
+</script>
+</body>
+</html>

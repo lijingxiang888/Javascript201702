@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .red {
+            width: 100px;
+            height: 200px;
+            background-color: red;
+        }
+        .green {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .yellow {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--<ul>-->
+        <!--&lt;!&ndash; 要循环谁 就把 v-for 写在谁身上&ndash;&gt;-->
+        <!--&lt;!&ndash; 循环绑定数组中每一项 &ndash;&gt;-->
+        <!--&lt;!&ndash;<li v-for="val in arr">{{val}}</li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li v-for="val of arr">{{val}}</li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li v-for="(val, ind) in arr">索引：{{ind}} &#45;&#45; 值：{{val}}</li>&ndash;&gt;-->
+    <!--</ul>-->
+    <!-- 遍历普通对象 -->
+    <!--<p v-for="(val, key) in obj">{{key}} : {{val}}</p>-->
+
+    <!--<ol>-->
+        <!--<li v-for="result in results">name is {{result.name}}  age is {{result.age}}</li>-->
+    <!--</ol>-->
+
+    <!--  v-if TRUE 插入/ false 移除 -->
+    <!--<div class="red" v-if="isInsert <= 5"></div>-->
+    <!--<div class="yellow" v-else-if="isInsert == 6 "></div>-->
+    <!--<div class="green" v-else="isInsert > 6"></div>-->
+
+    <!-- v-show true显示/false隐藏 -->
+    <div class="red" v-show="isShow"></div>
+
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            arr: [11,22,33,44,55],
+            obj: {name: 'zhufengpeixun', 'address': '回龙观', "tel": '4008888'},
+            results: [
+                {name: 'vue', age: 3},
+                {name: 'react', age: 3},
+                {name: 'node', age: 5}
+            ],
+            isInsert: 8,
+            isShow: false
+        }
+    });
+
+    setTimeout(function () {
+        vm.isShow = true;
+    }, 3000);
+</script>
+</body>
+</html>

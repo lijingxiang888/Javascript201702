@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3>{{title}}</h3>
+    <h4>{{say}}</h4>
+</div>
+<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    // 1.生产一个 Vue根实例 并传入一个参数对象
+    var obj = {
+        title: 'hello vue.js!',
+        say: ''
+    };
+    var vm = new Vue({
+//        el: '#app',
+        data: obj
+    });
+
+//    var vm = new Vue({
+////        el: '#app',
+//        data: obj
+//    }).$mount('#app');
+
+    // 手动挂载元素
+//    vm.$mount('#app');
+    setTimeout(function () {
+        vm.$mount('#app');
+    }, 3000);
+
+    // vm 根实例 会暴露出 属性和方法 前面 带 $
+//    console.log(vm.$data === obj);
+//    obj.title ='hello zhufeng';
+//    console.log(vm.title === obj.title);
+
+//    vm.say = 'good'; // 不能再实例生成后添加之前不存在属性
+//    obj.say = 'good'; // 不能再实例生成后添加之前不存在属性
+
+    // 获取挂载元素
+    console.log(vm.$el === document.getElementById('app'));
+
+    // 监听数据状态 监听的数据 改变时候 会触发 并且将 现在的新值和 之前的旧值 当做参数传递进来
+    vm.$watch('title', function (newVal, oldVal) {
+         console.log(newVal, oldVal);
+    });
+
+    setTimeout(function () {
+        vm.title = 'webpack'
+    },3000);
+    console.log(vm);
+</script>
+</body>
+</html>

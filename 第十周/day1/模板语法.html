@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        [v-cloak] { /*  编译前就是一个 普通的属性选择器*/
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!-- v-cloak  避免了闪烁 和避免了看到编译前样子 也可以 使用 {{}} 来插入值 -->
+<div id="app" v-cloak>
+    <!-- 1.{{}}插入值 -->
+    <!--{{title}}-->
+    <h3>李文利{{text}}</h3>
+
+    <!-- 2. v-text  避免了闪烁 避免了看到编译前的样子 用将元素原有的内容替换掉-->
+    <!--<h3 v-text="text">李文利</h3>-->
+    <!--<% %>-->
+    <!--{% %}-->
+
+    <!-- 3.插入html片段 尽量少用 避免xss攻击-->
+    <div v-html="htmlStr">
+
+    </div>
+
+    <!-- 一些表达式 -->
+    <!-- 三元运算 -->
+    <h4>{{context? context : '没有值'}}</h4>
+    <h4>{{context = context || '没有值'}}</h4>
+    <!-- 简单运算 -->
+    <h4>{{num + 100}}</h4>
+
+    <h4>{{text.toUpperCase()}}</h4>
+
+    <h4>{{arr.join().slice(-5)}}</h4>
+
+    <!-- 不能使用 操作语句 -->
+    <!--{{var name = 500}}-->
+    <!--{{if(true) {title}}-->
+
+    <!-- 动态绑定属性 v-bind -->
+    <!--<a v-bind:href="link">{{linkText}}</a>-->
+    
+    <!-- v-bind 缩写 -->
+    <a :href="link">{{linkText}}</a>
+    <img :src="imgSrc" alt="">
+
+    <!-- 一次性插入值 -->
+    <h3 v-once>{{text}}</h3>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            title: 'hello vue.js!',
+            text: 'hello react',
+            htmlStr: '<h4>zhufengpeixun</h4>',
+            context: 'Vue',
+            num: '10',
+            arr: ['liwenli'],
+            link: 'https://www.baidu.com',
+            linkText: '百度',
+            imgSrc: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2199477428,615827370&fm=23&gp=0.jpg'
+        }
+    });
+    setTimeout(function () {
+        vm.num = 300;
+        vm.link = 'https://www.sogou.com';
+        vm.linkText = '搜狗';
+        vm.text = '搜狗 搜索';
+    }, 3000);
+
+</script>
+</body>
+</html>
