@@ -92,7 +92,7 @@
         xhr.onreadystatechange = function () {
             if(this.readyState === 4 && /^2\d{2}$/.test(this.status)) {
                 if(typeof _defaultOptions.success === 'function') {
-                    _defaultOptions.success.call(_defaultOptions,this.response);
+                    _defaultOptions.success(this.response);
                 }
             }
         };
