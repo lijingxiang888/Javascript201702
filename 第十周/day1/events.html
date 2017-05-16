@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .oDiv {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="val">
+    <!-- v-on 绑定事件 v-on:事件类型='处理函数' -->
+    <!-- $event 特殊变量 代表的是 事件对象 -->
+    <!--<button v-on:click="say(132,$event)">点击</button>-->
+    <!-- v-on缩写 @ -->
+    <button @click="say(132,$event)">点击</button>
+    <br>
+    <!--<button @mouseover="say(132,$event)">点击</button>-->
+
+    <!-- 不传参 默认第一个参数就是 事件对象 -->
+    <!--<button v-on:click="say">点击</button>-->
+
+    <button @click="isShow=!isShow">显示/隐藏</button>
+    <div class="oDiv" v-show="isShow"></div>
+
+
+
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            val: 'hello vue.js',
+            isShow: true
+        },
+        methods:{ // 存放事件方法 集合
+           say: function (e,event) {
+               console.log(e);
+               console.log(event); // 接收 $event 事件对象
+               console.log(event.target); // 得到绑定事件的元素
+//               console.log(this); // this 当前的vue根实例
+               alert(this.val);
+           }
+        }
+    });
+</script>
+</body>
+</html>
