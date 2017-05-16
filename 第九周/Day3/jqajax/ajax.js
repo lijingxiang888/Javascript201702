@@ -14,7 +14,7 @@
 
         for(let i = 0; i < ary.length; i++) {
             let curFn = ary[i];
-            try{
+            try{//try catch 为了防止报错，因为如果浏览器没有判断条件里的东西会报错，阻塞后面代码执行
                 xhr = curFn();
                 getXhr = curFn;
                 break;

@@ -16,19 +16,15 @@
 						data = this.responseText;
 						typeof callback === 'function'? callback(data) : null;
 					}
-				}
+				};
 				xhr.send();
 			}
 			
-			getData(function (data) {
+			getData(bindData);
+
+			function bindData (data) {
 				console.log(data);
-			});
-			
-//			getData(bindData);
-//			
-//			function bindData () {
-//				console.log(data);
-//			}
+			}
 	
 		</script>
 	</body>

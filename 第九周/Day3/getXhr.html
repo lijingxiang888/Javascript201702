@@ -38,21 +38,21 @@
 				// 进行 筛选 改造
 				for (var i = 0; i < ary.length; i++) {
 					var curFn = ary[i];
-					try {
+					try {  //try catch 为了防止报错，因为如果浏览器没有判断条件里的东西会报错，阻塞后面代码执行
 						xhr = curFn();
 						getXhr = curFn; // 覆盖之前
 						break; // 如果得到正确答案 就没必要 在继续筛选
 					} catch(e) {}
 				}
-				if(!xhr) {
+				if(!xhr) {//如果都没有生成ajax对象，说明一下。
 					throw Error('你的浏览器版本太低 请升级~~');
 				}
-				return xhr; // 这是第一次的返回
+				return xhr; // 这是第一次的返回，返回后就覆盖了function了，以后直接用
 			}
 			
 			console.log(getXhr); // 改造前
 			
-			console.log(getXhr()); // 第一次调用时 进行改造 并返回一个ajax对象
+			console.log(getXhr()); // 第一次调用时 改造和调用同时执行了， 并返回一个ajax对象。
 			
 			console.log(getXhr); // 改造后
 			

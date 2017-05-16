@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style type="text/css">
+    <title>增加用户信息</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -12,6 +12,7 @@
             width: 400px;
             text-align: center;
             padding-top: 50px;
+            margin: 0 auto;
         }
 
         label {
@@ -34,41 +35,50 @@
     </style>
 </head>
 <body>
-<a href="/index.html">返回>></a>
+<!--搭建了node环境之后就不能像之前那样查找一级一级查找文件了，需要把当前项目看成根目录-->
+<a href="/index.html"></a>
 <div class="container">
-    <label for="username">用户名：</label> <input type="text" id="username"><br>
-    <label for="usertel">TEL：</label> <input type="text" id="usertel"><br>
+    <label for="username">用户名 <input type="text" id="username"></label><br>
+    <label for="usertel">TEL <input type="text" id="usertel"></label><br>
     <button id="addBtn">增加用户</button>
 </div>
-<script type="text/javascript" src="/public/ajax.js"></script>
-<script type="text/javascript">
+<script src="/public/ajax.js"></script>
+<script>
     let addBtn = document.getElementById('addBtn');
     let username = document.getElementById('username');//只需要增加name和tel，id是后台自己分配
     let usertel = document.getElementById('usertel');
     addBtn.onclick = function () {
         let nameVal = username.value;
         let telVal = usertel.value;
-        if(nameVal && telVal) {
-             $.ajax({
-                 url: '/addUserInfo',
-                 type: 'POST',
-                 data: {
-                     name: nameVal,
-                     tel: telVal
-                 },
-                 dataType: 'json',
-                 success: function (result) {
-                     if(result && result.error === 0) {
-                         username.value = '';
-                         usertel.value = '';
-                         alert(result.msg);
-                     }
-                 }
-             })
-        } else {
-            alert('请将用户信息填写完整~');
+        if (nameVal&&telVal) {
+            $.ajax({
+                url:'/addUserInfo',
+                type:'post',
+                data:{
+                    name:nameVal,
+                    tel:telVal
+                },
+                dataType:'json',
+                success:function (result) {
+                    if (result&&result.error===0) {
+                        username.value = '';//提交完后清空输入框
+                        usertel.value = '';//提交完后清空输入框
+                        alert(result.msg);
+                        }
+                }
+            })
+        }else {
+            alert('请填写信息')
         }
     }
+
+
+
+
+
 </script>
+
+
+
 </body>
 </html>

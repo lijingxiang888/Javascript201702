@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更新用户信息</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 400px;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+        button {
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            margin-top: 15px;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<a href="/index.html">返回>></a>
+<div class="container">
+    <label for="username">用户名：<input type="text" id="username"></label>
+    <label for="usertel">TEL<input type="text" id="usertel"></label>
+    <button id="changeBtn">确认修改</button>
+</div>
+<script src="/public/ajax.js"></script>
+<script>
+    let changeBtn = document.getElementById('changeBtn');
+    let username = document.getElementById('username');
+    let usertel = document.getElementById('usertel');
+    function getUrlParam(url) {
+        let reg = /([^?&=]+)=([^?&=]+)/g;
+        let obj = {};
+        url.replace(reg, function () {
+            obj[arguments[1]] = arguments[2];
+        });
+        return obj;
+    }
+    let urlParam = getUrlParam(window.location.href);
+    $.ajax({
+        url: '/getUserInfo',
+        data:urlParam,
+        dataType: 'json',
+        success: function (result) {
+            if(result && result.error === 0) {
+                username.value = result.data['name'];
+                usertel.value = result.data['tel'];
+            }
+        }
+    });
+    changeBtn.onclick = function () {
+        $.ajax({
+            url:'/updateUserInfo',
+            type:'POST',
+            data: {
+                id: urlParam.uid,
+                name: username.value,
+                tel: usertel.value
+            },
+            dataType: 'json',
+            success: function (result) {
+                if(result && result.error === 0) {
+                    alert(result.msg);
+                }
+            }
+
+        })
+    }
+
+
+
+
+</script>
+</body>
+</html>

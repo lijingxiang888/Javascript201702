@@ -32,6 +32,8 @@
               `
         }
         userList.innerHTML = str;
+
+
         let removeBtn = document.querySelectorAll('.removeBtn');
         for(let i = 0; i < removeBtn.length; i++){
            let curBtn = removeBtn[i];
