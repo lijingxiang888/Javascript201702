@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+    <style type="text/css">
+        .style1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .style2 {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+        }
+
+        .font {
+            font-size: 25px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!-- 动态绑定 v-bind:class  -->
+    <!-- 与静态class 是共存的 class="font s2" -->
+    <!--<div :class="s2" class="font">我是内容</div>-->
+
+    <!-- 对象写法  样式名：boolean true 添加 false 不添加 -->
+    <h3>对象写法</h3>
+    <button @click="isActive = !isActive">切换样式</button>
+    <div :class="{style1: isActive, style2: !isActive }"  class="font">我是内容</div>
+
+    <!-- 数组写法 -->
+    <h3>数组写法</h3>
+    <!-- [样式名] -->
+    <div :class="['style1']"></div>
+    <br>
+    <!-- [变量名] -->
+    <div :class="[s2]"></div>
+    <br>
+    <!-- 可以三元运算 -->
+    <button @click="isActive = !isActive">切换样式</button>
+    <div :class="[isActive? s1 : s2]"></div>
+    <br>
+    <div :class="[isActive? 'style2' : 'style1', 'font']">我是内容</div>
+
+    <h3>对象 + 数组</h3>
+    <div :class="[{style1: isActive, style2:!isActive}, 'font']">这是对象+数组</div>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            s1: 'style1',
+            s2: 'style2',
+            isActive: true
+        }
+    })
+</script>
+</body>
+</html>

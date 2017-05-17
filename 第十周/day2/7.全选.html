@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    全选 <input type="checkbox" @click="checkAll" v-model="isAll"><br>
+    <input v-for="list in lists" type="checkbox" v-model="list.isCheck" @click="select">
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            lists: [
+                {isCheck: false},
+                {isCheck: false},
+                {isCheck: false},
+                {isCheck: false},
+                {isCheck: false}
+            ],
+            isAll: false
+        },
+        methods: {
+            checkAll () {
+                   let that = this;
+                   this.lists.forEach(function (item) {
+                       item.isCheck = that.isAll;
+                   });
+             },
+            select(){
+//                如果能找到 返回当前项 如果 找不到返回 undefined
+//                如果有返回值 并且不是 undefined
+               let flag = this.lists.find(function (item) {
+//                    return item.isCheck === false;
+                      return !item.isCheck
+                });
+               // 如果flag 不是undefined 就说明 按钮有没选中的 如果是undefined 说明 这些按钮 都为选中
+               this.isAll = !flag;
+            }
+        }
+    });
+</script>
+</body>
+</html>

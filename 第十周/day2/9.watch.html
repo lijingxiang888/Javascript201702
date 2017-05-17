@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="val"><br>
+    <input type="text" v-model="title">
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            val: '',
+            title: '',
+            obj: {name: 'zhufeng', age:10}
+        },
+        watch: { // 监听当前数据属性 状态
+            val: function (newVal, oldVal) { // 可以是一个函数
+                console.log(newVal, oldVal);
+            },
+//          val(newVal, oldVal) {
+//                console.log(newVal, oldVal);
+//          }
+
+            title: 'listen', // 可以是一个函数名
+            obj: { // 监听对象类型 得到的 新值和旧值 都是同一个
+                 handler: function (newVal, oldVal) {
+                    console.log(newVal, oldVal);
+                },
+                deep: true
+            }
+        },
+        methods: {
+            listen(newVal, oldVal) {
+                console.log(newVal, oldVal);
+            }
+        }
+    });
+
+    setTimeout(function () {
+        vm.obj.name = 'vue.js';
+    }, 3000);
+//    实例属性方法
+//    vm.$watch('val', (newVal, oldVal) => {
+//       console.log(newVal, oldVal);
+//    });
+</script>
+</body>
+</html>

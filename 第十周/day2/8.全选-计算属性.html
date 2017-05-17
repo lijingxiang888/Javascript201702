@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    全选 <input type="checkbox" v-model="isAll"><br>
+    <input v-for="list in lists" type="checkbox" v-model="list.isCheck">
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            lists: [
+                {isCheck: false},
+                {isCheck: false},
+                {isCheck: false},
+                {isCheck: false},
+                {isCheck: false}
+            ]
+        },
+        computed: {
+            isAll:{
+                get() {
+                   let flag = this.lists.find(function (item) {
+                        return !item.isCheck;
+                    });
+                   console.log(flag);
+                   return !flag;
+                },
+                set (val) {
+                    this.lists.forEach((item) => {
+                        item.isCheck = val;
+                    });
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>-

@@ -36,7 +36,8 @@
             data: null,
             timeout: null,
             success: null,
-            error: null
+            error: null,
+            xhr: getXhr
         };
         // 默认参数进行合并
         for(let attr in options) {
@@ -92,7 +93,7 @@
         xhr.onreadystatechange = function () {
             if(this.readyState === 4 && /^2\d{2}$/.test(this.status)) {
                 if(typeof _defaultOptions.success === 'function') {
-                    _defaultOptions.success.call(_defaultOptions,this.response);
+                    _defaultOptions.success(this.response);
                 }
             }
         };
