@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!-- @keyup.keyCode(键码值) -->
+    <!-- 回车 -->
+    enter：<input type="text" @keyup.enter="say"><br>
+
+    <!-- 空格 -->
+    space：<input type="text" @keyup.space="say"><br>
+
+    <!-- ESC -->
+    esc：<input type="text" @keyup.esc="say"><br>
+
+    <!-- delete -->
+    delete：<input type="text" @keyup.delete="say"><br>
+    <!-- tab -->
+    tab：<input type="text" @keyup.tab="say"><br>
+
+    up：<input type="text" @keyup.up="say"><br>
+    down：<input type="text" @keyup.down="say"><br>
+    left：<input type="text" @keyup.left="say"><br>
+    right：<input type="text" @keyup.right="say"><br>
+
+   <!-- 其他 @keyup.相应键码值 -->
+    Q1：<input type="text" @keyup.81="say"><br>
+    Q2：<input type="text" @keyup.q="say"><br><br>
+
+    <!--添加：<input type="text" @keyup.enter="lists.push(val);val=''" v-model="val">-->
+    添加：<input type="text" @keyup.enter="add" v-model="val">
+    <ul>
+        <li v-for="list in lists">{{list}}</li>
+    </ul>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+       el: '#app',
+       data: {
+           lists: ['react', 'vue', 'node'],
+           val: ''
+       },
+       methods:{
+           say() {
+               alert('Enter');
+           },
+           add() {
+               let flag = /^\s*$/.test(this.val); // 非空验证
+               if(!flag) {
+                   this.lists.push(this.val);
+                   this.val = '';
+               }
+           }
+       }
+    });
+//   自定义按键修饰符 别名 = 键码值
+    Vue.config.keyCodes.q = 81;
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="inp">
+<script type="text/javascript">
+    var id = document.getElementById('inp');
+    inp.onkeyup = function (e) {
+        console.log(e.keyCode);
+        if(e.keyCode === 13) {
+            alert('Enter');
+        }
+    }
+</script>
+</body>
+</html>
