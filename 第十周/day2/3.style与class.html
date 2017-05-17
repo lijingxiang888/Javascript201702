@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!-- style 对象写法 -->
+    <h3>对象写法</h3>
+    <div :style="{width: '100px',height:'100px',backgroundColor:'red'}"></div>
+    <div :style="styleObj1"></div>
+
+    <!-- 数组写法 -->
+    <h3>数组写法</h3>
+    <div :style="[styleObj1, styleObj2]"></div>
+    <div :style="[styleObj1]"></div>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            styleObj1: {width: '100px', height:'100px', backgroundColor: 'green'},
+            styleObj2: {backgroundColor: 'blue'}
+        }
+    });
+</script>
+</body>
+</html>

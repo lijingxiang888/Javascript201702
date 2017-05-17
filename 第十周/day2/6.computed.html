@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!-- 计算属性 computed 通过一个属性 计算出来一个新的属性 当这个属性变化时 新的属性也会跟着变化 -->
+    <h3>计算商品总价</h3>
+    商品名称：<input type="text" v-model="product"><br>
+    商品单价：<input type="number" min="0" v-model="price"><br>
+    商品数量：<input type="number" min="0" v-model="count"><br>
+    <!--总价：<span>{{price * count}}</span>-->
+
+    <!-- 只要改变一次data里面的数据 这个total 都会 执行一次-->
+    <!--总价：<span>{{total()}}</span> <br>-->
+    <!--<input type="text" v-model="val">-->
+    <!--总价：<span>{{totals}}</span>-->
+    总价：<input type="text" v-model="totals">
+
+
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            price: 100,
+            count: 1,
+            product: 'iphone',
+            val: ''
+        },
+        methods: {
+            total() {
+                console.log('total');
+                return this.price * this.count;
+            }
+        },
+        computed: { // 计算属性 默认访问的是 getter
+//            totals() { // 当 price 和 count这两个属性 改变时 才会重新计算
+//                console.log('computed');
+//                return this.price * this.count;
+//            }
+//            访问计算属性 的 getter 和 setter
+            totals: {
+                get() { // totals的值获取的时候 会触发 get
+                    return this.price * this.count; // 通过 单价 * 数量 计算出 总价
+                },
+                set(val) { // totals 的属性值被修改时 会触发 set 并且将 修改的值 以参数的形式 传递进来
+                   this.count = val / this.price; // 通过 总价 / 单价 计算出 数量
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

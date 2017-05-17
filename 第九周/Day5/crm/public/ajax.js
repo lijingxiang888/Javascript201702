@@ -36,7 +36,8 @@
             data: null,
             timeout: null,
             success: null,
-            error: null
+            error: null,
+            xhr: getXhr
         };
         // 默认参数进行合并
         for(let attr in options) {
