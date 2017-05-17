@@ -8312,8 +8312,8 @@ function Datepicker() {
 	this._dialogClass = 'ui-datepicker-dialog'; // The name of the dialog marker class
 	this._disableClass = 'ui-datepicker-disabled'; // The name of the disabled covering marker class
 	this._unselectableClass = 'ui-datepicker-unselectable'; // The name of the unselectable cell marker class
-	this._currentClass = 'ui-datepicker-current-day'; // The name of the current day marker class
-	this._dayOverClass = 'ui-datepicker-days-cell-over'; // The name of the day hover marker class
+	this._currentClass = 'ui-datepicker-current-day2'; // The name of the current day2 marker class
+	this._dayOverClass = 'ui-datepicker-days-cell-over'; // The name of the day2 hover marker class
 	this.regional = []; // Available regional settings, indexed by language code
 	this.regional[''] = { // Default regional settings
 		closeText: 'Done', // Display text for close link
@@ -8328,7 +8328,7 @@ function Datepicker() {
 		dayNamesMin: ['Su','Mo','Tu','We','Th','Fr','Sa'], // Column headings for days starting at Sunday
 		weekHeader: 'Wk', // Column header for week of the year
 		dateFormat: 'mm/dd/yy', // See format options on parseDate
-		firstDay: 0, // The first day of the week, Sun = 0, Mon = 1, ...
+		firstDay: 0, // The first day2 of the week, Sun = 0, Mon = 1, ...
 		isRTL: false, // True if right-to-left language, false if left-to-right
 		showMonthAfterYear: false, // True if the year select precedes month, false for month then year
 		yearSuffix: '' // Additional text to append to the year in the month headers
@@ -8838,7 +8838,7 @@ $.extend(Datepicker.prototype, {
 						break; // current on ctrl or command +home
 				case 37: if (event.ctrlKey || event.metaKey) $.datepicker._adjustDate(event.target, (isRTL ? +1 : -1), 'D');
 						handled = event.ctrlKey || event.metaKey;
-						// -1 day on ctrl or command +left
+						// -1 day2 on ctrl or command +left
 						if (event.originalEvent.altKey) $.datepicker._adjustDate(event.target, (event.ctrlKey ?
 									-$.datepicker._get(inst, 'stepBigMonths') :
 									-$.datepicker._get(inst, 'stepMonths')), 'M');
@@ -8849,7 +8849,7 @@ $.extend(Datepicker.prototype, {
 						break; // -1 week on ctrl or command +up
 				case 39: if (event.ctrlKey || event.metaKey) $.datepicker._adjustDate(event.target, (isRTL ? -1 : +1), 'D');
 						handled = event.ctrlKey || event.metaKey;
-						// +1 day on ctrl or command +right
+						// +1 day2 on ctrl or command +right
 						if (event.originalEvent.altKey) $.datepicker._adjustDate(event.target, (event.ctrlKey ?
 									+$.datepicker._get(inst, 'stepBigMonths') :
 									+$.datepicker._get(inst, 'stepMonths')), 'M');
@@ -9169,7 +9169,7 @@ $.extend(Datepicker.prototype, {
 		this._adjustDate(target);
 	},
 
-	/* Action for selecting a day. */
+	/* Action for selecting a day2. */
 	_selectDay: function(id, month, year, td) {
 		var target = $(id);
 		if ($(td).hasClass(this._unselectableClass) || this._isDisabledDatepicker(target[0])) {
@@ -9415,12 +9415,12 @@ $.extend(Datepicker.prototype, {
 
 	/* Format a date object into a string value.
 	   The format can be combinations of the following:
-	   d  - day of month (no leading zero)
-	   dd - day of month (two digit)
-	   o  - day of year (no leading zeros)
-	   oo - day of year (three digit)
-	   D  - day name short
-	   DD - day name long
+	   d  - day2 of month (no leading zero)
+	   dd - day2 of month (two digit)
+	   o  - day2 of year (no leading zeros)
+	   oo - day2 of year (three digit)
+	   D  - day2 name short
+	   DD - day2 name long
 	   m  - month of year (no leading zero)
 	   mm - month of year (two digit)
 	   M  - month name short
@@ -9815,10 +9815,10 @@ $.extend(Datepicker.prototype, {
 							((printDate.getTime() == selectedDate.getTime() && drawMonth == inst.selectedMonth && inst._keyEvent) || // user pressed key
 							(defaultDate.getTime() == printDate.getTime() && defaultDate.getTime() == selectedDate.getTime()) ?
 							// or defaultDate is current printedDate and defaultDate is selectedDate
-							' ' + this._dayOverClass : '') + // highlight selected day
+							' ' + this._dayOverClass : '') + // highlight selected day2
 							(unselectable ? ' ' + this._unselectableClass + ' ui-state-disabled': '') +  // highlight unselectable days
 							(otherMonth && !showOtherMonths ? '' : ' ' + daySettings[1] + // highlight custom dates
-							(printDate.getTime() == currentDate.getTime() ? ' ' + this._currentClass : '') + // highlight selected day
+							(printDate.getTime() == currentDate.getTime() ? ' ' + this._currentClass : '') + // highlight selected day2
 							(printDate.getTime() == today.getTime() ? ' ui-datepicker-today' : '')) + '"' + // highlight today (if different)
 							((!otherMonth || showOtherMonths) && daySettings[2] ? ' title="' + daySettings[2] + '"' : '') + // cell title
 							(unselectable ? '' : ' onclick="DP_jQuery_' + dpuuid + '.datepicker._selectDay(\'#' +
@@ -9826,7 +9826,7 @@ $.extend(Datepicker.prototype, {
 							(otherMonth && !showOtherMonths ? '&#xa0;' : // display for other months
 							(unselectable ? '<span class="ui-state-default">' + printDate.getDate() + '</span>' : '<a class="ui-state-default' +
 							(printDate.getTime() == today.getTime() ? ' ui-state-highlight' : '') +
-							(printDate.getTime() == currentDate.getTime() ? ' ui-state-active' : '') + // highlight selected day
+							(printDate.getTime() == currentDate.getTime() ? ' ui-state-active' : '') + // highlight selected day2
 							(otherMonth ? ' ui-priority-secondary' : '') + // distinguish dates from other months
 							'" href="#">' + printDate.getDate() + '</a>')) + '</td>'; // display selectable date
 						printDate.setDate(printDate.getDate() + 1);
@@ -9967,7 +9967,7 @@ $.extend(Datepicker.prototype, {
 		return 32 - this._daylightSavingAdjust(new Date(year, month, 32)).getDate();
 	},
 
-	/* Find the day of the week of the first of a month. */
+	/* Find the day2 of the week of the first of a month. */
 	_getFirstDayOfMonth: function(year, month) {
 		return new Date(year, month, 1).getDay();
 	},

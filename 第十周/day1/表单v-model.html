@@ -14,12 +14,12 @@
     <!--<input type="checkbox" v-model="val">-->
     <!--<p>{{val}}</p>-->
 
-    <!--React： <input type="checkbox" value="React" v-model="arrs">-->
-    <!--Vue：<input type="checkbox" value="Vue" v-model="arrs">-->
-    <!--Node：<input type="checkbox" value="Node" v-model="arrs">-->
-    <!--<p>{{arrs}}</p>-->
+    React： <input type="checkbox" value="React" v-model="arrs">
+    Vue：<input type="checkbox" value="Vue" v-model="arrs">
+    Node：<input type="checkbox" value="Node" v-model="arrs">
+    <p>{{arrs}}</p>
 
-  用户名：<input type="text" v-model="users.name">
+  用户名：<input type="text" v-model="users.name"><!--v-model得到文本框里的值，从而改变 了数据层-->
   tel：<input type="text" v-model="users.tel">
     <ul>
         <li>用户名：{{users.name}}</li>
@@ -37,8 +37,8 @@
            val: '',
            arrs:[],
            users: {name: '', tel: ''},
-           num1: 0,
-           num2: 0
+           num1: '',
+           num2: ''
        }
     });
     setTimeout(function () {

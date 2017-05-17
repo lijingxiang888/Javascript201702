@@ -7509,7 +7509,7 @@ function buildParams( prefix, obj, traditional, add ) {
 }
 
 // This is still on the jQuery object... for now
-// Want to move this to jQuery.ajax some day
+// Want to move this to jQuery.ajax some day2
 jQuery.extend({
 
 	// Counter for holding the number of active queries

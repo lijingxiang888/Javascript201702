@@ -124,7 +124,7 @@ http.createServer(function (req, res) {
     }
 
 }).listen(3000, function () {
-    console.log('端口监听已开启');
+    console.log('3000端口监听已开启');
 });
 
 
