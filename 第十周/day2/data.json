@@ -1,0 +1,10 @@
+{
+  "users": [
+    {"name": "react", "price": 100},
+    {"name": "vue", "price": 200},
+    {"name": "vux", "price": 100},
+    {"name": "zepto", "price": 100},
+    {"name": "elementUI", "price": 100},
+    {"name": "koa", "price": 100}
+  ]
+}

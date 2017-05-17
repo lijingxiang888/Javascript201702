@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3>{{title}}</h3>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            title: 'hello vue.js'
+        },
+//       生命周期 钩子函数
+        beforeCreate() {
+            alert('实例创建前');
+        },
+        created() {
+            // alert(this.title); 在这个阶段可以 调用数据
+            alert('实例创建完成');
+        },
+        // 准备挂载数据
+        beforeMount(){
+            alert('挂载前');
+        },
+        mounted() {
+            alert('挂载完成')
+        },
+        beforeDestroy() {
+            alert('销毁前');
+        },
+        destroyed() {
+            alert('销毁完成');
+        },
+
+//      data 状态 更新
+        beforeUpdate() {
+            alert('更新前');
+        },
+        updated() {
+            alert('更新完成');
+        }
+    });
+
+    setTimeout(function () {
+//        vm.$destroy(); // 销毁 实例 组件
+
+        vm.title = 'hello zhufeng!';
+    }, 3000);
+
+</script>
+</body>
+</html>

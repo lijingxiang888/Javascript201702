@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in result">name: {{item.name}} -- price: {{item.price}}</li>
+    </ul>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    let vm = new Vue({
+        el: '#app',
+        data: {
+          result: ''
+        },
+        created() { // 实例创建完成 请求初始数据
+//            console.log(this); // vue实例
+            let that = this;
+            let xhr = new XMLHttpRequest();
+            xhr.open('get', './data.json', false);
+            xhr.onreadystatechange = function () {
+                // this ajax对象
+                if(this.readyState === 4 && /^2\d{2}$/.test(this.status)) {
+                    let initData = JSON.parse(this.responseText);
+                    that.result = initData.users;
+                }
+            };
+            xhr.send();
+        },
+        beforeMount(){
+            console.log('beforeMount');
+            console.log(this.result);
+        }
+    });
+
+</script>
+</body>
+</html>
