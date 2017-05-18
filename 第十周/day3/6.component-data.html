@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+ <h3>父组件 {{title}}</h3>
+    <!-- 从子组件外部传递数据 mess='liwenli' 这样的传递都是string-->
+    <!-- 如果想传递 动态属性 需要 v-bind -->
+    <!--<child v-bind:mess="title" say="ni hao"></child>-->
+    <child :my-mess="title" say="这是"></child>
+    <child :my-mess="title" say="ni hao"></child>
+    <child :my-mess="title" say="hello"></child>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    // 父子组件通信   通过props 接收外部 传递进来的数据
+    // 子组件 不可以 直接使用 父组件的 数据
+    // props 用来 从父组件 传递数据 给子组件
+    let child = {
+        props: ['myMess','say'], // 指定 用来接收 传递进来的的数据属性 如果属性名是驼峰命名myMess  在 外部使用的时候 全小写 '-' 隔开 <child my-mess></child>
+//        template: '<div><h3>{{say}} {{myMess}}</h3></div>',
+        template: '<div><h3>{{say}} {{myMess}}</h3></div>',
+    };
+
+    new Vue({
+        el: '#app',
+        data: {
+            title: 'parentData'
+        },
+        components: {
+            child
+        }
+    });
+</script>
+</body>
+</html>

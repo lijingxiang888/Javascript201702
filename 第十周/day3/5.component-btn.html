@@ -14,18 +14,20 @@
 <script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
 <script type="text/javascript">
     let obj = {count: 0};
+
     let child = {
-      template: '<button @click="count+=1">{{count}}</button>',
-      data(){
-          return {count: 0};
-      }
+        template: '<button @click="count+=1">{{count}}</button>',
+        data(){
+            return {count: 0};
+        }
     };
+
     new Vue({
         el: '#app',
         components: {
             child
         }
-    })
+    });
 
 </script>
 </body>
