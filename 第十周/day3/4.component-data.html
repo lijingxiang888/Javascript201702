@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<child></child>
+<child></child>
+<child></child>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    let obj = {val: 'hello'};
+    let vm = new Vue({
+       el: '#app',
+       components: {
+           child: {
+              template: '<div><input type="text" v-model="val"><p>{{val}}</p></div>',
+               data() { // 组件的data是一个函数
+//                   return obj; 数据共享
+                   return {val: 'hello'}; // 每创建一个组件 返回一个新的属于当前组件组件私有data 对象
+               }
+           }
+       }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app1">
+  <my-comp1></my-comp1>
+  <child></child>
+</div>
+<div id="app2">
+    <my-comp2></my-comp2>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    // 局部组件
+    new Vue({
+        el: '#app1',
+        components: { // 局部注册组件
+            'my-comp1': {
+                template: '<div><h3>my-comp1</h3></div>'
+            },
+            child: {
+                template: '<div><h3>child</h3></div>'
+            }
+        }
+    });
+
+    new Vue({
+        el: '#app2',
+        components: {
+            'my-comp2': {
+                template: '<div>我是 app2 的组件</div>'
+            }
+        }
+    });
+</script>
+</body>
+</html>
