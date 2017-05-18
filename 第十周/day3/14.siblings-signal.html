@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3>老大</h3>
+    <prevsibling></prevsibling>
+    <!-- 老二 -->
+    <nextsibling></nextsibling>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    // $emit发布  $on监听
+    let cpc = new Vue(); // 中央
+    let prevsibling = { // 老大
+         template: '<div><button @click="say">老大说</button></div>',
+         methods: {
+             say(){
+                 cpc.$emit('warning', '我是老大 你要听我的'); // 发布
+             }
+         }
+    };
+
+    let nextsibling = { // 老二
+        mounted(){
+           cpc.$on('warning', this.listen) // 开始监听
+        },
+        template: '<div><h3>老二</h3><p>接收到的通知：{{mess}}</p></div>',
+        data(){
+          return {mess: '等待通知中'}
+        },
+        methods: {
+            listen(msg){
+                this.mess = msg;
+            }
+        }
+    };
+    new Vue({
+        el: '#app',
+        components: {
+            prevsibling,
+            nextsibling
+        }
+    });
+</script>
+</body>
+</html>

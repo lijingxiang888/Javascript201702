@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3>父组件</h3>
+    <p>接收到通知：{{mess}}</p>
+    <p>回复：{{reply}}</p>
+    <!-- 监听自定义事件  answer定义在父组件中的事件 当接收到通知后 会触发 -->
+    <h3>子组件</h3>
+    <child v-on:getclothes="answer"></child>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    // $emit
+    let child = {
+        template:'<div><button @click="say">child say：</button>{{msg}}</div>',
+        data(){
+            return {msg: '准备发布'}
+        },
+        methods: {
+           say(){
+                alert('准备通知');
+                this.msg = '下雨了赶紧收衣服！';
+                this.$emit('getclothes',this.msg); // 发布
+            }
+        }
+    };
+
+    let vm = new Vue({
+        el: '#app',
+        methods: {
+            answer(val){ // val 就是 子组件中传递过来的 msg
+                this.mess = val;
+                this.reply = '知道了 不用你管！'
+            }
+        },
+        data: {
+          mess: '等待通知',
+            reply: '暂无回复'
+        },
+        components: {
+            child
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<prev></prev>
+<next></next>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    let cpc = new Vue(); // cpc.$emit发布  cpc.$on监听
+    let prev = {
+        template:'<div><h3>prev 组件</h3><input @keyup.enter="publish"  type="text" v-model="val"><button @click="publish">发布</button></div>',
+        data(){
+          return {val: 'hello'}
+        },
+        methods: {
+            publish(){
+                cpc.$emit('warning', this.val); // 发布
+            }
+        }
+    };
+
+    let next = {
+        template: '<div><h3>next 组件</h3><p>接收到：{{msg}}</p></div>',
+        mounted(){ // 挂载完成 钩子函数
+//            cpc.$on('warning',this.listen);
+            cpc.$on('warning', (val) => { // 开始监听
+                console.log(val);
+                this.msg = '哥哥说：'+ val.toUpperCase();
+            });
+        },
+        data() {
+          return {msg: ''}
+        },
+        methods: {
+//            listen(val){
+//                console.log(val);
+//                this.msg = val.toUpperCase();
+//            }
+        }
+    };
+
+    new Vue({
+       el: '#app',
+       components: {
+           prev,
+           next
+       }
+    });
+</script>
+</body>
+</html>

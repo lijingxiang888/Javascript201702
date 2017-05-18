@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app1">
+    <!-- 调用组件：<组件名></组件名> -->
+    <component></component>
+</div>
+<div id="app2">
+    <component></component>
+</div>
+<template id="temps">
+    <div>
+        <h3>我是全局模板</h3>
+        <p @click="say">欢迎来珠峰学习！</p>
+    </div>
+</template>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    // 全局组件 局部组件 自定义元素
+    // 在初始化实例之前 注册全局组件 可以在多个实例里 以自定义元素形式 来 使用
+    // @param1 组件名 多个单词 my-component（'-' 隔开） 也可以是 单个单词 comp 不能使 div h3 这些 已存在的html标签
+    // @param2 参数对象 配置 组件 结构template 行为methods 数据data 计算属性 钩子函数 ... 注意：组件data必须是一个函数
+    //    Vue.component('组件名',{
+    //        template
+    //        methods
+    //        data(){
+    //            return
+    //        }
+    //        computed
+    //        created(){
+    //
+    //        }
+    //    });
+
+//    在初始化实例之前 创建 全局组件
+    Vue.component('component', {
+//       template: '<div><h3>我是一个全局组件</h3></div>' // 组件只能有一个 根元素
+        template: '#temps', // 通过模板id 来引用
+        methods: {
+            say() {
+                alert('hello world!');
+            }
+        },
+        created(){
+            console.log('创建组件完成');
+        }
+    });
+
+    let vm1 = new Vue({
+        el: '#app1'
+    });
+
+    let vm2 = new Vue({
+        el: '#app2'
+    });
+
+
+</script>
+</body>
+</html>

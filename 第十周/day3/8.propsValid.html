@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!-- 不接收外部的 default默认值才会生效 -->
+    <!--<child ></child> -->
+    <!--<child :mess="title"></child>-->
+    <child></child>
+
+    <!--<child :mess="title"></child>-->
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            title: {val: 'zhufeng'}
+        },
+        components: {
+            child: {
+//               props: ['mess'],
+//              验证类型 type  Number String Boolean  Object Function Array
+                props: {
+//                    mess: Number
+//                    mess: [Boolean,Number] // 指定传递进来的数据应该是 Number类型的
+                    mess: { // 验证多项
+//                      type: Number
+//                        type: [Number, String], // 多个类型
+                        type: Object,
+
+                        default: function () { // Object/Array 默认值需要以工厂函数的形式返回
+                            return {val: '默认值'}
+                        }
+//                      default: '默认值', 不能和 required 同时用
+//                        required: true, // 必传项
+//                        validator (val) { // 验证函数 返回boolean true 通过 false Vue warning 不通过
+//                            console.log(val);
+//                            return val > 50
+//                        }
+                    },
+//                    mess1:{
+//
+//                    }
+                },
+//                mess {val: 'zhufeng'}
+                template: '<div><h3>{{mess.val}}</h3></div>'
+            }
+        }
+    });
+</script>
+</body>
+</html>
