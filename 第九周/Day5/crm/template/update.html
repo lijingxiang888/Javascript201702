@@ -54,7 +54,7 @@
         });
         return obj;
     }
-    let urlParam = getUrlParam(window.location.href);
+    let urlParam = getUrlParam(window.location.href);//执行getUrlParam方法，window.location.href是当前页面的url，用这个方法去匹配截取？后面的name和tel，然后放在文本框，以便进行修改
     $.ajax({
         url: '/getUserInfo',
         data:urlParam,

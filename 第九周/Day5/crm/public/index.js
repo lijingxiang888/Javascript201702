@@ -6,14 +6,14 @@
     // 获取用户数据
     function getInitData(callBack) {
         $.ajax({
-           url: '/getAllUsers',
-           type: 'GET',
-           dataType: 'json',
-           success: function (result) {
-               if(result && result.error === 0) {
-                   typeof callBack === 'function'? callBack(result['data']) : null;
-               }
-           }
+            url: '/getAllUsers',
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+                if(result && result.error === 0) {
+                    typeof callBack === 'function'? callBack(result['data']) : null;
+                }
+            }
         });
     }
     getInitData(bindData);
@@ -22,7 +22,7 @@
         let str = '';
         for (let i = 0; i < data.length; i++) {
             let curData = data[i];
-              str += `
+            str += `
                 <li>
                 <span>${curData.id}</span>
                 <span>${curData.name}</span>
@@ -36,8 +36,8 @@
 
         let removeBtn = document.querySelectorAll('.removeBtn');
         for(let i = 0; i < removeBtn.length; i++){
-           let curBtn = removeBtn[i];
-           curBtn.onclick = removeInfo;
+            let curBtn = removeBtn[i];
+            curBtn.onclick = removeInfo;
         }
 
         function removeInfo() {

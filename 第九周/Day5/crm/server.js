@@ -5,14 +5,15 @@ let mime = require('mime');
 let reqResult = {"error": 0, "msg": "用户添加成功"};
 http.createServer(function (req, res) {
     let {pathname, query} = url.parse(req.url, true);
+    // 读取所有用户信息
+    let users = JSON.parse(fs.readFileSync('./users.json', 'utf8'));
+
     if(pathname === '/') {
         res.setHeader('Content-Type', 'text/html;charset=utf-8');
         let resHtml = fs.readFileSync('./index.html');
         res.end(resHtml);
         return;
     }
-    // 读取所有用户信息
-    let users = JSON.parse(fs.readFileSync('./users.json', 'utf8'));
 
     // 获取所有用户信息
     if(pathname === '/getAllUsers') {
@@ -28,17 +29,17 @@ http.createServer(function (req, res) {
         let str = '';
         let userObj;
         req.on('data', function (data) {
-            str += data;
+            str += data;//一点一点接收post传进来的data数据
         });
 
-        req.on('end', function () {
+        req.on('end', function () {//data传完后，自动触发end事件，然后在处理完整的data
            // console.log(str); // name=liwen&id=adfad  querystring.parse()
             userObj = JSON.parse(str); // 提交的用户信息
             // users = JSON.parse(users); // 目前所有的用户列表信息
             // 给增加用户 分配id
             let lastInd = users.data.length - 1;
             userObj.id = users.data[lastInd].id + 1;
-            // 将增加的用户信息 添加用户列表中 并 存储写入到 users.json文件中
+            // 将增加的用户信息 添加到用户列表中 并 存储写入到 users.json文件中
             users.data.push(userObj);
             reqResult.msg = '用户增加成功';
             fs.writeFileSync('./users.json', JSON.stringify(users));
