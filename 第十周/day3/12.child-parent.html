@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!-- v-on:getclothes="listen" 接收子组件的通知 并触发 listen(父组件中的定义的处理函数) -->
+    <child v-on:liwenli="listen"></child>
+    <p>子组件传递过来的数据：{{mess}}</p>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    //  $emit 发射器
+    //  子组件 需要借助 this.$emit 发布相应自定义事件
+    //  父组件 需要在子组件 身上 通过 v-on:自定义事件类型 = 事件处理器， 进行监听 并处理
+    new Vue({
+        el: '#app',
+        data: {
+            mess: '等待接收'
+        },
+        methods: {
+            listen(val){
+                console.log(val); // 接收到 子组件的msg
+                this.mess = val;
+                alert('收到子组件通知');
+            }
+        },
+        components: { // 定义一个子组件
+            child: {
+                template: '<div><button @click="say">子组件发布</button></div>',
+                data(){
+                    return {msg: '我是子组件传递过来的数据'}
+                },
+                methods: {
+                    say(){
+                        alert('子组件进行发布');
+//                    liwenli 自定义事件类型
+//                    this.msg要传给父组件的数据 在发布的时候以参数的 形式传递过去
+                        this.$emit('liwenli', this.msg); // 发布自定义事件
+                    }
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

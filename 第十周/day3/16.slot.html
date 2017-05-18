@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <child>
+        <header slot="header">头部信息</header>
+        <h3 slot="title">标题</h3>
+        <footer>底部信息</footer>
+    </child>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    // slot 分放内容 分配位置
+    new Vue({
+       el: '#app',
+       components: {
+           child: {
+//               template: '<div><slot></slot><p>这是一个主体内容</p></div>'
+//               具名 slot
+           template: `
+               <div>
+               <slot name="header"></slot>
+               <slot name="title"></slot>
+               <p>这是一个主体内容</p>
+               <slot></slot>
+               </div>`
+           }
+       }
+    });
+</script>
+</body>
+</html>

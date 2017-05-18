@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3></h3>
+    <input type="text" v-model="val">
+    <!--<child mess="静态属性"></child>-->
+    <child :mess="val"></child>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    let child = {
+        props: ['mess'],
+        template: `<div>
+                      <h3>子组件</h3>
+                      <input type="text" v-model="mess">
+                    </div>`
+    };
+
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+          val: 'parentData'
+        },
+        components: {
+            child
+        }
+    });
+</script>
+</body>
+</html>
