@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--<my-component></my-component>-->
+    <!--<my-component></my-component>-->
+    <!--<my-component></my-component>-->
+    <child></child>
+    <child></child>
+    <child></child>
+    <child></child>
+{{title}}
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+//  let vm = new Vue({
+////      el: '#app'
+//   }).$mount('#app');
+//  vm.$mount('#app');
+// 组件扩展html元素 代码复用
+   // 全局组件
+//   let obj = {title: '我是一个全局组件'};
+//   Vue.component('my-component', {
+//        template: `
+//        <div>
+//        <input type="text" v-model="title">
+//        <h3 @click="say">{{title}}</h3>
+//        </div>
+//        `,
+//        data(){ // 每个组件要有属于组件自己的数据源对象
+//            return {title: '我是一个全局组件'};
+//        },
+//       methods: {
+//           say(){
+//               alert(this.title);
+//           }
+//       }
+//       // 计算属性 生命周期钩子函数...
+//   });
+
+
+    let vm = new Vue({
+       el: '#app',
+       data: {
+           title: 'hello vue.js'
+       },
+       components:{ // 局部注册组件  行为 结构 数据 计算属性 生命周期钩子函数...
+           child: {
+               template: '<div><h3 @click="say">{{title}}</h3></div>',
+               data() {
+                   return {title: '我是child组件'}
+               },
+               methods: {
+                   say(){
+                       alert(this.title);
+                   }
+               }
+           },
+           'my-child': {
+
+           }
+       }
+    });
+</script>
+</body>
+</html>

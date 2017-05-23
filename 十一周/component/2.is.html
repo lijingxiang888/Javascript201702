@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3>is</h3>
+    users：<input type="radio" v-model="comp" value="users">  books: <input type="radio" v-model="comp" value="books">
+    <!--keep-alive  缓存组件状态  避免每一次切换组件重新渲染 -->
+    <keep-alive>
+        <component :is="comp"></component>
+    </keep-alive>
+
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    // is 指定组件插入位置 需要结合 component标签 使用
+    new Vue({
+        el: '#app',
+        data: {
+            comp: 'books'
+        },
+        components: {
+            users: {
+                template: '<div><h3>users 组件</h3><input type="text" v-model="val"></div>',
+                data() {
+                    return {val: 'hello user'};
+                }
+            },
+            books: {
+                template: '<div><h3>books 组件</h3><input type="text" v-model="val"></div>',
+                data() {
+                    return {val: 'hello book'};
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
