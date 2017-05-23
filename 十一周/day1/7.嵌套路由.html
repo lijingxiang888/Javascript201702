@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .router-link-active {
+            color: blue;
+            font-size: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <nav>
+        <router-link to="/index/text1">首页</router-link>
+        <router-link to="/video">视频</router-link>
+        <router-link to="/music">音乐</router-link>
+        <router-link to="/news">新闻</router-link>
+    </nav>
+
+    <router-view></router-view>
+</div>
+<template id="index">
+    <div>
+        <h3>欢迎来到首页~</h3>
+        <h3>子路由</h3>
+        <nav>
+            <router-link to="text1">子路由1</router-link>
+            <router-link to="text2">子路由2</router-link>
+            <router-link to="text3">子路由3</router-link>
+        </nav>
+        <router-view></router-view>
+    </div>
+</template>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript" src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    // 1. 创建组件
+    let Index = {
+      template: '#index'
+    };
+    let Video = {
+        template: '<div><h3>欢迎来到视频页~</h3></div>'
+    };
+    let Music = {
+        template: '<div><h3>欢迎来到音乐页~</h3></div>'
+    };
+    let News = {
+        template: '<div><h3>欢迎来到新闻页~</h3></div>'
+    };
+
+    // 创建子路由组件
+    let Text1 = {
+      template: '<div><h3>go to 子路由 -- text1</h3></div>'
+    };
+
+    let Text2 = {
+        template: '<div><h3>go to 子路由 -- text2</h3></div>'
+    };
+
+    let Text3 = {
+        template: '<div><h3>go to 子路由 -- text3</h3></div>'
+    };
+
+    // 2. 配置路由 规则 映射关系
+    let routes = [
+        {
+            path: '/index',
+            component: Index,
+            children: [ // 配置子路由
+                {path: 'text1', component: Text1},
+                {path: 'text2', component: Text2},
+                {path: 'text3', component: Text3},
+            ]
+        },
+        {path: '/video', component: Video},
+        {path: '/music', component: Music},
+        {path: '/news', component: News},
+        {path: '*', redirect: '/index/text1'}
+    ];
+
+    // 3.创建路由实例
+    let router = new VueRouter({routes}); // routes: routes
+
+    new Vue({
+        el: '#app',
+        // 4.注入路由
+        // router: router
+        router
+    });
+</script>
+</body>
+</html>
