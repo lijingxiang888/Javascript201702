@@ -7,6 +7,7 @@
 <body>
 <div id="app">
     <!--<h3>hello vue.js!</h3>-->
+
 </div>
 <script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
 <script type="text/javascript">
@@ -35,10 +36,15 @@
 
     new Vue({
        el: '#app',
-       template: '<div><h3>父组件 图书商店</h3><child></child><child></child><child></child></div>', // 父组件
-       components: {
-//            组件名：参数对象
-//           child: child
+       template: `<div>
+                   <h3>父组件图书商店</h3>
+                       <child></child>
+                       <child></child>
+                       <child></child>
+                 </div>`,
+       components: {//生成局部组件
+//            组件名：参数对象相同时，可以简写
+//           child: child 可简写成 child
            child
        }
 

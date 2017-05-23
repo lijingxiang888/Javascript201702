@@ -21,13 +21,13 @@
                 {isCheck: false},
                 {isCheck: false}
             ],
-            isAll: false
+            isAll: false//初始时false，点击后为true
         },
         methods: {
             checkAll () {
                    let that = this;
                    this.lists.forEach(function (item) {
-                       item.isCheck = that.isAll;
+                       item.isCheck = that.isAll;//点击后让checkAll执行，让每一项的isCheck与全选框保持一致
                    });
              },
             select(){

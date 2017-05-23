@@ -58,7 +58,7 @@
             //     }
             // }
 
-            // 需不需要缓存  如果需要缓存 并且 需不需要 拼接'?'
+            // 需不需要缓存  如果不需要缓存 并且 需不需要 拼接'?'
             if(!_defaultOptions.cache && _defaultOptions.url.indexOf('?') > -1) {
                 _defaultOptions.url += '_='+ new Date().getTime();//加个时间戳
             } else if(!_defaultOptions.cache) {

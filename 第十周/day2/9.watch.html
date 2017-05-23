@@ -22,16 +22,13 @@
             val: function (newVal, oldVal) { // 可以是一个函数
                 console.log(newVal, oldVal);
             },
-//          val(newVal, oldVal) {
-//                console.log(newVal, oldVal);
-//          }
 
             title: 'listen', // 可以是一个函数名
-            obj: { // 监听对象类型 得到的 新值和旧值 都是同一个
+            obj: { // 监听对象类型 ,注意得到的 新值和旧值 都是同一个
                  handler: function (newVal, oldVal) {
                     console.log(newVal, oldVal);
                 },
-                deep: true
+                deep: true//开启深度watch，加上这个才能监听对象类型
             }
         },
         methods: {

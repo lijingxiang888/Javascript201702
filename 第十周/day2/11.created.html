@@ -15,7 +15,7 @@
     let vm = new Vue({
         el: '#app',
         data: {
-          result: ''
+          result: ''//赋值后就有了数据，然后就可以v-for循环了
         },
         created() { // 实例创建完成 请求初始数据
 //            console.log(this); // vue实例
@@ -25,7 +25,9 @@
             xhr.onreadystatechange = function () {
                 // this ajax对象
                 if(this.readyState === 4 && /^2\d{2}$/.test(this.status)) {
+                    //initData 是请求回来的数据，json字符串格式，需转换
                     let initData = JSON.parse(this.responseText);
+                    //将请求回来的数据赋值给 result
                     that.result = initData.users;
                 }
             };

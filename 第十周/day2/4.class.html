@@ -27,7 +27,7 @@
     <!-- 与静态class 是共存的 class="font s2" -->
     <!--<div :class="s2" class="font">我是内容</div>-->
 
-    <!-- 对象写法  样式名：boolean true 添加 false 不添加 -->
+    <!-- 对象写法  :class={样式名：boolean} true 添加 false 不添加 -->
     <h3>对象写法</h3>
     <button @click="isActive = !isActive">切换样式</button>
     <div :class="{style1: isActive, style2: !isActive }"  class="font">我是内容</div>
