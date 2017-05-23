@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+           /*进入效果*/
+        .fade-enter-active {
+            animation: bounceIn 1s;
+        }
+        @keyframes bounceIn {
+            0% {transform: scale(0)}
+            50% {transform: scale(1.5)}
+            100% {transform: scale(1)}
+        }
+        /* 离开效果 */
+        .fade-leave-active {
+            animation: bounceOut 1s;
+        }
+        @keyframes bounceOut {
+           0% {transform: scale(1)}
+           50% {transform: scale(1.5)}
+           100% {transform: scale(0)}
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="flag = !flag">切换</button>
+    <transition name="fade">
+        <div v-show="flag" :style="styleObj"></div>
+    </transition>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+       el: '#app',
+       data: {
+           flag: false,
+           styleObj: {
+               width: '100px',
+               height: '100px',
+               backgroundColor: 'red',
+               margin: '20px auto'
+           }
+       }
+    });
+</script>
+</body>
+</html>
