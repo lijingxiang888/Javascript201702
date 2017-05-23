@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <style type="text/css">
+        .router-link-active {
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="app" class="container">
+    <!-- 导航 -->
+    <nav>
+        <!-- 路由路径 -->
+
+        <ul class="nav nav-pills">
+            <li role="presentation" :class="{active: flag === 'index'}" @click="flag = 'index'">
+                <router-link to="/index" >首页</router-link>
+            </li>
+            <li role="presentation" :class="{active: flag === 'news'}" @click="flag = 'news'">
+                <router-link to="/news" >新闻</router-link>
+            </li>
+            <li role="presentation" :class="{active: flag === 'video'}" @click="flag = 'video'">
+                <router-link to="/video" >视频</router-link>
+            </li>
+        </ul>
+    </nav>
+    <!-- 展示部分 -->
+    <router-view></router-view>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript" src="node_modules/vue-router/dist/vue-router.js"></script>
+<script type="text/javascript">
+    // spa 单页应用 在一个页面中 切换导航展示 相应内容 局部刷新 不需要 跳转 重新加载整个页面
+
+    // 1.创建组件
+   let Index = {
+      template: '<div><h3>这是首页</h3></div>'
+   };
+
+   let News = {
+        template: '<div><h3>这是新闻页</h3></div>'
+   };
+
+   let Video = {
+       template: '<div><h3>这是视频页</h3></div>'
+   };
+
+   // 2.配置路由规则 路由路径 映射 组件
+    let routes = [
+//        {path:'/', component: Index},
+        {path: '/index', component: Index},
+        {path: '/news', component: News},
+        {path: '/video', component: Video},
+        {path: '*', redirect: '/index'}
+//        {path: '*', redirect: '/news'} // * 其他的路由路径 redirect 定向到 存在路由路径
+    ];
+
+    // 3.创建路由实例
+//   let router = new VueRouter({
+//       routes // routes: routes        routes: 路由规则数组名  routes: routes11
+////       routes:[
+////        {path: '/index', component: Index},
+////        {path: '/news', component: News},
+////        {path: '/video', component: Video},
+////       ]
+//    });
+
+    let router = new VueRouter({routes}); // {routes: routes(路由规则)}
+    new Vue({
+        el: '#app',
+        data: {
+           flag: 'index'
+        },
+//      4.根实例中注入路由 router: 创建的路由实例 （new VueRouter({routes})）
+        router  // router: router
+    });
+
+</script>
+</body>
+</html>

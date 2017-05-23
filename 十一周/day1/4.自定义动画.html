@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/animate.css/animate.css">
+</head>
+<body>
+<div id="app">
+  <button @click="flag=!flag">切换</button>
+
+  <transition
+  enter-active-class="animated tada bounceIn"
+  leave-active-class="animated tada bounceOut"
+  >
+      <h3 v-show="flag">这是结合animate.css的动画</h3>
+  </transition>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            flag: false
+        }
+    });
+</script>
+</body>
+</html>

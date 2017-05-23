@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+      .fade-enter-active, .fade-leave-active{
+          transition: all 0.5s;
+      }
+
+      /* enter 开始状态  leave结束状态*/
+      .fade-enter, .fade-leave-active{
+          opacity: 0;
+      }
+    </style>
+</head>
+<body>
+<div id="app">
+  <button @click="flag=!flag">显示/隐藏</button>
+    <!--
+      name-enter 指定进入过渡开始状态
+      name-enter-active 指定进入过渡激活结束状态
+      name-leave 指定离开过渡开始状态
+      name-leave-active 指定离开过渡激活结束状态
+    -->
+    <transition name="fade">
+        <div v-show="flag" :style="styleObj"></div>
+    </transition>
+
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    // v-if
+    // v-show
+    // 组件切换
+    new Vue({
+        el: '#app',
+        data: {
+            flag: false,
+            styleObj: {
+                width: '100px',
+                height: '100px',
+                backgroundColor: 'red'
+            }
+        }
+    });
+</script>
+</body>
+</html>
