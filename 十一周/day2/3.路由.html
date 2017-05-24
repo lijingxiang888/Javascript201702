@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!-- /index/dsf?name=12321 -->
+    <!-- {path: '/index',params:{id: 12}, query:{user:'zhufeng'}} -->
+    <!--<router-link :to="{path: '/index',params:{id:}, query:{user:'zhufeng'} }">首页</router-link>-->
+    <!-- 动态属性绑定  {path:'/index/20',query: {id: 110}} -->
+    <router-link :to="indxRoute">首页</router-link>
+    <router-link to="/video">视频</router-link>
+    <router-view></router-view>
+</div>
+
+<template id="index">
+    <div>
+        <h3>{{title}}</h3>
+
+    </div>
+</template>
+<template id="video">
+    <div>
+        <h3>{{title}}</h3>
+
+    </div>
+</template>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script type="text/javascript">
+
+    //创建组件
+    let Index = {
+        template:'#index',
+        data(){
+            return {title:'首页'}
+        }
+    };
+
+    let Vid = {
+        template:'#video',
+        data(){
+            return {title:'视频'}
+        }
+    };
+
+    //创建路由表规则
+    let routes = [
+        {path:'/index/:id',component:Index},
+        {path:'/video',component:Vid},
+        {path:'*',component:Index}
+    ];
+
+    let router = new VueRouter({routes});
+
+    new Vue({
+        el: '#app',
+        data: {
+           indxRoute: {path:'/index/20',query: {id: 110}}
+        },
+        router
+    });
+</script>
+</body>
+</html>
