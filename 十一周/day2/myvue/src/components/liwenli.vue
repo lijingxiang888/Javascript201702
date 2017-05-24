@@ -1,7 +1,7 @@
 <template>
     <div id="liwenli">
         <button @click="flag=!flag">显示</button>
-        <div v-show="flag"></div>
+        <div class="oDiv" v-show="flag"></div>
     </div>
 </template>
 
@@ -14,7 +14,7 @@
 </script>
 
 <style scoped>
-#liwenli div {
+.oDiv {
     width: 100px;
     height: 100px;
     background-color: red;
