@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <router-link :to="{name: 'index', params: {uid:24}, query:{user:'zhufeng'}}">首页</router-link>
+    <router-link :to="{name: 'video', params: {uid: 12}, query: {user: 'react'}}">视频</router-link>
+    <router-view></router-view>
+</div>
+
+<template id="index">
+    <div>
+        <h3>{{title}}</h3>
+
+    </div>
+</template>
+<template id="video">
+    <div>
+        <h3>{{title}}</h3>
+
+    </div>
+</template>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script type="text/javascript">
+
+    //创建组件
+    let Index = {
+        template:'#index',
+        data(){
+            return {title:'首页'}
+        }
+    };
+
+    let Vid = {
+        template:'#video',
+        data(){
+            return {title:'视频'}
+        }
+    };
+
+    //创建路由表规则
+    let routes = [
+        {path:'/index/:uid',name: 'index', component:Index},
+        {path:'/video/:uid',name:'video',component:Vid},
+        {path:'*',component: Index}
+    ];
+
+    let router = new VueRouter({routes});
+    new Vue({
+        el: '#app',
+        router,
+        watch:{
+            '$route'(to, from){ // 监听路由
+                console.log(arguments);
+                console.log(this); // 根实例
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

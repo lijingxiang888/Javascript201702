@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <router-link to="/index">首页</router-link>
+    <router-link to="/video">视频</router-link>
+    <router-link to="/news">新闻</router-link>
+    <keep-alive>
+        <router-view></router-view>
+    </keep-alive>
+</div>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script type="text/javascript">
+    let Index = {
+        template: '<div><h3 @click="say">{{mess}}</h3><input type="text" value="hello world"></div>',
+        data(){
+            return {mess: '欢迎来到首页~'}
+        },
+        methods: {
+            say(){
+                alert(this.mess);
+            }
+        }
+    };
+
+    let Video = {
+        template: '<div><h3>欢迎来到视频页~</h3><input type="text" value="hello video"></div>'
+    };
+
+    let News = {
+        template: '<div><h3>欢迎来到新闻页~</h3></div>'
+    };
+
+    let routes = [
+        {path: '/index', component: Index},
+        {path: '/video', component: Video},
+        {path: '/news', component: News}
+    ];
+
+    let router = new VueRouter({routes}); // {routes: routes} => {routes: 路由表}
+
+    new Vue({
+        el: '#app',
+        // 注入给根实例router属性
+        router// router:router
+    });
+</script>
+</body>
+</html>
