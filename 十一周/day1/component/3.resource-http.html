@@ -69,10 +69,11 @@
                    });
            },
            getData4(){ // jsonp
+               //用jsonp方式的话，参数1 url需要改成这样的+后台提供的端口号
                this.$http.jsonp('http://127.0.0.1:7000/getData',{
                    params: {id: 24, name: 'zhufeng'},
-                   jsonp: 'cb', // cb = 函数名 默认callback
-                   jsonpCallback: 'fn' // 指定函数名 是什么
+                   jsonp: 'cb', // cb = 函数名 不写默认是callback
+                   jsonpCallback: 'fn' // 指定函数名对应的函数体
                })
                    .then(res => {
                        let data = res.body;

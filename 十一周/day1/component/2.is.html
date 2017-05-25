@@ -6,9 +6,12 @@
 </head>
 <body>
 <div id="app">
-    <h3>is</h3>
-    users：<input type="radio" v-model="comp" value="users">  books: <input type="radio" v-model="comp" value="books">
+<!--当点击A 时，文本框的值里面有了值users，使得v-model监听到原有的默认值发生改变，这样 comp的数据源也会变成 'users'，这样is属性也会指向 'users'，最后实现点击不同选项实现了切换不同的组件-->
+    A：<input type="radio" v-model="comp" value="users">
+
+    B: <input type="radio" v-model="comp" value="books">
     <!--keep-alive  缓存组件状态  避免每一次切换组件重新渲染 -->
+    <!--缓存组件状态，之前是每次改变都会从新加载，用了这个之后，当数据发生改变，再次切换回来的时候，会缓存上次改变之后的数据-->
     <keep-alive>
         <component :is="comp"></component>
     </keep-alive>
@@ -20,7 +23,7 @@
     new Vue({
         el: '#app',
         data: {
-            comp: 'books'
+            comp: 'books' //默认值是 books组件
         },
         components: {
             users: {
