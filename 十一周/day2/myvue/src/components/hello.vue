@@ -6,9 +6,10 @@
 </template>
 
 <script>
+    console.log(200);
 export default {
    data(){
-       return {title: 'hello vue.js'}
+       return {title: 'hello vue.js11'}
    },
     methods: {
        say() {

@@ -51,6 +51,7 @@
         {path:'/index/:id',component:Index},
         {path:'/video',component:Vid},
         {path:'*',component:Index}
+//        {path:'*',redirect:'/index/12'}
     ];
 
     let router = new VueRouter({routes});
