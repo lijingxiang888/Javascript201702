@@ -52,3 +52,5 @@ npm run [dev]
 ```
 webpack-dev-server --config webpack2.config.js
 ```
+
+### .gitignore(git上传忽略文件)
