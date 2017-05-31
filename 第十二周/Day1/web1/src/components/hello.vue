@@ -11,7 +11,7 @@
    export default {
        name: 'hello',
        data() {
-           return {title: 'hello components !'}
+           return {title: 'hello a sdfsdf!'}
        }
    }
 </script>

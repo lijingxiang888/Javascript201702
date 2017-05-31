@@ -1,9 +1,16 @@
 import Vue from 'vue'
-import Hello from './components/hello.vue' // 导入单文件组件
-import './public/css/index.css' // 导入外部css
-import './public/css/hello.less' //导入外部less
+import Hello from './components/hello' // 导入vue单文件组件
+import './public/css/index' // 导入外部css
+import './public/css/hello' //导入外部less
+import $ from 'jquery'
+
+$('.main').click(function () {
+    alert('我是第一个依赖main的按钮');
+});
+
+
 // import 'bootstrap/dist/css/bootstrap.css' // 导入bootstrap ui组件
-import 'bootstrap'
+// import 'bootstrap'
 // console.log('HELLO WEBPACK!');
 
 // let add = (a, b) => console.log(a+b);
@@ -19,3 +26,7 @@ new Vue({
        Hello  // Hello: Hello
     }
 });
+console.log('main.js');
+console.log('main.js');
+console.log('main.js');
+console.log('main.js');
