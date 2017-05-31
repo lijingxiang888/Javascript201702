@@ -27,7 +27,7 @@
 <body>
 <div id="app">
     <button @click="flag = !flag">切换</button>
-    <transition name="fade">
+    <transition name="fade"><!--谁实现动画效果，就用transition包起来，name属性指定动画效果类型-->
         <div v-show="flag" :style="styleObj"></div>
     </transition>
 </div>

@@ -4,20 +4,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
-    <style type="text/css">
-        .router-link-active {
-            color: red;
-            font-size: 20px;
-        }
-    </style>
-
 </head>
 <body>
 <div id="app" class="container">
     <!-- 导航 -->
     <nav>
-        <!-- 路由路径 -->
-
+        <!--flag默认为index，当点击li标签时，会将默认值替换掉，导致active为true，那么当前这个li的类名active生效-->
+        <!--因为li标签里面的router-link会解析成a标签，当点击li增加样式类名的时候，也相当于点击了a标签，那么根据路由规则，会自动映射到对应的组件页面，然后显示在展示区域-->
         <ul class="nav nav-pills">
             <li role="presentation" :class="{active: flag === 'index'}" @click="flag = 'index'">
                 <router-link to="/index" >首页</router-link>
@@ -36,8 +29,6 @@
 <script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
 <script type="text/javascript" src="node_modules/vue-router/dist/vue-router.js"></script>
 <script type="text/javascript">
-    // spa 单页应用 在一个页面中 切换导航展示 相应内容 局部刷新 不需要 跳转 重新加载整个页面
-
     // 1.创建组件
    let Index = {
       template: '<div><h3>这是首页</h3></div>'

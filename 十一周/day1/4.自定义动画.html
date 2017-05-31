@@ -8,7 +8,9 @@
 <body>
 <div id="app">
   <button @click="flag=!flag">切换</button>
-
+    <!--想让谁有动画，就把谁用transition标签包裹,并在标签里加入开始和结束的类名-->
+    <!--进入的时候执行enter-active-class="animated bounceInDown"-->
+    <!--离开的时候执行leave-active-class="animated bounceOutDown"-->
   <transition
   enter-active-class="animated tada bounceIn"
   leave-active-class="animated tada bounceOut"

@@ -14,6 +14,7 @@
 <body>
 <div id="app">
     <nav>
+        <!--首页默认展示的是 index/text1-->
         <router-link to="/index/text1">首页</router-link>
         <router-link to="/video">视频</router-link>
         <router-link to="/music">音乐</router-link>
@@ -23,6 +24,7 @@
     <router-view></router-view>
 
 </div>
+<!--用template标签和id属性把指定的组件联系起来-->
 <template id="index">
     <div>
         <h3>欢迎来到首页~</h3>
@@ -72,7 +74,7 @@
         {
             path: '/index',
             component: Index,
-            children: [ // 配置子路由
+            children: [ // 配置子路由，用children属性
                 {path: 'text1', component: Text1},
                 {path: 'text2', component: Text2},
                 {path: 'text3', component: Text3},
