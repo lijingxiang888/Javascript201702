@@ -1,0 +1,15 @@
+设置devServer代理
+
+'/api': 'http://127.0.0.1:7000' // 必须要携带/api
+
+http://localhost:8080/api => http://127.0.0.1:7000/api
+http://localhost:8080/api/hello => http://127.0.0.1:7000/api/hello
+
+
+'/api': {
+    target: 'http://127.0.0.1:7000',
+    pathRewrite:{'^/api': ''} // 重写路径  避免携带/api 重写后等价于 后台接口的根路径
+}
+
+http://localhost:8080/api => http://127.0.0.1:7000/
+http://localhost:8080/api/hello => http://127.0.0.1:7000/hello
