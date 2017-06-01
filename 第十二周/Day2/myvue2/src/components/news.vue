@@ -2,8 +2,8 @@
     <div id="news">
         <h3>{{title}}</h3>
         <!--<p>{{$store.state.count}}</p>-->
-        <p>{{liwenli}}</p>
-        <p>{{count}}</p>
+        <!--<p>{{liwenli}}</p>-->
+        <!--<p>{{count}}</p>-->
     </div>
 </template>
 <script>
